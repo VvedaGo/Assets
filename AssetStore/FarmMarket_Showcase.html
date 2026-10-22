@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Market — Stylized Low-Poly Environment | План пака и витрина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --card-border: #30363d;
+      --accent: #2ea043;
+      --accent-glow: rgba(46, 160, 67, 0.25);
+      --gold: #f0883e;
+      --gold-glow: rgba(240, 136, 62, 0.2);
+      --text: #f0f6fc;
+      --text-muted: #8b949e;
+      --badge-small: #238636;
+      --badge-med: #1f6feb;
+      --badge-large: #a371f7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 80px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+      border-bottom: 1px solid var(--card-border);
+      padding: 48px 0 32px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(240, 136, 62, 0.15);
+      border: 1px solid rgba(240, 136, 62, 0.4);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(120deg, #ffffff 40%, #a5d6a7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .header-desc {
+      color: var(--text-muted);
+      font-size: 17px;
+      max-width: 820px;
+      margin-bottom: 24px;
+    }
+
+    /* Key Specs Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .stat-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px var(--gold-glow);
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .stat-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Gallery / Concept Visuals */
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 48px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--gold);
+      border-radius: 4px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .art-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .art-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+    }
+
+    .art-thumb {
+      width: 100%;
+      height: 230px;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+    .art-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .art-card:hover .art-thumb img {
+      transform: scale(1.04);
+    }
+
+    .art-body {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-grow: 1;
+    }
+    .art-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .art-title {
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .art-caption {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Tabs & Filters */
+    .filter-wrapper {
+      background: #161b22;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 12px;
+      margin: 32px 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .tab-btn.active {
+      background: var(--gold);
+      color: #000;
+      font-weight: 700;
+      border-color: var(--gold);
+      box-shadow: 0 2px 10px var(--gold-glow);
+    }
+
+    .search-box {
+      background: #0d1117;
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      padding: 8px 16px;
+      color: #ffffff;
+      font-size: 13px;
+      outline: none;
+      min-width: 240px;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus {
+      border-color: var(--gold);
+    }
+
+    /* Items Catalog Grid */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 16px;
+    }
+
+    .item-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .item-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .item-thumb {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #090d12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .item-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .item-thumb:hover img {
+      transform: scale(1.06);
+    }
+    .item-thumb-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: #8b949e;
+      font-size: 11px;
+      font-weight: 600;
+      height: 100%;
+      width: 100%;
+      background: radial-gradient(circle at center, #1c2128 0%, #0d1117 100%);
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .item-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .item-category {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .item-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-grow: 1;
+    }
+
+    .item-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 12px;
+    }
+
+    .badge-tris {
+      font-family: 'JetBrains Mono', monospace;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .badge-small { background: rgba(46, 160, 67, 0.15); color: #56d364; border: 1px solid rgba(46, 160, 67, 0.3); }
+    .badge-med { background: rgba(56, 139, 253, 0.15); color: #79c0ff; border: 1px solid rgba(56, 139, 253, 0.3); }
+    .badge-large { background: rgba(163, 113, 247, 0.15); color: #d2a8ff; border: 1px solid rgba(163, 113, 247, 0.3); }
+
+    .tag-variant {
+      color: #8b949e;
+      font-size: 11px;
+    }
+
+    /* Modal / Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+    .lightbox-content img {
+      width: 100%;
+      height: auto;
+      max-height: 85vh;
+      display: block;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover {
+      background: #e5534b;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 28px; }
+      .header-desc { font-size: 15px; }
+      .filter-wrapper { flex-direction: column; align-items: stretch; }
+      .search-box { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="header-badge" style="background: rgba(46, 160, 67, 0.15); border-color: rgba(46, 160, 67, 0.5); color: #56d364;">✦ 100% Каталога готово (74 / 74 превью) • Unity 6 / URP</div>
+      <h1>Farm Market — Stylized Low-Poly Environment</h1>
+      <p class="header-desc">
+        Комплексный модульный мир рынка и фермы: от свежих овощей со срезами до амбаров, тракторов, ветряных мельниц и животных. Оптимизировано для мобильных платформ, изометрических RPG и тайкунов на 1 общем атласе на категорию.
+      </p>
+
+      <div class="stats-bar">
+        <div class="stat-card" style="border-color: rgba(46, 160, 67, 0.5); background: rgba(46, 160, 67, 0.08);">
+          <span class="stat-label" style="color: #56d364;">Превью ассетов</span>
+          <span class="stat-value" style="color: #56d364;">74 / 74 (100%)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Всего префабов</span>
+          <span class="stat-value">~150+ шт.</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Категорий</span>
+          <span class="stat-value">8 разделов</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Бюджет полигонов</span>
+          <span class="stat-value">100 – 6000 tris</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Материалы</span>
+          <span class="stat-value">1 Атлас / кат.</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Демо-сцены</span>
+          <span class="stat-value">4 сцены</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 1. Концепты расширения -->
+    <h2 class="section-title">Визуальные концепты расширения (Концепт-арт разделов)</h2>
+    <div class="gallery-grid">
+      
+      <!-- Концепт 1: Овощи, фрукты, еда -->
+      <div class="art-card" onclick="openLightbox('Concept_Previews/01_Produce_and_Food.png')">
+        <div class="art-thumb">
+          <img src="Concept_Previews/01_Produce_and_Food.png" alt="Овощи и еда">
+        </div>
+        <div class="art-body">
+          <span class="art-tag">Категории 1 & 7</span>
+          <h3 class="art-title">Урожай, овощи, фрукты и бакалея</h3>
+          <p class="art-caption">Целые и срезанные плоды: помидоры со срезом, тыквы, морковь с ботвой, хрустящий хлеб, фермерский сыр, баночки с медом и бутылки молока.</p>
+        </div>
+      </div>
+
+      <!-- Концепт 2: Прилавки и Архитектура -->
+      <div class="art-card" onclick="openLightbox('Concept_Previews/02_Stalls_and_Buildings.png')">
+        <div class="art-thumb">
+          <img src="Concept_Previews/02_Stalls_and_Buildings.png" alt="Прилавки и амбар">
+        </div>
+        <div class="art-body">
+          <span class="art-tag">Категории 2 & 3</span>
+          <h3 class="art-title">Рыночные прилавки и архитектура фермы</h3>
+          <p class="art-caption">Модульные деревянные прилавки с полосатыми тентами, весы, классический красный амбар, дом фермера с верандой и ветряная мельница.</p>
+        </div>
+      </div>
+
+      <!-- Концепт 3: Фермерская жизнь и техника -->
+      <div class="art-card" onclick="openLightbox('Concept_Previews/03_Farm_Life_and_Vehicles.png')">
+        <div class="art-thumb">
+          <img src="Concept_Previews/03_Farm_Life_and_Vehicles.png" alt="Животные и техника">
+        </div>
+        <div class="art-body">
+          <span class="art-tag">Категории 4, 5, 6 & 8</span>
+          <h3 class="art-title">Поле, животные, техника и атмосфера</h3>
+          <p class="art-caption">Вспаханные грядки, пугало, винтажный фермерский трактор, телега, low-poly животные (корова, овечка, поросенок) и праздничные флажки.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2. Каталог и фильтры плана -->
+    <h2 class="section-title">Каталог моделей и спецификации плана (~150 префабов)</h2>
+
+    <div class="filter-wrapper">
+      <div class="tabs" id="tabs">
+        <button class="tab-btn active" data-cat="all">Все разделы (150+)</button>
+        <button class="tab-btn" data-cat="produce">1. Овощи и фрукты (40)</button>
+        <button class="tab-btn" data-cat="stalls">2. Прилавки (20)</button>
+        <button class="tab-btn" data-cat="buildings">3. Постройки (12)</button>
+        <button class="tab-btn" data-cat="landscape">4. Поле и ландшафт (25)</button>
+        <button class="tab-btn" data-cat="animals">5. Животные (8)</button>
+        <button class="tab-btn" data-cat="tools">6. Инструменты и техника (18)</button>
+        <button class="tab-btn" data-cat="food">7. Готовая еда (12)</button>
+        <button class="tab-btn" data-cat="decor">8. Декор и атмосфера (15)</button>
+      </div>
+      <input type="text" id="searchInput" class="search-box" placeholder="Поиск по названию или описанию...">
+    </div>
+
+    <div class="items-grid" id="itemsGrid">
+      <!-- Generated by JS -->
+    </div>
+
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <img id="lightboxImg" src="" alt="Full view">
+    </div>
+  </div>
+
+  <script>
+    const items = [
+      // 1. Овощи и фрукты
+      { cat: 'produce', name: 'Помидор', done: true, img: 'Item_Previews/item_produce_tomato.png', desc: 'Целый плод, разрезанная половинка, ветка с 3 спелыми помидорами', tris: '150–300 tris', budget: 'small', var: 'Целый + срез + ветка' },
+      { cat: 'produce', name: 'Морковь', done: true, img: 'Item_Previews/item_produce_carrot.png', desc: 'Одиночная морковь, связка-пучок из 5 штук, вариант с сочной ботвой', tris: '100–250 tris', budget: 'small', var: '1 шт / пучок 5 шт' },
+      { cat: 'produce', name: 'Картофель', done: true, img: 'Item_Previews/item_produce_potato.png', desc: 'Клубень картофеля, 3 разных органических формы, срез', tris: '100–200 tris', budget: 'small', var: '3 формы клубня + срез' },
+      { cat: 'produce', name: 'Капуста', done: true, img: 'Item_Previews/item_produce_cabbage.png', desc: 'Целый кочан, аккуратная половина с фактурой слоёв на срезе', tris: '300–500 tris', budget: 'small', var: 'Целая + срез' },
+      { cat: 'produce', name: 'Кукуруза', done: true, img: 'Item_Previews/item_produce_corn.png', desc: 'Початок в зелёных листьях, полностью очищенный золотой початок', tris: '200–400 tris', budget: 'small', var: 'В листьях + чистый' },
+      { cat: 'produce', name: 'Тыква', done: true, img: 'Item_Previews/item_produce_pumpkin.png', desc: '3 размера (малая, средняя, гигант), хэллоуинский Джек-фонарь с вырезом', tris: '300–500 tris', budget: 'small', var: '3 размера + Jack-o\'-lantern' },
+      { cat: 'produce', name: 'Огурец', done: true, img: 'Item_Previews/item_produce_cucumber.png', desc: 'Целый пупырчатый огурец, аккуратно нарезанные кружочки', tris: '100–200 tris', budget: 'small', var: 'Целый + ломтики' },
+      { cat: 'produce', name: 'Лук и чеснок', done: true, img: 'Item_Previews/item_produce_onion_garlic.png', desc: 'Отдельные головки репчатого лука и чеснока, подвесная плетеная коса-связка', tris: '150–300 tris', budget: 'small', var: 'Головка + связка-коса' },
+      { cat: 'produce', name: 'Болгарский перец и чили', done: true, img: 'Item_Previews/item_produce_peppers.png', desc: 'Красный, жёлтый, зелёный болгарский перец, острый стручок чили', tris: '150–250 tris', budget: 'small', var: '4 цвета и формы' },
+      { cat: 'produce', name: 'Баклажан', done: true, img: 'Item_Previews/item_produce_eggplant.png', desc: 'Целый гладкий баклажан с характерным зелёным чашелистиком', tris: '150–250 tris', budget: 'small', var: 'Целый' },
+      { cat: 'produce', name: 'Свёкла и редис', done: true, img: 'Item_Previews/item_produce_beet_radish.png', desc: 'Корнеплоды свёклы и редиса, пучок со свежей зелёной ботвой', tris: '150–250 tris', budget: 'small', var: 'Пучок с ботвой' },
+      { cat: 'produce', name: 'Салат и зелень', done: true, img: 'Item_Previews/item_produce_salad_greens.png', desc: 'Кочанный салат Айсберг, пучки пряной петрушки и укропа', tris: '200–400 tris', budget: 'small', var: 'Кочан + пучки' },
+      { cat: 'produce', name: 'Яблоко и груша', done: true, img: 'Item_Previews/item_produce_apple_pear.png', desc: 'Целые сочные плоды (красное/зелёное), огрызки с косточками', tris: '150–250 tris', budget: 'small', var: 'Целое + огрызок' },
+      { cat: 'produce', name: 'Арбуз', done: true, img: 'Item_Previews/item_produce_watermelon.png', desc: 'Большой полосатый арбуз, аппетитная отрезанная долька с косточками', tris: '250–400 tris', budget: 'small', var: 'Целый + долька' },
+      { cat: 'produce', name: 'Виноград', done: true, img: 'Item_Previews/item_produce_grape.png', desc: 'Пышная гроздь спелого винограда с веточкой и резным листком', tris: '300–500 tris', budget: 'small', var: 'Гроздь' },
+      { cat: 'produce', name: 'Клубника', done: true, img: 'Item_Previews/item_produce_strawberry.png', desc: 'Одиночная спелая ягода с листиком, горсть ягод на ладони/подложке', tris: '100–300 tris', budget: 'small', var: 'Ягода + горсть' },
+      { cat: 'produce', name: 'Лимон и апельсин', done: true, img: 'Item_Previews/item_produce_citrus.png', desc: 'Целые цитрусы с пористой кожурой, отрезанные сочные дольки', tris: '150–250 tris', budget: 'small', var: 'Целый + долька' },
+
+      // 2. Рыночные прилавки
+      { cat: 'stalls', name: 'Прилавок деревянный (3 вида)', done: true, img: 'Item_Previews/item_stalls_table.png', desc: 'Малый торговый стол, средний прилавок, угловой модуль, каркас с тентом', tris: '800–2000 tris', budget: 'med', var: 'Малый / Средний / Угловой' },
+      { cat: 'stalls', name: 'Тент и навес', done: true, img: 'Item_Previews/item_stalls_canopy.png', desc: 'Полосатая ткань в 4 цветовых решениях, развевающиеся ленты по кромке', tris: '500–1200 tris', budget: 'med', var: '4 расцветки' },
+      { cat: 'stalls', name: 'Тележка торговца', done: true, img: 'Item_Previews/item_stalls_cart.png', desc: 'Двухколёсная ручная тележка: пустая и наполненная свежими овощами', tris: '1000–2000 tris', budget: 'med', var: 'Пустая + с грузом' },
+      { cat: 'stalls', name: 'Ящики и корзины', done: true, img: 'Item_Previews/item_stalls_crates.png', desc: 'Деревянные реечные ящики, плетёные корзины, сетчатые короба в 3 размерах', tris: '150–500 tris', budget: 'small', var: 'Дерево / Плетёнка / Сетка' },
+      { cat: 'stalls', name: 'Весы торговые', done: true, img: 'Item_Previews/item_stalls_scale.png', desc: 'Винтажные чашечные весы с противовесом и набор латунных гирек', tris: '300–600 tris', budget: 'small', var: 'Чашечные + гири' },
+      { cat: 'stalls', name: 'Касса и столик', done: true, img: 'Item_Previews/item_stalls_cashbox.png', desc: 'Деревянный ящик-касса с отсеками и россыпью золотых монет', tris: '300–700 tris', budget: 'small', var: 'Касса + монеты' },
+      { cat: 'stalls', name: 'Вывески и ценники', done: true, img: 'Item_Previews/item_stalls_signboards.png', desc: 'Меловая доска штендера, подвесные резные таблички, гирлянда флажков', tris: '100–400 tris', budget: 'small', var: 'Штендер / Таблички' },
+      { cat: 'stalls', name: 'Рыночный зонт', done: true, img: 'Item_Previews/item_stalls_umbrella.png', desc: 'Широкий зонт от солнца на деревянной стойке в 3 расцветках', tris: '400–700 tris', budget: 'small', var: '3 расцветки' },
+      { cat: 'stalls', name: 'Витрина', done: true, img: 'Item_Previews/item_stalls_shelves.png', desc: 'Деревянный открытый стеллаж со скошенными полками под продукты', tris: '800–1500 tris', budget: 'med', var: 'Стеллаж' },
+      { cat: 'stalls', name: 'Мешки зерновые', done: true, img: 'Item_Previews/item_stalls_grain_sacks.png', desc: 'Завязанный мешок, открытый мешок с видимым зерном, сложенная стопка', tris: '200–500 tris', budget: 'small', var: 'Закрытый / Открытый / Стопка' },
+
+      // 3. Ферма: постройки
+      { cat: 'buildings', name: 'Амбар (Barn)', done: true, img: 'Item_Previews/item_building_barn.png', desc: 'Классический красный двухуровневый амбар с открывающимися воротами', tris: '3000–5000 tris', budget: 'large', var: 'Красный амбар с воротами' },
+      { cat: 'buildings', name: 'Дом фермера', done: true, img: 'Item_Previews/item_building_house.png', desc: 'Уютный деревянный жилой дом со срубом, верандой и черепицей', tris: '3000–6000 tris', budget: 'large', var: 'Сруб с верандой' },
+      { cat: 'buildings', name: 'Курятник', done: true, img: 'Item_Previews/item_building_coop.png', desc: 'Компактный домик с насестом, наклонным трапом-лесенкой и сеткой', tris: '1000–2000 tris', budget: 'med', var: 'С трапом и гнездами' },
+      { cat: 'buildings', name: 'Хлев и стойло', done: true, img: 'Item_Previews/item_building_stable.png', desc: 'Навес со стойлами и перегородками для лошадей и коров', tris: '1500–3000 tris', budget: 'large', var: 'Стойло с кормушкой' },
+      { cat: 'buildings', name: 'Силосная башня', done: true, img: 'Item_Previews/item_building_silo.png', desc: 'Высокая цилиндрическая башня для корма с купольной крышей', tris: '800–1500 tris', budget: 'med', var: 'Башня' },
+      { cat: 'buildings', name: 'Ветряная мельница', done: true, img: 'Item_Previews/item_building_windmill.png', desc: 'Традиционная мельница с отдельным мешем лопастей для анимации вращения', tris: '1500–3000 tris', budget: 'large', var: 'Лопасти готовы к вращению' },
+      { cat: 'buildings', name: 'Колодец', done: true, img: 'Item_Previews/item_building_well.png', desc: 'Каменное основание, деревянный ворот с веревкой и подвесным ведром', tris: '500–1000 tris', budget: 'med', var: 'С ведром и навесом' },
+      { cat: 'buildings', name: 'Сарай для инструментов', done: true, img: 'Item_Previews/item_building_shed.png', desc: 'Малая хозяйственная постройка для хранения лопат, граблей и семян', tris: '800–1500 tris', budget: 'med', var: 'Малый сарай' },
+      { cat: 'buildings', name: 'Теплица', done: true, img: 'Item_Previews/item_building_greenhouse.png', desc: 'Деревянно-металлический каркас с прозрачными панелями под рассаду', tris: '1000–2000 tris', budget: 'med', var: 'Каркас + стеклянные рамы' },
+      { cat: 'buildings', name: 'Голубятня и скворечник', done: true, img: 'Item_Previews/item_building_birdhouse.png', desc: 'Миниатюрные декоративные скворечники на шестах и настенная голубятня', tris: '200–500 tris', budget: 'small', var: 'Скворечник + голубятня' },
+
+      // 4. Поле и ландшафт
+      { cat: 'landscape', name: 'Грядки модульные', done: true, img: 'Item_Previews/item_landscape_garden_beds.png', desc: 'Вспаханная земляная секция: пустая, с росточками, в фазе зрелого урожая', tris: '200–600 tris', budget: 'small', var: '3 стадии готовности' },
+      { cat: 'landscape', name: 'Растущие культуры', done: true, img: 'Item_Previews/item_landscape_crops.png', desc: 'Морковь, капуста, кукуруза, пшеница, подсолнухи по 3 стадии роста', tris: '100–500 tris', budget: 'small', var: 'Росток / Рост / Зрелый' },
+      { cat: 'landscape', name: 'Заборы модульные', done: true, img: 'Item_Previews/item_landscape_fences.png', desc: 'Штакетник, жердевой забор, распашные ворота, угловые секции, сломанная секция', tris: '100–400 tris', budget: 'small', var: '5 типов секций' },
+      { cat: 'landscape', name: 'Пугало огородное', done: true, img: 'Item_Previews/item_landscape_scarecrow.png', desc: '2 колоритных вида пугала в рубахе, соломенной шляпе и с тыквенной головой', tris: '500–900 tris', budget: 'med', var: '2 варианта образа' },
+      { cat: 'landscape', name: 'Сено (Тюки и стога)', done: true, img: 'Item_Previews/item_landscape_hay.png', desc: 'Прямоугольный тюк, круглый рулон, стопка-пирамида, рассыпанная куча', tris: '200–500 tris', budget: 'small', var: 'Прямоугольный / Круглый / Стек' },
+      { cat: 'landscape', name: 'Деревья стилизованные', done: true, img: 'Item_Previews/item_landscape_trees.png', desc: 'Плодовая яблоня с плодами, дуб, стройная берёза, пушистая ель (по 2–3 вариации)', tris: '500–2000 tris', budget: 'med', var: '4 породы деревьев' },
+      { cat: 'landscape', name: 'Кусты и полевые цветы', done: true, img: 'Item_Previews/item_landscape_bushes_flowers.png', desc: 'Цветочные ромашки, маки, декоративные подсолнухи, густые кустарники', tris: '50–300 tris', budget: 'small', var: 'Цветы и кусты' },
+      { cat: 'landscape', name: 'Трава с ветровым шейдером', done: true, img: 'Item_Previews/item_landscape_grass.png', desc: 'Одиночные пучки и пышные полянки травы с поддержкой вершинного ветра', tris: '50–200 tris', budget: 'small', var: 'Шейдер ветра URP' },
+      { cat: 'landscape', name: 'Камни и пни', done: true, img: 'Item_Previews/item_landscape_rocks_stumps.png', desc: '5 видов валунов с фасками, 3 спиленных пня с годовыми кольцами', tris: '100–400 tris', budget: 'small', var: '5 камней + 3 пня' },
+      { cat: 'landscape', name: 'Дорожки и мостики', done: true, img: 'Item_Previews/item_landscape_paths_bridge.png', desc: 'Модульные плиты грунтовой тропинки, каменный мостик через ручей', tris: '300–800 tris', budget: 'small', var: 'Тропа + мост' },
+      { cat: 'landscape', name: 'Лужи и грязь', done: true, img: 'Item_Previews/item_landscape_puddles.png', desc: 'Плоские декали луж и грязевых пятен для оживления дорог', tris: '4–50 tris', budget: 'small', var: 'Декали' },
+
+      // 5. Животные
+      { cat: 'animals', name: 'Корова', done: true, img: 'Item_Previews/item_animal_cow.png', desc: 'Стилизованная пятнистая корова. Риг, анимации: idle, walk, eat', tris: '1500–2500 tris', budget: 'large', var: '3 базовые анимации' },
+      { cat: 'animals', name: 'Овца', done: true, img: 'Item_Previews/item_animal_sheep.png', desc: 'Пушистая кудрявая овечка с ушками. Анимации: idle, walk, eat', tris: '1200–2000 tris', budget: 'med', var: '3 анимации' },
+      { cat: 'animals', name: 'Курица / Петух', done: true, img: 'Item_Previews/item_animal_chicken.png', desc: 'Озорная курочка и важный петух. Анимации: idle, peck, walk', tris: '500–900 tris', budget: 'small', var: 'Анимация клевания' },
+      { cat: 'animals', name: 'Свинья', done: true, img: 'Item_Previews/item_animal_pig.png', desc: 'Милая розовая свинка с хвостиком. Анимации: idle, walk', tris: '1200–2000 tris', budget: 'med', var: '2 анимации' },
+      { cat: 'animals', name: 'Лошадь', done: true, img: 'Item_Previews/item_animal_horse.png', desc: 'Фермерская рабочая лошадка. Анимации: idle, walk, trot', tris: '2000–3000 tris', budget: 'large', var: 'Рысь, шаг, покой' },
+      { cat: 'animals', name: 'Утка', done: true, img: 'Item_Previews/item_animal_duck.png', desc: 'Селезень и уточка для водоема. Анимации: idle, walk, swim', tris: '500–800 tris', budget: 'small', var: 'Плавание, походка' },
+
+      // 6. Инструменты и техника
+      { cat: 'tools', name: 'Ручной инвентарь', done: true, img: 'Item_Previews/item_tools_hand_inventory.png', desc: 'Лопата, вилы, грабли, лейка, серп, топор, молоток с деревянными ручками', tris: '100–400 tris', budget: 'small', var: '7 инструментов' },
+      { cat: 'tools', name: 'Тачка и молочный бидон', done: true, img: 'Item_Previews/item_tools_wheelbarrow_can.png', desc: 'Деревянная одноколесная тачка, алюминиевый молочный бидон с крышкой', tris: '300–800 tris', budget: 'small', var: 'Тачка + бидон' },
+      { cat: 'tools', name: 'Телега крестьянская', done: true, img: 'Item_Previews/item_tools_wagon.png', desc: 'Деревянная телега на больших спицевых колёсах, наполненная соломой', tris: '1000–2000 tris', budget: 'med', var: 'С сеном и пустая' },
+      { cat: 'tools', name: 'Винтажный трактор', done: true, img: 'Item_Previews/item_tools_tractor.png', desc: 'Старый стилизованный фермерский трактор с большими задними колесами', tris: '3000–5000 tris', budget: 'large', var: 'Анимируемые колеса' },
+      { cat: 'tools', name: 'Корыто и поилка', done: true, img: 'Item_Previews/item_tools_trough.png', desc: 'Деревянные и каменные поилки для скота с водой', tris: '200–500 tris', budget: 'small', var: 'С водой / кормом' },
+      { cat: 'tools', name: 'Бочки дубовые', done: true, img: 'Item_Previews/item_tools_barrels.png', desc: 'Стоячая бочка, малая бочка, лежащая бочка на подставке с латунным краном', tris: '200–500 tris', budget: 'small', var: '3 вариации' },
+      { cat: 'tools', name: 'Мешки с семенами', done: true, img: 'Item_Previews/item_tools_seed_sacks.png', desc: 'Крафтовые бумажные пакеты и тканевые пачки с этикетками семян', tris: '100–300 tris', budget: 'small', var: 'Пакеты семян' },
+
+      // 7. Готовая еда
+      { cat: 'food', name: 'Хлеб и выпечка', done: true, img: 'Item_Previews/item_food_bread.png', desc: 'Пышная деревенская буханка, хрустящий французский багет, круассан', tris: '150–350 tris', budget: 'small', var: '3 вида выпечки' },
+      { cat: 'food', name: 'Сыр фермерский', done: true, img: 'Item_Previews/item_food_cheese.png', desc: 'Большой круг сыра с восковой коркой, головка с дырками, отрезанный ломтик', tris: '150–300 tris', budget: 'small', var: 'Круг / Кусок' },
+      { cat: 'food', name: 'Молоко и напитки', done: true, img: 'Item_Previews/item_food_milk.png', desc: 'Стеклянная бутылка с пробкой, деревянное ведро со свежим молоком', tris: '200–400 tris', budget: 'small', var: 'Бутылки + ведро' },
+      { cat: 'food', name: 'Яйца домашние', done: true, img: 'Item_Previews/item_food_eggs.png', desc: 'Плетеная корзинка со свежими яйцами, картонный лоток на десяток яиц', tris: '200–450 tris', budget: 'small', var: 'Корзина + лоток' },
+      { cat: 'food', name: 'Мёд и варенье', done: true, img: 'Item_Previews/item_food_honey.png', desc: 'Стеклянные банки с золотым мёдом и ягодным джемом, деревянная ложка-веретено', tris: '250–450 tris', budget: 'small', var: 'Банки + соты' },
+      { cat: 'food', name: 'Мясо и рыба', done: true, img: 'Item_Previews/item_food_meat_fish.png', desc: 'Копчёный окорок на крюке, свежая рыба, выложенная на лотке со льдом', tris: '300–600 tris', budget: 'small', var: 'Окорок + рыба со льдом' },
+
+      // 8. Декор и атмосфера
+      { cat: 'decor', name: 'Гирлянды и флажки', done: true, img: 'Item_Previews/item_decor_bunting.png', desc: 'Праздничные разноцветные треугольные флажки на бечевке, светящиеся фонарики', tris: '200–500 tris', budget: 'small', var: 'Флажки + гирлянды' },
+      { cat: 'decor', name: 'Фонари уличные', done: true, img: 'Item_Previews/item_decor_lanterns.png', desc: 'Подвесной кованый фонарь со свечой, настенный светильник, фонарный столб', tris: '300–600 tris', budget: 'small', var: 'Столб + подвес' },
+      { cat: 'decor', name: 'Лавочки и столы', done: true, img: 'Item_Previews/item_decor_benches_table.png', desc: 'Простые дощатые лавки и деревянный стол для пикника', tris: '300–700 tris', budget: 'small', var: 'Стол + лавки' },
+      { cat: 'decor', name: 'Цветочные кашпо и ящики', done: true, img: 'Item_Previews/item_decor_planters.png', desc: 'Глиняные горшки, прямоугольные деревянные ящики с цветущими петуниями', tris: '200–500 tris', budget: 'small', var: 'Горшки + ящики' },
+      { cat: 'decor', name: 'Почтовый ящик и указатели', done: true, img: 'Item_Previews/item_decor_mailbox_signs.png', desc: 'Деревянный столб с направляющими стрелками, сельский почтовый ящик', tris: '200–450 tris', budget: 'small', var: 'Указатель + ящик' },
+      { cat: 'decor', name: 'Улей пчелиный', done: true, img: 'Item_Previews/item_decor_beehive.png', desc: 'Деревянный многоярусный пчелиный улей с летком', tris: '300–600 tris', budget: 'small', var: 'Улей' },
+      { cat: 'decor', name: 'Бочка для дождевой воды', done: true, img: 'Item_Previews/item_decor_rain_barrel.png', desc: 'Резная бочка с водосточным желобом и рябью воды', tris: '250–500 tris', budget: 'small', var: 'С водой' }
+    ];
+
+    const grid = document.getElementById('itemsGrid');
+    const tabs = document.querySelectorAll('.tab-btn');
+    const search = document.getElementById('searchInput');
+
+    function render(filterCat = 'all', searchQuery = '') {
+      grid.innerHTML = '';
+      const q = searchQuery.toLowerCase().trim();
+
+      const filtered = items.filter(it => {
+        const matchesCat = filterCat === 'all' || it.cat === filterCat;
+        const matchesSearch = !q || it.name.toLowerCase().includes(q) || it.desc.toLowerCase().includes(q);
+        return matchesCat && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 48px; color: #8b949e;">Ничего не найдено по вашему запросу</div>';
+        return;
+      }
+
+      filtered.forEach(it => {
+        const card = document.createElement('div');
+        card.className = 'item-card';
+
+        const catTitles = {
+          produce: '1. Овощи & Фрукты',
+          stalls: '2. Прилавки',
+          buildings: '3. Постройки',
+          landscape: '4. Поле & Ландшафт',
+          animals: '5. Животные',
+          tools: '6. Инструменты',
+          food: '7. Готовая еда',
+          decor: '8. Декор'
+        };
+
+        const thumbHtml = it.img ? `
+          <div class="item-thumb" onclick="openLightbox('${it.img}')">
+            <img src="${it.img}" alt="${it.name}" onerror="this.parentElement.innerHTML='<div class=\\'item-thumb-placeholder\\'><span>📦</span><span>В очереди генерации</span></div>'">
+          </div>
+        ` : `
+          <div class="item-thumb">
+            <div class="item-thumb-placeholder">
+              <span>🎨</span>
+              <span>В очереди генерации</span>
+            </div>
+          </div>
+        `;
+
+        card.innerHTML = `
+          ${thumbHtml}
+          <div class="item-header">
+            <div>
+              <div class="item-category">${catTitles[it.cat] || it.cat}</div>
+              <h4 class="item-name">${it.name}</h4>
+            </div>
+            <span class="badge-tris badge-${it.budget}">${it.tris}</span>
+          </div>
+          <p class="item-desc">${it.desc}</p>
+          <div class="item-footer">
+            <span class="tag-variant">Вариации: <b>${it.var}</b></span>
+            ${it.done ? '<span style="color: #2ea043; font-weight: 600;">✓ Ready</span>' : '<span style="color: #8b949e; font-weight: 600;">⏳ В очереди</span>'}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        render(btn.dataset.cat, search.value);
+      });
+    });
+
+    search.addEventListener('input', (e) => {
+      const activeTab = document.querySelector('.tab-btn.active');
+      render(activeTab ? activeTab.dataset.cat : 'all', e.target.value);
+    });
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      img.src = src;
+      lb.classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    render('all', '');
+  </script>
+</body>
+</html>
