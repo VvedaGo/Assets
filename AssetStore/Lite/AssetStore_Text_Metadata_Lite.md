@@ -100,7 +100,7 @@ Version 1.0.0 - Initial Release:
 
 ---
 
-## 6. Медиа (папка `AssetStore/Hero/`)
+## 6. Медиа (папка `AssetStore/Lite/Hero/`)
 
 ### Screenshots & videos (мин. ширина 1200 px)
 | № | Файл | Размер |
