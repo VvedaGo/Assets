@@ -119,7 +119,7 @@ namespace MarketFarm.Editor
             }
         }
 
-        private static UniversalRenderPipelineAsset HeroPipeline(UniversalRenderPipelineAsset source)
+        internal static UniversalRenderPipelineAsset HeroPipeline(UniversalRenderPipelineAsset source)
         {
             const string dir = "Assets/Scenes/Hero";
             Directory.CreateDirectory(dir);
@@ -154,7 +154,7 @@ namespace MarketFarm.Editor
             return rp;
         }
 
-        private static void Capture(Camera cam, string path, int w, int h, int downsample)
+        internal static void Capture(Camera cam, string path, int w, int h, int downsample)
         {
             var rt = new RenderTexture(w, h, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.sRGB);
             cam.targetTexture = rt;

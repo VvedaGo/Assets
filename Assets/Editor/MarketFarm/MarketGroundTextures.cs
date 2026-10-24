@@ -13,16 +13,26 @@ namespace MarketFarm.Editor
         private const int Size = 512;
         private const string Dir = MarketSceneBuilder.MaterialDir;
 
-        internal static Material Cobble(string materialName, Vector2 tiling)
+        internal static Material Cobble(string materialName, Vector2 tiling) => Cobble(Dir, materialName, tiling);
+
+        internal static Material Grass(string materialName, Vector2 tiling) => Grass(Dir, materialName, tiling);
+
+        internal static Material Cobble(string dir, string materialName, Vector2 tiling)
         {
-            EnsureTextures("T_Ground_Cobble", GenerateCobble);
-            return MakeMaterial(materialName, "T_Ground_Cobble", tiling, 0.18f, 1.0f);
+            EnsureTextures(dir, "T_Ground_Cobble", GenerateCobble);
+            return MakeMaterial(dir, materialName, "T_Ground_Cobble", tiling, 0.18f, 1.0f);
         }
 
-        internal static Material Grass(string materialName, Vector2 tiling)
+        internal static Material Grass(string dir, string materialName, Vector2 tiling)
         {
-            EnsureTextures("T_Ground_Grass", GenerateGrass);
-            return MakeMaterial(materialName, "T_Ground_Grass", tiling, 0.04f, 0.6f);
+            EnsureTextures(dir, "T_Ground_Grass", GenerateGrass);
+            return MakeMaterial(dir, materialName, "T_Ground_Grass", tiling, 0.04f, 0.6f);
+        }
+
+        internal static Material Dirt(string dir, string materialName, Vector2 tiling)
+        {
+            EnsureTextures(dir, "T_Ground_Dirt", GenerateDirt);
+            return MakeMaterial(dir, materialName, "T_Ground_Dirt", tiling, 0.06f, 0.8f);
         }
 
         // ---------- Generators: fill base colour and height, normal is derived from height ----------
@@ -100,12 +110,47 @@ namespace MarketFarm.Editor
             }
         }
 
+        private static void GenerateDirt(Color[] colour, float[] height)
+        {
+            var dark = new Color(0.50f, 0.37f, 0.25f);
+            var mid = new Color(0.64f, 0.49f, 0.33f);
+            var light = new Color(0.76f, 0.62f, 0.44f);
+            var pebble = new Color(0.80f, 0.74f, 0.64f);
+            var rng = new System.Random(17);
+            for (var y = 0; y < Size; y++)
+            for (var x = 0; x < Size; x++)
+            {
+                var low = Noise(x, y, Size, 6f) * 0.5f + Noise(x, y, Size, 19f) * 0.5f;
+                var c = low < 0.5f ? Color.Lerp(dark, mid, low * 2f) : Color.Lerp(mid, light, (low - 0.5f) * 2f);
+                var fine = 0.92f + 0.16f * Noise(x, y, Size, 80f);
+                colour[y * Size + x] = new Color(c.r * fine, c.g * fine, c.b * fine, 1f);
+                height[y * Size + x] = 0.4f * low + 0.1f * fine;
+            }
+            // Pebbles: small light dots, raised.
+            for (var n = 0; n < 900; n++)
+            {
+                var cx = rng.Next(Size); var cy = rng.Next(Size);
+                var r = 1.5f + (float)rng.NextDouble() * 3f;
+                var tint = Color.Lerp(pebble, mid, (float)rng.NextDouble() * 0.5f);
+                for (var dy = -5; dy <= 5; dy++)
+                for (var dx = -5; dx <= 5; dx++)
+                {
+                    var d = Mathf.Sqrt(dx * dx + dy * dy) / r;
+                    if (d > 1f) continue;
+                    var px = ((cx + dx) % Size + Size) % Size; var py = ((cy + dy) % Size + Size) % Size;
+                    colour[py * Size + px] = Color.Lerp(colour[py * Size + px], tint, Smoothstep(1f, 0.6f, d));
+                    height[py * Size + px] += 0.35f * (1f - d * d);
+                }
+            }
+        }
+
         // ---------- Plumbing ----------
 
-        private static void EnsureTextures(string name, System.Action<Color[], float[]> generate)
+        private static void EnsureTextures(string dir, string name, System.Action<Color[], float[]> generate)
         {
-            var basePath = $"{Dir}/{name}_BaseColor.png";
-            var normalPath = $"{Dir}/{name}_Normal.png";
+            Directory.CreateDirectory(dir);
+            var basePath = $"{dir}/{name}_BaseColor.png";
+            var normalPath = $"{dir}/{name}_Normal.png";
             if (File.Exists(basePath) && File.Exists(normalPath)) return;
 
             var colour = new Color[Size * Size];
@@ -154,17 +199,17 @@ namespace MarketFarm.Editor
             importer.SaveAndReimport();
         }
 
-        private static Material MakeMaterial(string materialName, string textureName, Vector2 tiling, float smoothness, float bumpScale)
+        private static Material MakeMaterial(string dir, string materialName, string textureName, Vector2 tiling, float smoothness, float bumpScale)
         {
-            var path = $"{Dir}/{materialName}.mat";
+            var path = $"{dir}/{materialName}.mat";
             var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (mat == null)
             {
                 mat = new Material(Shader.Find("Universal Render Pipeline/Lit"));
                 AssetDatabase.CreateAsset(mat, path);
             }
-            mat.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{Dir}/{textureName}_BaseColor.png"));
-            mat.SetTexture("_BumpMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{Dir}/{textureName}_Normal.png"));
+            mat.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{dir}/{textureName}_BaseColor.png"));
+            mat.SetTexture("_BumpMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{dir}/{textureName}_Normal.png"));
             mat.EnableKeyword("_NORMALMAP");
             mat.SetFloat("_BumpScale", bumpScale);
             mat.SetColor("_BaseColor", Color.white);
