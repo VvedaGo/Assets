@@ -1,0 +1,311 @@
+# Farm Nature demo compositions (NATURE_COMPOSITIONS 01 + 03). Read by FarmNatureCompositionBuilder.
+# Units: metres, composition-local. x right, z back; with yaw 45 the front corner is (-,-), screen-left (-,+), screen-right (+,-).
+# Ground top is y=0. Water/terrain blocks have banks at 0.30: streams sit in a pit at y -0.30, ponds are sunk -0.24.
+# Raised bed soil is at y 0.35.
+#
+# comp   <name> <originX> <originZ> <camYaw> <orthoSize> <pitch> <lookX> <lookY> <lookZ>
+# island <a> <b> <exponent> <points> <skirt>   rounded island, grass grid with holes over water
+# octagon <halfX> <halfZ> <chamfer>          ground slab (grass top, soil sides)
+# poly   x z x z ...                          convex ground slab
+# pit    x0 z0 x1 z1                          soil filler under a stream channel (top -0.30)
+# <Prefab> x z [rot|r] [scale] [y]            prefab name without FMS_
+# row    A,B x0 z0 x1 z1 count [rot|r] [y] [scale]
+# scatter A,B cx cz rx rz count seed [smin smax]   random, avoids placed objects
+
+# ===================== 03 / 01 Огород =====================
+comp Ogorod -55 60 45 4.9 40 0 0.4 0
+octagon 4 4 1.2
+Hedge_Straight -2.2 3.2 0
+Hedge_Straight -0.2 3.2 0
+Hedge_End 1.2 3.2 0
+Crop_Sunflower_S3 2.2 3.2 225
+Crop_Sunflower_S3 3.0 2.4 200
+Crop_Sunflower_S2 1.6 2.3 250
+Bush_Round -3.3 2.3 r
+Flower_Lavender -3.3 -1.6 r
+Flower_Lavender -3.0 -2.4 r
+Bed_Raised_2x1 3.0 0.6 90
+Bed_Trellis 3.3 0.6 90 1 0.35
+row Crop_Tomato_S3 2.8 0.0 2.8 1.2 3 0 0.35
+Bed_Raised_2x1 -2.4 1.3 0
+row Crop_Carrot_S3 -3.0 1.05 -1.8 1.05 3 r 0.35
+row Crop_Carrot_S3 -3.0 1.55 -1.8 1.55 3 r 0.35
+Bed_Raised_2x1 1.4 -2.0 0
+row Crop_Cabbage_S3 0.8 -2.0 2.0 -2.0 3 r 0.35
+Path_Dirt_Straight -0.4 -3.0 90
+Path_Dirt_Straight -0.4 -1.0 90
+Path_Dirt_Curve -0.4 1.0 90
+Path_Dirt_End 1.6 1.0 180
+Bush_Round -2.8 -0.8 r
+Grass_Tall -3.2 0.2 r
+Flower_Daisy -2.2 -2.2 r
+Flower_Daisy -1.6 -3.0 r
+Flower_Meadow 2.9 -1.0 r
+scatter Grass_Tuft_S,Grass_Tuft_M 0 0 3.8 3.8 40 1
+scatter Flower_Daisy 0 -1 3.5 3 5 2
+
+# ===================== 03 / 02 Поле =====================
+comp Pole -33 60 45 5.0 40 0 0.4 0
+octagon 4.2 4.2 1.0
+Crop_WheatField_Golden -1 2.5 0
+Crop_WheatField_Golden 1 2.5 0
+Crop_WheatField_Green -1 0.5 0
+Crop_WheatField_Green 1 0.5 0
+Crop_WheatField_Stubble -1 -1.5 0
+Crop_WheatField_Stubble 1 -1.5 0
+row Crop_Corn_S3 -1.6 3.75 1.6 3.75 5 r
+Crop_Sunflower_S3 3.1 2.0 225
+Crop_Sunflower_S3 3.3 0.9 210
+Crop_Sunflower_S2 3.0 -0.2 240
+Bed_Raised_1x1 -3.2 1.8 0
+Bed_Raised_1x1 -3.2 0.3 0
+Bed_Raised_1x1 -3.2 -1.2 0
+Crop_Wheat_S1 -3.2 1.8 r 1 0.35
+Crop_Wheat_S2 -3.2 0.3 r 1 0.35
+Crop_Wheat_S3 -3.2 -1.2 r 1 0.35
+Path_Dirt_Straight -3.2 -3.1 0
+Path_Dirt_Straight -1.2 -3.1 0
+Path_Dirt_Straight 0.8 -3.1 0
+Path_Dirt_End 2.8 -3.1 180
+scatter Grass_Tuft_S,Grass_Tuft_M 0 0 4 4 35 3
+
+# ===================== 03 / 03 Яблоневый сад =====================
+comp Sad -11 60 45 5.8 40 0 1.4 0
+octagon 4.5 4.5 1.4
+Tree_Apple_Blossom -2.0 1.6 0
+Tree_Apple_Fruit 1.6 2.6 30
+Tree_Apple_Fruit 2.2 -1.6 -40
+Path_Stepping_Stones -1.6 -1.6 -45
+Path_Stepping_Stones -0.1 -0.1 -45
+Path_Stepping_Stones 1.3 1.3 -45
+Bush_Berry 0.8 -1.5 r
+Flower_Lavender -3.0 -0.6 r
+Flower_Lavender -2.6 -1.6 r
+Flower_Lavender -0.6 3.2 r
+Flower_Lavender 3.3 0.4 r
+Hedge_Straight -1.0 4.0 0
+Hedge_Straight 1.0 4.0 0
+Hedge_End 2.4 4.0 0
+Hedge_Straight 4.0 1.0 90
+Hedge_Straight 4.0 -1.0 90
+Hedge_End 4.0 -2.4 90
+scatter Grass_Tuft_S,Grass_Tuft_M 0 0 4.2 4.2 45 4
+scatter Flower_Daisy,Flower_Meadow 0 0 4 4 10 5
+
+# ===================== 03 / 04 Пруд и мост =====================
+comp Prud 11 60 45 5.3 40 0 0.9 0
+poly -2.8 -4  0 -4  0 4  -2.8 4  -4 2.8  -4 -2.8
+poly 0 0  4 0  4 2.8  2.8 4  0 4
+poly 0 -4  2.8 -4  4 -2.8  4 -1.6  0 -1.6
+pit 0 -1.6 4 0
+Water_Stream_Straight 1 -0.8 0 1 -0.3
+Water_Stream_Straight 3 -0.8 0 1 -0.3
+Water_Pond_Round -1.7 -0.8 0 1 -0.24
+Water_LilyPads -2.2 -1.2 20 1 0.02
+Water_LilyPads -1.3 0.0 70 0.7 0.02
+Water_Bridge_Wood 2.4 -0.8 90
+Path_Dirt_End 2.4 1.7 90
+Tree_Willow -1.6 2.4 0 0.85
+Grass_Reeds -3.2 1.2 r
+Grass_Reeds 0.4 0.6 r
+Grass_Reeds -0.2 -2.9 r
+Grass_Reeds 3.5 0.8 r
+Rock_L 1.0 -3.0 r
+Rock_M 3.4 -2.9 r
+Rock_S -3.2 -2.2 r
+Grass_Tall 0.9 2.6 r
+scatter Grass_Tuft_S,Grass_Tuft_M 0 0 3.8 3.8 40 6
+scatter Flower_Daisy 0 0 3.5 3.5 5 7
+
+# ===================== 03 / 05 Лесная опушка =====================
+comp Opushka 33 60 45 7.0 40 0 2.4 0
+octagon 5 5 1.5
+Tree_Oak_L 1.0 1.6 0
+Tree_Spruce_L -3.2 2.0 0
+Tree_Birch 3.0 -1.8 0
+Wood_Log -2.4 -1.6 -30
+Wood_Stump 0.0 -1.2 0
+Wood_Firewood_Stack 1.6 -0.2 45
+Plant_Fern -1.0 -0.2 r
+Plant_Fern -3.6 -0.4 r
+Rock_M -4.0 0.6 r
+Rock_M 2.4 -3.8 r
+Rock_S 3.6 -3.4 r
+Bush_Round -1.0 3.8 r
+Bush_Round 3.8 2.0 r
+Bush_Berry 4.0 0.2 r
+scatter Grass_Tuft_S,Grass_Tuft_M 0 0 4.8 4.8 55 8
+scatter Flower_Daisy 0 -1.5 4 3 8 9
+
+# ===================== 03 / 06 Цветочная тропа =====================
+comp Tropa 55 60 45 4.9 40 0 0.5 0
+octagon 4 4 1.2
+Path_Dirt_Straight -1 -3 90
+Path_Dirt_Curve -1 -1 90
+Path_Dirt_Curve 1 -1 -90
+Path_Dirt_Straight 1 1 90
+Path_Dirt_Straight 1 3 90
+Hedge_Straight -2.2 3.2 0
+Hedge_End -0.8 3.2 0
+Hedge_End 2.1 3.3 0
+Bush_Flowering -1.8 2.0 r
+Tree_Apple_Blossom 3.0 1.4 0 0.8
+Flower_Lavender -3.0 0.8 r
+Flower_Lavender -2.4 1.1 r
+Flower_Lavender -0.1 1.0 r
+Flower_Lavender 0.0 1.7 r
+Flower_Poppy -2.6 -1.0 r
+Flower_Poppy -2.0 -1.8 r
+Flower_Poppy -3.0 -0.2 r
+Flower_Tulip 2.6 -0.8 r
+Flower_Tulip 3.1 -1.6 r
+Flower_Tulip 2.4 -2.2 r
+Flower_Daisy -2.4 -3.0 r
+Flower_Daisy 2.8 0.0 r
+Flower_Meadow 0.4 -3.0 r
+scatter Grass_Tuft_S,Grass_Tuft_M 0 0 3.8 3.8 40 10
+scatter Flower_Daisy,Flower_Meadow 0 0 3.6 3.6 6 11
+
+# ===================== 01 / Общая композиция =====================
+# Rounded island (super-ellipse, cells over water cut out). Stream: spring at the back -> two bends -> pond front-right.
+comp Overall 0 115 0 10.3 38 0 2.0 0.8
+island 16.5 11.5 3.2 96 1.3
+# ---- water: spring, meander, pond ----
+Water_Stream_End 2 8 90 1 -0.3
+Water_Stream_Straight 2 6 90 1 -0.3
+Water_Stream_Curve 2 4 0 1 -0.3
+Water_Stream_Straight 4 4 0 1 -0.3
+Water_Stream_Straight 6 4 0 1 -0.3
+Water_Stream_Curve 8 4 180 1 -0.3
+Water_Stream_Straight 8 2 90 1 -0.3
+Water_Pond_Oval 8.5 -0.6 0 1 -0.3
+Water_LilyPads 9.6 -0.9 30 1 -0.04
+Water_LilyPads 7.2 -0.4 -40 0.7 -0.04
+Water_LilyPads 10.4 0.2 110 0.6 -0.04
+Water_Bridge_Wood 4 4 90
+Grass_Reeds 5.4 0.6 r
+Grass_Reeds 6.6 -2.7 r
+Grass_Reeds 10.9 1.4 r
+Grass_Reeds 11.9 -1.2 r
+Grass_Reeds 9.2 3.0 r
+Rock_M 6.2 -3.4 r
+Rock_S 7.6 -2.9 r
+Rock_L 10.6 -3.4 r
+Rock_S 1.0 7.6 r
+Rock_M 3.2 8.6 r
+# ---- path: front edge -> fork -> garden / bridge -> forest ----
+Path_Dirt_Straight 0 -10.4 90
+Path_Dirt_Straight 0 -8.4 90
+Path_Dirt_Straight 0 -6.4 90
+Path_Dirt_Straight 0 -4.4 90
+Path_Dirt_T 0 -2.4 180
+Path_Dirt_Straight -2 -2.4 0
+Path_Dirt_Straight -4 -2.4 0
+Path_Dirt_End -6 -2.4 0
+Path_Dirt_Straight 2 -2.4 0
+Path_Dirt_Curve 4 -2.4 -90
+Path_Dirt_Straight 4 -0.4 90
+Path_Dirt_End 4 1.6 90
+Path_Dirt_End 4 6.5 90
+# ---- garden front-left ----
+Bed_Raised_2x1 -11 -5.6 0
+row Crop_Cabbage_S3 -11.6 -5.6 -10.4 -5.6 3 r 0.35
+Bed_Raised_2x1 -8.2 -5.6 0
+row Crop_Carrot_S3 -8.8 -5.35 -7.6 -5.35 3 r 0.35
+row Crop_Carrot_S3 -8.8 -5.85 -7.6 -5.85 3 r 0.35
+Bed_Raised_2x1 -5.4 -5.6 0
+Crop_Pumpkin_S3 -5.4 -5.6 0 1 0.35
+Bed_Raised_2x1 -8.5 -2.2 0
+Bed_Trellis -8.5 -1.95 0 1 0.35
+row Crop_Tomato_S3 -9.1 -2.4 -7.9 -2.4 3 0 0.35
+Bed_Raised_1x1 -11.4 -2.3 0
+Crop_Tomato_S2 -11.4 -2.3 0 1 0.35
+Hedge_Straight -14.4 -6 90
+Hedge_Straight -14.4 -4 90
+Hedge_End -14.4 -2.6 90
+Hedge_Straight -10.5 -9.2 0
+Hedge_Straight -8.5 -9.2 0
+Hedge_End -7.1 -9.2 0
+Bush_Round -12.6 -8.2 r
+Flower_Lavender -12.6 -7.0 r
+Flower_Lavender -13.2 -6.4 r
+Flower_Lavender -6.2 -7.6 r
+Flower_Lavender -5.4 -8.2 r
+Flower_Lavender -3.6 -7.4 r
+# ---- corn, sunflowers, fields ----
+row Crop_Corn_S3 -14 0.7 -10 0.7 5 r
+row Crop_Sunflower_S3 -8.8 0.6 -6.4 0.6 4 180
+Crop_WheatField_Golden -13 3 0
+Crop_WheatField_Golden -11 3 0
+Crop_WheatField_Golden -9 3 0
+Crop_WheatField_Golden -7 3 0
+Crop_WheatField_Golden -13 5 0
+Crop_WheatField_Golden -11 5 0
+Crop_WheatField_Golden -9 5 0
+Crop_WheatField_Golden -7 5 0
+Crop_WheatField_Green -11 7 0
+Crop_WheatField_Green -9 7 0
+Crop_WheatField_Green -7 7 0
+Bush_Round -15.2 -1.4 r
+Bush_Round -15.3 2.0 r
+Bush_Round -13.3 7.6 r
+# ---- orchard + big oak in the middle ----
+Tree_Apple_Fruit -4.4 2.6 0
+Tree_Apple_Fruit -1.4 0.9 40
+Tree_Apple_Fruit -3.4 5.6 -20
+Tree_Oak_L -0.6 7.8 0
+Wood_Stump 1.6 -0.6 0
+Bush_Berry -2.6 -0.6 r
+Bush_Flowering -6.2 -0.3 r
+# ---- back-left trees behind the fields ----
+Tree_Birch_S -9.0 9.6 0
+Tree_Birch -6.0 9.4 30
+Tree_Spruce_S -11.6 9.0 0
+Bush_Round -4.0 10.2 r
+# ---- forest back-right ----
+Tree_Spruce_L 10.5 8.4 0
+Tree_Spruce_L 13.8 5.2 30
+Tree_Spruce_L 6.4 9.6 15
+Tree_Spruce_S 4.4 10.0 0
+Tree_Birch 8.6 7.2 0
+Tree_Birch 12.4 7.8 60
+Tree_Birch_S 14.6 2.4 0
+Wood_Log_Fallen 11.6 2.4 0
+Wood_Firewood_Stack 6.0 6.6 0
+Wood_Stump 9.6 5.6 0
+Plant_Fern 7.6 6.2 r
+Plant_Fern 13.2 0.6 r
+Bush_Berry 14.0 -0.6 r
+Bush_Round 15.0 4.0 r
+# ---- front-right: willow, rocks, flowers ----
+Tree_Willow 13.2 -4.6 0
+Rock_Cluster 14.6 -1.4 r
+Rock_L 11.0 -7.6 r
+Rock_M 3.6 -9.2 r
+Rock_M -3.0 -9.0 r
+Rock_S 1.6 -9.6 r
+Grass_Tall 2.2 -5.5 r
+Grass_Tall -1.8 -7.2 r
+Grass_Tall 5.6 -6.0 r
+Grass_Tall 12.6 -8.0 r
+Flower_Lavender 4.4 -7.4 r
+Flower_Lavender 5.0 -8.2 r
+Flower_Lavender 8.6 -4.6 r
+Bush_Flowering 7.8 -8.4 r
+# ---- fill ----
+scatter Grass_Tuft_S,Grass_Tuft_M 0 0 15.5 10.5 340 12
+scatter Flower_Daisy,Flower_Meadow 0 -5 14 5 60 13
+scatter Flower_Lavender 7 -6 5 3 8 16
+scatter Grass_Tall,Plant_Fern 0 2 15 8 14 14
+
+# ===================== Store icon vignette (apple tree on a small island) =====================
+comp Icon 0 175 30 3.2 28 0 1.8 0
+island 2.8 2.8 2.4 48 0.9
+Tree_Apple_Fruit 0.2 0.4 20
+Bush_Berry -1.5 -1.0 r
+Flower_Daisy 1.1 -1.4 r
+Flower_Lavender -0.3 -1.9 r
+Grass_Tall 1.8 0.1 r
+Rock_S -1.9 0.8 r
+scatter Grass_Tuft_S,Grass_Tuft_M 0 0 2.5 2.5 26 21
+scatter Flower_Daisy 0 -0.5 2.3 2 4 22
