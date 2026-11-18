@@ -97,9 +97,25 @@ namespace FarmProcessing.Editor
             var material = texture != null ? UrpMaterial(texture) : null;
             if (material == null) issues.Add("no texture in FBX");
 
-            var renderers = instance.GetComponentsInChildren<Renderer>(true);
-            foreach (var r in renderers)
+            foreach (var r in instance.GetComponentsInChildren<Renderer>(true))
                 r.sharedMaterials = Enumerable.Repeat(material, r.sharedMaterials.Length).ToArray();
+
+            // LOD1 parts are exported as direct children of the root ("<part>_LOD1"); move each under its part so it
+            // follows the moving part, and build a LODGroup (LOD0 = parts, LOD1 = *_LOD1).
+            var lod1 = instance.GetComponentsInChildren<Renderer>(true).Where(r => r.name.EndsWith("_LOD1")).ToArray();
+            foreach (var r in lod1)
+            {
+                var partName = r.name.Substring(0, r.name.Length - 5);
+                var part = instance.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == partName);   // parts can be nested (STA-06 crank)
+                if (part != null) r.transform.SetParent(part, true);
+            }
+            var renderers = instance.GetComponentsInChildren<Renderer>(true).Where(r => !r.name.EndsWith("_LOD1")).ToArray();
+            if (lod1.Length > 0)
+            {
+                var group = instance.AddComponent<LODGroup>();
+                group.SetLODs(new[] { new LOD(0.25f, renderers), new LOD(0.015f, lod1) });
+                group.RecalculateBounds();
+            }
 
             var bounds = renderers[0].bounds;
             foreach (var r in renderers.Skip(1)) bounds.Encapsulate(r.bounds);
@@ -108,6 +124,7 @@ namespace FarmProcessing.Editor
             box.size = bounds.size;
 
             var tris = renderers.Sum(r => r.GetComponent<MeshFilter>().sharedMesh.triangles.Length / 3);
+            var lod1Tris = lod1.Sum(r => r.GetComponent<MeshFilter>().sharedMesh.triangles.Length / 3);
             var rootRot = instance.transform.localEulerAngles;
             if (rootRot.sqrMagnitude > 0.01f) issues.Add($"root rotation {rootRot}");
             if (Mathf.Abs(bounds.min.y) > 0.005f) issues.Add($"min Y {bounds.min.y:F3}");
@@ -117,6 +134,7 @@ namespace FarmProcessing.Editor
             Object.DestroyImmediate(instance);
 
             var parts = renderers.Length > 1 ? $"  parts {renderers.Length}" : "";
+            if (lod1Tris > 0) parts += $"  LOD1 {lod1Tris}";
             return $"{category}/{model.name}  tris {tris}{parts}  size {bounds.size.x:F2}x{bounds.size.y:F2}x{bounds.size.z:F2}" +
                    (issues.Count > 0 ? "  ! " + string.Join(", ", issues) : "");
         }
