@@ -1,0 +1,21 @@
+# PRD-10 Open flour sack
+
+Reference measured at 1374x1145: body x264..1087, base y1047, widest lower ring y855; neck x332..1000 around y565; cuff x282..1042, y132..576; flour peak y200. Projected cuff/body width .92, neck/body .81. Camera projection hides the front half of the mound. Features: wide nearly flat base, low belly, pinched neck, continuous thick rolled cuff, single broad faceted flour mound, tied front detail.
+
+Planned size .350 X / .300 depth / .268 Z m. Intentional departure from catalogue .450 height: preserve the requested squat reference silhouette. Belly z=.070 (26%); base radius .166 vs widest .175 (.95), neck radius .128 at z=.156 (58%). Cuff cross-section 60mm high, ~40mm thick, outer diameter .296 / neck .268 =1.10 at support. Flour peak .268, 30mm above inner cuff edge .238. Twelve body/cuff facets; alternating body vertex folds +/-4mm. Two 14mm-diameter brown twine wraps at z=.158/.172 with knot, two short tails and split ends. Root/Body ground-centre pivots, static, front -Y.
+
+Material class: flat palette; 256px 4x4 own atlas, cells0..9 retained. Custom cloth #C9A06A/#A9824F, twine #7A5233, flour #F6F2EA/#E4DDCD. No woven noise. Anchors: TOL_Tools build_cheese_mold continuous container/fill shell, shared processing_common read-only, PRD04 renderer/check/export structure. PRD04 used only for pack conventions; its cream ruffled rim/red ribbons/separate curds deliberately avoided. Market Sack_Open tall textured cylinder/orange grain deliberately avoided. NOT modelled: labels, spills, separate grains, supporting furniture, red ribbon, fabric weave, moving parts.
+
+Budget <=550 tris. Checks and compare rounds recorded below after rendering.
+
+Round 1: flour surface had twisted planes from incorrectly ordered peak corners; lower base was too sharp/blocky; knot was an angular long slash. Reordered peak CCW to match boundary, added a shallow base bevel ring, shortened knot to a compact two-ring cord segment. Thumbnail: sack/flour/twine read, but twisted flour was a major defect and fixed before round2.
+
+Round 2: flour corrected and base bevel improved silhouette. Knot still read as a diagonal single strand and was too thin; widened it to a compact pentagonal-section boss and shortened its span for round3. Cloth/rim are darker than reference by explicit duplicate-avoidance instruction; mound intentionally uses a few large planes rather than small lumps. Thumbnail now reads a white flour mound within a rolled tan cuff.
+
+Round3/final: inspected comparison,128px thumbnail,back/side/top and final1280x800preview. Widened knot is readable. Final export buries hidden twine section 1mm deeper (minimum1.66mm) and was rerendered/inspected. Minor remaining differences: simpler broad four-corner flour crest and more regular cuff; dark cloth/brown twine intentional. Short tails hang freely from attached roots. QA SHIP WITH NOTES: squat height departure and Unity import unverified.
+
+Final Body548tris / ceiling550: cloth+cuff+flour220, wraps120each, knot16, tails20each, four frays8each. Size .350x.300x.268m X/depth/height; X[-.175,+.175],Y[-.150,+.150],minZ0. Ground-centre root/Body pivots(0,0,0), identity source transforms, front-Y,no moving parts. Neck58%height,belly26%,55mm-high rolled section; flour30mm above inner upper edge. Footprint normalization slightly scales nominal4mm folds. Flat shaded, one M_FarmProcessing_PRD10 material,256px4x4 atlas.
+
+export.log evidence: nonmanifold0/loose0/degenerate0, both wraps mirrorX0; cloth/flour/knot/tails intentionally asymmetric. Contact problems[],worstgap0; cloth+cuff+flour integrated and cords/knot/tails/frays contact. SNAP N/A standalone. FBX reimport root EMPTY+Body MESH,548tris,same dimensions,minZ0,scale1,256px texture found in.fbm; standard pack FBX conversion gives X90deg on Blender reimport. Unity not modified or tested.
+
+Outputs: art/Farm_Processing/Meshes/FMS_Workshop_PRD_10.fbx; Meshes/FMS_Workshop_PRD_10.fbm/T_FarmProcessing_PRD10_BaseColor.png; Textures/T_FarmProcessing_PRD10_BaseColor.png; Blend/FMS_Workshop_PRD_10.blend; Previews/FMS_Workshop_PRD_10_Preview.png. Source/evidence: build_flour_sack.py,render_preview.py,compare.py,spec.md,export.log in this folder. Three compare rounds plus final gate; temp check images removed after inspection. Approximate elapsed12minutes. Only own folder/exports modified.

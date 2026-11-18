@@ -1,0 +1,33 @@
+00:06.516  render           | Saved: 'C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Previews\FMS_Workshop_TOL_07_Preview.png'
+  COMPONENT cone_rim 120
+  COMPONENT collar_stem 96
+  COMPONENT handle 28
+  COMPONENT boss_bolt 32
+  COMPONENT handle 28
+  COMPONENT boss_bolt 32
+  COMPONENT red_plate 12
+  Body: non-manifold 0 loose 0 degenerate 0 mirrorX 0.000000 worst gap 0.00000  problems []
+  Body: non-manifold 0 loose 0 degenerate 0 mirrorX 0.000000 worst gap 0.00000  problems []
+  FMS_Workshop_TOL_07_Body: tris 348 dims [0.224, 0.175, 0.185] pivot [0.0, 0.0, 0.0]
+TOTAL tris 348 | size X 0.224 Y 0.175 Z 0.185 | x -0.112..0.112 y -0.087..0.087 min z 0.0000
+  TASK ALLOWANCE <=350: OK; static hierarchy/pivot/ground: OK
+  budget 100-250 -> OVER x1.39
+
+FBX export starting... 'C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-2\\art\\Farm_Processing\\Meshes\\FMS_Workshop_TOL_07.fbx'
+export finished in 0.0116 sec.
+exported C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Meshes\FMS_Workshop_TOL_07.fbx
+lib blend C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Blend\FMS_Workshop_TOL_07.blend
+rendered C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Previews\FMS_Workshop_TOL_07_Preview.png
+FBX version: 7400
+  VERIFY FMS_Workshop_TOL_07_Body parent FMS_Workshop_TOL_07 tris 348 scale [1.0, 1.0, 1.0]
+  VERIFY FMS_Workshop_TOL_07 EMPTY
+  VERIFY nodes 2 total tris 348 dims [0.224, 0.175, 0.185] minz -0.0
+  VERIFY images [('T_FarmProcessing_TOL07_BaseColor.png.001', True, (256, 256))]
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:35:40)
+
+Blender quit
+
+C:\Users\Sergv\orca\workspaces\VFX\master-2\.work\models\Farm_Processing\TOL07_Funnel\build_funnel.py:189: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('TMP_World'); w.use_nodes = True; nt = w.node_tree
+
+BLENDER_RETURN_CODE 0

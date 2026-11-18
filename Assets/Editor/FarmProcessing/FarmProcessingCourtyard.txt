@@ -1,0 +1,117 @@
+# Farm Processing demo courtyard (reference: planning/FarmProcessing/previews/FarmProcessing_Hero_v1.png + SCENE_LAYOUT.md)
+# Layout space, metres: x to the camera's right, z away from the camera (back), y up. rot 0 = faces the camera,
+# rot 90 = faces screen-left, rot -90 = faces screen-right. Floor tiles are 0.15 thick: everything on the floor stands at y 0.15.
+#   <ID> x z [rot] [y]          one prefab (ID like STA-05)
+#   row <ID> x0 z0 x1 z1 n [rot] [y]
+#   floor <W|S|P> x0 z0 x1 z1   2x2 tiles (MOD-01 wood / MOD-02 stone / MOD-02 Plain calm stone), tile centres stepped by 2
+#   shot <name> px py pz lx ly lz fov
+# Surface tops (y): FUR-01 1.05 | FUR-02 0.995 | FUR-09 1.05 | FUR-07 0.655 | FUR-06 0.92 | FUR-12 0.33 | FUR-08 shelf 0.818
+#   FUR-05 boards 0.41/0.89/1.37 | FUR-03 shelves 0.334/0.774/1.214/1.654 | FUR-11 rails 0.605 | MOD-12 top = its y + 0.38
+
+# ---------- floor: 10 x 8 m (x -5..5, z 0..8): stone work area in the centre, wood under the side and back zones ----------
+floor P -2 1 2 5
+floor W -4 1 -4 7
+floor W 4 1 4 7
+floor W -2 7 2 7
+
+# ---------- architecture (walls stand on the floor, y 0.15) ----------
+MOD-03 -4 7.91 0
+MOD-03 -2 7.91 0
+MOD-04 0 7.91 0
+MOD-03 2 7.91 0
+MOD-03 4 7.91 0
+MOD-03 -4.91 6.82 90
+MOD-03 -4.91 4.82 90
+MOD-05 -4.91 2.82 90
+MOD-09 -4.91 2.82 90
+MOD-06 -4.91 1.82 0
+MOD-03 4.91 6.82 90
+MOD-03 4.91 4.82 90
+MOD-06 4.91 3.82 0
+MOD-11 -4.91 7.91 0
+MOD-11 4.91 7.91 0
+# canopies over the two back corners
+MOD-06 -3.1 5.95 0
+MOD-06 3.1 5.95 0
+MOD-07 -4.0 5.95 0 2.35
+MOD-07 4.0 5.95 0 2.35
+MOD-08 -4.0 6.85 0 2.55
+MOD-08 4.0 6.85 0 2.55
+MOD-12 0 7.82 0 0.85
+PRD-07 -0.35 7.62 0 1.23
+PRD-15 0.35 7.62 0 1.23
+MOD-10 2.85 3.9 90
+
+# ---------- front centre: juice (hero) ----------
+STA-05 1.0 1.6 0
+STA-04 -0.4 3.3 15
+FUR-12 -1.5 2.6 10
+PRD-05 -1.5 2.6 10 0.33
+FUR-02 -0.3 0.8 0
+PRD-06 -0.85 0.8 0 0.995
+TOL-07 -0.4 0.8 0 0.995
+row PRD-15 -0.05 0.8 0.3 0.8 3 0 0.995
+FUR-08 -1.5 0.35 25
+row PRD-15 -1.65 0.27 -1.35 0.41 3 0 0.818
+
+# ---------- left: dairy ----------
+STA-01 -3.6 2.6 25
+FUR-01 -3.0 0.9 0
+TOL-04 -3.5 0.95 0 1.05
+PRD-04 -3.05 1.05 0 1.05
+PRD-01 -2.65 1.05 0 1.05
+PRD-02 -2.35 0.75 -20 1.05
+PRD-03 -3.05 0.65 0 1.05
+STA-02 -2.5 3.6 0
+STA-03 -1.4 3.9 0
+FUR-06 -4.45 4.6 -90
+TOL-12 -4.45 4.9 0 0.92
+TOL-06 -4.5 4.25 -90 0.92
+FUR-03 -3.95 7.5 0
+row PRD-02 -4.35 7.5 -3.55 7.5 2 180 0.774
+row PRD-02 -4.35 7.5 -3.55 7.5 2 180 1.214
+row PRD-01 -4.35 7.5 -3.55 7.5 2 0 0.334
+
+# ---------- back left: grain and bakery ----------
+STA-06 -2.5 6.3 20
+FUR-05 -1.75 7.6 0
+row PRD-07 -2.05 7.6 -1.45 7.6 3 0 0.89
+row PRD-07 -2.05 7.6 -1.45 7.6 3 0 1.37
+row PRD-07 -2.05 7.6 -1.45 7.6 2 0 0.41
+PRD-10 -1.6 6.3 0
+TOL-09 -1.1 6.0 30
+FUR-09 -0.3 5.7 0
+TOL-08 -0.75 5.65 0 1.05
+PRD-11 -0.25 5.8 0 1.05
+PRD-13 0.25 5.75 0 1.05
+TOL-14 -0.5 5.4 90 1.05
+STA-09 1.5 7.05 0
+TOL-16 0.75 6.0 60
+
+# ---------- back right: jam and drying ----------
+STA-08 2.95 7.35 0
+FUR-04 3.0 7.82 0 1.95
+PRD-09 2.675 7.62 0 1.725
+PRD-09 3.0 7.62 0 1.725
+PRD-09 3.325 7.62 0 1.725
+STA-07 -3.3 5.0 20
+
+# ---------- right: seed oil, smoke, honey ----------
+STA-11 4.15 6.5 -25
+FUR-10 4.45 3.3 -90
+PRD-16 4.45 3.0 -90 1.22
+PRD-17 4.45 3.6 -90 1.22
+STA-10 1.9 5.0 -15
+STA-12 3.95 5.0 -35
+FUR-11 3.5 2.35 -20
+TOL-17 3.5 2.35 -20 0.605
+FUR-01 3.7 0.85 0
+PRD-18 3.25 0.9 0 1.05
+TOL-18 3.75 0.95 0 1.05
+PRD-15 4.2 0.8 0 1.05
+FUR-07 1.0 4.75 0
+PRD-14 1.0 4.75 0 0.655
+
+# ---------- camera ----------
+shot Hero 0.15 7.6 -5.6 0.15 0.5 3.6 37
+shot Alt 5.6 13.4 -3.8 0.1 0.3 3.8 37

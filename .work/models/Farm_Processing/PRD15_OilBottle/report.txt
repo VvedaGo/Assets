@@ -1,0 +1,12 @@
+PRD-15 SHIP WITH NOTES; 3 comparison rounds, full final preview and 4 views inspected, 128px readable.
+Source: .work/models/Farm_Processing/PRD15_OilBottle/build_oil_bottle.py with render_preview.py, compare.py, spec.md, checks.json, round1-3.log.
+FBX: art/Farm_Processing/Meshes/FMS_Workshop_PRD_15.fbx
+Texture: art/Farm_Processing/Textures/T_FarmProcessing_PRD15_BaseColor.png plus Meshes/FMS_Workshop_PRD_15.fbm/ copy.
+Blend: art/Farm_Processing/Blend/FMS_Workshop_PRD_15.blend
+Preview: art/Farm_Processing/Previews/FMS_Workshop_PRD_15_Preview.png (1280x800).
+336 tris Body: ceramic 276 + stopper 60 versus 200-450 budget; one material / 256px atlas.
+Size .149308 x .142 x .320 m; root and Body pivots ground-centre zero, minZ=0; no moving parts.
+Checks: non-manifold/loose/degenerate=0; mirrorX below 1e-16, contact gap=0, SNAP ground OK.
+FBX re-import 2 nodes, 336 tris, matching world dimensions, scales 1, texture found.
+Notes: reference-led width exceeds .12 catalogue; band z.090-.146 follows measured reference rather than approximate 40-58%; cream/red lighting differs slightly.
+Anchors TOL-12 bowl and TOL-14 rolling pin; Unity import unverified; approximately 10 minutes.

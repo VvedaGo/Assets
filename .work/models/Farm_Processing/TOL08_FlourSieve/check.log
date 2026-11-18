@@ -1,0 +1,38 @@
+<string>:12: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+00:04.797  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\round5.png'
+<string>:12: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+00:06.031  render           | Saved: 'C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Previews\FMS_Workshop_TOL_08_Preview.png'
+00:06.578  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\front.png'
+00:07.031  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\back.png'
+00:07.500  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\bottom.png'
+00:07.922  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\top.png'
+HOLES: all 32 see-through; 168 downward ray samples clear; uniform top height .040
+LATTICE: continuous non-overlapping grid/rim; 6x6 cells clipped to 16gon; holes 32 square opening .030 pitch .044 slat .014; all top Z .040 base Z .030; cap area 0.035108936033793725 expected 0.035108936181317114
+COMPONENT TRIS {'wood_wall_band': 288, 'uniform_lattice_rim': 486, 'red_plate': 96, 'handle': 88, 'bolt': 80} total 1038 original 400 coordinator-approved allowance 1040
+  Body: non-manifold 152 loose 0 degenerate 0 mirrorX 0.000000 worst gap 0.00000  problems []
+TOPOLOGY: intentional open underside/end boundaries 152 unexpected nonmanifold 0 loose/degenerate 0
+CONTACTS: grid and cream rim are one continuous mesh; outer rim buried .001m into wood; handles/bolts overlap wall; band integral; VERIFY OK
+  Body: non-manifold 152 loose 0 degenerate 0 mirrorX 0.000000 worst gap 0.00000  problems []
+  FMS_Workshop_TOL_08_Body: tris 1038 dims [0.38, 0.31, 0.1] pivot [0.0, 0.0, 0.0]
+TOTAL tris 1038 | size X 0.380 Y 0.310 Z 0.100 | x -0.190..0.190 y -0.155..0.155 min z 0.0000
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\round5.png
+
+FBX export starting... 'C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-2\\art\\Farm_Processing\\Meshes\\FMS_Workshop_TOL_08.fbx'
+export finished in 0.0123 sec.
+exported C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Meshes\FMS_Workshop_TOL_08.fbx
+lib blend C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Blend\FMS_Workshop_TOL_08.blend
+rendered C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Previews\FMS_Workshop_TOL_08_Preview.png
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\front.png
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\back.png
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\bottom.png
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\TOL08\top.png
+FBX version: 7400
+VERIFY objects [('FMS_Workshop_TOL_08_Body.001', 'MESH', 'FMS_Workshop_TOL_08.001'), ('FMS_Workshop_TOL_08.001', 'EMPTY', None)]
+   FMS_Workshop_TOL_08_Body.001 tris 1038 loc [0.0, 0.0, 0.0] rot [90.0, -0.0, 0.0] scale [1.0, 1.0, 1.0]
+   FMS_Workshop_TOL_08.001 EMPTY rot [90.0, -0.0, 0.0] scale [1.0, 1.0, 1.0]
+  total tris 1038 dims [0.38, 0.31, 0.1] minz -0.0
+  images [('T_FarmProcessing_TOL08_BaseColor.png.001', 'C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-2\\art\\Farm_Processing\\Meshes\\FMS_Workshop_TOL_08.fbm\\T_FarmProcessing_TOL08_BaseColor.png', True, (256, 256))]
+  temp cleanup done; scenes ['FMS_Workshop_TOL_08_Build']
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:35:40)
+
+Blender quit

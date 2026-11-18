@@ -1,0 +1,48 @@
+00:04.625  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\PRD16\front.png'
+00:05.656  render           | Saved: 'C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Previews\FMS_Workshop_PRD_16_Preview.png'
+00:06.047  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\PRD16\side.png'
+00:06.422  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\PRD16\back.png'
+00:06.812  render           | Saved: 'C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\PRD16\top.png'
+PROFILE widest z=.098 / fish .278 = 0.35251798561151076 head zone 0.. .083; paired raised crescent edges .005m; continuous single shell
+BASE MIRROR Y 1.2246468525851679e-17 before intentional head bend
+POSE body tangent 8deg; head forward -Y 10deg; mouth depth .035; crescent rise .005; eye diameter .020 proud .004
+HANG EXACT (0.0, 0.0, 0.4000000059604645)
+COMPONENT continuous_curved_fish tris 140
+COMPONENT eye-1 tris 28
+COMPONENT eye1 tris 28
+COMPONENT crescent_gill-1 tris 44
+COMPONENT crescent_gill1 tris 44
+COMPONENT dorsal tris 16
+COMPONENT ventral tris 16
+COMPONENT pectoral-1 tris 16
+COMPONENT pectoral1 tris 16
+COMPONENT tailL tris 16
+COMPONENT tailR tris 16
+COMPONENT wrap0 tris 44
+COMPONENT wrap1 tris 44
+COMPONENT cordloop tris 120
+  Body: non-manifold 0 loose 0 degenerate 0 mirrorX 0.000000 worst gap 0.00000  problems []
+CONTACTS OK; SNAP N/A; HANG z=.400 mouth minZ=0; mirror posed head intentionally asymmetric in Y
+  Body: non-manifold 0 loose 0 degenerate 0 mirrorX 0.000000 worst gap 0.00000  problems []
+  FMS_Workshop_PRD_16_Body: tris 588 dims [0.132, 0.061, 0.4] pivot [0.0, 0.0, 0.4]
+TOTAL tris 588 | size X 0.132 Y 0.061 Z 0.400 | x -0.063..0.068 y -0.030..0.030 min z 0.0000
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\PRD16\front.png
+
+FBX export starting... 'C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-2\\art\\Farm_Processing\\Meshes\\FMS_Workshop_PRD_16.fbx'
+export finished in 0.0096 sec.
+exported C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Meshes\FMS_Workshop_PRD_16.fbx
+lib blend C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Blend\FMS_Workshop_PRD_16.blend
+rendered C:\Users\Sergv\orca\workspaces\VFX\master-2\art\Farm_Processing\Previews\FMS_Workshop_PRD_16_Preview.png
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\PRD16\side.png
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\PRD16\back.png
+rendered C:\Users\Sergv\AppData\Local\Temp\FarmProcessing_check\PRD16\top.png
+FBX version: 7400
+VERIFY objects [('FMS_Workshop_PRD_16_Body.001', 'MESH', 'FMS_Workshop_PRD_16.001'), ('FMS_Workshop_PRD_16.001', 'EMPTY', None)]
+   FMS_Workshop_PRD_16_Body.001 tris 588 loc [0.0, 0.0, 0.4] rot [90.0, -0.0, 0.0] scale [1.0, 1.0, 1.0]
+   FMS_Workshop_PRD_16.001 EMPTY rot [90.0, -0.0, 0.0] scale [1.0, 1.0, 1.0]
+  total tris 588 dims [0.132, 0.061, 0.4] minz 0.0
+  images [('T_FarmProcessing_PRD16_BaseColor.png.001', 'C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-2\\art\\Farm_Processing\\Meshes\\FMS_Workshop_PRD_16.fbm\\T_FarmProcessing_PRD16_BaseColor.png', True, (256, 256))]
+  temp cleanup done; scenes ['Scene']
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:35:40)
+
+Blender quit

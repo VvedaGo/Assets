@@ -1,0 +1,33 @@
+# TOL-10 Cheese board — FMS_Workshop_TOL_10
+
+Reference measured at 1374 x 1145 pixels: board approx corners (100,490), (800,265), (1100,560), (360,910); handle ends near (1270,340); front slab side about 110 px, front red straps about 75 px wide, hole about 100 px across in perspective. Board long projected edge about 735 px, handle projection about 250 px including neck; body approximately 76% of overall X. Perspective measurements converted to catalogue dimensions below.
+
+Pre-build dimensions: overall 0.450 X / 0.280 Y / 0.040 Z m, including metal relief; wood body 0.340 X / 0.268 Y / 0.038 Z; chamfered outline corners 0.018; board x=-0.225..0.115, handle on +X ending 0.225. Pocket x=-0.199..0.089, Y +/-0.108; 3 planks along X at Z=0.0345, 3.5 mm below frame, 1.8 mm grooves. Hex through-hole centre X=0.199, circumradius 0.018 (36 mm corner-to-corner); handle Z=0.001..0.038. Four 28 mm red L straps at X=-0.175/0.065, one 15 mm hex bolt on each outward side. Root and Body origins at ground bbox centre (0,0,0); no moving parts.
+
+Features: thick chamfer-corner board; dark wood frame/sides; recessed three pale planks and two real shallow channels; short narrowing paddle handle with faceted end and real hex through-hole; four red metal straps bending down edges with grey hex heads. No food.
+
+Material: one flat atlas material M_FarmProcessing_TOL10, 256px 4x4 T_FarmProcessing_TOL10_BaseColor.png, cells 0–12 shared layout, extra light wood #E8CFA6 / #DFC39A and hole interior #B39C74. No noise or grain. Flat shading.
+
+Anchors: TOL_Tools/build_tools.py fill/tube and registry renderer (copied locally), TOL-03 flat paddle preview; MOD04_WallWindow red caps and restrained relief. processing_common.py imported read-only. TOL_Tools has no separate render_preview.py; its embedded renderer is copied to our render_preview.py. Headless Blender 5.2 only.
+
+Not modelled: food, knife, grain, moving parts, ground, LODs, collider. Sharp height transitions retained to fit tight budget; bevels expressed by chamfered plan outlines and faceted tapered bolt heads. Deviation: X axis follows explicit task (overrides common tools Y-axis convention); about 300 tris permitted rather than nominal 80–180, for real hole and four closed straps/bolts. No Unity import performed.
+
+Compare rounds: 3 completed, each side-by-side and 128px thumbnail inspected; four view angles plus final 1280x800 preview inspected.
+
+Round 1: hole visually closed from the low camera despite correct topology (confirmed top view); grooves too hairline; middle plank too different in value. Fixes: hole 40 mm, handle thickness 30 mm (Z=.008..038), camera elevation 41 degrees to reveal the opening, grooves 3 mm, lighter middle plank. Width/depth silhouette and four wrap straps already match. Far-side bolt heads face outward and are hidden in front preview, unlike the reference's inward-facing far straps; kept symmetric practical construction for the 3.5 mm inset.
+
+
+Round 2: handle inner wall still reads too pale/closed; strong straight groove channels match but are darker than reference. Fixes: handle thickness 26 mm, dark wood tube walls, elevation 45 degrees (reference hole visibility takes priority over generic 20-30 degree preset); no extra triangles. Preserve full slab 38 mm and short neck silhouette.
+
+
+Round 3/final gate: hex hole reads as open, three cream planks and paired red straps survive thumbnail. No further geometry changes; final export re-rendered and inspected. Remaining differences: far-side bolts face outward and are occluded in the front preview; no continuous upper edge bevel (chamfered plan corners only); handle somewhat thinner (26 mm) and hole 40 mm rather than about 35 mm, camera 45 degrees rather than generic low angle. These are deliberate budget/readability compromises, not missing geometry. QA verdict: SHIP WITH NOTES.
+
+Final counts: _Body 304 tris (frame 44, planks 3x12=36, perforated handle 64, straps 4x20=80, hex bolts 4x20=80), nominal 80-180 exceeded x1.69, within task allowance of about 300 (4 tris over 300). Exact overall size 0.450 x 0.280 x 0.040 m. All geometry flat shaded, one material, no modifiers. Root/Body pivots (0,0,0), identity transforms, bbox centred on X/Y, min Z=0. Non-manifold=0, loose=0, degenerate=0; actual Y mirror error <1e-16; X check intentionally skipped because of handle; worst component contact gap=0, no contact problems. Vertical ray through hex centre misses mesh, proving real opening. VERIFY CONTRACT OK (SNAP not applicable to tool).
+FBX re-import assertions PASS: two nodes, parented Body under root empty, 304 tris, dimensions .450/.280/.040, min Z=0, scale 1, one material, 256px texture found in .fbm. Re-import rotation +90 X is the standard Blender/FBX Y-up conversion, same as anchors. Unity editor import remains unverified. Final Blender process exit 0. Evidence: verification.log.
+
+Outputs: art/Farm_Processing/Meshes/FMS_Workshop_TOL_10.fbx; Meshes/FMS_Workshop_TOL_10.fbm/T_FarmProcessing_TOL10_BaseColor.png; Textures/T_FarmProcessing_TOL10_BaseColor.png; Blend/FMS_Workshop_TOL_10.blend; Previews/FMS_Workshop_TOL_10_Preview.png. Check images were in TEMP/FarmProcessing_check/TOL-10 and removed after inspection.
+
+## Lead seam-artifact correction (2026-11-14)
+Plank end faces previously coincided with the frame inner walls, and plank bottoms coincided with the pocket floor; these coincidences are removed. Every plank now has 1.25 mm clearance to the frame walls at its ends and outside long edge. Plank bottoms Z=.0305 are sunk 1 mm below groove bed Z=.0315, giving hidden contact without coplanar faces; visible grooves remain 3 mm wide and are now 3 mm deep. Grooves have no overlapping faces. Full triangulation has zero slivers below 0.5 mm altitude; minimum altitude is 1.838 mm. This threshold is a world-size sliver check, not an aspect-ratio test, since intentional narrow straps and channels are long thin surfaces.
+A first corrected render removed end-wall interference but retained shadow-map stepping in the grooves. Preview shadow texels refined from 1 mm to 0.1 mm with jittered shadows, 128 samples, 8 rays and 16 shadow steps; the final 1280x800 preview was opened and inspected, confirming the dotted/sawtooth artifact is gone at both grooves and both plank ends. Camera, lighting direction, palette and output names are unchanged.
+Re-exported FBX, blend, atlas and preview at the same paths; all checks and asserted FBX roundtrip pass. Triangles unchanged: 304 (_Body only). Exact size .450/.280/.040 m, two FBX nodes, texture found, topology/contact/Y-mirror checks pass, hex-hole ray passes. Verification evidence overwritten with final passing run in verification.log. Review request complete; Unity import remains unverified.

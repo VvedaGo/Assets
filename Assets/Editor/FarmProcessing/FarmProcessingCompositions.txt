@@ -1,0 +1,107 @@
+# Farm Processing: 8 ready compositions CMP-01..08 (reference: AssetStore/FarmProcessing/Media/ArtDirection/Boards/12_Compositions.png,
+# plan FARM_PROCESSING_PACK.md section 7). Each is a 3 x 3 m wood-floor plot (user decision 2026-11-18; one MOD-01 tile scaled 1.5 in x/z) saved as a prefab Art/Prefabs/CMP/FMS_Workshop_CMP_XX_<Name>.
+# Composition-local space: x -1.5..1.5 (right), z 0..3 (back), origin = front centre on the ground, floor top y 0.15. rot 0 faces the camera.
+# Only pack models are used (user decision 2026-11-18).
+# Surface tops (y): FUR-01 1.05 | FUR-02 0.995 | FUR-09 1.05 | FUR-07 0.655 | FUR-12 0.33 | FUR-11 rails 0.605
+
+ground 233 233 236
+bg 233 233 236
+
+# ---------- CMP-01 Dairy ----------
+comp CMP_01_Dairy -45 0
+scaled MOD-01 0 1.5 1.5 1.5
+STA-01 -0.788 2.138 20
+STA-02 0.413 2.287 0
+STA-03 1.087 1.65 0
+FUR-01 0.038 0.788 0
+TOL-04 -0.375 0.788 0 1.05
+PRD-04 -0.038 0.862 0 1.05
+PRD-02 0.338 0.75 -20 1.05
+PRD-03 0.038 0.6 0 1.05
+shot CMP_01_Dairy -4.2 5.3 -3.75 0.15 0.5 1.25 23
+
+# ---------- CMP-02 Juice pressing ----------
+comp CMP_02_Juice -15 0
+scaled MOD-01 0 1.5 1.5 1.5
+STA-04 -0.637 2.138 15
+STA-05 0.637 2.062 0
+FUR-02 -0.112 0.712 0
+PRD-06 -0.488 0.712 0 0.995
+TOL-07 -0.188 0.712 0 0.995
+row PRD-15 0.075 0.712 0.338 0.712 3 0 0.995
+FUR-12 1.013 0.488 -10
+PRD-05 1.013 0.488 -10 0.33
+shot CMP_02_Juice -4.2 5.3 -3.75 0.15 0.5 1.25 23
+
+# ---------- CMP-03 Grain milling ----------
+comp CMP_03_Grain 15 0
+scaled MOD-01 0 1.5 1.5 1.5
+STA-06 -0.45 2.175 20
+FUR-12 0.862 2.175 -15
+PRD-10 0.862 2.175 -15 0.33
+PRD-10 -0.712 1.312 15
+FUR-09 0.038 0.862 0
+TOL-08 -0.338 0.825 0 1.05
+PRD-11 0.038 0.938 0 1.05
+TOL-14 0.338 0.75 90 1.05
+TOL-09 0.413 0.975 20 1.05
+shot CMP_03_Grain -4.2 5.3 -3.75 0.15 0.5 1.25 23
+
+# ---------- CMP-04 Jam and drying ----------
+comp CMP_04_JamDrying 45 0
+scaled MOD-01 0 1.5 1.5 1.5
+STA-07 -0.637 2.062 15
+STA-08 0.712 2.287 0
+FUR-02 -0.038 0.712 0
+row PRD-07 -0.413 0.712 -0.112 0.712 2 0 0.995
+PRD-08 0.262 0.712 0 0.995
+FUR-12 1.05 1.275 -15
+PRD-12 1.05 1.275 -15 0.33
+shot CMP_04_JamDrying -4.2 5.3 -3.75 0.15 0.5 1.25 23
+
+# ---------- CMP-05 Bakery ----------
+comp CMP_05_Bakery -45 30
+scaled MOD-01 0 1.5 1.5 1.5
+STA-09 -0.338 2.175 0
+TOL-13 1.013 2.25 70
+FUR-09 0.112 0.825 0
+PRD-11 -0.3 0.862 0 1.05
+PRD-13 0.188 0.825 0 1.05
+TOL-14 0.562 0.75 90 1.05
+TOL-16 1.05 1.462 50
+shot CMP_05_Bakery -4.2 5.3 -3.75 0.15 0.5 1.25 23
+
+# ---------- CMP-06 Seed oil ----------
+comp CMP_06_SeedOil -15 30
+scaled MOD-01 0 1.5 1.5 1.5
+STA-10 -0.525 2.062 15
+FUR-07 0.562 0.9 0
+TOL-18 0.562 0.9 0 0.655
+PRD-15 1.087 0.975 0
+PRD-15 1.2 0.788 0
+FUR-12 -0.338 0.788 10
+PRD-14 -0.338 0.788 30 0.33
+PRD-15 0.562 0.9 0 0.655
+shot CMP_06_SeedOil -4.2 5.3 -3.75 0.15 0.5 1.25 23
+
+# ---------- CMP-07 Smokehouse ----------
+comp CMP_07_Smokehouse 15 30
+scaled MOD-01 0 1.5 1.5 1.5
+STA-11 -0.525 2.138 15
+FUR-10 0.712 1.575 0
+PRD-16 0.488 1.575 0 1.22
+PRD-17 0.938 1.575 0 1.22
+TOL-15 0.712 1.575 0 1.08
+shot CMP_07_Smokehouse -4.2 5.3 -3.75 0.15 0.5 1.25 23
+
+# ---------- CMP-08 Honey ----------
+comp CMP_08_Honey 45 30
+scaled MOD-01 0 1.5 1.5 1.5
+STA-12 -0.6 2.138 15
+FUR-11 0.712 2.213 -10
+TOL-17 0.712 2.213 -10 0.605
+FUR-02 0.038 0.75 0
+TOL-18 -0.338 0.75 0 0.995
+PRD-18 0.112 0.75 0 0.995
+PRD-15 0.413 0.75 0 0.995
+shot CMP_08_Honey -4.2 5.3 -3.75 0.15 0.5 1.25 23
