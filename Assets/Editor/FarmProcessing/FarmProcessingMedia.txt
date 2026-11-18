@@ -1,0 +1,72 @@
+# Farm Processing store media (AssetStore/FarmProcessing/Media/ArtDirection/MEDIA_PLAN.md): single Unity frames, no text.
+# Areas 25 m apart; teal backdrop like the overview reference. shot ... fov [w h]
+
+ground 23 60 69
+bg 23 60 69
+
+# ---------- 01 Icon: the juice press large in the centre, a small jug at the spout ----------
+comp Icon 0 0
+scaled MOD-01 0 0.9 0.8 0.8
+STA-05 0 0.95 0
+PRD-06 0.55 0.45 -25 0.15
+shot Icon -2.0 2.9 -3.2 0.05 0.85 0.95 30 1024 1024
+
+# ---------- 02 Card: vat left, press centre, oven right (group in the upper part, lower part free for the title) ----------
+comp Card 25 0
+scaled MOD-01 0 1.1 2.2 1.2
+STA-01 -1.55 1.1 25
+STA-05 0 0.95 0
+STA-09 1.7 1.5 -15
+shot Card -2.2 3.9 -5.0 0.1 0.15 1.1 32 1260 840
+
+# ---------- 07 Close-ups (three separate frames) ----------
+comp CloseScrew 50 0
+STA-05 0 0 0
+shot CloseScrew -0.9 2.25 -1.6 0 1.15 0 30 1920 1080
+comp CloseCheese 75 0
+FUR-01 0 0 0
+PRD-02 -0.35 0.05 -25 1.05
+TOL-02 0.25 -0.05 15 1.05
+TOL-11 0.0 -0.2 -70 1.05
+PRD-01 0.55 0.1 0 1.05
+PRD-03 -0.65 -0.12 10 1.05
+shot CloseCheese -0.55 1.5 -1.25 -0.2 1.1 -0.05 33 1920 1080
+comp CloseHoney 100 0
+FUR-11 0 0.1 0
+TOL-17 0 0.1 0 0.605
+FUR-07 0.75 -0.35 -10
+PRD-18 0.65 -0.4 0 0.655
+TOL-18 0.95 -0.25 0 0.655
+shot CloseHoney -0.6 1.4 -1.6 0.3 0.75 -0.15 32 1920 1080
+
+# ---------- 08 Modules: separate modules, and an assembled bay ----------
+comp Modules 125 0
+MOD-04 -3.2 2.5 0 0
+MOD-05 -0.8 2.5 0 0
+MOD-09 -0.8 2.5 0 0
+MOD-03 1.6 2.5 0 0
+MOD-06 3.2 2.5 0 0
+MOD-11 3.9 2.5 0 0
+MOD-01 -2.6 -0.2 0 0
+MOD-02 0 -0.2 0 0
+MOD-08 2.6 -0.2 0 0
+MOD-07 -0.2 1.0 0 0
+MOD-10 2.6 1.15 0 0
+MOD-12 -3.2 1.4 0 0
+shot Modules 0.3 6.6 -7.0 0.3 0.8 1.2 32 1920 1080
+comp Bay 150 0
+floor W -1 1 1 3
+MOD-04 0 3.91 0
+MOD-11 -1.91 3.91 0
+MOD-03 -1.91 2.82 90
+MOD-05 -1.91 0.82 90
+MOD-09 -1.91 0.82 90
+MOD-06 1.91 3.91 0
+MOD-12 0 3.82 0 0.85
+FUR-05 1.3 3.45 0
+row PRD-07 1.0 3.45 1.6 3.45 3 0 1.04
+STA-03 0.0 2.6 0
+FUR-01 0.5 1.0 0
+PRD-02 0.25 1.0 -20 1.05
+PRD-04 0.8 1.05 0 1.05
+shot Bay -4.1 5.1 -5.2 -0.15 1.0 1.9 34 1920 1080

@@ -32,6 +32,9 @@ namespace FarmProcessing.Editor
         [MenuItem("Tools/Farm Processing/Build Courtyard Scene")]
         public static string BuildCourtyard() => Build("FarmProcessingCourtyard.txt", "Demo_WorkshopCourtyard");
 
+        [MenuItem("Tools/Farm Processing/Build Media Scene")]
+        public static string BuildMedia() => Build("FarmProcessingMedia.txt", "Demo_Media", savePrefabs: false);
+
         [MenuItem("Tools/Farm Processing/Build Catalog Scene")]
         public static string BuildCatalog() => Build("FarmProcessingCatalog.txt", "Demo_Catalog", savePrefabs: false);
 
@@ -60,7 +63,8 @@ namespace FarmProcessing.Editor
                 switch (t[0])
                 {
                     case "shot":    // relative to the current comp origin
-                        shots.Add(new Shot { Name = t[1], Pos = origin + V(t, 2), Look = origin + V(t, 5), Fov = F(t[8]), Bg = bg });
+                        shots.Add(new Shot { Name = t[1], Pos = origin + V(t, 2), Look = origin + V(t, 5), Fov = F(t[8]), Bg = bg,
+                                             W = t.Length > 10 ? int.Parse(t[9]) : 1920, H = t.Length > 10 ? int.Parse(t[10]) : 1080 });
                         break;
                     case "ground":  // ground r g b (0-255): colour of the backdrop floor plane
                         groundColor = new Color32((byte)int.Parse(t[1]), (byte)int.Parse(t[2]), (byte)int.Parse(t[3]), 255);
