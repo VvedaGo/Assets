@@ -1,0 +1,56 @@
+{
+ "species": "Turkey",
+ "asset": "FMS_Turkey",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Turkey_Idle",
+   "seconds": 3.5,
+   "last_frame": 105,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Turkey_Walk",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 15,
+     "time": 0.5,
+     "stringParameter": "LegR"
+    }
+   ],
+   "speed_mps": 0.24
+  },
+  "Display": {
+   "take": "Turkey_Display",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": [
+    {
+     "name": "Display",
+     "frame": 27,
+     "time": 0.9,
+     "stringParameter": "FanOpen"
+    },
+    {
+     "name": "Display",
+     "frame": 52,
+     "time": 1.7333,
+     "stringParameter": "Rattle"
+    }
+   ]
+  }
+ }
+}

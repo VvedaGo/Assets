@@ -1,0 +1,36 @@
+{
+ "species": "Butterfly",
+ "asset": "FMS_Butterfly",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Fly": {
+   "take": "Butterfly_Fly",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "hover_m": 0.06,
+   "events": [
+    {
+     "name": "WingFlap",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "Down"
+    },
+    {
+     "name": "WingFlap",
+     "frame": 15,
+     "time": 0.5,
+     "stringParameter": "Down"
+    }
+   ]
+  },
+  "Perch_Idle": {
+   "take": "Butterfly_Perch_Idle",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  }
+ }
+}

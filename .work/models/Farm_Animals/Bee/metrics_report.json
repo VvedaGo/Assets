@@ -1,0 +1,468 @@
+{
+ "asset": "FMS_Bee",
+ "tris": 904,
+ "bones": 16,
+ "rig": {
+  "bones": 16,
+  "hierarchy_ok": true,
+  "rigid": true
+ },
+ "clips": {
+  "rest_overlap_face_pairs": {
+   "Leg_3.L/Abdomen": 19,
+   "Leg_3.R/Abdomen": 19
+  },
+  "Fly": {
+   "frames": 31,
+   "seconds": 1.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "max_rotation_deg": {
+    "Abdomen": 5.6,
+    "Antenna.L": 18.0,
+    "Antenna.R": 18.0,
+    "Body": 10.0,
+    "Head": 3.0,
+    "Leg_1.L": 18.4,
+    "Leg_1.R": 18.4,
+    "Leg_2.L": 14.4,
+    "Leg_2.R": 14.4,
+    "Leg_3.L": 16.5,
+    "Leg_3.R": 16.5,
+    "WingBack.L": 25.4,
+    "WingBack.R": 25.4,
+    "WingFront.L": 55.6,
+    "WingFront.R": 55.6
+   },
+   "limit_violations": [],
+   "lowest_vertex_m": 0.0892,
+   "new_overlap_face_pairs_vs_rest": {
+    "Leg_3.L/Abdomen": 2
+   },
+   "feet_min_height_m": 0.0892
+  },
+  "On_Flower": {
+   "frames": 61,
+   "seconds": 2.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "max_rotation_deg": {
+    "Abdomen": 3.5,
+    "Antenna.L": 12.2,
+    "Antenna.R": 12.8,
+    "Head": 7.7,
+    "Leg_1.L": 14.3,
+    "Leg_1.R": 14.3,
+    "Leg_2.L": 14.3,
+    "Leg_2.R": 14.3,
+    "Leg_3.L": 14.3,
+    "Leg_3.R": 14.3,
+    "WingBack.L": 4.0,
+    "WingBack.R": 4.0,
+    "WingFront.L": 24.4,
+    "WingFront.R": 24.4
+   },
+   "limit_violations": [],
+   "lowest_vertex_m": -0.0,
+   "new_overlap_face_pairs_vs_rest": {},
+   "legs_on_flower_min": 5,
+   "legs_on_flower_max": 6,
+   "leg_below_flower_m": -0.0,
+   "max_foot_lift_m": 0.0032
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Bee.fbx",
+  "takes": [
+   [
+    "Bee_Fly",
+    30.0
+   ],
+   [
+    "Bee_On_Flower",
+    60.0
+   ]
+  ],
+  "limbs": 16,
+  "roots": [
+   {
+    "name": "Abdomen",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.0246,
+     -0.0077
+    ]
+   },
+   {
+    "name": "Antenna.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.011,
+     0.037,
+     0.0215
+    ]
+   },
+   {
+    "name": "Antenna.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0039,
+     0.037,
+     0.026
+    ]
+   },
+   {
+    "name": "Body",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.0244,
+     0.0023
+    ]
+   },
+   {
+    "name": "Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0156,
+     0.0245,
+     0.0262
+    ]
+   },
+   {
+    "name": "Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0061,
+     0.0245,
+     0.0322
+    ]
+   },
+   {
+    "name": "Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.024,
+     0.0118
+    ]
+   },
+   {
+    "name": "Leg_1.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0055,
+     0.016,
+     0.0133
+    ]
+   },
+   {
+    "name": "Leg_1.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0055,
+     0.016,
+     0.0133
+    ]
+   },
+   {
+    "name": "Leg_2.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0065,
+     0.015,
+     0.0023
+    ]
+   },
+   {
+    "name": "Leg_2.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0065,
+     0.015,
+     0.0023
+    ]
+   },
+   {
+    "name": "Leg_3.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0065,
+     0.016,
+     -0.0077
+    ]
+   },
+   {
+    "name": "Leg_3.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0065,
+     0.016,
+     -0.0077
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "name": "WingBack.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0045,
+     0.0315,
+     -0.0002
+    ]
+   },
+   {
+    "name": "WingBack.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0045,
+     0.0315,
+     -0.0002
+    ]
+   },
+   {
+    "name": "WingFront.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.004,
+     0.033,
+     0.0063
+    ]
+   },
+   {
+    "name": "WingFront.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.004,
+     0.033,
+     0.0063
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 16,
+   "import_meshes": 17,
+   "import_actions": [
+    "Rig.001|Bee_Fly",
+    "Rig.001|Bee_On_Flower"
+   ],
+   "import_tris": 904,
+   "import_frame_ranges": {
+    "Rig.001|Bee_Fly": [
+     1.0,
+     31.0
+    ],
+    "Rig.001|Bee_On_Flower": [
+     1.0,
+     61.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Bee_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Bee_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Bee_Fly": 0.0,
+    "Bee_On_Flower": 0.0
+   }
+  }
+ }
+}

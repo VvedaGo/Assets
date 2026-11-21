@@ -1,0 +1,98 @@
+{
+ "species": "Goose",
+ "asset": "FMS_Goose",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Goose_Idle",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Goose_Walk",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 15,
+     "time": 0.5,
+     "stringParameter": "LegR"
+    }
+   ],
+   "speed_mps": 0.15
+  },
+  "Graze": {
+   "take": "Goose_Graze",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": [
+    {
+     "name": "Peck",
+     "frame": 18,
+     "time": 0.6,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 24,
+     "time": 0.8,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 30,
+     "time": 1.0,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 38,
+     "time": 1.2667,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 44,
+     "time": 1.4667,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 83,
+     "time": 2.7667,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 89,
+     "time": 2.9667,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 95,
+     "time": 3.1667,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 101,
+     "time": 3.3667,
+     "stringParameter": ""
+    }
+   ]
+  }
+ }
+}

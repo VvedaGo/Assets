@@ -1,0 +1,68 @@
+{
+ "species": "Kid",
+ "asset": "FMS_Kid",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Kid_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Kid_Walk",
+   "seconds": 0.6,
+   "last_frame": 18,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 4,
+     "time": 0.1333,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 9,
+     "time": 0.3,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 14,
+     "time": 0.4667,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.24
+  },
+  "Play_Hop": {
+   "take": "Kid_Play_Hop",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "Takeoff"
+    },
+    {
+     "name": "Footstep",
+     "frame": 20,
+     "time": 0.6667,
+     "stringParameter": "Land"
+    }
+   ]
+  }
+ }
+}

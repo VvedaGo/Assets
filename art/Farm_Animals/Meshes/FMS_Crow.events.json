@@ -1,0 +1,62 @@
+{
+ "species": "Crow",
+ "asset": "FMS_Crow",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Crow_Idle",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Crow_Walk",
+   "seconds": 0.8,
+   "last_frame": 24,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "L"
+    },
+    {
+     "name": "Footstep",
+     "frame": 12,
+     "time": 0.4,
+     "stringParameter": "R"
+    }
+   ],
+   "speed_mps": 0.22
+  },
+  "Fly": {
+   "take": "Crow_Fly",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "Flap",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": ""
+    },
+    {
+     "name": "Flap",
+     "frame": 10,
+     "time": 0.3333,
+     "stringParameter": ""
+    },
+    {
+     "name": "Flap",
+     "frame": 20,
+     "time": 0.6667,
+     "stringParameter": ""
+    }
+   ]
+  }
+ }
+}

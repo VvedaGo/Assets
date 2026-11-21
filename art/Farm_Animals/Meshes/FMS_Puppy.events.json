@@ -1,0 +1,80 @@
+{
+ "species": "Puppy",
+ "asset": "FMS_Puppy",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Puppy_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Trot": {
+   "take": "Puppy_Trot",
+   "seconds": 0.5,
+   "last_frame": 15,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "FrontR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "HindR"
+    }
+   ],
+   "speed_mps": 0.55
+  },
+  "Play_Bow": {
+   "take": "Puppy_Play_Bow",
+   "seconds": 2.5,
+   "last_frame": 75,
+   "loop": true,
+   "events": [
+    {
+     "name": "Takeoff",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "Front"
+    },
+    {
+     "name": "Land",
+     "frame": 18,
+     "time": 0.6,
+     "stringParameter": "Front"
+    },
+    {
+     "name": "Takeoff",
+     "frame": 50,
+     "time": 1.6667,
+     "stringParameter": "Front"
+    },
+    {
+     "name": "Land",
+     "frame": 60,
+     "time": 2.0,
+     "stringParameter": "Front"
+    }
+   ]
+  }
+ }
+}

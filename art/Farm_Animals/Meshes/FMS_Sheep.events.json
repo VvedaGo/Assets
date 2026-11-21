@@ -1,0 +1,55 @@
+{
+ "species": "Sheep",
+ "asset": "FMS_Sheep",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Sheep_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Sheep_Walk",
+   "seconds": 0.9,
+   "last_frame": 27,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 7,
+     "time": 0.2333,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 14,
+     "time": 0.4667,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 20,
+     "time": 0.6667,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.33
+  },
+  "Graze": {
+   "take": "Sheep_Graze",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  }
+ }
+}

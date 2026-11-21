@@ -1,0 +1,55 @@
+{
+ "species": "Cat",
+ "asset": "FMS_Cat",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Cat_Idle",
+   "seconds": 3.5,
+   "last_frame": 105,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Cat_Walk",
+   "seconds": 0.8,
+   "last_frame": 24,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 6,
+     "time": 0.2,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 12,
+     "time": 0.4,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 18,
+     "time": 0.6,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.36
+  },
+  "Lie_Idle": {
+   "take": "Cat_Lie_Idle",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  }
+ }
+}

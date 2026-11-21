@@ -1,0 +1,67 @@
+{
+ "species": "Pigeon",
+ "asset": "FMS_Pigeon",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Pigeon_Idle",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  },
+  "Peck": {
+   "take": "Pigeon_Peck",
+   "seconds": 2.5,
+   "last_frame": 75,
+   "loop": true,
+   "events": [
+    {
+     "name": "Peck",
+     "frame": 23,
+     "time": 0.7667,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 33,
+     "time": 1.1,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 42,
+     "time": 1.4,
+     "stringParameter": ""
+    }
+   ]
+  },
+  "Fly": {
+   "take": "Pigeon_Fly",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "Flap",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": ""
+    },
+    {
+     "name": "Flap",
+     "frame": 10,
+     "time": 0.3333,
+     "stringParameter": ""
+    },
+    {
+     "name": "Flap",
+     "frame": 20,
+     "time": 0.6667,
+     "stringParameter": ""
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,970 @@
+{
+ "asset": "FMS_Piglet",
+ "tris": 1424,
+ "bones": 25,
+ "rig": {
+  "bones": 25,
+  "names_ok": true,
+  "hierarchy_ok": true,
+  "roll_bad": []
+ },
+ "clips": {
+  "Idle": {
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0,
+   "lowest_frame": 23,
+   "neck_yaw_total_deg": 3.0,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -10.1,
+     1.9
+    ],
+    "Ear.L.z": [
+     0.0,
+     10.0
+    ],
+    "Ear.R.x": [
+     -13.7,
+     2.0
+    ],
+    "Ear.R.z": [
+     -9.9,
+     0.0
+    ],
+    "FrontFoot.L.x": [
+     -27.1,
+     -0.4
+    ],
+    "FrontFoot.R.x": [
+     -27.1,
+     -0.4
+    ],
+    "FrontLower.L.x": [
+     0.5,
+     33.2
+    ],
+    "FrontLower.R.x": [
+     0.5,
+     33.2
+    ],
+    "FrontUpper.L.x": [
+     -6.4,
+     0.3
+    ],
+    "FrontUpper.R.x": [
+     -6.4,
+     0.3
+    ],
+    "Head.x": [
+     -2.7,
+     2.9
+    ],
+    "Head.z": [
+     -3.0,
+     3.0
+    ],
+    "HindFoot.L.x": [
+     0.4,
+     24.6
+    ],
+    "HindFoot.R.x": [
+     0.4,
+     24.6
+    ],
+    "HindLower.L.x": [
+     -30.1,
+     -0.5
+    ],
+    "HindLower.R.x": [
+     -30.1,
+     -0.5
+    ],
+    "HindUpper.L.x": [
+     0.1,
+     5.5
+    ],
+    "HindUpper.R.x": [
+     0.1,
+     5.5
+    ],
+    "Neck1.x": [
+     -1.2,
+     1.2
+    ],
+    "Spine1.x": [
+     -0.8,
+     0.8
+    ],
+    "Spine2.x": [
+     -0.5,
+     0.5
+    ],
+    "Tail1.x": [
+     -2.0,
+     2.0
+    ],
+    "Tail1.z": [
+     -18.7,
+     11.2
+    ],
+    "Tail2.z": [
+     -7.4,
+     7.4
+    ],
+    "Tail3.x": [
+     -5.6,
+     5.6
+    ]
+   },
+   "limit_violations": []
+  },
+  "Walk": {
+   "frames": 19,
+   "seconds": 0.6,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0017,
+   "lowest_frame": 15,
+   "foot_slip_m": 0.0026,
+   "foot_slip_pct_of_step": 3.29,
+   "step_m": 0.079,
+   "stance_foot_max_height_m": 0.0,
+   "speed_mps": 0.22,
+   "neck_yaw_total_deg": 1.0,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -8.9,
+     -0.0
+    ],
+    "Ear.L.z": [
+     0.0,
+     2.7
+    ],
+    "Ear.R.x": [
+     -9.0,
+     -0.1
+    ],
+    "Ear.R.z": [
+     -2.7,
+     -0.0
+    ],
+    "FrontFoot.L.x": [
+     -57.2,
+     -5.9
+    ],
+    "FrontFoot.R.x": [
+     -57.2,
+     -5.9
+    ],
+    "FrontLower.L.x": [
+     19.7,
+     66.0
+    ],
+    "FrontLower.R.x": [
+     19.7,
+     66.0
+    ],
+    "FrontUpper.L.x": [
+     -18.0,
+     3.1
+    ],
+    "FrontUpper.L.z": [
+     -1.5,
+     1.5
+    ],
+    "FrontUpper.R.x": [
+     -18.0,
+     3.1
+    ],
+    "FrontUpper.R.z": [
+     -1.5,
+     1.5
+    ],
+    "Head.x": [
+     -0.6,
+     0.6
+    ],
+    "HindFoot.L.x": [
+     17.4,
+     71.3
+    ],
+    "HindFoot.R.x": [
+     17.4,
+     71.3
+    ],
+    "HindLower.L.x": [
+     -74.9,
+     -21.1
+    ],
+    "HindLower.R.x": [
+     -74.9,
+     -21.1
+    ],
+    "HindUpper.L.x": [
+     -5.9,
+     21.0
+    ],
+    "HindUpper.L.z": [
+     -2.8,
+     2.6
+    ],
+    "HindUpper.R.x": [
+     -5.9,
+     21.0
+    ],
+    "HindUpper.R.z": [
+     -2.6,
+     2.8
+    ],
+    "Neck1.x": [
+     -1.4,
+     1.5
+    ],
+    "Neck1.z": [
+     -1.0,
+     1.0
+    ],
+    "Pelvis.x": [
+     -0.7,
+     0.5
+    ],
+    "Pelvis.y": [
+     -2.0,
+     2.0
+    ],
+    "Pelvis.z": [
+     -1.5,
+     1.5
+    ],
+    "Tail1.x": [
+     -6.0,
+     5.8
+    ],
+    "Tail1.z": [
+     -11.9,
+     11.9
+    ],
+    "Tail2.x": [
+     -2.9,
+     3.0
+    ],
+    "Tail2.z": [
+     -7.2,
+     7.2
+    ]
+   },
+   "limit_violations": []
+  },
+  "Root": {
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0059,
+   "lowest_frame": 81,
+   "neck_yaw_total_deg": 2.0,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -7.0,
+     0.9
+    ],
+    "Ear.R.x": [
+     -7.0,
+     0.9
+    ],
+    "FrontFoot.L.x": [
+     -49.0,
+     -36.3
+    ],
+    "FrontFoot.R.x": [
+     -49.0,
+     -36.3
+    ],
+    "FrontLower.L.x": [
+     49.2,
+     64.3
+    ],
+    "FrontLower.R.x": [
+     49.2,
+     64.3
+    ],
+    "FrontUpper.L.x": [
+     -17.4,
+     -14.7
+    ],
+    "FrontUpper.R.x": [
+     -17.4,
+     -14.7
+    ],
+    "Head.x": [
+     10.0,
+     15.0
+    ],
+    "Head.z": [
+     -2.0,
+     2.0
+    ],
+    "HindFoot.L.x": [
+     8.7,
+     32.0
+    ],
+    "HindFoot.R.x": [
+     8.7,
+     32.0
+    ],
+    "HindLower.L.x": [
+     -38.3,
+     -10.1
+    ],
+    "HindLower.R.x": [
+     -38.3,
+     -10.1
+    ],
+    "HindUpper.L.x": [
+     -0.6,
+     4.3
+    ],
+    "HindUpper.R.x": [
+     -0.6,
+     4.3
+    ],
+    "Neck1.x": [
+     18.0,
+     18.0
+    ],
+    "Neck2.x": [
+     10.5,
+     13.5
+    ],
+    "Pelvis.x": [
+     2.0,
+     2.0
+    ],
+    "Spine1.x": [
+     -0.5,
+     0.5
+    ],
+    "Spine2.x": [
+     -0.3,
+     0.3
+    ],
+    "Tail1.x": [
+     -3.0,
+     3.0
+    ],
+    "Tail1.z": [
+     -9.9,
+     9.9
+    ],
+    "Tail2.z": [
+     -7.9,
+     8.0
+    ],
+    "Tail3.x": [
+     -5.0,
+     4.9
+    ]
+   },
+   "limit_violations": [],
+   "snout_min_z_m": [
+    -0.0059,
+    0.0261
+   ]
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Piglet.fbx",
+  "takes": [
+   [
+    "Piglet_Idle",
+    90.0
+   ],
+   [
+    "Piglet_Walk",
+    18.0
+   ],
+   [
+    "Piglet_Root",
+    90.0
+   ]
+  ],
+  "limbs": 25,
+  "roots": [
+   {
+    "name": "FMS_Piglet_Ear.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.1539,
+     0.5205,
+     0.1271
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Ear.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.1539,
+     0.5205,
+     0.1271
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.1334,
+     0.4042,
+     0.271
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.1334,
+     0.4042,
+     0.271
+    ]
+   },
+   {
+    "name": "FMS_Piglet_FrontFoot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.106,
+     0.042,
+     0.0414
+    ]
+   },
+   {
+    "name": "FMS_Piglet_FrontFoot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.106,
+     0.042,
+     0.0414
+    ]
+   },
+   {
+    "name": "FMS_Piglet_FrontLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.106,
+     0.078,
+     0.0414
+    ]
+   },
+   {
+    "name": "FMS_Piglet_FrontLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.106,
+     0.078,
+     0.0414
+    ]
+   },
+   {
+    "name": "FMS_Piglet_FrontUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.106,
+     0.235,
+     0.0414
+    ]
+   },
+   {
+    "name": "FMS_Piglet_FrontUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.106,
+     0.235,
+     0.0414
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.3558,
+     0.0057
+    ]
+   },
+   {
+    "name": "FMS_Piglet_HindFoot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.108,
+     0.042,
+     -0.2736
+    ]
+   },
+   {
+    "name": "FMS_Piglet_HindFoot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.108,
+     0.042,
+     -0.2736
+    ]
+   },
+   {
+    "name": "FMS_Piglet_HindLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.108,
+     0.078,
+     -0.2736
+    ]
+   },
+   {
+    "name": "FMS_Piglet_HindLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.108,
+     0.078,
+     -0.2736
+    ]
+   },
+   {
+    "name": "FMS_Piglet_HindUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.108,
+     0.235,
+     -0.2736
+    ]
+   },
+   {
+    "name": "FMS_Piglet_HindUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.108,
+     0.235,
+     -0.2736
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Jaw",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.1858,
+     0.1382
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Neck1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.295,
+     0.0414
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Neck2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.31,
+     0.0764
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Nose",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.2607,
+     0.2501
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Pelvis",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.285,
+     -0.2586
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Spine1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.285,
+     0.0314
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Spine2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.285,
+     0.1214
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Tail1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.37,
+     -0.3636
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Tail2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0462,
+     0.4213,
+     -0.4296
+    ]
+   },
+   {
+    "name": "FMS_Piglet_Tail3",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0163,
+     0.5129,
+     -0.3869
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 25,
+   "import_meshes": 27,
+   "import_actions": [
+    "Rig.001|Piglet_Idle",
+    "Rig.001|Piglet_Root",
+    "Rig.001|Piglet_Walk"
+   ],
+   "import_tris": 1424,
+   "import_frame_ranges": {
+    "Rig.001|Piglet_Idle": [
+     1.0,
+     91.0
+    ],
+    "Rig.001|Piglet_Root": [
+     1.0,
+     91.0
+    ],
+    "Rig.001|Piglet_Walk": [
+     1.0,
+     19.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Piglet_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Piglet_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Piglet_Idle": 0.0,
+    "Piglet_Walk": 0.0,
+    "Piglet_Root": 0.0
+   }
+  }
+ }
+}

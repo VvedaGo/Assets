@@ -1,0 +1,62 @@
+{
+ "species": "Hen",
+ "asset": "FMS_Hen",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Hen_Idle",
+   "seconds": 3.5,
+   "last_frame": 105,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Hen_Walk",
+   "seconds": 0.8,
+   "last_frame": 24,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 12,
+     "time": 0.4,
+     "stringParameter": "LegR"
+    }
+   ],
+   "speed_mps": 0.2
+  },
+  "Peck": {
+   "take": "Hen_Peck",
+   "seconds": 2.5,
+   "last_frame": 75,
+   "loop": true,
+   "events": [
+    {
+     "name": "Peck",
+     "frame": 23,
+     "time": 0.7667,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 33,
+     "time": 1.1,
+     "stringParameter": ""
+    },
+    {
+     "name": "Peck",
+     "frame": 42,
+     "time": 1.4,
+     "stringParameter": ""
+    }
+   ]
+  }
+ }
+}

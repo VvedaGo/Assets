@@ -1,0 +1,451 @@
+{
+ "asset": "FMS_Butterfly",
+ "tris": 810,
+ "bones": 15,
+ "rig": {
+  "bones": 15,
+  "hierarchy_ok": true,
+  "rigid": true
+ },
+ "clips": {
+  "rest_overlap_face_pairs": {
+   "WingBack.L/Body": 13,
+   "WingBack.R/Body": 13,
+   "WingFront.L/Body": 14,
+   "WingFront.R/Body": 14
+  },
+  "Fly": {
+   "frames": 31,
+   "seconds": 1.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "max_euler_step_deg": 22.09,
+   "max_rotation_deg": {
+    "Antenna.L": 13.0,
+    "Antenna.R": 12.9,
+    "Body": 9.1,
+    "Head": 3.0,
+    "Leg_1.L": 29.1,
+    "Leg_1.R": 29.1,
+    "Leg_2.L": 33.9,
+    "Leg_2.R": 33.9,
+    "Leg_3.L": 37.5,
+    "Leg_3.R": 37.5,
+    "WingBack.L": 93.4,
+    "WingBack.R": 93.4,
+    "WingFront.L": 93.4,
+    "WingFront.R": 93.4
+   },
+   "limit_violations": [],
+   "lowest_vertex_m": 0.0477,
+   "new_overlap_face_pairs_vs_rest": {
+    "WingBack.L/Body": 5,
+    "WingBack.R/Body": 3,
+    "WingFront.R/Body": 4,
+    "WingFront.L/Body": 4
+   },
+   "feet_min_height_m": 0.0477
+  },
+  "Perch_Idle": {
+   "frames": 121,
+   "seconds": 4.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "max_euler_step_deg": 4.88,
+   "max_rotation_deg": {
+    "Antenna.L": 10.9,
+    "Antenna.R": 11.4,
+    "Head": 6.5,
+    "WingBack.L": 97.4,
+    "WingBack.R": 97.4,
+    "WingFront.L": 97.4,
+    "WingFront.R": 97.4
+   },
+   "limit_violations": [],
+   "lowest_vertex_m": -0.0,
+   "new_overlap_face_pairs_vs_rest": {
+    "WingBack.L/Body": 5,
+    "WingBack.R/Body": 3,
+    "WingFront.R/Body": 6,
+    "WingFront.L/Body": 4
+   },
+   "feet_on_ground_min": 6,
+   "foot_slip_m": 0.0
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Butterfly.fbx",
+  "takes": [
+   [
+    "Butterfly_Fly",
+    30.0
+   ],
+   [
+    "Butterfly_Perch_Idle",
+    120.0
+   ]
+  ],
+  "limbs": 15,
+  "roots": [
+   {
+    "name": "Antenna.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.004,
+     0.0514,
+     0.0152
+    ]
+   },
+   {
+    "name": "Antenna.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.004,
+     0.0514,
+     0.0152
+    ]
+   },
+   {
+    "name": "Body",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.0269,
+     0.0
+    ]
+   },
+   {
+    "name": "Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.006,
+     0.0417,
+     0.0227
+    ]
+   },
+   {
+    "name": "Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.006,
+     0.0417,
+     0.0227
+    ]
+   },
+   {
+    "name": "Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.034,
+     0.008
+    ]
+   },
+   {
+    "name": "Leg_1.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0033,
+     0.0189,
+     0.0057
+    ]
+   },
+   {
+    "name": "Leg_1.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0033,
+     0.0189,
+     0.0057
+    ]
+   },
+   {
+    "name": "Leg_2.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0047,
+     0.0175,
+     0.0005
+    ]
+   },
+   {
+    "name": "Leg_2.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0047,
+     0.0175,
+     0.0005
+    ]
+   },
+   {
+    "name": "Leg_3.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0038,
+     0.0184,
+     -0.0033
+    ]
+   },
+   {
+    "name": "Leg_3.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0038,
+     0.0184,
+     -0.0033
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "name": "WingBack.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0104,
+     0.0292,
+     -0.0075
+    ]
+   },
+   {
+    "name": "WingBack.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0104,
+     0.0292,
+     -0.0075
+    ]
+   },
+   {
+    "name": "WingFront.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0104,
+     0.0344,
+     -0.0038
+    ]
+   },
+   {
+    "name": "WingFront.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0104,
+     0.0344,
+     -0.0038
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 15,
+   "import_meshes": 16,
+   "import_actions": [
+    "Rig.001|Butterfly_Fly",
+    "Rig.001|Butterfly_Perch_Idle"
+   ],
+   "import_tris": 810,
+   "import_frame_ranges": {
+    "Rig.001|Butterfly_Fly": [
+     1.0,
+     31.0
+    ],
+    "Rig.001|Butterfly_Perch_Idle": [
+     1.0,
+     121.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Butterfly_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Butterfly_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Butterfly_Fly": 0.0,
+    "Butterfly_Perch_Idle": 0.0
+   }
+  }
+ }
+}

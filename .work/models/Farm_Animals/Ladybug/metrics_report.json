@@ -1,0 +1,499 @@
+{
+ "asset": "FMS_Ladybug",
+ "tris": 1028,
+ "bones": 15,
+ "rig": {
+  "bones": 15,
+  "hierarchy_ok": true,
+  "rigid": true
+ },
+ "clips": {
+  "rest_overlap_face_pairs": {
+   "Wing.L/Elytra.L": 8,
+   "Wing.R/Elytra.R": 8,
+   "Wing.L/Leg_3.L": 10,
+   "Wing.R/Leg_3.R": 10
+  },
+  "Idle": {
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "max_rotation_deg": {
+    "Antenna.L": 32.0,
+    "Antenna.R": 34.6,
+    "Body": 1.2,
+    "Head": 6.5,
+    "Leg_1.L": 1.5,
+    "Leg_1.R": 1.5,
+    "Leg_2.L": 0.8,
+    "Leg_2.R": 0.8,
+    "Leg_3.L": 1.4,
+    "Leg_3.R": 1.4
+   },
+   "max_leg_translation_m": 3e-05,
+   "limit_violations": [],
+   "lowest_vertex_m": -5e-05,
+   "new_overlap_face_pairs_vs_rest": {
+    "Wing.L/Elytra.L": 1,
+    "Wing.R/Elytra.R": 1
+   },
+   "foot_slip_m": 0.0
+  },
+  "Crawl": {
+   "frames": 17,
+   "seconds": 0.533,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "max_rotation_deg": {
+    "Antenna.L": 16.4,
+    "Antenna.R": 16.0,
+    "Body": 2.5,
+    "Head": 2.6,
+    "Leg_1.L": 7.1,
+    "Leg_1.R": 7.1,
+    "Leg_2.L": 11.7,
+    "Leg_2.R": 11.7,
+    "Leg_3.L": 9.2,
+    "Leg_3.R": 9.2
+   },
+   "max_leg_translation_m": 0.00204,
+   "limit_violations": [],
+   "lowest_vertex_m": -0.00023,
+   "new_overlap_face_pairs_vs_rest": {
+    "Leg_1.R/Elytra.R": 7,
+    "Leg_2.L/Elytra.L": 11,
+    "Wing.L/Elytra.L": 1,
+    "Wing.R/Leg_3.R": 4,
+    "Leg_3.R/Elytra.R": 7,
+    "Leg_1.L/Elytra.L": 7,
+    "Leg_2.R/Elytra.R": 11,
+    "Wing.R/Elytra.R": 1,
+    "Wing.L/Leg_3.L": 4,
+    "Leg_3.L/Elytra.L": 7
+   },
+   "foot_slip_m": 0.0,
+   "foot_slip_pct_of_step": 0.0,
+   "step_m": 0.005,
+   "speed_mps": 0.0187,
+   "stance_sole_max_height_m": 0.0,
+   "max_hip_shift_m": 0.00204
+  },
+  "Fly": {
+   "frames": 31,
+   "seconds": 1.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "max_rotation_deg": {
+    "Antenna.L": 16.0,
+    "Antenna.R": 16.0,
+    "Body": 25.1,
+    "Elytra.L": 51.4,
+    "Elytra.R": 51.4,
+    "Head": 3.0,
+    "Leg_1.L": 26.5,
+    "Leg_1.R": 26.5,
+    "Leg_2.L": 34.5,
+    "Leg_2.R": 34.5,
+    "Leg_3.L": 42.0,
+    "Leg_3.R": 42.0,
+    "Wing.L": 88.7,
+    "Wing.R": 88.7
+   },
+   "max_leg_translation_m": 0.0,
+   "limit_violations": [],
+   "lowest_vertex_m": 0.02979,
+   "new_overlap_face_pairs_vs_rest": {
+    "Wing.R/Leg_2.R": 4,
+    "Wing.L/Leg_2.L": 4
+   },
+   "feet_min_height_m": 0.0317
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Ladybug.fbx",
+  "takes": [
+   [
+    "Ladybug_Idle",
+    90.0
+   ],
+   [
+    "Ladybug_Crawl",
+    16.0
+   ],
+   [
+    "Ladybug_Fly",
+    30.0
+   ]
+  ],
+  "limbs": 15,
+  "roots": [
+   {
+    "name": "Antenna.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0045,
+     0.02,
+     0.0201
+    ]
+   },
+   {
+    "name": "Antenna.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0045,
+     0.02,
+     0.0201
+    ]
+   },
+   {
+    "name": "Body",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.008,
+     -0.0024
+    ]
+   },
+   {
+    "name": "Elytra.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0003,
+     0.0193,
+     0.0146
+    ]
+   },
+   {
+    "name": "Elytra.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0003,
+     0.0193,
+     0.0146
+    ]
+   },
+   {
+    "name": "Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.005,
+     0.0112,
+     0.0264
+    ]
+   },
+   {
+    "name": "Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.005,
+     0.0112,
+     0.0264
+    ]
+   },
+   {
+    "name": "Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.012,
+     0.0126
+    ]
+   },
+   {
+    "name": "Leg_1.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0075,
+     0.0055,
+     0.0046
+    ]
+   },
+   {
+    "name": "Leg_1.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0075,
+     0.0055,
+     0.0046
+    ]
+   },
+   {
+    "name": "Leg_2.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.008,
+     0.0055,
+     -0.0004
+    ]
+   },
+   {
+    "name": "Leg_2.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.008,
+     0.0055,
+     -0.0004
+    ]
+   },
+   {
+    "name": "Leg_3.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0075,
+     0.0055,
+     -0.0094
+    ]
+   },
+   {
+    "name": "Leg_3.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0075,
+     0.0055,
+     -0.0094
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "name": "Wing.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0035,
+     0.0088,
+     0.0026
+    ]
+   },
+   {
+    "name": "Wing.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0035,
+     0.0088,
+     0.0026
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 15,
+   "import_meshes": 16,
+   "import_actions": [
+    "Rig.001|Ladybug_Crawl",
+    "Rig.001|Ladybug_Fly",
+    "Rig.001|Ladybug_Idle"
+   ],
+   "import_tris": 1028,
+   "import_frame_ranges": {
+    "Rig.001|Ladybug_Crawl": [
+     1.0,
+     17.0
+    ],
+    "Rig.001|Ladybug_Fly": [
+     1.0,
+     31.0
+    ],
+    "Rig.001|Ladybug_Idle": [
+     1.0,
+     91.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Ladybug_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Ladybug_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Ladybug_Idle": 0.0,
+    "Ladybug_Crawl": 0.0,
+    "Ladybug_Fly": 0.0
+   }
+  }
+ }
+}

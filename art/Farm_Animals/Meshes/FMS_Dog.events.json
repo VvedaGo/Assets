@@ -1,0 +1,55 @@
+{
+ "species": "Dog",
+ "asset": "FMS_Dog",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Dog_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Dog_Walk",
+   "seconds": 1.133,
+   "last_frame": 34,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 6,
+     "time": 0.2,
+     "stringParameter": "FrontR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 17,
+     "time": 0.5667,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 23,
+     "time": 0.7667,
+     "stringParameter": "FrontL"
+    }
+   ],
+   "speed_mps": 0.5294
+  },
+  "Sit_Idle": {
+   "take": "Dog_Sit_Idle",
+   "seconds": 3.5,
+   "last_frame": 105,
+   "loop": true,
+   "events": []
+  }
+ }
+}

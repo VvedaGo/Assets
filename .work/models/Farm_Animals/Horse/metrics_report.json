@@ -1,0 +1,676 @@
+{
+ "asset": "FMS_Horse",
+ "tris": 2424,
+ "rig": {
+  "bones": 29,
+  "names_ok": true,
+  "hierarchy_ok": true,
+  "roll_bad": []
+ },
+ "clips": {
+  "Idle": {
+   "frames": 121,
+   "seconds": 4.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.002,
+   "lowest_frame": 1,
+   "neck_yaw_total_deg": 3.0,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -21.8,
+     10.0
+    ],
+    "Ear.L.y": [
+     -4.0,
+     58.3
+    ],
+    "Ear.L.z": [
+     -11.9,
+     0.0
+    ],
+    "Ear.R.x": [
+     -22.0,
+     10.0
+    ],
+    "Ear.R.y": [
+     -51.7,
+     4.0
+    ],
+    "Ear.R.z": [
+     0.0,
+     12.0
+    ],
+    "Forelock.x": [
+     -1.2,
+     1.2
+    ],
+    "Forelock.z": [
+     -2.5,
+     2.5
+    ],
+    "FrontFoot.L.x": [
+     -8.0,
+     -2.6
+    ],
+    "FrontFoot.R.x": [
+     -8.0,
+     -2.6
+    ],
+    "FrontLower.L.x": [
+     2.1,
+     11.3
+    ],
+    "FrontLower.R.x": [
+     2.1,
+     11.3
+    ],
+    "FrontUpper.L.x": [
+     -2.6,
+     -0.4
+    ],
+    "FrontUpper.R.x": [
+     -2.6,
+     -0.4
+    ],
+    "Head.x": [
+     -1.0,
+     1.0
+    ],
+    "Head.z": [
+     -1.8,
+     1.8
+    ],
+    "Mane1.y": [
+     -1.2,
+     1.2
+    ],
+    "Mane1.z": [
+     -3.4,
+     3.4
+    ],
+    "Mane2.y": [
+     -1.2,
+     1.2
+    ],
+    "Mane2.z": [
+     -3.4,
+     3.4
+    ],
+    "Mane3.y": [
+     -1.2,
+     1.2
+    ],
+    "Mane3.z": [
+     -3.0,
+     3.0
+    ],
+    "Neck1.x": [
+     -1.5,
+     1.5
+    ],
+    "Neck2.z": [
+     -1.2,
+     1.2
+    ],
+    "Spine1.x": [
+     -0.5,
+     0.5
+    ],
+    "Spine2.x": [
+     -1.0,
+     1.0
+    ],
+    "Tail1.x": [
+     0.0,
+     5.0
+    ],
+    "Tail1.z": [
+     -15.7,
+     23.4
+    ],
+    "Tail2.x": [
+     0.0,
+     3.0
+    ],
+    "Tail2.z": [
+     -18.8,
+     31.1
+    ],
+    "Tail3.x": [
+     0.0,
+     1.0
+    ],
+    "Tail3.z": [
+     -22.0,
+     37.3
+    ]
+   },
+   "limit_violations": [],
+   "legs_cross_midline_m": 0.0015
+  },
+  "Walk": {
+   "frames": 34,
+   "seconds": 1.1,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0048,
+   "lowest_frame": 3,
+   "foot_slip_m": 0.0056,
+   "foot_slip_pct_of_step": 0.89,
+   "step_m": 0.627,
+   "stance_foot_max_height_m": 0.0,
+   "speed_mps": 0.95,
+   "neck_yaw_total_deg": 1.5,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     1.0,
+     7.0
+    ],
+    "Ear.L.z": [
+     -5.5,
+     -2.5
+    ],
+    "Ear.R.x": [
+     1.0,
+     7.0
+    ],
+    "Ear.R.z": [
+     2.5,
+     5.5
+    ],
+    "Forelock.x": [
+     -2.0,
+     2.0
+    ],
+    "Forelock.z": [
+     -4.0,
+     4.0
+    ],
+    "FrontFoot.L.x": [
+     -68.1,
+     4.1
+    ],
+    "FrontFoot.R.x": [
+     -67.7,
+     2.4
+    ],
+    "FrontLower.L.x": [
+     34.3,
+     105.3
+    ],
+    "FrontLower.R.x": [
+     35.5,
+     106.1
+    ],
+    "FrontUpper.L.x": [
+     -49.4,
+     6.7
+    ],
+    "FrontUpper.L.z": [
+     -1.8,
+     1.8
+    ],
+    "FrontUpper.R.x": [
+     -50.1,
+     7.7
+    ],
+    "FrontUpper.R.z": [
+     -1.8,
+     1.8
+    ],
+    "Head.x": [
+     -1.5,
+     1.5
+    ],
+    "HindFoot.L.x": [
+     -41.3,
+     70.7
+    ],
+    "HindFoot.R.x": [
+     -41.5,
+     71.5
+    ],
+    "HindLower.L.x": [
+     -59.5,
+     29.5
+    ],
+    "HindLower.R.x": [
+     -59.6,
+     29.5
+    ],
+    "HindUpper.L.x": [
+     -11.5,
+     23.1
+    ],
+    "HindUpper.L.z": [
+     -1.7,
+     1.7
+    ],
+    "HindUpper.R.x": [
+     -11.2,
+     22.7
+    ],
+    "HindUpper.R.z": [
+     -1.7,
+     1.7
+    ],
+    "Mane1.x": [
+     -2.0,
+     2.0
+    ],
+    "Mane1.y": [
+     -2.4,
+     2.4
+    ],
+    "Mane1.z": [
+     -4.0,
+     4.0
+    ],
+    "Mane2.x": [
+     -1.4,
+     1.4
+    ],
+    "Mane2.y": [
+     -2.4,
+     2.4
+    ],
+    "Mane2.z": [
+     -5.0,
+     5.0
+    ],
+    "Mane3.x": [
+     -0.8,
+     0.8
+    ],
+    "Mane3.y": [
+     -2.4,
+     2.4
+    ],
+    "Mane3.z": [
+     -6.0,
+     6.0
+    ],
+    "Neck1.x": [
+     -3.0,
+     3.0
+    ],
+    "Neck1.z": [
+     -1.5,
+     1.5
+    ],
+    "Pelvis.x": [
+     0.2,
+     4.1
+    ],
+    "Pelvis.y": [
+     -1.2,
+     1.2
+    ],
+    "Tail1.z": [
+     -4.0,
+     4.0
+    ],
+    "Tail2.z": [
+     -6.0,
+     6.0
+    ],
+    "Tail3.z": [
+     -8.0,
+     8.0
+    ]
+   },
+   "limit_violations": [],
+   "legs_cross_midline_m": 0.0086
+  },
+  "Graze": {
+   "frames": 151,
+   "seconds": 5.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0,
+   "lowest_frame": 16,
+   "neck_yaw_total_deg": 5.8,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -28.0,
+     -6.0
+    ],
+    "Ear.L.y": [
+     20.0,
+     50.0
+    ],
+    "Ear.L.z": [
+     -18.0,
+     -8.0
+    ],
+    "Ear.R.x": [
+     -28.0,
+     -6.0
+    ],
+    "Ear.R.y": [
+     -50.0,
+     -20.0
+    ],
+    "Ear.R.z": [
+     8.0,
+     18.0
+    ],
+    "Forelock.x": [
+     -1.5,
+     1.5
+    ],
+    "Forelock.z": [
+     -3.0,
+     3.0
+    ],
+    "FrontFoot.L.x": [
+     -19.7,
+     -17.9
+    ],
+    "FrontFoot.R.x": [
+     -46.2,
+     -44.8
+    ],
+    "FrontLower.L.x": [
+     50.3,
+     52.5
+    ],
+    "FrontLower.R.x": [
+     64.1,
+     65.4
+    ],
+    "FrontUpper.L.x": [
+     -39.4,
+     -38.8
+    ],
+    "FrontUpper.R.x": [
+     -26.3,
+     -25.3
+    ],
+    "Head.x": [
+     -46.0,
+     -40.0
+    ],
+    "Head.z": [
+     -4.0,
+     4.0
+    ],
+    "HindFoot.L.x": [
+     4.3,
+     4.3
+    ],
+    "HindFoot.R.x": [
+     4.3,
+     4.3
+    ],
+    "HindLower.L.x": [
+     -9.6,
+     -9.6
+    ],
+    "HindLower.R.x": [
+     -9.6,
+     -9.6
+    ],
+    "HindUpper.L.x": [
+     3.8,
+     3.8
+    ],
+    "HindUpper.R.x": [
+     3.8,
+     3.8
+    ],
+    "Jaw.x": [
+     0.0,
+     6.9
+    ],
+    "Jaw.z": [
+     -3.0,
+     3.0
+    ],
+    "Mane1.y": [
+     -1.5,
+     1.5
+    ],
+    "Mane1.z": [
+     -2.5,
+     2.5
+    ],
+    "Mane2.y": [
+     -1.5,
+     1.5
+    ],
+    "Mane2.z": [
+     -3.1,
+     3.1
+    ],
+    "Mane3.y": [
+     -1.5,
+     1.5
+    ],
+    "Mane3.z": [
+     -3.7,
+     3.7
+    ],
+    "Neck1.x": [
+     63.0,
+     75.0
+    ],
+    "Neck2.x": [
+     12.0,
+     20.0
+    ],
+    "Neck2.z": [
+     -2.0,
+     2.0
+    ],
+    "Pelvis.x": [
+     1.5,
+     1.5
+    ],
+    "Spine1.x": [
+     1.7,
+     2.3
+    ],
+    "Spine2.x": [
+     2.2,
+     3.8
+    ],
+    "Tail1.x": [
+     0.0,
+     5.0
+    ],
+    "Tail1.z": [
+     -19.3,
+     14.7
+    ],
+    "Tail2.x": [
+     0.0,
+     3.0
+    ],
+    "Tail2.z": [
+     -27.9,
+     18.6
+    ],
+    "Tail3.x": [
+     0.0,
+     1.0
+    ],
+    "Tail3.z": [
+     -37.4,
+     23.2
+    ]
+   },
+   "limit_violations": [],
+   "legs_cross_midline_m": 0.0015
+  },
+  "_graze": {
+   "neck1": 75,
+   "neck2": 20,
+   "head": -40,
+   "muzzle_z": 0.027
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Horse.fbx",
+  "takes": [
+   "Horse_Graze",
+   "Horse_Idle",
+   "Horse_Walk"
+  ],
+  "summary": {
+   "version": 7400,
+   "roots": [
+    {
+     "name": "FMS_Horse",
+     "type": "Mesh",
+     "rot": [
+      0,
+      0,
+      0
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "pos": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Rig",
+     "type": "Null",
+     "rot": [
+      -90.0,
+      0.0,
+      0.0
+     ],
+     "scale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   ],
+   "limb_nodes": 29,
+   "limb_names": [
+    "Ear.L",
+    "Ear.R",
+    "Forelock",
+    "FrontFoot.L",
+    "FrontFoot.R",
+    "FrontLower.L",
+    "FrontLower.R",
+    "FrontUpper.L",
+    "FrontUpper.R",
+    "Head",
+    "HindFoot.L",
+    "HindFoot.R",
+    "HindLower.L",
+    "HindLower.R",
+    "HindUpper.L",
+    "HindUpper.R",
+    "Jaw",
+    "Mane1",
+    "Mane2",
+    "Mane3",
+    "Neck1",
+    "Neck2",
+    "Pelvis",
+    "Root",
+    "Spine1",
+    "Spine2",
+    "Tail1",
+    "Tail2",
+    "Tail3"
+   ],
+   "stacks": [
+    {
+     "name": "Horse_Idle",
+     "seconds": 4.0,
+     "frames30": 120.0
+    },
+    {
+     "name": "Horse_Walk",
+     "seconds": 1.1,
+     "frames30": 33.0
+    },
+    {
+     "name": "Horse_Graze",
+     "seconds": 5.0,
+     "frames30": 150.0
+    }
+   ],
+   "up_axis": [
+    1
+   ],
+   "front_axis": [
+    2
+   ],
+   "unit_scale": [
+    100.0
+   ]
+  },
+  "reimport": {
+   "import_bones": 29,
+   "import_actions": [
+    "Rig.001|Horse_Graze",
+    "Rig.001|Horse_Idle",
+    "Rig.001|Horse_Walk"
+   ],
+   "import_tris": 2424,
+   "import_dims": [
+    0.928,
+    2.394,
+    2.965
+   ],
+   "rig_rot": [
+    -0.0,
+    0.0,
+    0.0
+   ],
+   "rig_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "images": [
+    [
+     "T_FarmAnimals_Horse_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Horse_BaseColor.001",
+     true
+    ]
+   ],
+   "max_vertex_error_m": {
+    "Horse_Idle": 0.0,
+    "Horse_Walk": 0.0,
+    "Horse_Graze": 0.0
+   },
+   "import_frame_ranges": {
+    "Horse_Idle": [
+     1.0,
+     121.0
+    ],
+    "Horse_Walk": [
+     1.0,
+     34.0
+    ],
+    "Horse_Graze": [
+     1.0,
+     151.0
+    ]
+   }
+  }
+ }
+}

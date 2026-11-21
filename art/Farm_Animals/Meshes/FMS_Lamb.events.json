@@ -1,0 +1,68 @@
+{
+ "species": "Lamb",
+ "asset": "FMS_Lamb",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Lamb_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Lamb_Walk",
+   "seconds": 0.7,
+   "last_frame": 21,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 5,
+     "time": 0.1667,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 10,
+     "time": 0.3333,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 16,
+     "time": 0.5333,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.22
+  },
+  "Play_Hop": {
+   "take": "Lamb_Play_Hop",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "Takeoff"
+    },
+    {
+     "name": "Footstep",
+     "frame": 20,
+     "time": 0.6667,
+     "stringParameter": "Land"
+    }
+   ]
+  }
+ }
+}

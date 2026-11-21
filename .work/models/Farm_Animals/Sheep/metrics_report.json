@@ -1,0 +1,1046 @@
+{
+ "asset": "FMS_Sheep",
+ "tris": 2026,
+ "bones": 24,
+ "rig": {
+  "bones": 24,
+  "names_ok": true,
+  "hierarchy_ok": true,
+  "roll_bad": []
+ },
+ "clips": {
+  "Idle": {
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0,
+   "lowest_frame": 23,
+   "neck_yaw_total_deg": 3.0,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -4.0,
+     13.8
+    ],
+    "Ear.L.z": [
+     -3.0,
+     24.9
+    ],
+    "Ear.R.x": [
+     -4.0,
+     9.8
+    ],
+    "Ear.R.z": [
+     -29.8,
+     3.0
+    ],
+    "FrontFoot.L.x": [
+     -21.5,
+     -0.2
+    ],
+    "FrontFoot.R.x": [
+     -21.5,
+     -0.2
+    ],
+    "FrontLower.L.x": [
+     0.3,
+     30.6
+    ],
+    "FrontLower.R.x": [
+     0.3,
+     30.6
+    ],
+    "FrontUpper.L.x": [
+     -9.6,
+     0.5
+    ],
+    "FrontUpper.R.x": [
+     -9.6,
+     0.5
+    ],
+    "Head.x": [
+     -1.0,
+     1.0
+    ],
+    "Head.z": [
+     -3.0,
+     3.0
+    ],
+    "HindFoot.L.x": [
+     0.2,
+     13.8
+    ],
+    "HindFoot.R.x": [
+     0.2,
+     13.8
+    ],
+    "HindLower.L.x": [
+     -20.8,
+     -0.3
+    ],
+    "HindLower.R.x": [
+     -20.8,
+     -0.3
+    ],
+    "HindUpper.L.x": [
+     0.1,
+     7.0
+    ],
+    "HindUpper.R.x": [
+     0.1,
+     7.0
+    ],
+    "Neck1.x": [
+     -1.5,
+     1.5
+    ],
+    "Spine1.x": [
+     -1.0,
+     1.0
+    ],
+    "Spine2.x": [
+     -0.6,
+     0.6
+    ],
+    "Tail1.x": [
+     -3.0,
+     3.0
+    ],
+    "Tail1.z": [
+     -11.7,
+     16.0
+    ],
+    "Tail2.z": [
+     -21.2,
+     19.3
+    ]
+   },
+   "limit_violations": []
+  },
+  "Walk": {
+   "frames": 28,
+   "seconds": 0.9,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0011,
+   "lowest_frame": 7,
+   "foot_slip_m": 0.0021,
+   "foot_slip_pct_of_step": 1.19,
+   "step_m": 0.178,
+   "stance_foot_max_height_m": 0.0,
+   "speed_mps": 0.33,
+   "neck_yaw_total_deg": 1.5,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -4.0,
+     4.0
+    ],
+    "Ear.L.z": [
+     -5.0,
+     -1.0
+    ],
+    "Ear.R.x": [
+     -4.0,
+     4.0
+    ],
+    "Ear.R.z": [
+     1.0,
+     5.0
+    ],
+    "FrontFoot.L.x": [
+     -47.4,
+     -0.3
+    ],
+    "FrontFoot.R.x": [
+     -47.1,
+     2.0
+    ],
+    "FrontLower.L.x": [
+     23.2,
+     70.7
+    ],
+    "FrontLower.R.x": [
+     21.6,
+     71.1
+    ],
+    "FrontUpper.L.x": [
+     -30.1,
+     6.6
+    ],
+    "FrontUpper.L.z": [
+     -2.4,
+     2.4
+    ],
+    "FrontUpper.R.x": [
+     -30.1,
+     6.0
+    ],
+    "FrontUpper.R.z": [
+     -2.3,
+     2.4
+    ],
+    "Head.x": [
+     -1.2,
+     1.2
+    ],
+    "HindFoot.L.x": [
+     3.5,
+     63.1
+    ],
+    "HindFoot.R.x": [
+     3.4,
+     63.4
+    ],
+    "HindLower.L.x": [
+     -71.6,
+     -22.0
+    ],
+    "HindLower.R.x": [
+     -72.4,
+     -21.0
+    ],
+    "HindUpper.L.x": [
+     -5.2,
+     32.1
+    ],
+    "HindUpper.L.z": [
+     -2.2,
+     2.1
+    ],
+    "HindUpper.R.x": [
+     -4.7,
+     31.7
+    ],
+    "HindUpper.R.z": [
+     -2.1,
+     2.2
+    ],
+    "Neck1.x": [
+     -2.4,
+     2.4
+    ],
+    "Neck1.z": [
+     -1.5,
+     1.5
+    ],
+    "Pelvis.x": [
+     -1.1,
+     1.0
+    ],
+    "Pelvis.y": [
+     -1.5,
+     1.5
+    ],
+    "Spine1.x": [
+     -1.2,
+     1.2
+    ],
+    "Spine2.x": [
+     -1.0,
+     1.0
+    ],
+    "Tail1.x": [
+     -2.0,
+     2.0
+    ],
+    "Tail1.z": [
+     -7.0,
+     7.0
+    ],
+    "Tail2.z": [
+     -11.0,
+     11.0
+    ]
+   },
+   "limit_violations": []
+  },
+  "Graze": {
+   "frames": 121,
+   "seconds": 4.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0,
+   "lowest_frame": 36,
+   "neck_yaw_total_deg": 1.5,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -6.0,
+     8.0
+    ],
+    "Ear.L.z": [
+     6.0,
+     32.0
+    ],
+    "Ear.R.x": [
+     -6.0,
+     7.8
+    ],
+    "Ear.R.z": [
+     -31.7,
+     -6.0
+    ],
+    "FrontFoot.L.x": [
+     -20.1,
+     -0.9
+    ],
+    "FrontFoot.R.x": [
+     -32.3,
+     -15.8
+    ],
+    "FrontLower.L.x": [
+     12.1,
+     39.9
+    ],
+    "FrontLower.R.x": [
+     20.3,
+     43.7
+    ],
+    "FrontUpper.L.x": [
+     -21.1,
+     -11.9
+    ],
+    "FrontUpper.R.x": [
+     -12.7,
+     -5.2
+    ],
+    "Head.x": [
+     -50.0,
+     -45.0
+    ],
+    "Head.z": [
+     -1.5,
+     1.5
+    ],
+    "HindFoot.L.x": [
+     -1.1,
+     14.1
+    ],
+    "HindFoot.R.x": [
+     -1.1,
+     14.1
+    ],
+    "HindLower.L.x": [
+     -23.2,
+     -0.3
+    ],
+    "HindLower.R.x": [
+     -23.2,
+     -0.3
+    ],
+    "HindUpper.L.x": [
+     0.4,
+     8.1
+    ],
+    "HindUpper.R.x": [
+     0.4,
+     8.1
+    ],
+    "Jaw.x": [
+     0.0,
+     9.0
+    ],
+    "Jaw.z": [
+     -3.0,
+     3.0
+    ],
+    "Neck1.x": [
+     42.0,
+     54.0
+    ],
+    "Neck2.x": [
+     30.0,
+     36.0
+    ],
+    "Pelvis.x": [
+     1.0,
+     1.0
+    ],
+    "Spine1.x": [
+     -0.8,
+     0.8
+    ],
+    "Spine2.x": [
+     -0.5,
+     0.5
+    ],
+    "Tail1.z": [
+     -13.1,
+     10.7
+    ],
+    "Tail2.z": [
+     -22.5,
+     11.9
+    ]
+   },
+   "limit_violations": []
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Sheep.fbx",
+  "takes": [
+   [
+    "Sheep_Idle",
+    90.0
+   ],
+   [
+    "Sheep_Walk",
+    27.0
+   ],
+   [
+    "Sheep_Graze",
+    120.0
+   ]
+  ],
+  "limbs": 24,
+  "roots": [
+   {
+    "name": "FMS_Sheep_Ear.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.1376,
+     0.8108,
+     0.5578
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Ear.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.1376,
+     0.8108,
+     0.5578
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0978,
+     0.7583,
+     0.6323
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0978,
+     0.7583,
+     0.6323
+    ]
+   },
+   {
+    "name": "FMS_Sheep_FrontFoot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.15,
+     0.07,
+     0.2172
+    ]
+   },
+   {
+    "name": "FMS_Sheep_FrontFoot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.15,
+     0.07,
+     0.2172
+    ]
+   },
+   {
+    "name": "FMS_Sheep_FrontLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.15,
+     0.165,
+     0.2172
+    ]
+   },
+   {
+    "name": "FMS_Sheep_FrontLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.15,
+     0.165,
+     0.2172
+    ]
+   },
+   {
+    "name": "FMS_Sheep_FrontUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.15,
+     0.39,
+     0.2172
+    ]
+   },
+   {
+    "name": "FMS_Sheep_FrontUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.15,
+     0.39,
+     0.2172
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.8262,
+     0.4662
+    ]
+   },
+   {
+    "name": "FMS_Sheep_HindFoot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.15,
+     0.07,
+     -0.3228
+    ]
+   },
+   {
+    "name": "FMS_Sheep_HindFoot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.15,
+     0.07,
+     -0.3228
+    ]
+   },
+   {
+    "name": "FMS_Sheep_HindLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.15,
+     0.185,
+     -0.3228
+    ]
+   },
+   {
+    "name": "FMS_Sheep_HindLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.15,
+     0.185,
+     -0.3228
+    ]
+   },
+   {
+    "name": "FMS_Sheep_HindUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.15,
+     0.41,
+     -0.3228
+    ]
+   },
+   {
+    "name": "FMS_Sheep_HindUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.15,
+     0.41,
+     -0.3228
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Jaw",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.6552,
+     0.4674
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Neck1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.605,
+     0.2572
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Neck2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.715,
+     0.3522
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Nose",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.5674,
+     0.6438
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Pelvis",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.55,
+     -0.2828
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Spine1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.55,
+     -0.0728
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Spine2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.555,
+     0.1472
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Tail1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.64,
+     -0.3828
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Tail2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.675,
+     -0.5228
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Wool_Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.8262,
+     0.4662
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Wool_Neck",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.605,
+     0.2572
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Wool_Pelvis",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.55,
+     -0.2828
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Wool_Spine1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.55,
+     -0.0728
+    ]
+   },
+   {
+    "name": "FMS_Sheep_Wool_Spine2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.555,
+     0.1472
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 24,
+   "import_meshes": 31,
+   "import_actions": [
+    "Rig.001|Sheep_Graze",
+    "Rig.001|Sheep_Idle",
+    "Rig.001|Sheep_Walk"
+   ],
+   "import_tris": 2026,
+   "import_frame_ranges": {
+    "Rig.001|Sheep_Graze": [
+     1.0,
+     121.0
+    ],
+    "Rig.001|Sheep_Idle": [
+     1.0,
+     91.0
+    ],
+    "Rig.001|Sheep_Walk": [
+     1.0,
+     28.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Sheep_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Sheep_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Sheep_Idle": 0.0,
+    "Sheep_Walk": 0.0,
+    "Sheep_Graze": 0.0
+   }
+  }
+ }
+}

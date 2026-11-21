@@ -1,0 +1,75 @@
+{
+ "species": "Ladybug",
+ "asset": "FMS_Ladybug",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Ladybug_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Crawl": {
+   "take": "Ladybug_Crawl",
+   "seconds": 0.533,
+   "last_frame": 16,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "TripodA"
+    },
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "TripodB"
+    }
+   ],
+   "speed_mps": 0.0187
+  },
+  "Fly": {
+   "take": "Ladybug_Fly",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "WingFlap",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "Down"
+    },
+    {
+     "name": "WingFlap",
+     "frame": 6,
+     "time": 0.2,
+     "stringParameter": "Down"
+    },
+    {
+     "name": "WingFlap",
+     "frame": 12,
+     "time": 0.4,
+     "stringParameter": "Down"
+    },
+    {
+     "name": "WingFlap",
+     "frame": 18,
+     "time": 0.6,
+     "stringParameter": "Down"
+    },
+    {
+     "name": "WingFlap",
+     "frame": 24,
+     "time": 0.8,
+     "stringParameter": "Down"
+    }
+   ],
+   "hover_m": 0.045
+  }
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "species": "Kitten",
+ "asset": "FMS_Kitten",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Kitten_Idle",
+   "seconds": 3.5,
+   "last_frame": 105,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Kitten_Walk",
+   "seconds": 0.5,
+   "last_frame": 15,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 4,
+     "time": 0.1333,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 11,
+     "time": 0.3667,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.15
+  },
+  "Pounce": {
+   "take": "Kitten_Pounce",
+   "seconds": 2.0,
+   "last_frame": 60,
+   "loop": true,
+   "events": [
+    {
+     "name": "Pounce",
+     "frame": 28,
+     "time": 0.9333,
+     "stringParameter": ""
+    },
+    {
+     "name": "Land",
+     "frame": 36,
+     "time": 1.2,
+     "stringParameter": "Front"
+    }
+   ]
+  }
+ }
+}

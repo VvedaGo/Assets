@@ -1,0 +1,54 @@
+{
+ "species": "Rabbit",
+ "asset": "FMS_Rabbit",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Rabbit_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Hop": {
+   "take": "Rabbit_Hop",
+   "seconds": 0.6,
+   "last_frame": 18,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 3,
+     "time": 0.1,
+     "stringParameter": "FrontOff"
+    },
+    {
+     "name": "Footstep",
+     "frame": 5,
+     "time": 0.1667,
+     "stringParameter": "Takeoff"
+    },
+    {
+     "name": "Footstep",
+     "frame": 11,
+     "time": 0.3667,
+     "stringParameter": "LandFront"
+    },
+    {
+     "name": "Footstep",
+     "frame": 13,
+     "time": 0.4333,
+     "stringParameter": "LandHind"
+    }
+   ]
+  },
+  "Nibble": {
+   "take": "Rabbit_Nibble",
+   "seconds": 2.0,
+   "last_frame": 60,
+   "loop": true,
+   "events": []
+  }
+ }
+}

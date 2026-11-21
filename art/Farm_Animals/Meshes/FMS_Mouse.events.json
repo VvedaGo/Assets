@@ -1,0 +1,80 @@
+{
+ "species": "Mouse",
+ "asset": "FMS_Mouse",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Mouse_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": [
+    {
+     "name": "Sniff",
+     "frame": 4,
+     "time": 0.1333,
+     "stringParameter": ""
+    },
+    {
+     "name": "Sniff",
+     "frame": 36,
+     "time": 1.2,
+     "stringParameter": ""
+    },
+    {
+     "name": "Sniff",
+     "frame": 63,
+     "time": 2.1,
+     "stringParameter": ""
+    }
+   ]
+  },
+  "Scurry": {
+   "take": "Mouse_Scurry",
+   "seconds": 0.267,
+   "last_frame": 8,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "FrontR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 4,
+     "time": 0.1333,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 4,
+     "time": 0.1333,
+     "stringParameter": "HindR"
+    }
+   ]
+  },
+  "Nibble": {
+   "take": "Mouse_Nibble",
+   "seconds": 2.0,
+   "last_frame": 60,
+   "loop": true,
+   "events": [
+    {
+     "name": "Nibble",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "Start"
+    }
+   ]
+  }
+ }
+}

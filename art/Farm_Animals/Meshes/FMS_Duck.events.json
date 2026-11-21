@@ -1,0 +1,68 @@
+{
+ "species": "Duck",
+ "asset": "FMS_Duck",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Duck_Idle",
+   "seconds": 3.5,
+   "last_frame": 105,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Duck_Walk",
+   "seconds": 0.9,
+   "last_frame": 27,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 14,
+     "time": 0.4667,
+     "stringParameter": "LegR"
+    }
+   ],
+   "speed_mps": 0.1
+  },
+  "Swim": {
+   "take": "Duck_Swim",
+   "seconds": 2.0,
+   "last_frame": 60,
+   "loop": true,
+   "events": [
+    {
+     "name": "Paddle",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Paddle",
+     "frame": 15,
+     "time": 0.5,
+     "stringParameter": "LegR"
+    },
+    {
+     "name": "Paddle",
+     "frame": 30,
+     "time": 1.0,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Paddle",
+     "frame": 45,
+     "time": 1.5,
+     "stringParameter": "LegR"
+    }
+   ]
+  }
+ }
+}

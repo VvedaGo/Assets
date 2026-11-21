@@ -1,0 +1,772 @@
+{
+ "asset": "FMS_Duck",
+ "tris": 894,
+ "bones": 20,
+ "rig": {
+  "bones": 20,
+  "names_ok": true,
+  "hierarchy_ok": true,
+  "roll_bad": []
+ },
+ "clips": {
+  "Idle": {
+   "frames": 106,
+   "seconds": 3.5,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "lowest_vertex_m": -0.0,
+   "lowest_frame": 33,
+   "lowest_at": [
+    0.035,
+    0.009,
+    -0.0
+   ],
+   "neck_yaw_total_deg": 35.0,
+   "joint_ranges_deg": {
+    "Beak_Lower.x": [
+     0.0,
+     12.0
+    ],
+    "Body.x": [
+     -0.8,
+     0.8
+    ],
+    "Foot.L.x": [
+     -20.9,
+     -18.2
+    ],
+    "Foot.R.x": [
+     -20.9,
+     -18.2
+    ],
+    "Head.x": [
+     -3.0,
+     28.0
+    ],
+    "Head.y": [
+     -6.0,
+     5.0
+    ],
+    "Head.z": [
+     -24.5,
+     21.0
+    ],
+    "LegLower.L.x": [
+     32.7,
+     38.0
+    ],
+    "LegLower.R.x": [
+     32.7,
+     38.0
+    ],
+    "LegUpper.L.x": [
+     -18.0,
+     -13.7
+    ],
+    "LegUpper.R.x": [
+     -18.0,
+     -13.7
+    ],
+    "Neck1.x": [
+     -1.4,
+     8.3
+    ],
+    "Neck2.y": [
+     -9.0,
+     10.5
+    ],
+    "TailFan1.x": [
+     -1.5,
+     1.5
+    ],
+    "TailFan1.z": [
+     -16.5,
+     15.9
+    ],
+    "TailFan2.z": [
+     -8.6,
+     8.5
+    ],
+    "WingUpper.L.z": [
+     -1.2,
+     -1.2
+    ],
+    "WingUpper.R.z": [
+     1.2,
+     1.2
+    ]
+   },
+   "limit_violations": []
+  },
+  "Walk": {
+   "frames": 28,
+   "seconds": 0.9,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "lowest_vertex_m": -0.0015,
+   "lowest_frame": 26,
+   "lowest_at": [
+    -0.054,
+    0.013,
+    -0.001
+   ],
+   "foot_slip_m": 0.0005,
+   "foot_slip_pct_of_step": 0.97,
+   "step_m": 0.054,
+   "stance_foot_max_height_m": 0.0,
+   "speed_mps": 0.1,
+   "head_y_range_rel_body_m": 0.0099,
+   "head_world_drift_in_hold_mps": null,
+   "neck_yaw_total_deg": 4.0,
+   "joint_ranges_deg": {
+    "Body.y": [
+     -9.0,
+     9.0
+    ],
+    "Body.z": [
+     -3.0,
+     3.0
+    ],
+    "Foot.L.x": [
+     -41.9,
+     2.7
+    ],
+    "Foot.R.x": [
+     -41.4,
+     1.9
+    ],
+    "Head.x": [
+     -1.2,
+     1.3
+    ],
+    "LegLower.L.x": [
+     24.9,
+     79.0
+    ],
+    "LegLower.R.x": [
+     27.2,
+     80.0
+    ],
+    "LegUpper.L.x": [
+     -43.8,
+     1.8
+    ],
+    "LegUpper.L.z": [
+     -11.2,
+     10.6
+    ],
+    "LegUpper.R.x": [
+     -44.2,
+     2.9
+    ],
+    "LegUpper.R.z": [
+     -10.5,
+     11.1
+    ],
+    "Neck1.x": [
+     -3.0,
+     3.0
+    ],
+    "Neck2.x": [
+     -1.5,
+     1.5
+    ],
+    "Neck2.y": [
+     -4.0,
+     4.0
+    ],
+    "TailFan1.x": [
+     -2.4,
+     2.4
+    ],
+    "TailFan1.z": [
+     -8.0,
+     8.0
+    ],
+    "TailFan2.z": [
+     -4.8,
+     4.8
+    ],
+    "WingUpper.L.z": [
+     -3.6,
+     -0.0
+    ],
+    "WingUpper.R.z": [
+     0.0,
+     3.6
+    ]
+   },
+   "limit_violations": []
+  },
+  "Swim": {
+   "frames": 61,
+   "seconds": 2.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "lowest_vertex_m": -0.0058,
+   "lowest_frame": 8,
+   "lowest_at": [
+    -0.071,
+    -0.016,
+    -0.006
+   ],
+   "neck_yaw_total_deg": 0.0,
+   "joint_ranges_deg": {
+    "Body.x": [
+     -1.5,
+     1.5
+    ],
+    "Body.y": [
+     -2.0,
+     2.0
+    ],
+    "Foot.L.x": [
+     -59.3,
+     -20.2
+    ],
+    "Foot.R.x": [
+     -55.7,
+     -21.9
+    ],
+    "Head.x": [
+     -3.0,
+     -1.0
+    ],
+    "LegLower.L.x": [
+     51.3,
+     132.7
+    ],
+    "LegLower.R.x": [
+     57.1,
+     126.6
+    ],
+    "LegUpper.L.x": [
+     -57.2,
+     21.9
+    ],
+    "LegUpper.L.z": [
+     -5.3,
+     3.6
+    ],
+    "LegUpper.R.x": [
+     -53.0,
+     16.6
+    ],
+    "LegUpper.R.z": [
+     -3.8,
+     4.8
+    ],
+    "Neck1.x": [
+     2.0,
+     6.0
+    ],
+    "Neck2.x": [
+     -2.8,
+     -1.2
+    ],
+    "TailFan1.x": [
+     -2.0,
+     2.0
+    ],
+    "TailFan1.z": [
+     -9.9,
+     9.9
+    ],
+    "TailFan2.z": [
+     -6.0,
+     6.0
+    ],
+    "WingUpper.L.z": [
+     -1.2,
+     -1.2
+    ],
+    "WingUpper.R.z": [
+     1.2,
+     1.2
+    ]
+   },
+   "limit_violations": []
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Duck.fbx",
+  "takes": [
+   [
+    "Duck_Idle",
+    105.0
+   ],
+   [
+    "Duck_Walk",
+    27.0
+   ],
+   [
+    "Duck_Swim",
+    60.0
+   ]
+  ],
+  "limbs": 20,
+  "roots": [
+   {
+    "name": "Beak_Lower",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.298,
+     0.1437
+    ]
+   },
+   {
+    "name": "Body",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.17,
+     -0.0283
+    ]
+   },
+   {
+    "name": "Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0519,
+     0.3481,
+     0.1282
+    ]
+   },
+   {
+    "name": "Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0519,
+     0.3481,
+     0.1282
+    ]
+   },
+   {
+    "name": "Foot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.054,
+     0.012,
+     -0.0043
+    ]
+   },
+   {
+    "name": "Foot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.054,
+     0.012,
+     -0.0043
+    ]
+   },
+   {
+    "name": "Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.322,
+     0.0917
+    ]
+   },
+   {
+    "name": "LegLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.054,
+     0.056,
+     -0.0043
+    ]
+   },
+   {
+    "name": "LegLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.054,
+     0.056,
+     -0.0043
+    ]
+   },
+   {
+    "name": "LegUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.054,
+     0.11,
+     -0.0043
+    ]
+   },
+   {
+    "name": "LegUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.054,
+     0.11,
+     -0.0043
+    ]
+   },
+   {
+    "name": "Neck1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.215,
+     0.0837
+    ]
+   },
+   {
+    "name": "Neck2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.288,
+     0.0927
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "name": "TailFan1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.188,
+     -0.1383
+    ]
+   },
+   {
+    "name": "TailFan2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.2,
+     -0.1883
+    ]
+   },
+   {
+    "name": "WingLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.1,
+     0.163,
+     0.0317
+    ]
+   },
+   {
+    "name": "WingLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.1,
+     0.163,
+     0.0317
+    ]
+   },
+   {
+    "name": "WingTip.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.08,
+     0.205,
+     -0.0883
+    ]
+   },
+   {
+    "name": "WingTip.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.08,
+     0.205,
+     -0.0883
+    ]
+   },
+   {
+    "name": "WingUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.1,
+     0.215,
+     0.0517
+    ]
+   },
+   {
+    "name": "WingUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.1,
+     0.215,
+     0.0517
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 20,
+   "import_meshes": 21,
+   "import_actions": [
+    "Rig.001|Duck_Idle",
+    "Rig.001|Duck_Swim",
+    "Rig.001|Duck_Walk"
+   ],
+   "import_tris": 894,
+   "import_frame_ranges": {
+    "Rig.001|Duck_Idle": [
+     1.0,
+     106.0
+    ],
+    "Rig.001|Duck_Swim": [
+     1.0,
+     61.0
+    ],
+    "Rig.001|Duck_Walk": [
+     1.0,
+     28.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Duck_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Duck_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Duck_Idle": 0.0,
+    "Duck_Walk": 0.0,
+    "Duck_Swim": 0.0
+   }
+  }
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "species": "Duckling",
+ "asset": "FMS_Duckling",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Duckling_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Duckling_Walk",
+   "seconds": 0.533,
+   "last_frame": 16,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "LegR"
+    }
+   ],
+   "speed_mps": 0.05
+  },
+  "Swim": {
+   "take": "Duckling_Swim",
+   "seconds": 1.6,
+   "last_frame": 48,
+   "loop": true,
+   "events": [
+    {
+     "name": "Paddle",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Paddle",
+     "frame": 12,
+     "time": 0.4,
+     "stringParameter": "LegR"
+    },
+    {
+     "name": "Paddle",
+     "frame": 24,
+     "time": 0.8,
+     "stringParameter": "LegL"
+    },
+    {
+     "name": "Paddle",
+     "frame": 36,
+     "time": 1.2,
+     "stringParameter": "LegR"
+    }
+   ]
+  }
+ }
+}

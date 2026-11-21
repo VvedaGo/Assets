@@ -1,0 +1,55 @@
+{
+ "species": "Pig",
+ "asset": "FMS_Pig",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Pig_Idle",
+   "seconds": 3.5,
+   "last_frame": 105,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Pig_Walk",
+   "seconds": 0.9,
+   "last_frame": 27,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 7,
+     "time": 0.2333,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 14,
+     "time": 0.4667,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 20,
+     "time": 0.6667,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.34
+  },
+  "Root": {
+   "take": "Pig_Root",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  }
+ }
+}

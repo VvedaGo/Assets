@@ -1,0 +1,55 @@
+{
+ "species": "Fox",
+ "asset": "FMS_Fox",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Fox_Idle",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Fox_Walk",
+   "seconds": 1.1,
+   "last_frame": 33,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 16,
+     "time": 0.5333,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 25,
+     "time": 0.8333,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.4
+  },
+  "Lie_Idle": {
+   "take": "Fox_Lie_Idle",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  }
+ }
+}

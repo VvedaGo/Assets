@@ -1,0 +1,55 @@
+{
+ "species": "Ram",
+ "asset": "FMS_Ram",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Ram_Idle",
+   "seconds": 3.5,
+   "last_frame": 105,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Ram_Walk",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 15,
+     "time": 0.5,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 22,
+     "time": 0.7333,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.36
+  },
+  "Graze": {
+   "take": "Ram_Graze",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  }
+ }
+}

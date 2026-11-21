@@ -1,0 +1,183 @@
+{
+ "species": "Cow",
+ "asset": "FMS_Cow",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Cow_Idle",
+   "seconds": 3.6,
+   "last_frame": 108,
+   "loop": true,
+   "events": []
+  },
+  "Idle_Look": {
+   "take": "Cow_Idle_Look",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  },
+  "Eat": {
+   "take": "Cow_Eat",
+   "seconds": 2.0,
+   "last_frame": 60,
+   "loop": true,
+   "events": []
+  },
+  "Drink": {
+   "take": "Cow_Drink",
+   "seconds": 2.0,
+   "last_frame": 60,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "take": "Cow_Walk",
+   "seconds": 1.0,
+   "last_frame": 30,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 15,
+     "time": 0.5,
+     "stringParameter": "HindR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 22,
+     "time": 0.7333,
+     "stringParameter": "FrontR"
+    }
+   ],
+   "speed_mps": 0.9
+  },
+  "Run": {
+   "take": "Cow_Run",
+   "seconds": 0.6,
+   "last_frame": 18,
+   "loop": true,
+   "events": [
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "FrontR"
+    },
+    {
+     "name": "Footstep",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "HindL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 9,
+     "time": 0.3,
+     "stringParameter": "FrontL"
+    },
+    {
+     "name": "Footstep",
+     "frame": 9,
+     "time": 0.3,
+     "stringParameter": "HindR"
+    }
+   ],
+   "speed_mps": 2.0
+  },
+  "Lie_Down": {
+   "take": "Cow_Lie_Down",
+   "seconds": 1.5,
+   "last_frame": 45,
+   "loop": false,
+   "events": []
+  },
+  "Lie_Idle": {
+   "take": "Cow_Lie_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Sleep": {
+   "take": "Cow_Sleep",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  },
+  "Stand_Up": {
+   "take": "Cow_Stand_Up",
+   "seconds": 1.5,
+   "last_frame": 45,
+   "loop": false,
+   "events": []
+  },
+  "Hit_React": {
+   "take": "Cow_Hit_React",
+   "seconds": 0.6,
+   "last_frame": 18,
+   "loop": false,
+   "events": []
+  },
+  "Moo": {
+   "take": "Cow_Moo",
+   "seconds": 2.0,
+   "last_frame": 60,
+   "loop": false,
+   "events": [
+    {
+     "name": "Vocal",
+     "frame": 16,
+     "time": 0.5333,
+     "stringParameter": "Moo"
+    }
+   ]
+  },
+  "Tail_Swish": {
+   "take": "Cow_Tail_Swish",
+   "seconds": 1.2,
+   "last_frame": 36,
+   "loop": true,
+   "events": [],
+   "keyed_bones_only": [
+    "Tail1",
+    "Tail2",
+    "Tail3"
+   ],
+   "unity_clip_mask": {
+    "note": "The Blender FBX baker writes curves for every bone in every take (NLA path forces it), so this take also holds rest-pose curves for the other 24 bones. On import set ModelImporterClipAnimation.maskType = CopyFromOther with an AvatarMask whose active transforms are only Tail1-3; the imported clip then contains tail curves only and can play on a Tail layer over any clip.",
+    "active_transforms": [
+     "Rig/Root/Pelvis/Tail1",
+     "Rig/Root/Pelvis/Tail1/Tail2",
+     "Rig/Root/Pelvis/Tail1/Tail2/Tail3"
+    ],
+    "inactive_parents": [
+     "Rig",
+     "Rig/Root",
+     "Rig/Root/Pelvis"
+    ]
+   }
+  },
+  "Graze": {
+   "take": "Cow_Graze",
+   "seconds": 4.0,
+   "last_frame": 120,
+   "loop": true,
+   "events": []
+  }
+ }
+}

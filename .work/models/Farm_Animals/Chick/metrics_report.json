@@ -1,0 +1,682 @@
+{
+ "asset": "FMS_Chick",
+ "tris": 406,
+ "bones": 16,
+ "rig": {
+  "bones": 16,
+  "names_ok": true,
+  "hierarchy_ok": true,
+  "roll_bad": []
+ },
+ "clips": {
+  "Idle": {
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "lowest_vertex_m": -0.0003,
+   "lowest_frame": 9,
+   "lowest_at": [
+    0.018,
+    -0.002,
+    -0.0
+   ],
+   "neck_yaw_total_deg": 38.0,
+   "joint_ranges_deg": {
+    "Body.x": [
+     -1.0,
+     1.0
+    ],
+    "Foot.L.x": [
+     -12.7,
+     -10.4
+    ],
+    "Foot.R.x": [
+     -12.7,
+     -10.4
+    ],
+    "Head.x": [
+     -4.0,
+     6.0
+    ],
+    "Head.y": [
+     -14.0,
+     12.0
+    ],
+    "Head.z": [
+     -24.5,
+     26.6
+    ],
+    "LegLower.L.x": [
+     36.9,
+     46.3
+    ],
+    "LegLower.R.x": [
+     36.9,
+     46.3
+    ],
+    "LegUpper.L.x": [
+     -34.5,
+     -25.7
+    ],
+    "LegUpper.R.x": [
+     -34.5,
+     -25.7
+    ],
+    "Neck.x": [
+     -1.5,
+     1.5
+    ],
+    "Neck.y": [
+     -11.4,
+     10.5
+    ],
+    "TailFan1.x": [
+     -4.0,
+     4.0
+    ],
+    "TailFan1.z": [
+     -6.0,
+     6.0
+    ],
+    "WingLower.L.z": [
+     -4.6,
+     0.0
+    ],
+    "WingLower.R.z": [
+     0.0,
+     4.6
+    ],
+    "WingUpper.L.z": [
+     -9.3,
+     -1.0
+    ],
+    "WingUpper.R.z": [
+     1.0,
+     9.3
+    ]
+   },
+   "limit_violations": []
+  },
+  "Walk": {
+   "frames": 17,
+   "seconds": 0.533,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "lowest_vertex_m": -0.0013,
+   "lowest_frame": 0,
+   "lowest_at": [
+    -0.018,
+    0.007,
+    -0.001
+   ],
+   "foot_slip_m": 0.0,
+   "foot_slip_pct_of_step": 0.13,
+   "step_m": 0.018,
+   "stance_foot_max_height_m": 0.0,
+   "speed_mps": 0.06,
+   "head_y_range_rel_body_m": 0.0067,
+   "head_world_drift_in_hold_mps": null,
+   "neck_yaw_total_deg": 0.0,
+   "joint_ranges_deg": {
+    "Body.x": [
+     3.0,
+     3.0
+    ],
+    "Body.y": [
+     -4.0,
+     4.0
+    ],
+    "Body.z": [
+     -3.0,
+     3.0
+    ],
+    "Foot.L.x": [
+     -31.8,
+     10.2
+    ],
+    "Foot.R.x": [
+     -31.8,
+     10.2
+    ],
+    "Head.x": [
+     -18.8,
+     9.9
+    ],
+    "LegLower.L.x": [
+     39.6,
+     95.1
+    ],
+    "LegLower.R.x": [
+     39.6,
+     95.1
+    ],
+    "LegUpper.L.x": [
+     -83.8,
+     -24.7
+    ],
+    "LegUpper.L.z": [
+     -4.1,
+     4.5
+    ],
+    "LegUpper.R.x": [
+     -83.8,
+     -24.7
+    ],
+    "LegUpper.R.z": [
+     -4.5,
+     4.1
+    ],
+    "Neck.x": [
+     -13.4,
+     15.8
+    ],
+    "TailFan1.x": [
+     -7.8,
+     7.8
+    ],
+    "TailFan1.z": [
+     -4.0,
+     4.0
+    ],
+    "WingLower.L.z": [
+     -3.5,
+     0.0
+    ],
+    "WingLower.R.z": [
+     0.0,
+     3.5
+    ],
+    "WingUpper.L.z": [
+     -8.0,
+     -1.1
+    ],
+    "WingUpper.R.z": [
+     1.1,
+     8.0
+    ]
+   },
+   "limit_violations": []
+  },
+  "Peck": {
+   "frames": 61,
+   "seconds": 2.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "loop_closure_loc_m": 0.0,
+   "lowest_vertex_m": -0.0012,
+   "lowest_frame": 18,
+   "lowest_at": [
+    0.018,
+    -0.001,
+    -0.001
+   ],
+   "beak_tip_min_z_m": 0.003,
+   "beak_tip_max_z_m": 0.0777,
+   "neck_yaw_total_deg": 15.0,
+   "joint_ranges_deg": {
+    "Body.x": [
+     0.0,
+     34.0
+    ],
+    "Foot.L.x": [
+     2.5,
+     27.1
+    ],
+    "Foot.R.x": [
+     -12.9,
+     7.0
+    ],
+    "Head.x": [
+     4.8,
+     66.9
+    ],
+    "Head.y": [
+     0.0,
+     10.0
+    ],
+    "Head.z": [
+     -12.0,
+     15.0
+    ],
+    "LegLower.L.x": [
+     37.2,
+     37.4
+    ],
+    "LegLower.R.x": [
+     47.0,
+     72.8
+    ],
+    "LegUpper.L.x": [
+     -98.4,
+     -39.9
+    ],
+    "LegUpper.R.x": [
+     -113.8,
+     -34.0
+    ],
+    "Neck.x": [
+     -35.0,
+     -4.7
+    ],
+    "TailFan1.x": [
+     0.0,
+     26.0
+    ],
+    "WingUpper.L.z": [
+     -8.0,
+     0.0
+    ],
+    "WingUpper.R.z": [
+     0.0,
+     8.0
+    ]
+   },
+   "limit_violations": []
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Chick.fbx",
+  "takes": [
+   [
+    "Chick_Idle",
+    90.0
+   ],
+   [
+    "Chick_Walk",
+    16.0
+   ],
+   [
+    "Chick_Peck",
+    60.0
+   ]
+  ],
+  "limbs": 16,
+  "roots": [
+   {
+    "name": "Beak_Lower",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.0854,
+     0.0474
+    ]
+   },
+   {
+    "name": "Body",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.046,
+     -0.01
+    ]
+   },
+   {
+    "name": "Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.025,
+     0.0944,
+     0.0498
+    ]
+   },
+   {
+    "name": "Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.025,
+     0.0944,
+     0.0498
+    ]
+   },
+   {
+    "name": "Foot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.016,
+     0.002,
+     -0.002
+    ]
+   },
+   {
+    "name": "Foot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.016,
+     0.002,
+     -0.002
+    ]
+   },
+   {
+    "name": "Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.074,
+     0.004
+    ]
+   },
+   {
+    "name": "LegLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.016,
+     0.022,
+     -0.002
+    ]
+   },
+   {
+    "name": "LegLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.016,
+     0.022,
+     -0.002
+    ]
+   },
+   {
+    "name": "LegUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.016,
+     0.03,
+     -0.002
+    ]
+   },
+   {
+    "name": "LegUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.016,
+     0.03,
+     -0.002
+    ]
+   },
+   {
+    "name": "Neck",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.06,
+     -0.004
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "name": "TailFan1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.058,
+     -0.036
+    ]
+   },
+   {
+    "name": "WingLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.04,
+     0.043,
+     0.002
+    ]
+   },
+   {
+    "name": "WingLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.04,
+     0.043,
+     0.002
+    ]
+   },
+   {
+    "name": "WingUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.038,
+     0.044,
+     0.008
+    ]
+   },
+   {
+    "name": "WingUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.038,
+     0.044,
+     0.008
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 16,
+   "import_meshes": 17,
+   "import_actions": [
+    "Rig.001|Chick_Idle",
+    "Rig.001|Chick_Peck",
+    "Rig.001|Chick_Walk"
+   ],
+   "import_tris": 406,
+   "import_frame_ranges": {
+    "Rig.001|Chick_Idle": [
+     1.0,
+     91.0
+    ],
+    "Rig.001|Chick_Peck": [
+     1.0,
+     61.0
+    ],
+    "Rig.001|Chick_Walk": [
+     1.0,
+     17.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Chick_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Chick_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Chick_Idle": 0.0,
+    "Chick_Walk": 0.0,
+    "Chick_Peck": 0.0
+   }
+  }
+ }
+}

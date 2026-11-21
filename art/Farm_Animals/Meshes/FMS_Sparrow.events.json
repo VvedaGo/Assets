@@ -1,0 +1,62 @@
+{
+ "species": "Sparrow",
+ "asset": "FMS_Sparrow",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Sparrow_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Hop": {
+   "take": "Sparrow_Hop",
+   "seconds": 0.5,
+   "last_frame": 15,
+   "loop": true,
+   "events": [
+    {
+     "name": "Land",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": "Both"
+    },
+    {
+     "name": "Takeoff",
+     "frame": 6,
+     "time": 0.2,
+     "stringParameter": "Both"
+    }
+   ],
+   "speed_mps": 0.12
+  },
+  "Fly": {
+   "take": "Sparrow_Fly",
+   "seconds": 0.8,
+   "last_frame": 24,
+   "loop": true,
+   "events": [
+    {
+     "name": "Flap",
+     "frame": 0,
+     "time": 0.0,
+     "stringParameter": ""
+    },
+    {
+     "name": "Flap",
+     "frame": 8,
+     "time": 0.2667,
+     "stringParameter": ""
+    },
+    {
+     "name": "Flap",
+     "frame": 16,
+     "time": 0.5333,
+     "stringParameter": ""
+    }
+   ]
+  }
+ }
+}

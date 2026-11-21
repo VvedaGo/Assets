@@ -1,0 +1,1021 @@
+{
+ "asset": "FMS_Hedgehog",
+ "tris": 1166,
+ "bones": 22,
+ "rig": {
+  "bones": 22,
+  "names_ok": true,
+  "hierarchy_ok": true,
+  "roll_bad": []
+ },
+ "blended_vertices": 64,
+ "clips": {
+  "Idle": {
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0,
+   "lowest_frame": 32,
+   "neck_yaw_total_deg": 10.0,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -13.7,
+     0.0
+    ],
+    "Ear.L.z": [
+     0.0,
+     5.9
+    ],
+    "Ear.R.x": [
+     -13.7,
+     0.0
+    ],
+    "Ear.R.z": [
+     -5.9,
+     0.0
+    ],
+    "FrontFoot.L.x": [
+     -16.6,
+     -0.5
+    ],
+    "FrontFoot.R.x": [
+     -16.6,
+     -0.5
+    ],
+    "FrontLower.L.x": [
+     0.8,
+     29.2
+    ],
+    "FrontLower.R.x": [
+     0.8,
+     29.2
+    ],
+    "FrontUpper.L.x": [
+     -12.8,
+     -0.0
+    ],
+    "FrontUpper.R.x": [
+     -12.8,
+     -0.0
+    ],
+    "Head.x": [
+     -4.3,
+     0.0
+    ],
+    "Head.z": [
+     -6.0,
+     6.0
+    ],
+    "HindFoot.L.x": [
+     0.5,
+     11.2
+    ],
+    "HindFoot.R.x": [
+     0.5,
+     11.2
+    ],
+    "HindLower.L.x": [
+     -19.6,
+     -0.8
+    ],
+    "HindLower.R.x": [
+     -19.6,
+     -0.8
+    ],
+    "HindUpper.L.x": [
+     0.3,
+     8.4
+    ],
+    "HindUpper.R.x": [
+     0.3,
+     8.4
+    ],
+    "Neck1.x": [
+     -3.5,
+     0.0
+    ],
+    "Neck1.z": [
+     -4.0,
+     4.0
+    ],
+    "Nose.x": [
+     -9.0,
+     9.0
+    ],
+    "Nose.z": [
+     -5.8,
+     6.0
+    ],
+    "Spine1.x": [
+     -0.6,
+     0.6
+    ],
+    "Spine2.x": [
+     -0.4,
+     0.4
+    ]
+   },
+   "limit_violations": [],
+   "loop_closure_loc_m": 0.0
+  },
+  "Walk": {
+   "frames": 16,
+   "seconds": 0.5,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0007,
+   "lowest_frame": 10,
+   "foot_slip_m": 0.0009,
+   "foot_slip_pct_of_step": 2.54,
+   "step_m": 0.034,
+   "stance_foot_max_height_m": 0.0,
+   "speed_mps": 0.11,
+   "neck_yaw_total_deg": 2.0,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -3.0,
+     2.9
+    ],
+    "Ear.R.x": [
+     -3.0,
+     3.0
+    ],
+    "FrontFoot.L.x": [
+     -63.6,
+     3.9
+    ],
+    "FrontFoot.R.x": [
+     -63.5,
+     4.8
+    ],
+    "FrontLower.L.x": [
+     35.6,
+     83.4
+    ],
+    "FrontLower.R.x": [
+     35.4,
+     83.2
+    ],
+    "FrontUpper.L.x": [
+     -49.5,
+     3.7
+    ],
+    "FrontUpper.L.z": [
+     -1.8,
+     1.7
+    ],
+    "FrontUpper.R.x": [
+     -48.8,
+     4.5
+    ],
+    "FrontUpper.R.z": [
+     -1.7,
+     1.9
+    ],
+    "Head.x": [
+     -1.0,
+     1.0
+    ],
+    "HindFoot.L.x": [
+     -0.4,
+     69.9
+    ],
+    "HindFoot.R.x": [
+     -0.8,
+     67.2
+    ],
+    "HindLower.L.x": [
+     -97.1,
+     -30.7
+    ],
+    "HindLower.R.x": [
+     -95.7,
+     -34.1
+    ],
+    "HindUpper.L.x": [
+     -9.8,
+     56.7
+    ],
+    "HindUpper.L.z": [
+     -3.1,
+     2.8
+    ],
+    "HindUpper.R.x": [
+     -5.7,
+     56.4
+    ],
+    "HindUpper.R.z": [
+     -2.8,
+     3.2
+    ],
+    "Neck1.x": [
+     -1.5,
+     1.7
+    ],
+    "Neck1.z": [
+     -2.0,
+     2.0
+    ],
+    "Nose.x": [
+     -6.0,
+     6.0
+    ],
+    "Nose.z": [
+     -3.6,
+     3.5
+    ],
+    "Pelvis.x": [
+     -1.7,
+     1.6
+    ],
+    "Pelvis.y": [
+     -2.0,
+     2.0
+    ],
+    "Spine1.z": [
+     -2.5,
+     2.5
+    ],
+    "Spine2.z": [
+     -2.5,
+     2.5
+    ]
+   },
+   "limit_violations": [],
+   "loop_closure_loc_m": 0.0
+  },
+  "Curl_Up": {
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0,
+   "lowest_frame": 21,
+   "neck_yaw_total_deg": 0.0,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -60.0,
+     0.0
+    ],
+    "Ear.R.x": [
+     -60.0,
+     0.0
+    ],
+    "FrontFoot.L.x": [
+     -0.5,
+     0.0
+    ],
+    "FrontFoot.R.x": [
+     -0.5,
+     0.0
+    ],
+    "FrontLower.L.x": [
+     0.0,
+     0.8
+    ],
+    "FrontLower.R.x": [
+     0.0,
+     0.8
+    ],
+    "FrontUpper.L.x": [
+     -0.3,
+     30.0
+    ],
+    "FrontUpper.R.x": [
+     -0.3,
+     30.0
+    ],
+    "Head.x": [
+     0.0,
+     10.0
+    ],
+    "HindFoot.L.x": [
+     0.0,
+     0.5
+    ],
+    "HindFoot.R.x": [
+     0.0,
+     0.5
+    ],
+    "HindLower.L.x": [
+     -0.8,
+     0.0
+    ],
+    "HindLower.R.x": [
+     -0.8,
+     0.0
+    ],
+    "HindUpper.L.x": [
+     -30.0,
+     0.3
+    ],
+    "HindUpper.R.x": [
+     -30.0,
+     0.3
+    ],
+    "Neck1.x": [
+     0.0,
+     15.0
+    ],
+    "Neck2.x": [
+     0.0,
+     10.0
+    ],
+    "Pelvis.x": [
+     -115.0,
+     0.0
+    ],
+    "Spine1.x": [
+     0.0,
+     116.2
+    ],
+    "Spine2.x": [
+     0.0,
+     115.8
+    ]
+   },
+   "limit_violations": [],
+   "loop_closure_loc_m": 0.0,
+   "ball": {
+    "hold": [
+     31,
+     55
+    ],
+    "hidden_check": {
+     "f31": {
+      "outside_shell": 148,
+      "visible": 0,
+      "of": 360,
+      "worst_out_m": 0.0189,
+      "outside_parts": {
+       "Head": 53,
+       "Jaw": 5,
+       "Nose": 6,
+       "Ear.L": 13,
+       "Ear.R": 13,
+       "FrontLower.L": 8,
+       "FrontFoot.L": 17,
+       "FrontLower.R": 8,
+       "FrontFoot.R": 17,
+       "HindLower.L": 4,
+       "HindLower.R": 4
+      },
+      "visible_parts": {}
+     },
+     "f43": {
+      "outside_shell": 150,
+      "visible": 0,
+      "of": 360,
+      "worst_out_m": 0.0198,
+      "outside_parts": {
+       "Head": 53,
+       "Jaw": 5,
+       "Nose": 6,
+       "Ear.L": 13,
+       "Ear.R": 13,
+       "FrontLower.L": 8,
+       "FrontFoot.L": 18,
+       "FrontLower.R": 8,
+       "FrontFoot.R": 18,
+       "HindLower.L": 4,
+       "HindLower.R": 4
+      },
+      "visible_parts": {}
+     },
+     "f55": {
+      "outside_shell": 151,
+      "visible": 0,
+      "of": 360,
+      "worst_out_m": 0.019,
+      "outside_parts": {
+       "Head": 54,
+       "Jaw": 5,
+       "Nose": 6,
+       "Ear.L": 13,
+       "Ear.R": 13,
+       "FrontLower.L": 7,
+       "FrontFoot.L": 19,
+       "FrontLower.R": 7,
+       "FrontFoot.R": 19,
+       "HindLower.L": 4,
+       "HindLower.R": 4
+      },
+      "visible_parts": {}
+     }
+    }
+   }
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Hedgehog.fbx",
+  "takes": [
+   [
+    "Hedgehog_Idle",
+    90.0
+   ],
+   [
+    "Hedgehog_Walk",
+    15.0
+   ],
+   [
+    "Hedgehog_Curl_Up",
+    90.0
+   ]
+  ],
+  "limbs": 22,
+  "roots": [
+   {
+    "name": "FMS_Hedgehog_Ear.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0535,
+     0.0911,
+     0.0671
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Ear.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0535,
+     0.0911,
+     0.0671
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0323,
+     0.0728,
+     0.0926
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.0323,
+     0.0728,
+     0.0926
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_FrontFoot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.032,
+     0.01,
+     0.0561
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_FrontFoot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.032,
+     0.01,
+     0.0561
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_FrontLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.032,
+     0.04,
+     0.0561
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_FrontLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.032,
+     0.04,
+     0.0561
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_FrontUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.032,
+     0.052,
+     0.0561
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_FrontUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.032,
+     0.052,
+     0.0561
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.064,
+     0.0561
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_HindFoot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.037,
+     0.01,
+     -0.0519
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_HindFoot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.037,
+     0.01,
+     -0.0519
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_HindLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.037,
+     0.04,
+     -0.0519
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_HindLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.037,
+     0.04,
+     -0.0519
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_HindUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.037,
+     0.052,
+     -0.0519
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_HindUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.037,
+     0.052,
+     -0.0519
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Jaw",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.0376,
+     0.0545
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Neck1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.062,
+     0.0261
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Neck2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.063,
+     0.0411
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Nose",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.0508,
+     0.0996
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Pelvis",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.068,
+     -0.0611
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Spikes_Neck",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.062,
+     0.0261
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Spikes_Pelvis",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.068,
+     -0.0611
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Spikes_Spine1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.068,
+     -0.0395
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Spikes_Spine2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.068,
+     0.0073
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Spine1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.068,
+     -0.0395
+    ]
+   },
+   {
+    "name": "FMS_Hedgehog_Spine2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.068,
+     0.0073
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 22,
+   "import_meshes": 28,
+   "import_actions": [
+    "Rig.001|Hedgehog_Curl_Up",
+    "Rig.001|Hedgehog_Idle",
+    "Rig.001|Hedgehog_Walk"
+   ],
+   "import_tris": 1166,
+   "import_frame_ranges": {
+    "Rig.001|Hedgehog_Curl_Up": [
+     1.0,
+     91.0
+    ],
+    "Rig.001|Hedgehog_Idle": [
+     1.0,
+     91.0
+    ],
+    "Rig.001|Hedgehog_Walk": [
+     1.0,
+     16.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Hedgehog_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Hedgehog_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Hedgehog_Idle": 0.0,
+    "Hedgehog_Walk": 0.0,
+    "Hedgehog_Curl_Up": 0.0
+   }
+  }
+ }
+}

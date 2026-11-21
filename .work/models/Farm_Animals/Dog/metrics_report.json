@@ -1,0 +1,1197 @@
+{
+ "asset": "FMS_Dog",
+ "tris": 1800,
+ "bones": 26,
+ "rig": {
+  "bones": 26,
+  "names_ok": true,
+  "hierarchy_ok": true,
+  "roll_bad": []
+ },
+ "blended_vertices": 244,
+ "clips": {
+  "Idle": {
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0026,
+   "lowest_frame": 58,
+   "neck_yaw_total_deg": 8.9,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -12.4,
+     1.5
+    ],
+    "Ear.L.z": [
+     0.0,
+     7.9
+    ],
+    "Ear.R.x": [
+     -15.3,
+     1.5
+    ],
+    "Ear.R.z": [
+     -8.0,
+     0.0
+    ],
+    "FrontFoot.L.x": [
+     -8.6,
+     -3.6
+    ],
+    "FrontFoot.R.x": [
+     -8.6,
+     -3.6
+    ],
+    "FrontLower.L.x": [
+     6.9,
+     13.7
+    ],
+    "FrontLower.R.x": [
+     6.9,
+     13.7
+    ],
+    "FrontUpper.L.x": [
+     -1.4,
+     2.8
+    ],
+    "FrontUpper.L.z": [
+     -2.3,
+     2.3
+    ],
+    "FrontUpper.R.x": [
+     -1.4,
+     2.8
+    ],
+    "FrontUpper.R.z": [
+     -2.3,
+     2.3
+    ],
+    "Head.x": [
+     -1.5,
+     1.5
+    ],
+    "Head.z": [
+     -6.0,
+     6.0
+    ],
+    "HindFoot.L.x": [
+     10.3,
+     14.5
+    ],
+    "HindFoot.R.x": [
+     10.3,
+     14.5
+    ],
+    "HindLower.L.x": [
+     -28.3,
+     -22.1
+    ],
+    "HindLower.R.x": [
+     -28.3,
+     -22.1
+    ],
+    "HindUpper.L.x": [
+     13.9,
+     20.7
+    ],
+    "HindUpper.L.z": [
+     -1.4,
+     1.4
+    ],
+    "HindUpper.R.x": [
+     13.9,
+     20.7
+    ],
+    "HindUpper.R.z": [
+     -1.4,
+     1.4
+    ],
+    "Neck1.x": [
+     -1.0,
+     1.0
+    ],
+    "Neck1.z": [
+     -3.0,
+     3.0
+    ],
+    "Pelvis.x": [
+     -5.8,
+     -2.7
+    ],
+    "Pelvis.z": [
+     -2.3,
+     2.3
+    ],
+    "Ruff.x": [
+     -0.6,
+     0.6
+    ],
+    "Spine1.x": [
+     -1.3,
+     1.3
+    ],
+    "Spine2.x": [
+     -0.8,
+     0.8
+    ],
+    "Tail1.x": [
+     14.0,
+     14.0
+    ],
+    "Tail1.z": [
+     -24.0,
+     24.0
+    ],
+    "Tail2.x": [
+     6.0,
+     6.0
+    ],
+    "Tail2.z": [
+     -32.0,
+     32.0
+    ],
+    "Tail3.x": [
+     2.0,
+     2.0
+    ],
+    "Tail3.z": [
+     -40.0,
+     40.0
+    ]
+   },
+   "limit_violations": [],
+   "legs": {
+    "wrong_way_frames": 0,
+    "wrong_examples": [],
+    "flex_deg": {
+     "FrontL": [
+      3.6,
+      10.5
+     ],
+     "FrontR": [
+      3.6,
+      10.5
+     ],
+     "HindL": [
+      -44.9,
+      -38.7
+     ],
+     "HindR": [
+      -44.9,
+      -38.7
+     ]
+    },
+    "front_stance_bow_m": null,
+    "min_same_side_paw_gap_m": 0.466,
+    "min_left_right_paw_gap_m": 0.26
+   },
+   "tail_tip_lateral_m": [
+    -0.329,
+    0.333
+   ],
+   "wag_hz": 2.333
+  },
+  "Walk": {
+   "frames": 35,
+   "seconds": 1.133,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0014,
+   "lowest_frame": 7,
+   "foot_slip_m": 0.0011,
+   "foot_slip_pct_of_step": 0.31,
+   "step_m": 0.36,
+   "stance_foot_max_height_m": 0.0,
+   "speed_mps": 0.5294117647058824,
+   "neck_yaw_total_deg": 0.3,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -4.0,
+     4.0
+    ],
+    "Ear.R.x": [
+     -4.0,
+     3.9
+    ],
+    "FrontFoot.L.x": [
+     -34.2,
+     16.8
+    ],
+    "FrontFoot.R.x": [
+     -34.2,
+     16.8
+    ],
+    "FrontLower.L.x": [
+     3.5,
+     67.2
+    ],
+    "FrontLower.R.x": [
+     3.5,
+     67.2
+    ],
+    "FrontUpper.L.x": [
+     -32.5,
+     17.5
+    ],
+    "FrontUpper.L.z": [
+     -3.6,
+     3.3
+    ],
+    "FrontUpper.R.x": [
+     -32.5,
+     17.5
+    ],
+    "FrontUpper.R.z": [
+     -3.3,
+     3.6
+    ],
+    "Head.x": [
+     -1.8,
+     2.5
+    ],
+    "Head.z": [
+     -0.8,
+     0.8
+    ],
+    "HindFoot.L.x": [
+     -14.4,
+     59.4
+    ],
+    "HindFoot.R.x": [
+     -14.4,
+     59.4
+    ],
+    "HindLower.L.x": [
+     -50.3,
+     -3.4
+    ],
+    "HindLower.R.x": [
+     -50.3,
+     -3.4
+    ],
+    "HindUpper.L.x": [
+     -18.2,
+     25.0
+    ],
+    "HindUpper.L.z": [
+     -3.1,
+     1.8
+    ],
+    "HindUpper.R.x": [
+     -18.2,
+     25.0
+    ],
+    "HindUpper.R.z": [
+     -1.8,
+     3.1
+    ],
+    "Neck1.x": [
+     -1.1,
+     2.4
+    ],
+    "Neck1.y": [
+     -4.6,
+     4.6
+    ],
+    "Neck1.z": [
+     -1.0,
+     1.0
+    ],
+    "Pelvis.x": [
+     -4.6,
+     2.6
+    ],
+    "Pelvis.y": [
+     -1.5,
+     1.5
+    ],
+    "Ruff.x": [
+     -2.5,
+     2.5
+    ],
+    "Spine2.y": [
+     -4.6,
+     4.6
+    ],
+    "Tail1.x": [
+     -3.0,
+     3.0
+    ],
+    "Tail1.z": [
+     -8.0,
+     8.0
+    ],
+    "Tail2.x": [
+     -3.0,
+     3.0
+    ],
+    "Tail2.z": [
+     -12.0,
+     12.0
+    ],
+    "Tail3.x": [
+     -3.0,
+     3.0
+    ],
+    "Tail3.z": [
+     -16.0,
+     16.0
+    ]
+   },
+   "limit_violations": [],
+   "legs": {
+    "wrong_way_frames": 0,
+    "wrong_examples": [],
+    "flex_deg": {
+     "FrontL": [
+      0.2,
+      64.0
+     ],
+     "FrontR": [
+      0.2,
+      64.0
+     ],
+     "HindL": [
+      -66.9,
+      -20.1
+     ],
+     "HindR": [
+      -66.9,
+      -20.1
+     ]
+    },
+    "front_stance_bow_m": 0.0127,
+    "min_same_side_paw_gap_m": 0.2,
+    "min_left_right_paw_gap_m": 0.27
+   }
+  },
+  "Sit_Idle": {
+   "frames": 106,
+   "seconds": 3.5,
+   "loop": true,
+   "loop_closure_deg": 0.0,
+   "lowest_vertex_m": -0.0043,
+   "lowest_frame": 61,
+   "neck_yaw_total_deg": 8.8,
+   "joint_ranges_deg": {
+    "Ear.L.x": [
+     -12.6,
+     1.2
+    ],
+    "Ear.L.z": [
+     0.0,
+     7.9
+    ],
+    "Ear.R.x": [
+     -14.3,
+     1.2
+    ],
+    "Ear.R.z": [
+     -7.9,
+     0.0
+    ],
+    "FrontFoot.L.x": [
+     23.1,
+     24.6
+    ],
+    "FrontFoot.R.x": [
+     23.1,
+     24.6
+    ],
+    "FrontLower.L.x": [
+     13.6,
+     15.8
+    ],
+    "FrontLower.R.x": [
+     13.6,
+     15.8
+    ],
+    "FrontUpper.L.x": [
+     28.9,
+     30.2
+    ],
+    "FrontUpper.L.z": [
+     -5.8,
+     -5.6
+    ],
+    "FrontUpper.R.x": [
+     28.9,
+     30.2
+    ],
+    "FrontUpper.R.z": [
+     5.6,
+     5.8
+    ],
+    "Head.x": [
+     22.6,
+     25.0
+    ],
+    "Head.y": [
+     -5.0,
+     5.0
+    ],
+    "Head.z": [
+     -6.0,
+     6.0
+    ],
+    "HindFoot.L.x": [
+     11.1,
+     11.1
+    ],
+    "HindFoot.L.y": [
+     -7.1,
+     -7.1
+    ],
+    "HindFoot.L.z": [
+     65.1,
+     65.1
+    ],
+    "HindFoot.R.x": [
+     11.1,
+     11.1
+    ],
+    "HindFoot.R.y": [
+     7.1,
+     7.1
+    ],
+    "HindFoot.R.z": [
+     -65.1,
+     -65.1
+    ],
+    "HindLower.L.x": [
+     -127.7,
+     -127.7
+    ],
+    "HindLower.R.x": [
+     -127.7,
+     -127.7
+    ],
+    "HindUpper.L.x": [
+     50.6,
+     50.6
+    ],
+    "HindUpper.L.y": [
+     53.4,
+     53.4
+    ],
+    "HindUpper.L.z": [
+     -76.1,
+     -76.1
+    ],
+    "HindUpper.R.x": [
+     50.6,
+     50.6
+    ],
+    "HindUpper.R.y": [
+     -53.4,
+     -53.4
+    ],
+    "HindUpper.R.z": [
+     76.1,
+     76.1
+    ],
+    "Neck1.x": [
+     23.1,
+     24.5
+    ],
+    "Neck1.z": [
+     -3.0,
+     3.0
+    ],
+    "Neck2.x": [
+     20.4,
+     20.4
+    ],
+    "Pelvis.x": [
+     -54.0,
+     -54.0
+    ],
+    "Ruff.x": [
+     23.8,
+     28.2
+    ],
+    "Spine1.x": [
+     -6.6,
+     -5.4
+    ],
+    "Spine2.x": [
+     -9.6,
+     -6.4
+    ],
+    "Tail1.x": [
+     73.6,
+     73.6
+    ],
+    "Tail2.x": [
+     2.8,
+     7.6
+    ],
+    "Tail2.y": [
+     -0.4,
+     -0.4
+    ],
+    "Tail2.z": [
+     14.4,
+     21.6
+    ],
+    "Tail3.x": [
+     11.3,
+     27.3
+    ],
+    "Tail3.y": [
+     -2.3,
+     -2.3
+    ],
+    "Tail3.z": [
+     11.0,
+     27.6
+    ]
+   },
+   "limit_violations": [],
+   "legs": {
+    "wrong_way_frames": 0,
+    "wrong_examples": [],
+    "flex_deg": {
+     "FrontL": [
+      10.4,
+      12.5
+     ],
+     "FrontR": [
+      10.4,
+      12.5
+     ],
+     "HindL": [
+      -144.3,
+      -144.3
+     ],
+     "HindR": [
+      -144.3,
+      -144.3
+     ]
+    },
+    "front_stance_bow_m": null,
+    "min_same_side_paw_gap_m": 0.492,
+    "min_left_right_paw_gap_m": 0.35
+   },
+   "sit_pose": {
+    "pelvis_pitch": -54,
+    "torso_tilt": 57.356125884375494,
+    "shoulder_z": 0.433,
+    "hip_z": 0.093,
+    "front_leg": 0.521
+   }
+  }
+ },
+ "export": {
+  "fbx": "C:\\Users\\Sergv\\orca\\workspaces\\VFX\\master-3\\art\\Farm_Animals\\Meshes\\FMS_Dog.fbx",
+  "takes": [
+   [
+    "Dog_Idle",
+    90.0
+   ],
+   [
+    "Dog_Walk",
+    34.0
+   ],
+   [
+    "Dog_Sit_Idle",
+    105.0
+   ]
+  ],
+  "limbs": 26,
+  "roots": [
+   {
+    "name": "FMS_Dog_Ear.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.1314,
+     0.9907,
+     0.2425
+    ]
+   },
+   {
+    "name": "FMS_Dog_Ear.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.1314,
+     0.9907,
+     0.2425
+    ]
+   },
+   {
+    "name": "FMS_Dog_Eye.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.1242,
+     0.9239,
+     0.3821
+    ]
+   },
+   {
+    "name": "FMS_Dog_Eye.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.1242,
+     0.9239,
+     0.3821
+    ]
+   },
+   {
+    "name": "FMS_Dog_FrontFoot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.135,
+     0.03,
+     0.1185
+    ]
+   },
+   {
+    "name": "FMS_Dog_FrontFoot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.135,
+     0.03,
+     0.1185
+    ]
+   },
+   {
+    "name": "FMS_Dog_FrontLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.135,
+     0.255,
+     0.1015
+    ]
+   },
+   {
+    "name": "FMS_Dog_FrontLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.135,
+     0.255,
+     0.1015
+    ]
+   },
+   {
+    "name": "FMS_Dog_FrontUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.135,
+     0.52,
+     0.0965
+    ]
+   },
+   {
+    "name": "FMS_Dog_FrontUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.135,
+     0.52,
+     0.0965
+    ]
+   },
+   {
+    "name": "FMS_Dog_Head",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.81,
+     0.1768
+    ]
+   },
+   {
+    "name": "FMS_Dog_HindFoot.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.13,
+     0.03,
+     -0.3271
+    ]
+   },
+   {
+    "name": "FMS_Dog_HindFoot.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.13,
+     0.03,
+     -0.3271
+    ]
+   },
+   {
+    "name": "FMS_Dog_HindLower.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.13,
+     0.235,
+     -0.3501
+    ]
+   },
+   {
+    "name": "FMS_Dog_HindLower.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.13,
+     0.235,
+     -0.3501
+    ]
+   },
+   {
+    "name": "FMS_Dog_HindUpper.L",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.13,
+     0.54,
+     -0.2951
+    ]
+   },
+   {
+    "name": "FMS_Dog_HindUpper.R",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     -0.13,
+     0.54,
+     -0.2951
+    ]
+   },
+   {
+    "name": "FMS_Dog_Jaw",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.7224,
+     0.3666
+    ]
+   },
+   {
+    "name": "FMS_Dog_Neck1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.63,
+     0.0868
+    ]
+   },
+   {
+    "name": "FMS_Dog_Neck2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.755,
+     0.1468
+    ]
+   },
+   {
+    "name": "FMS_Dog_Nose",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.7983,
+     0.54
+    ]
+   },
+   {
+    "name": "FMS_Dog_Pelvis",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.592,
+     -0.2951
+    ]
+   },
+   {
+    "name": "FMS_Dog_Ruff",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.69,
+     0.1668
+    ]
+   },
+   {
+    "name": "FMS_Dog_Spine1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.58,
+     -0.2047
+    ]
+   },
+   {
+    "name": "FMS_Dog_Spine2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.58,
+     0.0212
+    ]
+   },
+   {
+    "name": "FMS_Dog_Tail1",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.6616,
+     -0.3817
+    ]
+   },
+   {
+    "name": "FMS_Dog_Tail2",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.6338,
+     -0.5057
+    ]
+   },
+   {
+    "name": "FMS_Dog_Tail3",
+    "type": "Mesh",
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "pos": [
+     0.0,
+     0.5849,
+     -0.6236
+    ]
+   },
+   {
+    "name": "Rig",
+    "type": "Null",
+    "rot": [
+     -90.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "reimport": {
+   "import_bones": 26,
+   "import_meshes": 28,
+   "import_actions": [
+    "Rig.001|Dog_Idle",
+    "Rig.001|Dog_Sit_Idle",
+    "Rig.001|Dog_Walk"
+   ],
+   "import_tris": 1800,
+   "import_frame_ranges": {
+    "Rig.001|Dog_Idle": [
+     1.0,
+     91.0
+    ],
+    "Rig.001|Dog_Sit_Idle": [
+     1.0,
+     106.0
+    ],
+    "Rig.001|Dog_Walk": [
+     1.0,
+     35.0
+    ]
+   },
+   "images": [
+    [
+     "T_FarmAnimals_Dog_BaseColor",
+     true
+    ],
+    [
+     "T_FarmAnimals_Dog_BaseColor.001",
+     true
+    ]
+   ],
+   "missing_parts": [],
+   "max_vertex_error_m": {
+    "Dog_Idle": 0.0,
+    "Dog_Walk": 0.0,
+    "Dog_Sit_Idle": 0.0
+   }
+  }
+ }
+}

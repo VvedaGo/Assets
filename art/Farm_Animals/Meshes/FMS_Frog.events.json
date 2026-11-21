@@ -1,0 +1,41 @@
+{
+ "species": "Frog",
+ "asset": "FMS_Frog",
+ "fps": 30,
+ "note": "Unity AnimationEvents to add on import (FBX does not carry them)",
+ "clips": {
+  "Idle": {
+   "take": "Frog_Idle",
+   "seconds": 3.0,
+   "last_frame": 90,
+   "loop": true,
+   "events": []
+  },
+  "Jump": {
+   "take": "Frog_Jump",
+   "seconds": 1.5,
+   "last_frame": 45,
+   "loop": true,
+   "events": [
+    {
+     "name": "Jump",
+     "frame": 17,
+     "time": 0.5667,
+     "stringParameter": "Takeoff"
+    },
+    {
+     "name": "Footstep",
+     "frame": 27,
+     "time": 0.9,
+     "stringParameter": "LandFront"
+    },
+    {
+     "name": "Land",
+     "frame": 29,
+     "time": 0.9667,
+     "stringParameter": "LandHind"
+    }
+   ]
+  }
+ }
+}
