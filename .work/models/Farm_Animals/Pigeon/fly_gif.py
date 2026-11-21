@@ -9,7 +9,7 @@ import os, sys, math
 import bpy
 from mathutils import Vector
 
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 SRC = os.path.join(REPO, '.work', 'models', 'Farm_Animals', '_common', 'anim_gif.py')
 SUN_FLY = (22, 0, -35)
 

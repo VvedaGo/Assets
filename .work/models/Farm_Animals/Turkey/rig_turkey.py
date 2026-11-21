@@ -8,7 +8,7 @@
 # Geometry, part names and pivots come unchanged from build_turkey.build(). Shared modules (_common) are used read-only;
 # skeleton 'BT' is registered in animal_rig.SKELETONS at runtime in this process only.
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Turkey'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

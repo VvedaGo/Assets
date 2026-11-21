@@ -11,7 +11,7 @@
 #  - bend test with flight extremes; meshcheck = built mesh vs the mesh-only FBX backup (mesh unchanged).
 # Geometry, part names and pivots come unchanged from build_<species>.build(). Shared modules (_common) are read-only.
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 HERE = REPO + r'\.work\models\Farm_Animals\Pigeon'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', HERE):
     if p not in sys.path: sys.path.insert(0, p)

@@ -9,7 +9,7 @@
 # Shared modules (_common/animal_*.py) are used read-only; the skeleton variant is registered at runtime in this process.
 # Structure copied from ../Lamb/rig_lamb.py (export_nla / reimport_check / events_json are local copies).
 import sys, os, math, json, importlib, copy
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Rabbit'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

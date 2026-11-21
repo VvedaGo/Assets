@@ -3,7 +3,7 @@
 # Uses ../Pigeon/rig_pigeon.py + ../Pigeon/pigeon_clips.py read-only (flight-capable copy of the Hen rig B toolkit):
 # only the species table lives here. Geometry, part names and pivots come unchanged from build_sparrow.build().
 import sys, os
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 HERE = REPO + r'\.work\models\Farm_Animals\Sparrow'
 for p in (REPO + r'\.work\models\Farm_Animals\Pigeon', HERE):
     if p not in sys.path: sys.path.insert(0, p)

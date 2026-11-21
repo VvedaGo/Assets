@@ -10,7 +10,7 @@ import os, sys, math
 import bpy
 from mathutils import Vector
 
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 SRC = os.path.join(REPO, '.work', 'models', 'Farm_Animals', '_common', 'anim_gif.py')
 FLOWER_H, DISC_R, DISC_T, PETAL_R0, PETAL_R1, PETALS = 0.075, 0.036, 0.006, 0.030, 0.068, 10
 

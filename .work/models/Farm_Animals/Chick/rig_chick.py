@@ -5,7 +5,7 @@
 # Copied from ../Hen/rig_hen.py (read-only): changed the build-module import, the bone list (parts that exist), the species
 # table, the bend poses (single neck) and file names. Geometry, part names and pivots come unchanged from build_chick.build().
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Chick'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

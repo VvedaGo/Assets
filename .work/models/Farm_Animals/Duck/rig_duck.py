@@ -4,7 +4,7 @@
 # Copied from ../Hen/rig_hen.py (read-only): changed the build-module import, the species table (DUCK), the clip list
 # (Peck -> Swim), file names. Geometry, part names and pivots come unchanged from build_duck.build().
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Duck'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

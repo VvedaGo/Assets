@@ -7,7 +7,7 @@
 # Template: ../Sheep/build_sheep.py + ../Lamb/build_lamb.py (lobes, tuck rings, naming, objects/coplanar/check sheet),
 # horns: ../Bull, ../Goat (tapered tube with a lighter tip) extended to a spiral. Shared modules are only imported.
 import sys, os, math
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common'):
     if p not in sys.path: sys.path.insert(0, p)
 import bpy, bmesh

@@ -8,7 +8,7 @@
 # FINAL EXPORT = this script's export mode (build_butterfly.py export would overwrite the FBX with the static mesh).
 # The mesh comes unchanged from build_butterfly.build() (16 parts); every part bound rigidly (weight 1.0) to one bone.
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Butterfly'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', REPO + r'\.work\models\Farm_Animals\Bee', WORK):
     if p not in sys.path: sys.path.insert(0, p)

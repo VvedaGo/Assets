@@ -8,7 +8,7 @@
 # v2 (rework): plump pear body 12 sides, big egg head of horizontal tilted rings (one ring edge = collar line),
 # one blue collar band (body front segment + necks + lower head) with a V point on the chest, shield wing, fanned tail.
 import sys, os, math
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common'):
     if p not in sys.path: sys.path.insert(0, p)
 import bpy, bmesh

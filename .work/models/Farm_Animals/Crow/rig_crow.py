@@ -5,7 +5,7 @@
 # Round 2 (2026-11-21): + Walk (crow_clips.py: hen gait copy registered into pigeon_clips.CLIP_FUNCS in memory, pigeon
 # files untouched) + Fly (pigeon_clips.clip_fly with the 'fly' table below). Idle table unchanged.
 import sys, os
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 HERE = REPO + r'\.work\models\Farm_Animals\Crow'
 for p in (REPO + r'\.work\models\Farm_Animals\Pigeon', HERE):
     if p not in sys.path: sys.path.insert(0, p)

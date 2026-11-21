@@ -7,7 +7,7 @@
 import os, sys, math
 import bpy
 
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 SRC = os.path.join(REPO, '.work', 'models', 'Farm_Animals', '_common', 'anim_gif.py')
 WATER_Z = 0.18
 

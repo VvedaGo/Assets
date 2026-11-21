@@ -7,7 +7,7 @@
 # Structure copied from ../Pigeon/build_pigeon.py (pear body of tilted rings, egg head, hidden necks, ray-cast eyes,
 # split_to_objects, checks, renders) and ../Rooster/build_rooster.py (wing = overlapping plates projected on the body).
 import sys, os, math
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common'):
     if p not in sys.path: sys.path.insert(0, p)
 import bpy, bmesh

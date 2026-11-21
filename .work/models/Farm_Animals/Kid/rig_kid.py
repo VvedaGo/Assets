@@ -8,7 +8,7 @@
 # Copied from ../Lamb/rig_lamb.py (read-only; Play_Hop) with the Goat skeleton/bone tails (../Goat/rig_goat.py). The kid legs
 # are straight at rest (no hock offset), so the shared collinear leg IK is used. Mesh unchanged from build_kid.build().
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Kid'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

@@ -6,7 +6,7 @@
 # Blender axes: front = -Y, left = +X, up = +Z, metres (FBX: Y up, Z forward in Unity).
 # Structure from ../Bee/build_bee.py (helpers copied); coplanar_true from ../Mouse/build_mouse.py. Shared modules read-only.
 import sys, os, math
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common'):
     if p not in sys.path: sys.path.insert(0, p)
 import bpy, bmesh

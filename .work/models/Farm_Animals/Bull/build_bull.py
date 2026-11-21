@@ -10,7 +10,7 @@
 # lattice) + 4 brown shades assigned per facet (quad) from its normal; sideways cream horns; big ears; polygon head with a
 # flat forehead and a brow over the eyes; nose pad; longer legs; tail close to the rump reaching the hocks.
 import sys, os, math
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common'):
     if p not in sys.path: sys.path.insert(0, p)
 import bpy, bmesh

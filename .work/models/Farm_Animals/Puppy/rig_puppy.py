@@ -6,7 +6,7 @@
 #   PYTHONUTF8=1 blender --background --factory-startup --python rig_puppy.py -- PET-03 bend|anim|export|meshcheck
 # The mesh comes unchanged from build_puppy.build() (geometry, part names and pivots untouched).
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Puppy'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

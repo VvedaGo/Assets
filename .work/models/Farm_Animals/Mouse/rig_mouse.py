@@ -8,7 +8,7 @@
 # The mesh comes unchanged from build_mouse.build() (geometry, part names and pivots untouched).
 # Copy of ../Rabbit/rig_rabbit.py (export_nla / reimport_check / events_json are local copies); shared modules read-only.
 import sys, os, math, json, importlib, copy
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Mouse'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

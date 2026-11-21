@@ -7,7 +7,7 @@
 # Structure copied from ../Calf/build_calf.py (Model/loft/tuck/patch field + contour snap/objects), ears from ../Sheep,
 # horns from ../Cow (sunk tapered tube, darker tip), leg bend from ../Horse. Shared modules are only imported.
 import sys, os, math
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common'):
     if p not in sys.path: sys.path.insert(0, p)
 import bpy, bmesh

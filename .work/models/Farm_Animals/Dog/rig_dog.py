@@ -10,7 +10,7 @@
 # export: anim + FBX (skinned parts + armature + 2 takes, NLA, bake_space_transform) + re-import check + events json + .blend
 # The mesh comes unchanged from build_dog.build() (geometry, part names and pivots untouched).
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Dog'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

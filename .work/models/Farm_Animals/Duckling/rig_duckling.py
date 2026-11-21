@@ -6,7 +6,7 @@
 # Swim). Changed: build-module import, species table (DUCKLING), chain-end tails measured from the mesh (bill tip, wing tip,
 # tail tip), leg limits restored, file names. Geometry, part names and pivots unchanged from build_duckling.build().
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Duckling'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)

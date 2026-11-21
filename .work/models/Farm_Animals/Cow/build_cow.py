@@ -5,7 +5,7 @@
 # anim  : build + 13 clips + metrics report + frame strips (TEMP)
 # export: anim + FBX (all clips as takes) + verify + events json + .blend + preview
 import sys, os, math, json, copy
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', REPO + r'\.work\models\Farm_Animals\Cow'):
     if p not in sys.path: sys.path.insert(0, p)
 import bpy, bmesh

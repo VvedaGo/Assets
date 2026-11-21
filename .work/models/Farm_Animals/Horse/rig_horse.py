@@ -4,7 +4,7 @@
 # (one SkinnedMeshRenderer, like the Cow) and every part is bound with weight 1.0 to the bone of the same name
 # (Eye.L/R and Nostrils -> Head). Shared _common modules are imported read-only.
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 HERE = REPO + r'\.work\models\Farm_Animals\Horse'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', HERE):
     if p not in sys.path: sys.path.insert(0, p)

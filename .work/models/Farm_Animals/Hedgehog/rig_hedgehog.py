@@ -11,7 +11,7 @@
 # Pattern: ../Fox/rig_fox.py (itself ../Cat/rig_cat.py + ../Dog). The mesh comes unchanged from build_hedgehog.build().
 #   PYTHONUTF8=1 blender --background --factory-startup --python rig_hedgehog.py -- SML-04 bend|anim|curlviews|export
 import sys, os, math, json, importlib
-REPO = r'C:\Users\Sergv\orca\workspaces\VFX\master-3'
+REPO = r'D:\GitProjects\Assets_Farm'
 WORK = REPO + r'\.work\models\Farm_Animals\Hedgehog'
 for p in (REPO + r'\Tools\blender', REPO + r'\.work\models\Farm_Animals\_common', WORK):
     if p not in sys.path: sys.path.insert(0, p)
