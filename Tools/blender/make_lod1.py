@@ -4,10 +4,11 @@
 #   blender --background --factory-startup --python make_lod1.py -- --art <art dir> NAME [NAME ...] [--ratio 0.5]
 #   NAME = asset root, e.g. FMS_Workshop_STA_05; reads <art>/Blend/NAME.blend (collection-only library written by the
 #   build script via pack_common.save_lib) and rewrites <art>/Meshes/NAME.fbx (LOD0 untouched).
-# For each part it adds a decimated copy "<part>_LOD1" as a DIRECT child of the root at the part's world pose (2nd-level
+# For each part it adds a decimated copy "<part>_Low1" as a DIRECT child of the root at the part's world pose (2nd-level
 # FBX children export wrongly in Blender 5.2; the Unity PackPrefabBuilder re-parents it under its part and adds a LODGroup),
 # then re-snaps every LOD1 face to the palette cell of the VISIBLE LOD0 surface (ray vote over 4 samples).
 # Rerun after ANY re-export of the model by its build script (the build script writes the FBX without LOD1).
+# NOTE: suffix is _Low1, not _LOD1: Unity treats "_LODn" names as an LOD set and warns about a missing _LOD0.
 import bpy, bmesh, os, sys, math
 from mathutils.bvhtree import BVHTree
 
@@ -21,7 +22,7 @@ skip = {args[args.index(k) + 1] for k in ('--ratio', '--art') if k in args}
 ids = [a for a in args if not a.startswith('--') and a not in skip]
 
 def lod1_for(src, root, coll, ratio):
-    me = src.data.copy(); ob = bpy.data.objects.new(src.name + '_LOD1', me); coll.objects.link(ob)
+    me = src.data.copy(); ob = bpy.data.objects.new(src.name + '_Low1', me); coll.objects.link(ob)
     ob.parent = root; bpy.context.view_layer.update(); ob.matrix_world = src.matrix_world.copy()   # world pose of the part (also for nested parts)
     tris0 = sum(len(p.vertices) - 2 for p in src.data.polygons)
     if tris0 > 60:                                       # tiny parts (bolts, pins) keep their LOD0 shape
@@ -55,8 +56,8 @@ for name in ids:
         dst.collections = [c for c in src.collections if c == name]
     coll = dst.collections[0]; bpy.context.scene.collection.children.link(coll)
     root = next(o for o in coll.objects if o.type == 'EMPTY' and o.parent is None)
-    parts = [o for o in coll.objects if o.type == 'MESH' and not o.name.endswith('_LOD1')]
-    for o in [o for o in coll.objects if o.name.endswith('_LOD1')]: bpy.data.objects.remove(o, do_unlink=True)
+    parts = [o for o in coll.objects if o.type == 'MESH' and not o.name.endswith('_Low1')]
+    for o in [o for o in coll.objects if o.name.endswith('_Low1')]: bpy.data.objects.remove(o, do_unlink=True)
     t0 = t1 = 0; lines = []
     for p in parts:
         ob, a, b = lod1_for(p, root, coll, ratio); t0 += a; t1 += b; lines.append(f'{p.name} {a}->{b}')

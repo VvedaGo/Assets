@@ -11,7 +11,7 @@ namespace PackTools.Editor
     /// <summary>
     /// Shared pack importer (origin: Farm Processing, 2026-11-20): model import settings, one URP/Lit material per atlas,
     /// single-item prefabs in Art/Prefabs/&lt;Category&gt; with a BoxCollider, a LODGroup when the FBX carries "&lt;part&gt;_LOD1"
-    /// children (Tools/blender/make_lod1.py), and Documentation/ImportReport.txt (tris, parts, LOD1, size, issues).
+    /// children (Tools/blender/make_lod1.py), and .work/ImportReport_<Tag>.txt (tris, parts, LOD1, size, issues).
     /// The atlas of each FBX is read from the FBX bytes. Idempotent: GUIDs of prefabs and materials are kept.
     /// </summary>
     public static class PackPrefabBuilder
@@ -42,7 +42,7 @@ namespace PackTools.Editor
             report.AppendLine($"[{C.Tag}] {lines.Count} prefabs, {lines.Count(l => l.Contains(" ! "))} with issues");
             foreach (var l in lines) report.AppendLine(l);
             File.WriteAllText(ReportPath, report.ToString());
-            AssetDatabase.ImportAsset(ReportPath);
+            // report lives outside Assets/ (see PackConfig.ReportPath), nothing to import
             Debug.Log(report.ToString());
             return report.ToString();
         }
@@ -98,16 +98,16 @@ namespace PackTools.Editor
             foreach (var r in instance.GetComponentsInChildren<Renderer>(true))
                 r.sharedMaterials = Enumerable.Repeat(material, r.sharedMaterials.Length).ToArray();
 
-            // LOD1 parts are exported as direct children of the root ("<part>_LOD1"); move each under its part so it
-            // follows the moving part, and build a LODGroup (LOD0 = parts, LOD1 = *_LOD1).
-            var lod1 = instance.GetComponentsInChildren<Renderer>(true).Where(r => r.name.EndsWith("_LOD1")).ToArray();
+            // LOD1 parts are exported as direct children of the root ("<part>_Low1"); move each under its part so it
+            // follows the moving part, and build a LODGroup (LOD0 = parts, LOD1 = *_Low1).
+            var lod1 = instance.GetComponentsInChildren<Renderer>(true).Where(r => r.name.EndsWith("_Low1")).ToArray();
             foreach (var r in lod1)
             {
                 var partName = r.name.Substring(0, r.name.Length - 5);
                 var part = instance.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == partName);   // parts can be nested (e.g. a crank under a stone)
                 if (part != null) r.transform.SetParent(part, true);
             }
-            var renderers = instance.GetComponentsInChildren<Renderer>(true).Where(r => !r.name.EndsWith("_LOD1")).ToArray();
+            var renderers = instance.GetComponentsInChildren<Renderer>(true).Where(r => !r.name.EndsWith("_Low1")).ToArray();
             if (lod1.Length > 0)
             {
                 var group = instance.AddComponent<LODGroup>();

@@ -34,7 +34,7 @@ namespace PackTools.Editor
         public string TextureDir => Root + "/Art/Textures";
         public string PrefabDir => Root + "/Art/Prefabs";
         public string DemoDir => Root + "/Demo";
-        public string ReportPath => Root + "/Documentation/ImportReport.txt";
+        public string ReportPath => ".work/ImportReport_" + Tag + ".txt";   // outside Assets: the Asset Store validator takes any .txt under the pack for documentation
 
         /// <summary>Prefab path of a catalogue ID: category = the part before the first '-' (STA-05 -> Art/Prefabs/STA/...).</summary>
         public string PrefabPath(string id)
