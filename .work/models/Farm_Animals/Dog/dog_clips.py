@@ -12,6 +12,7 @@ import animal_rig as ar
 TW = 2 * math.pi
 WAGS = 7                    # Idle: 7 wags in 3.0 s (2.33 Hz), integer -> closed loop
 _IK = {}
+FOOT_CAP = math.radians(float(__import__('os').environ.get('DOG_FOOT_CAP', '36')))
 
 
 # ---------------- leg IK with rest offsets (copy of ../Goat/goat_clips.py, itself from ../Horse/horse_clips.py) ----------------
@@ -32,7 +33,7 @@ def setup_ik(sk):
 
 def leg_ik_h(sk, pose, leg, fetlock, hoof_pitch=0.0):
     up, lo, ft, front = ar.LEGS[leg]; de, ep, sgn = _IK[leg]
-    M = sk.fk(pose); M0 = M[sk.parent[up]] @ sk.rel[up]
+    M = sk.fk(pose); M0 = M[sk.parent[up]] @ sk.rel[up] @ Matrix.Translation(pose[up][0])   # Sit: FrontUpper slide
     t = M0.inverted() @ Vector(fetlock)
     beta = math.atan2(-t.x, t.y); r = math.hypot(t.x, t.y); tz = t.z
     L1, L2 = sk.length[up], sk.length[lo]
@@ -45,8 +46,40 @@ def leg_ik_h(sk, pose, leg, fetlock, hoof_pitch=0.0):
     phi2 = math.atan2(tz2 - kz, ty - ky)
     dd = Matrix.Rotation(-beta, 3, 'Z') @ (M0.to_3x3().inverted() @ Vector((0, 0, -1)))
     phid = math.atan2(dd.z, dd.y)
-    pose[up][1] = [a1, 0.0, beta]; pose[lo][1] = [phi2 - a1 - de, 0.0, 0.0]; pose[ft][1] = [phid + hoof_pitch - phi2 - ep, 0.0, 0.0]
+    # round 4: the paw follows the ground only within FOOT_CAP of the lower leg: in swing the folded leg used to turn the
+    # rigid paw block 60-90 deg against the shank and it came loose from it (user: paws 'crawl out of each other')
+    fx = phid + hoof_pitch - phi2 - ep; fx = max(-FOOT_CAP, min(FOOT_CAP, fx))
+    pose[up][1] = [a1, 0.0, beta]; pose[lo][1] = [phi2 - a1 - de, 0.0, 0.0]; pose[ft][1] = [fx, 0.0, 0.0]
     return d0 - (L1 + L2)
+
+
+LOC_BONES = ('Pelvis', 'FrontUpper.L', 'FrontUpper.R')
+
+
+def write_action(rig, name, frames, loop, bones=None):
+    """copy of animal_anim.write_action that also keys the location of FrontUpper.L/R (Sit_Idle shoulder slide: the
+    leg slides up along its rest axis into the chest, like the scapula); all channels LINEAR"""
+    from bpy_extras import anim_utils
+    import bpy
+    old = bpy.data.actions.get(name)
+    if old: bpy.data.actions.remove(old)
+    act = bpy.data.actions.new(name); act.use_fake_user = True
+    slot = act.slots.new(id_type='OBJECT', name=rig.name)
+    cb = anim_utils.action_ensure_channelbag_for_slot(act, slot)
+    N = len(frames) - 1
+    for b in (bones or [n for n in frames[0]]):
+        chans = [('rotation_euler', 1)] + ([('location', 0)] if b in LOC_BONES else [])
+        for path, ix in chans:
+            for i in range(3):
+                fc = cb.fcurves.new(f'pose.bones["{b}"].{path}', index=i, group_name=b)
+                fc.keyframe_points.add(N + 1)
+                co = []
+                for f, p in enumerate(frames): co += [float(f), p[b][ix][i]]
+                fc.keyframe_points.foreach_set('co', co)
+                fc.keyframe_points.foreach_set('interpolation', [1] * (N + 1))
+                fc.update()
+    act.use_frame_range = True; act.frame_start = 0; act.frame_end = N; act.use_cyclic = loop
+    return act
 
 
 def flick(t, c, w):
@@ -232,7 +265,7 @@ def build_clips(sk, sp):
     def ov_walk(p, ph, pitch):
         rot(p, 'Neck1', x=-0.6 * pitch + 0.6 * math.sin(2 * TW * ph - 1.0), z=1.0 * math.sin(TW * ph - 0.6))
         rot(p, 'Head', x=-0.4 * pitch - 0.8 * math.sin(2 * TW * ph - 1.3), z=-0.8 * math.sin(TW * ph - 0.9))
-        wag(p, ph, g['tail'], 0.10, lift=tuple(g['tail_bounce'] * math.sin(2 * TW * ph - 1.6 - 0.5 * i) for i in range(3)))
+        wag(p, ph, g['tail'], 0.10, lift=tuple(g.get('tail_carry', (0, 0, 0))[i] + g['tail_bounce'] * math.sin(2 * TW * ph - 1.6 - 0.5 * i) for i in range(3)))
         rot(p, 'Ruff', x=g['ruff'] * math.sin(2 * TW * ph - 1.9))
         e = g['ear'] * math.sin(2 * TW * ph - 2.0)
         rot(p, 'Ear.L', x=e); rot(p, 'Ear.R', x=g['ear'] * math.sin(2 * TW * ph - 2.3))
@@ -281,10 +314,11 @@ def hinge(sk, pose, bone, y, nxt):
 
 
 def sit_pose(sk, st):
-    """pelvis pitched nose-up + Spine1/2 lift, rump lowered onto the ground; pitch searched so the shoulders stand at
-    `front_reach` x the front-leg length (front legs nearly straight, paws under the shoulders); hind legs folded: hock on
-    the ground behind the hip, cannon forward to the paw under the hip; neck/head counter-pitched to look ahead; tail laid
-    on the ground behind with a sideways curve. Returns (pose, front feet, info)."""
+    """Sit (rig round 2). Pelvis pitched nose-up + Spine1/2 lift, rump on the ground; pitch searched for the asked torso
+    tilt (line Pelvis joint -> Spine2 joint vs the ground). Front legs: the FrontUpper joint (now at the chest bottom)
+    slides straight up inside the chest (bone location, like the scapula) until the straight leg reaches the ground at
+    `front_slant` deg forward; paws `front_out` apart. Hind legs: thigh (hip -> hock) forward-out beside the belly, joint
+    near the ground, lower leg forward along the ground to the paw beside the front paw; neck/head counter-pitched to look ahead; tail on the ground."""
     bodym = sk.mask(['Pelvis', 'Spine1', 'Spine2'])
     L1f, L2f = sk.length['FrontUpper.L'], sk.length['FrontLower.L']; L3f = sk.length['FrontFoot.L']
     Lf = L1f + L2f + L3f
@@ -293,52 +327,72 @@ def sit_pose(sk, st):
         p = new_pose(sk); body(sk, p, (0, 0, 0), pitch=P)
         rot(p, 'Spine1', x=st['spine'][0]); rot(p, 'Spine2', x=st['spine'][1])
         raise_body(sk, p, st['rump_z'] - sk.minz(p, bodym))          # rump (lowest body vertex) on the ground
-        M = sk.fk(p); H = M['HindUpper.L'].translation; Sh = M['FrontUpper.L'].translation
-        return p, math.degrees(math.atan2(Sh.z - H.z, H.y - Sh.y)), Sh.z
-    # pelvis pitch searched for the asked torso tilt (hip joint -> shoulder joint line vs the ground); the front legs
-    # must still reach the ground nearly straight (`front_ext` x length): if not, the tilt is raised until they do
+        M = sk.fk(p); A = M['Pelvis'].translation; Bv = M['Spine2'].translation
+        return p, math.degrees(math.atan2(Bv.z - A.z, A.y - Bv.y))
     tab = []; best = None
-    for P in range(-25, -76, -1):
-        p, tilt, shz = seat(P); ok = shz - L3f <= st['front_ext'] * (L1f + L2f)
-        tab.append((P, round(tilt, 1), round(shz, 3), ok))
-        if tilt >= st['tilt'] and ok: best = (P, p, tilt); break
+    for P in range(-15, -80, -1):
+        p, tilt = seat(P); tab.append((P, round(tilt, 1)))
+        if tilt >= st['tilt']: best = (P, p, tilt); break
     if best is None: best = (P, p, tilt)
-    print('SIT pelvis pitch -> (tilt, shoulder z, front legs reach)', tab[::4] + tab[-1:])
+    print('SIT pelvis pitch -> torso tilt', tab[::4] + tab[-1:])
     P, p, tilt = best
-    # neck up, head looking ahead again: the counter pitch is shared along the neck
     back = -(P + st['spine'][0] + st['spine'][1])          # total nose-up pitch of the chest
-    for b, w in (('Neck1', 0.35), ('Neck2', 0.30), ('Head', 0.35)): rot(p, b, x=w * back * st['head_level'])
+    # round 6 (user: the sit is still 'ужас'; the Codex reference sit shows why): the counter-pitch left the neck leaning BACK
+    # 25 deg past vertical (Neck2 joint 6 cm behind Spine2), so the head sat above the rump looking at the sky. The neck is
+    # now aimed in world space: Neck1/Neck2 lean `neck` deg FORWARD of vertical (Codex sit: 21 / 14), the head stays level.
+    c2 = math.radians(st['chest'])                       # Spine2 (chest) continues the spine line: Codex sit 59 deg
+    aim_xz(sk, p, 'Spine2', Vector((0.0, -math.cos(c2), math.sin(c2))))
+    n1, n2 = (math.radians(v) for v in st['neck'])
+    aim_xz(sk, p, 'Neck1', Vector((0.0, -math.sin(n1), math.cos(n1))))
+    aim_xz(sk, p, 'Neck2', Vector((0.0, -math.sin(n2), math.cos(n2))))
+    hd = sk.rest['Head'].to_3x3() @ Vector((0, 1, 0)); hu = math.radians(st['head_up'])
+    hd = Vector((hd.x, hd.y * math.cos(hu) - hd.z * math.sin(hu), hd.z * math.cos(hu) + hd.y * math.sin(hu)))
+    aim_xz(sk, p, 'Head', hd)
     rot(p, 'Ruff', x=st['ruff'])
-    # front legs: straight (front_ext), slanted forward from the shoulder as far as the shoulder height needs, paws set
-    # a little apart (front_out) so both legs read separately from the chest
-    M = sk.fk(p); feet = {}
+    # front legs: slide the joint up (world vertical) until the straight leg stands at front_slant
+    a = math.radians(st['front_slant']); Lm = st['front_ext'] * (L1f + L2f)
+    feet = {}; slide = {}
     for k in ('FrontL', 'FrontR'):
-        sx = 1.0 if k.endswith('L') else -1.0
-        sh = M[ar.LEGS[k][0]].translation; v = sh.z - L3f; Lm = st['front_ext'] * (L1f + L2f)
-        hz = math.sqrt(max(Lm * Lm - v * v - st['front_out'] ** 2, 0.0))
-        feet[k] = Vector((sh.x + sx * st['front_out'], sh.y - max(hz, st['paw_fwd']), 0.0))
+        up = ar.LEGS[k][0]; sx = 1.0 if k.endswith('L') else -1.0
+        M = sk.fk(p); Mp = (M[sk.parent[up]] @ sk.rel[up]).to_3x3()
+        J0 = (M[sk.parent[up]] @ sk.rel[up]).translation
+        need = Lm * math.cos(a) * math.cos(math.atan2(st['front_out'], Lm)) + L3f
+        s = max(0.0, need - J0.z); slide[k] = s
+        p[up][0] = list(Mp.inverted() @ Vector((0.0, 0.0, s)))
+        J = J0 + Vector((0, 0, s)); h = J.z - L3f
+        feet[k] = Vector((J.x + sx * st['front_out'], J.y - h * math.tan(a), 0.0))
     plant(sk, p, ['FrontL', 'FrontR'], feet)
-    # hind legs folded: hock on the ground, out to the side and back of the hip (thigh splayed so it shows beside the
-    # belly), metatarsus forward along the ground (slightly inward), paw flat -> hock bends backward (correct side)
-    zk, sl = st['hock_z'], math.radians(st['cannon_slope'])
+    # hind legs: thigh forward-out beside the belly to the joint near the ground, white lower leg forward along the
+    # ground (turned in) to the paw beside the front paw (in the sit this joint reads as the stifle: it folds forward)
     for k in ('HindL', 'HindR'):
-        up, lo, ft, _ = ar.LEGS[k]; sx = 1.0 if k.endswith('L') else -1.0
-        H = sk.fk(p)[up].translation; Lu = sk.length[up]
-        dz = H.z - zk; hr = math.sqrt(max(Lu * Lu - dz * dz, 0.0)); a = math.radians(st['hock_splay'])
-        K = Vector((H.x + sx * hr * math.sin(a), H.y + hr * math.cos(a), zk))
-        ci = math.radians(st['cannon_in'])
-        cd = Vector((-sx * math.sin(ci) * math.cos(sl), -math.cos(ci) * math.cos(sl), -math.sin(sl)))
-        hinge(sk, p, up, (K - H).normalized(), cd)          # thigh frame: X = hock hinge -> the hock flexes about X only
+      up, lo, ft, _ = ar.LEGS[k]; sx = 1.0 if k.endswith('L') else -1.0
+      pm = sk.mask([ft, lo]); zk = st['hock_z']
+      for _it in range(4):                                  # raise the joint until the paw box rests on the ground
+        H = sk.fk(p)[up].translation; Lu = sk.length[up]; Ll = sk.length[lo]; L3 = sk.length[ft]
+        dz = H.z - zk; hr = math.sqrt(max(Lu * Lu - dz * dz, 0.0)); sp_ = math.radians(st['hock_splay'])
+        Kp = Vector((H.x + sx * hr * math.sin(sp_), H.y - hr * math.cos(sp_), zk))
+        sl = math.asin(max(0.0, min(0.9, (st['hock_z'] - L3 - 0.004) / Ll))); ci = math.radians(st['cannon_in'])
+        cd = Vector((-sx * math.sin(ci) * math.cos(sl), -math.cos(ci) * math.cos(sl), -math.sin(sl)))   # forward along the ground
+        hinge(sk, p, up, (Kp - H).normalized(), cd)
         aim(sk, p, lo, cd)
         aim(sk, p, ft, Vector((0.0, -0.25, -1.0)))
+        mz = sk.minz(p, pm)
+        if abs(mz) < 5e-4: break
+        zk -= mz
     # tail on the ground behind, gentle sideways curve
     T0 = sk.fk(p)['Tail1'].translation; L1 = sk.length['Tail1']
     a = math.asin(max(-1.0, min(1.0, (T0.z - st['tail_z']) / L1)))
     aim(sk, p, 'Tail1', Vector((0.0, math.cos(a), -math.sin(a))))
     for b, ang, up_ in (('Tail2', st['tail_curve'][0], 0.0), ('Tail3', st['tail_curve'][1], st['tail_tip_up'])):
         c = math.radians(ang); aim(sk, p, b, Vector((math.sin(c), math.cos(c), math.sin(math.radians(up_)))))
-    info = dict(pelvis_pitch=P, torso_tilt=tilt, shoulder_z=round(sk.fk(p)['FrontUpper.L'].translation.z, 3),
-                hip_z=round(sk.fk(p)['HindUpper.L'].translation.z, 3), front_leg=round(Lf, 3))
+    Vw = sk.skin(sk.fk(p)); iv = int(np.argmin(Vw[:, 2]))
+    print('SIT lowest vertex', round(float(Vw[iv, 2]), 4), 'bone', sk.order[int(np.argmax(sk.W[iv]))])
+    M = sk.fk(p)
+    info = dict(pelvis_pitch=P, torso_tilt=round(tilt, 1), shoulder_slide_m=round(slide['FrontL'], 3),
+                shoulder_z=round(M['FrontUpper.L'].translation.z, 3), hip_z=round(M['HindUpper.L'].translation.z, 3),
+                front_leg=round(Lf, 3), front_slant_deg=st['front_slant'],
+                front_paws_x=round(feet['FrontL'].x - feet['FrontR'].x, 3),
+                hind_paws_y=[round(M['HindFoot.L'].translation.y, 3)], front_paws_y=round(feet['FrontL'].y, 3))
     print('SIT', info)
     return p, feet, info
 
@@ -357,6 +411,11 @@ def sit_clip(sk, sp, N):
         lift = bump(t, 0.35, 0.16) + bump(t, 0.85, 0.14)                # tail tip lifts and wags slowly twice
         rot(p, 'Tail3', x=st['tip_lift'] * lift, z=st['tip_wag'] * math.sin(TW * 2 * t) * (0.4 + 0.6 * lift))
         rot(p, 'Tail2', x=0.3 * st['tip_lift'] * lift, z=0.3 * st['tip_wag'] * math.sin(TW * 2 * t - 0.6))
+    import os as _o
+    if _o.environ.get('DOG_JOINTS'):
+        _M = sk.fk(base)
+        for _b in ('Pelvis','Spine1','Spine2','Neck1','Neck2','Ruff','Head','FrontUpper.L','FrontLower.L','FrontFoot.L','HindUpper.L','HindLower.L','HindFoot.L','Tail1','Tail2','Tail3'):
+            _t = _M[_b].translation; print('JOINT', _b, round(_t.x,3), round(_t.y,3), round(_t.z,3))
     fr = []
     for f in range(N):
         p = copy_pose(base); ov(p, f / N); plant(sk, p, ['FrontL', 'FrontR'], feet); fr.append(p)

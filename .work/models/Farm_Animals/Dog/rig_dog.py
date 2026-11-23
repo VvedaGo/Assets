@@ -31,8 +31,8 @@ ar.SKELETONS['QD'] = [b for b in ar.Q_BONES if not b[0].startswith('Horn')] + [(
 BIND = {'Eye.L': 'Head', 'Eye.R': 'Head', 'Nose': 'Head'}
 LIMITS = dict(asp.Q_LIMITS, Ruff=dict(x=(-15, 50), y=(-10, 10), z=(-15, 15)),   # sit: ruff hangs on the chest
              
-              Pelvis=dict(x=(-65, 25), y=(-15, 15), z=(-15, 15)),    # Sit_Idle: pelvis pitched nose-up (sitting)
-              FrontUpper=dict(x=(-75, 70), z=(-25, 25)), HindUpper=dict(x=(-60, 130), z=(-80, 80)))   # sit: shoulder, hip flexion; hip z: thighs splayed 50 deg with the pelvis pitched -54 (euler z -76)   # HindLower set from the rest bend below
+              Pelvis=dict(x=(-75, 25), y=(-15, 15), z=(-15, 15)),    # Sit_Idle: pelvis pitched nose-up (sitting)
+              FrontUpper=dict(x=(-75, 80), z=(-25, 25)), Tail1=dict(x=(-60, 110)), Spine2=dict(x=(-15, 55), y=(-15, 15), z=(-15, 15)), HindUpper=dict(x=(-115, 130), z=(-80, 80)))   # sit: shoulder, hip flexion; hip z: thighs splayed 50 deg with the pelvis pitched -54 (euler z -76)   # HindLower set from the rest bend below
 
 
 def bone_of(part):
@@ -50,6 +50,16 @@ def far_vertex(o, piv):
 
 
 def species(obs):
+    sp = _species(obs)
+    ovr = json.loads(os.environ.get('DOG_OVR', '{}'))          # check runs only: {"sit": {"tilt": 47}, ...}
+    for sec, d in ovr.items():
+        tgt = sp['gait']['Walk'] if sec == 'walk' else sp[sec]
+        tgt.update({k: (tuple(v) if isinstance(v, list) else v) for k, v in d.items()})
+    if ovr: print('OVERRIDES', ovr)
+    return sp
+
+
+def _species(obs):
     """dog table in the animal_species format; bone heads = part pivots (joints), tails = next joint / far vertex"""
     P = {k: o.matrix_world.translation.copy() for k, o in obs.items()}
     t = lambda v: tuple(round(c, 4) for c in v)
@@ -71,14 +81,15 @@ def species(obs):
                 # Walk round 2: 34 fr (1.133 s), stride 0.60 m (0.44x nose->tail), stance travel 0.372 m, diagonal couplets
                 # (front 0.18 cycle after its diagonal hind: same-side paws >= 0.2 m apart, paws are 0.18 m long);
                 # stance centred under shoulder/hip; front legs 0.995 straight in stance, hind 0.97 (hock bent back)
-                gait={'Walk': dict(T=34 / 30, duty=0.60, stride=0.60, harm=18, harm_hind=5, lift=(0.065, 0.065), lift_skew=(0.85, 1.0), flick=(32, 24),
+                gait={'Walk': dict(T=34 / 30, duty=0.60, stride=0.60, harm=18, harm_hind=5, lift=(0.085, 0.08), lift_skew=(0.8, 0.9), flick=(30, 25),   # round 4: stiff straight-leg swing -> legs fold in swing (not so far that the rigid parts come apart)
+                                   
                                    straight=(0.9995, 0.985), centre=(0.0, 0.0), out=(0.0, 0.005), crouch=0.0, roll=1.5, sway=0.006,
                                    phases={'HindL': 0.0, 'FrontR': 0.18, 'HindR': 0.5, 'FrontL': 0.68},
-                                   ear=4.0, tail=(8.0, 12.0, 16.0), tail_bounce=3.0, ruff=2.5)},
-                idle=dict(wag=(24.0, 32.0, 40.0), lag=0.10, hip=1.5, ear=14.0, tail_lift=(14.0, 6.0, 2.0),
-                          hind_drop=0.03, front_drop=0.004, hind_back=0.02, shift=0.012, shift_roll=0.0, breath=0.005, breath_spine=1.6),
-                sit=dict(tilt=57.0, spine=(-6.0, -8.0), rump_z=0.01, front_ext=0.995, front_out=0.04, head_level=1.0, ruff=26.0,
-                         paw_fwd=0.03, hock_z=0.095, hock_splay=50.0, cannon_in=15.0, cannon_slope=8.0, tail_z=0.11,
+                                   ear=4.0, tail=(8.0, 12.0, 16.0), tail_bounce=3.0, ruff=2.5, tail_carry=(-14.0, -6.0, 6.0))},
+                idle=dict(wag=(30.0, 40.0, 48.0), lag=0.10, hip=2.0, ear=14.0, tail_lift=(-18.0, -8.0, 6.0),   # round 3: tail hangs low (ref), wider wag
+                          hind_drop=0.03, front_drop=0.004, hind_back=0.02, shift=0.018, shift_roll=1.5, breath=0.008, breath_spine=1.6),
+                sit=dict(tilt=70.0, spine=(-6.0, -8.0), rump_z=0.01, front_ext=0.995, front_out=0.01, front_slant=8.0,
+                         head_level=1.0, chest=62.0, neck=(20.0, 12.0), head_up=0.0, ruff=25.0, hock_z=0.112, hock_splay=30.0, cannon_in=40.0, tail_z=0.11,
                          tail_curve=(-18.0, -38.0), tail_tip_up=4.0, breaths=2, tip_lift=16.0, tip_wag=12.0),
                 clips=[('Idle', 3.0, True), ('Walk', 34 / 30, True), ('Sit_Idle', 3.5, True)], limits=LIMITS, poses={})
 
@@ -120,6 +131,8 @@ def part_weights(nm, co, P, tail_pts):
             up, lo, ft = k + 'Upper' + s, k + 'Lower' + s, k + 'Foot' + s
             if nm not in (up, lo): continue
             zk = P[lo].z; zf = P[ft].z
+            if nm == up and k == 'Front' and co.z > P[up].z + 0.05:
+                return {'Spine2': 1.0}               # leg top hidden in the chest follows the chest (pivot at chest bottom)
             if nm == up:
                 return {up: 0.5, lo: 0.5} if abs(co.z - zk) < 0.008 else {up: 1.0}
             if co.z < zf: return {ft: 1.0}
@@ -269,11 +282,12 @@ def anim(B):
     sk = B['sk']; SP = B['SP']
     clips = dcl.build_clips(sk, SP)
     de = math.degrees(dcl._IK['HindL'][0])            # hock rest flex: straight leg = HindLower x of +|rest|
-    SP['limits']['HindLower'] = dict(x=(-170, max(3.0, abs(de) + 3.0)))
+    # +95: Sit_Idle only - thigh forward, lower leg forward along the ground (the joint folds forward like a stifle)
+    SP['limits']['HindLower'] = dict(x=(-170, 95.0))
     acts = {}
     for c, _, _ in SP['clips']:
         C = clips[c]
-        acts[c] = an.write_action(B['rig'], f"{SP['species']}_{c}", C['frames'], C['loop'], C['bones'])
+        acts[c] = dcl.write_action(B['rig'], f"{SP['species']}_{c}", C['frames'], C['loop'], C['bones'])
     ex = clips['Walk']['extra']
     print('WALK step', round(ex['step'], 3), 'drop front max/min', max(ex['drops']['Front']), min(ex['drops']['Front']),
           'hind', max(ex['drops']['Hind']), min(ex['drops']['Hind']))
@@ -301,11 +315,12 @@ def clip_strips(B, clips, acts):
         views = {'Idle': [('side', (1.0, 0.0, 0.06)), ('back', (-0.35, 1.0, 0.6)), ('q', (1.0, -0.55, 0.17))],
                  'Walk': [('side', (1.0, 0.0, 0.04)), ('q', (1.0, -0.55, 0.17))],
                  'Sit_Idle': [('side', (1.0, 0.0, 0.06)), ('q', (1.0, -0.55, 0.17)), ('front', (0.25, -1.0, 0.15))]}[c]
-        if c != 'Walk': fr = fr[:4]
+        if c != 'Walk': fr = [round(i * N / 8) for i in range(8)]
         an.assign(rig, act)
         setters = [(lambda f=f: (sc.frame_set(f), bpy.context.view_layer.update())) for f in fr]
+        tw, th = (int(x) for x in os.environ.get('DOG_TILE', '300x230').split('x'))
         for vn, view in views:
-            strip(B, setters, os.path.join(CHECK, f'Dog_strip_{c}_{vn}.png'), view, cols=4 if c != 'Walk' else 6, size=(300, 230))
+            strip(B, setters, os.path.join(CHECK, f'Dog_strip_{c}_{vn}.png'), view, cols=4 if c != 'Walk' else 6, size=(tw, th))
         print('strip', c, 'frames', fr)
     an.assign(rig, None); sc.frame_set(0)
 

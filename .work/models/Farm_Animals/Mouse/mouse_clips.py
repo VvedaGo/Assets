@@ -149,7 +149,8 @@ def settle(sk, pose, legs, mask, floor=0.0):
 
 
 # ---------------- clip parameters ----------------
-SCURRY = dict(T=8.0 / 30.0, duty=0.50, speed=0.075, lift=0.0048, flick=(-24.0, 12.0), crouch=0.0, bob=0.0005, roll=1.5, reach=1.0,
+SCURRY = dict(T=10.0 / 30.0, duty=0.50, speed=0.13, lift=0.0075,     # review 2026-11-21: step 1 cm -> ~2.2 cm (was invisible)
+              flick=(-24.0, 12.0), crouch=0.0, bob=0.0005, roll=1.5, reach=1.0,
               phases={'HindL': 0.0, 'FrontR': 0.0, 'HindR': 0.5, 'FrontL': 0.5})
 NIB_BODY = dict(pitch=-42.0, spine1=0.0, spine2=4.0, neck1=20.0, neck2=15.0, head=18.0, tail_lift=24.0, tail_droop=-34.0)
 NIB_PAW = (0.0060, -0.0100)         # FrontFoot head target relative to the Nose pivot (y: + = behind it, z: below), m

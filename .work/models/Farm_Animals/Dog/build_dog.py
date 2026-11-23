@@ -21,7 +21,7 @@ REF = REPO + r'\planning\FarmAnimals\references\PET-01.png'
 CHECK = os.path.join(os.environ.get('TEMP', '/tmp'), 'FarmAnimals_check_dog')
 os.makedirs(CHECK, exist_ok=True)
 REF_VIEW = (0.75, -1.0, 0.25)        # PET-01 reference: chest towards the camera, left flank receding, ~11 deg above
-PREVIEW_VIEW = (1.0, -0.78, 0.22)    # preview: three-quarter front-left like the reference, dog fills the frame
+PREVIEW_VIEW = (0.95, -0.95, 0.22)   # preview: three-quarter front-left (head rework 4: a bit more frontal so the face reads)
 PREVIEW_FILL = (0.78, 0.86)
 BUDGET = 2800
 
@@ -50,6 +50,8 @@ BODY_RINGS = [(BY(y), f) for y, f in [(-0.370, 0), (-0.340, 0), (-0.270, 0.4), (
 SPLIT = {'Spine2': (0, 3), 'Spine1': (3, 5), 'Pelvis': (5, 9)}
 FROZEN_LONG = {0, 3, 5, 9}
 FRONT = (0.135, BY(-0.250))
+FRONT_SHOULDER_Z = 0.40     # rig round 2 (Sit_Idle): FrontUpper pivot at the chest bottom (was 0.52 = leg top inside the
+                            # chest); the leg mesh above it is bound to Spine2 in rig_dog (mesh unchanged)
 HIND = (0.130, BY(0.270))
 # patch layout per side (+1 left / -1 right): chest line, black saddle bottom z(y), wobble phase
 COLLAR = {1: BY(-0.300), -1: BY(-0.292)}
@@ -62,18 +64,35 @@ BELLY_Y = (BY(-0.26), BY(0.22))
 
 NECK_AXIS = [(y + DYH, z) for y, z in [(-0.250, 0.500), (-0.280, 0.570), (-0.310, 0.625), (-0.335, 0.665), (-0.355, 0.700)]]
 NECK_R = [(0.150, 0.130), (0.150, 0.130), (0.145, 0.125), (0.125, 0.110), (0.080, 0.065)]
-NH = 12
-SNOUT = 0.75                            # muzzle length factor in front of the stop (ring 4)
-_HR = [(-0.330, 0.072, 0.660, 0.770), (-0.356, 0.114, 0.628, 0.816), (-0.402, 0.130, 0.615, 0.836),
-       (-0.454, 0.118, 0.621, 0.823), (-0.495, 0.088, 0.621, 0.786), (-0.538, 0.062, 0.615, 0.745),
-       (-0.584, 0.058, 0.610, 0.722), (-0.620, 0.052, 0.612, 0.708)]
-SY = lambda y: (y if y >= -0.495 else -0.495 + (y + 0.495) * SNOUT) + DYH
-HEAD_RINGS = [(SY(y), w, zb, zt) for y, w, zb, zt in _HR]
 HEAD_GROUP = ('Head', 'Jaw', 'Ear.L', 'Ear.R', 'Eye.L', 'Eye.R', 'Nose')
-HEAD_SCALE = 1.46                       # rework 3: head group 1.35x larger (1.08 x 1.35)
-HEAD_Q = Vector((0, -0.34 + DYH, 0.68))
-EYE_R = 0.0135
-EAR_UP, EAR_FLAP = 0.085, 0.042        # upper third folds forward
+# Head rework 4 (2026-11-21, collie face): built directly in final metres around the head pivot HP (neck joint, after
+# MOVE; the old x1.46 group scale is gone). Broad skull with a real stop, short tapered muzzle, eyes forward on the stop,
+# big semi-erect ears folding forward-out, dark mane tufts framing the face, orange cheek tufts. Offsets: x left, -y fwd.
+HP = Vector((0, -0.34 + DYH, 0.68)) + MOVE
+NH = 12
+HEAD_ANG = [5, 35, 70, 105, 140, 172]   # ring vertex angles from the top (left side; right = 360 - a): narrow top face
+# rings: y, half width top, half width bottom, z bottom, z top (relative to HP)
+HEAD_RINGS = [(0.035, 0.100, 0.090, -0.040, 0.150), (-0.020, 0.160, 0.145, -0.090, 0.215),
+              (-0.090, 0.180, 0.165, -0.110, 0.245), (-0.150, 0.170, 0.160, -0.115, 0.230),
+              (-0.200, 0.122, 0.128, -0.110, 0.158), (-0.235, 0.098, 0.100, -0.105, 0.112),
+              (-0.268, 0.080, 0.080, -0.098, 0.082), (-0.292, 0.058, 0.058, -0.088, 0.056)]
+EYE_R = 0.024
+EYE_AT = (0.088, -0.185, 0.082)
+EAR_AT = (0.118, -0.075, 0.30)          # ear base: ray down onto the skull
+EAR_D1 = (0.80, 0.06, 1.0)              # standing part leans out
+EAR_UP, EAR_FLAP = 0.115, 0.13
+EAR_W = (0.082, 0.078, 0.020)           # half widths base / fold / tip
+EAR_FOLD = (-0.40, 0.90, 0.22)          # flap direction = a*d1 + b*forward + c*width axis (out-down)
+# mane tufts (left side; mirrored): base (inside the skull), direction, length, half width, half thickness, slot
+MANE = [((0.120, 0.000, 0.170), (0.62, 0.25, -0.75), 0.20, 0.095, 0.055, 'K'),
+        ((0.130, -0.060, 0.070), (0.55, 0.05, -0.83), 0.22, 0.095, 0.055, 'K'),
+        ((0.120, -0.075, -0.040), (0.62, -0.05, -0.78), 0.20, 0.090, 0.055, 'K'),
+        ((0.085, 0.050, 0.130), (0.45, 0.55, -0.70), 0.21, 0.100, 0.055, 'K'),
+        ((0.100, 0.010, 0.010), (0.50, 0.35, -0.79), 0.22, 0.095, 0.055, 'K'),
+        ((0.125, -0.020, 0.120), (0.72, 0.15, -0.68), 0.18, 0.100, 0.060, 'K'),
+        ((0.115, -0.045, -0.085), (0.45, 0.10, -0.89), 0.20, 0.095, 0.060, 'K'),
+        ((0.110, -0.150, -0.010), (0.70, -0.20, -0.68), 0.13, 0.075, 0.045, 'R'),
+        ((0.080, -0.165, -0.075), (0.45, -0.30, -0.84), 0.12, 0.070, 0.045, 'R')]
 # Ruff = mane: horizontal slices around the neck from under the ears/cheeks down to the chest, back half sunk into the
 # neck and shoulders; z, centre y, half width, front, back. Last slice = jagged lower edge (5 points on the front).
 RUFF = [(0.760, -0.370 + DYH, 0.150, 0.040, 0.100), (0.680, -0.380 + DYH, 0.215, 0.100, 0.150),
@@ -353,23 +372,41 @@ def build_ruff(M):
 
 
 # ---------------- head ----------------
-def head_colour(j, k):
-    D = min(k, NH - k)                                     # 0 blaze face (centred on top) .. 6 throat
-    if D == 0: return K if j <= 1 else W                   # narrow white blaze: forehead -> nose
-    if D == 1: return K if j <= 1 else (R if j <= 5 else W)
-    if D == 2: return K if j <= 1 else (R if j <= 5 else W)   # eyes sit in the orange mask
-    if D == 3: return K if j <= 1 else (R if j <= 4 else W)   # orange cheek mask (black frame = cheek fins)
-    if D == 4: return K if j <= 1 else (R if j <= 3 else W)
-    if D == 5: return K if j <= 1 else W
-    return K if j <= 1 else W
+# head face columns (k = face between ring vertex k and k+1): 11 top centre (blaze), 0/10 upper, 1/9 brow side,
+# 2/8 side (eyes), 3/7 lower side (cheek), 4/6 under, 5 bottom centre. Segments j: 0 back .. 2 crown, 3 eyes/stop, 4-6 muzzle
+HEAD_COLS = {'top':     'KWWWWWW', 'upper': 'KKKKWWW', 'brow': 'KKKRRWW', 'side': 'KKRRRRW',
+             'low':     'KRRRWWW', 'under': 'RRRWWWW', 'bottom': 'WWWWWWW'}
+_COLK = {11: 'top', 0: 'upper', 10: 'upper', 1: 'brow', 9: 'brow', 2: 'side', 8: 'side', 3: 'low', 7: 'low',
+         4: 'under', 6: 'under', 5: 'bottom'}
+SLOT = {'K': K, 'W': W, 'R': R, 'T': TAN}
+
+
+def head_ring(y, wt, wb, zb, zt, p=2.4):
+    angs = HEAD_ANG + [360 - a for a in reversed(HEAD_ANG)]
+    zc, h = (zt + zb) / 2, (zt - zb) / 2; out = []
+    for a in angs:
+        r = math.radians(a); s, c = math.sin(r), math.cos(r)
+        w = wt if c >= 0 else wb
+        out.append(HP + Vector((w * spow(s, 2 / p), y, zc + h * spow(c, 2 / p))))
+    return out
 
 
 def build_head(M):
-    rings = [ring_xyz(Vector((0, y, (zb + zt) / 2)), w, (zt - zb) / 2, (zt - zb) / 2, NH, X, Z, 2.4, 2.6, -math.pi / NH)
-             for y, w, zb, zt in HEAD_RINGS]
-    faces = M.loft('Head', rings, head_colour, K, W)
-    M.pivot['Head'] = Vector((0, -0.34 + DYH, 0.68))
+    rings = [head_ring(*r) for r in HEAD_RINGS]
+    faces = M.loft('Head', rings, lambda j, k: SLOT[HEAD_COLS[_COLK[k]][j]], K, W)
+    M.pivot['Head'] = HP.copy()
     return faces
+
+
+def tuft(M, name, b, d, L, w, t, slot, sx):
+    """angular fur tuft: flattened 4-sided pyramid, base sunk in the skull, apex out along d (mirrored for sx = -1)"""
+    b = HP + Vector(b); d = Vector(d).normalized()
+    n0 = Vector((1, 0, 0))
+    v = (n0 - d * n0.dot(d)).normalized(); u = d.cross(v).normalized()
+    ring = [b + u * w, b + v * t, b - u * w, b - v * t]
+    apex = b + d * L
+    if sx < 0: ring = [mir(p) for p in reversed(ring)]; apex = mir(apex)
+    return M.cone(name, ring, apex, slot)
 
 
 def bvh_of(faces):
@@ -387,54 +424,49 @@ def surf(bvh, target, d, back=0.4):
 
 def build_face(M, head_faces):
     hb = bvh_of(head_faces)
-    # eyes: small dark-brown 8-gon cone discs in the orange, 2 mm proud, looking forward-sideways
-    look = Vector((0.50, -0.85, 0.10)).normalized()
-    hp, n = surf(hb, (0.080, -0.472 + DYH, 0.757), -look)
-    ax = (n + look).normalized()
+    # eyes: round dark-brown 8-gon discs on the stop, looking forward (slightly out), 3 mm proud
+    look = Vector((0.22, -0.95, 0.12)).normalized()
+    hp, n = surf(hb, HP + Vector(EYE_AT), -look)
+    ax = (n + 2 * look).normalized()
     for sfx, sx in (('.L', 1), ('.R', -1)):
         c = hp if sx > 0 else mir(hp); a = ax if sx > 0 else mir(ax)
         _, e1, e2 = pc.basis(a, (0, 0, 1))
-        M.cone('Eye' + sfx, ngon_ring(c + a * 0.002, e1, e2, EYE_R, 8), c - a * 0.011, EYE)
+        M.cone('Eye' + sfx, ngon_ring(c + a * 0.003, e1, e2, EYE_R, 8), c - a * 0.014, EYE)
         M.pivot['Eye' + sfx] = c.copy()
-    # nose: dark rounded pad on the muzzle tip, proud
-    hp, n = surf(hb, (0, -0.70, 0.672), (0, 1, 0))
+    # nose: broad dark pad on the muzzle tip (wider than tall, flat bottom), proud
+    hp, n = surf(hb, HP + Vector((0, -0.40, 0.012)), (0, 1, 0))
     up = (Z - n * Z.dot(n)).normalized(); side = up.cross(n).normalized()
     if side.x < 0: side = -side
-    nr = lambda off, sc: ngon_ring(hp + n * off, side, up, 0.033 * sc, 8, math.pi / 8, 0.68)
-    M.loft('Nose', [nr(-0.016, 0.9), nr(0.005, 1.0), nr(0.018, 0.72)], NOSE, NOSE, NOSE)
+    nr = lambda off, sc, sy: ngon_ring(hp + n * off + up * 0.004, side, up, 0.046 * sc, 8, math.pi / 8, sy)
+    M.loft('Nose', [nr(-0.018, 0.92, 0.62), nr(0.006, 1.0, 0.64), nr(0.022, 0.74, 0.58)], NOSE, NOSE, NOSE)
     M.pivot['Nose'] = hp.copy()
-    # jaw: white chin block under the muzzle
-    jr = [(SY(-0.492), 0.049, 0.599, 0.635), (SY(-0.551), 0.045, 0.589, 0.625), (SY(-0.609), 0.031, 0.599, 0.620)]
-    M.loft('Jaw', [ring_xyz(Vector((0, y, (a + b) / 2)), w, (b - a) / 2, (b - a) / 2, 6, X, Z) for y, w, a, b in jr], W, W, W)
-    M.pivot['Jaw'] = Vector((0, -0.47 + DYH, 0.62))
-    # black hair frame: a fin on each side of the head behind the orange cheeks, ear -> jaw, sunk into the head
-    yf = -0.415 + DYH
-    rings = []
-    for z, ext, t in ((0.815, 0.010, 0.016), (0.775, 0.030, 0.022), (0.715, 0.040, 0.024), (0.660, 0.028, 0.020),
-                      (0.625, 0.008, 0.014)):
-        hx, _ = surf(hb, (0.0, yf, z), (-1, 0, 0), back=0.4)
-        x0 = hx.x
-        prof = [(-0.020, 0.0), (-0.010, -t), (ext, -0.55 * t), (ext + 0.010, 0.0), (ext, 0.55 * t), (-0.010, t)]
-        rings.append([Vector((x0 + a, yf + b, z)) for a, b in prof])
-    for sx in (1, -1):
-        rr = rings if sx > 0 else [[mir(p) for p in r] for r in rings]
-        M.loft('Head', rr, K, K, K)
-    # ears: semi-erect leaf, upper third folds forward-out-down over a fixed hinge; tan inner face, black outside + rim
-    hp, n = surf(hb, (0.090, -0.385 + DYH, 0.90), (0, 0, -1))
-    d1 = Vector((0.42, 0.0, 1.0)).normalized()
+    # jaw: short white chin block under the muzzle, top sunk into the muzzle
+    jr = [(-0.190, 0.064, -0.138, -0.086), (-0.236, 0.056, -0.142, -0.092), (-0.276, 0.038, -0.128, -0.092)]
+    M.loft('Jaw', [ring_xyz(HP + Vector((0, y, (a + b) / 2)), w, (b - a) / 2, (b - a) / 2, 6, X, Z) for y, w, a, b in jr],
+           W, W, W)
+    M.pivot['Jaw'] = HP + Vector((0, -0.17, -0.09))
+    # mane: dark angular tufts from behind the ears down past the cheeks (frame the face), orange cheek tufts in front
+    for b, d, L, w, t, s in MANE:
+        for sx in (1, -1): tuft(M, 'Head', b, d, L, w, t, SLOT[s], sx)
+    # ears: big semi-erect leaf leaning out, the upper half folds forward-out-down over a fixed hinge;
+    # tan inner face framed by a black rim, black flap (tan underside)
+    hp, n = surf(hb, HP + Vector(EAR_AT), (0, 0, -1))
+    d1 = Vector(EAR_D1).normalized()
     fwd = Vector((0, -1, 0))
     wa = d1.cross(fwd).normalized()
-    d2 = (-0.60 * d1 + 0.80 * fwd + 0.35 * wa).normalized()
-    base = hp - d1 * 0.020; fold = base + d1 * EAR_UP; tip = fold + d2 * EAR_FLAP
+    d2 = (EAR_FOLD[0] * d1 + EAR_FOLD[1] * fwd + EAR_FOLD[2] * wa).normalized()
+    base = hp - d1 * 0.025; fold = base + d1 * EAR_UP; tip = fold + d2 * EAR_FLAP
     prof = [(1, 0), (0.55, 1), (-0.55, 1), (-1, 0), (-0.8, -1), (0.8, -1)]     # +b = inner (front) face
+    hinge = d1.cross(d2).normalized()
+    if hinge.dot(wa) < 0: hinge = -hinge
     rings = []; prev = fwd
-    for c, t, hw, ht in ((base, d1, 0.052, 0.012), (fold, (d1 + d2).normalized(), 0.040, 0.011), (tip, d2, 0.010, 0.005)):
-        w_ = (wa - t * wa.dot(t)).normalized()
+    for c, t, hw, ht in ((base, d1, EAR_W[0], 0.022), (fold, (d1 + d2).normalized(), EAR_W[1], 0.018), (tip, d2, EAR_W[2], 0.006)):
+        w_ = (hinge - t * hinge.dot(t)).normalized()
         ta = t.cross(w_).normalized()
         if ta.dot(prev) < 0: ta = -ta
         prev = ta
         rings.append([c + w_ * (a * hw) + ta * (b * ht) for a, b in prof])
-    col = lambda j, k: TAN if (j == 0 and k == 1) else K      # tan inner face framed by a black rim, black flap
+    col = lambda j, k: TAN if k == 1 else K                  # tan inner face framed by a black rim, black flap
     for sfx, sx in (('.L', 1), ('.R', -1)):
         rr = rings if sx > 0 else [[mir(p) for p in r] for r in rings]
         M.loft('Ear' + sfx, rr, col, K, K)
@@ -451,23 +483,26 @@ def build_legs(M):
             ring = lambda yy, z, r, sy=1.0: ngon_ring(Vector((x, yy, z)), X, Y, r, 8, math.pi / 8, sy)
             if kind == 'Front':
                 up = [(y, 0.53, 0.064, 1.10), (y, 0.41, 0.083, 1.10), (y - 0.005, 0.25, 0.070, 1.0)]
-                lo = [(y - 0.005, 0.275, 0.0685), (y - 0.008, 0.16, 0.066), (y - 0.010, 0.045, 0.063)]
-                fy = y - 0.022; z_up, z_lo = 0.52, 0.255
+                lo = [(y - 0.005, 0.275, 0.0685), (y - 0.009, 0.16, 0.064), (y - 0.016, 0.045, 0.058)]
+                fy = y - 0.022; z_up, z_lo = FRONT_SHOULDER_Z, 0.255
             else:
                 up = [(y, 0.56, 0.058, 1.15), (y, 0.47, 0.078, 1.25), (y + 0.025, 0.35, 0.083, 1.15), (y + 0.055, 0.23, 0.070, 1.0)]
-                lo = [(y + 0.055, 0.255, 0.0685), (y + 0.045, 0.15, 0.066), (y + 0.040, 0.045, 0.063)]
+                lo = [(y + 0.055, 0.255, 0.0685), (y + 0.047, 0.15, 0.064), (y + 0.040, 0.045, 0.058)]
                 fy = y + 0.032; z_up, z_lo = 0.54, 0.235
             ru = [ring(*r) for r in up]
             M.loft(kind + 'Upper' + sfx, ru, W if kind == 'Front' else R, W if kind == 'Front' else R,
                    W if kind == 'Front' else R)          # white front legs to the elbow; orange "trousers" to the hock
             M.loft(kind + 'Lower' + sfx, [ring(*r) for r in lo], W, W, W)
             pr = lambda z, r, sy: ngon_ring(Vector((x, fy, z)), X, Y, r, 8, math.pi / 8, sy)
+            # round 5 (user: paws come loose from the shank in Walk): the paw box was only 0.064 high with its joint at z 0.03,
+            # 1.5 cm below the shank end (z 0.045), so any turn of the paw opened a gap. Now a hidden neck (r 0.050, inside
+            # the shank, r 0.058-0.064) reaches up to z 0.115 and the joint sits at z 0.075 inside that overlap.
             M.loft(kind + 'Foot' + sfx, [pr(0.0, 0.069, 1.28), pr(0.006, 0.072, 1.28), pr(0.040, 0.072, 1.26),
-                                         pr(0.064, 0.062, 1.12)],
+                                         pr(0.064, 0.062, 1.12), pr(0.072, 0.050, 1.0), pr(0.115, 0.050, 1.0)],
                    lambda j, k: SOLE if j == 0 else W, SOLE, W, ground=True)
             M.pivot[kind + 'Upper' + sfx] = Vector((x, up[0][0], z_up))
             M.pivot[kind + 'Lower' + sfx] = Vector((x, lo[0][0], z_lo))
-            M.pivot[kind + 'Foot' + sfx] = Vector((x, fy, 0.03))
+            M.pivot[kind + 'Foot' + sfx] = Vector((x, fy, 0.075))
 
 
 # ---------------- tail: bushy, carried low, black top / rust underside / white brush tip ----------------
@@ -545,18 +580,13 @@ def com_of(bm):
 def build_model():
     M = Model()
     build_body(M); build_neck(M); build_ruff(M)
-    hf = build_head(M); build_face(M, hf)
-    build_legs(M); tl = build_tail(M)
     bm = M.P.bm
-    mg = ('Neck1', 'Neck2', 'Ruff') + HEAD_GROUP
+    mg = ('Neck1', 'Neck2', 'Ruff')
     mv = {v for nm, faces, _ in M.P.comp if nm in mg for f in faces for v in f.verts}
     for v in mv: v.co += MOVE
     for k in mg: M.pivot[k] = M.pivot[k] + MOVE
-    hq = HEAD_Q + MOVE
-    if HEAD_SCALE != 1.0:
-        hv = {v for nm, faces, _ in M.P.comp if nm in HEAD_GROUP for f in faces for v in f.verts}
-        for v in hv: v.co = hq + (v.co - hq) * HEAD_SCALE
-        for k in HEAD_GROUP: M.pivot[k] = hq + (M.pivot[k] - hq) * HEAD_SCALE
+    hf = build_head(M); build_face(M, hf)                  # head group built in place (final metres around HP)
+    build_legs(M); tl = build_tail(M)
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
     com, vol = com_of(bm)
     shift = Vector((0, -com.y, 0))
@@ -698,11 +728,13 @@ if __name__ == '__main__':
         look(B)
     elif CMD == 'head':
         B = build(os.path.join(CHECK, 'tex'))
-        hs = [B['obs'][n] for n in HEAD_GROUP]; tiles = []
-        for i, v in enumerate(((0.0, -1.0, 0.15), (1.0, 0.0, 0.1), (0.75, -1.0, 0.25), (-0.4, 1.0, 0.4))):
-            p = os.path.join(CHECK, f'h{i}.png'); rn.preview(B['sc'], hs, p, view=v, fill=(0.8, 0.8))
-            tiles.append(rn.resize(rn.load_px(p), 400)); os.remove(p)
-        rn.compose(tiles, 2, os.path.join(CHECK, 'Dog_head_sheet.png'))
+        hs = [B['obs'][n] for n in HEAD_GROUP]; tiles = [rn.ref_tile(REF, 300)]
+        for i, v in enumerate(((0.38, -1.0, 0.22), (0.0, -1.0, 0.15), (1.0, 0.0, 0.1), (1.0, -0.78, 0.22))):
+            p = os.path.join(CHECK, f'h{i}.png'); rn.preview(B['sc'], hs, p, view=v, fill=(0.62, 0.72))
+            tiles.append(rn.resize(rn.load_px(p), 300)); os.remove(p)
+        p = os.path.join(CHECK, 'hall.png'); rn.preview(B['sc'], list(B['obs'].values()), p, view=REF_VIEW, fill=(0.7, 0.8))
+        tiles.append(rn.resize(rn.load_px(p), 300)); os.remove(p)
+        rn.compose(tiles, 3, os.path.join(CHECK, 'Dog_head_sheet.png'))
     elif CMD == 'export':
         B = build(os.path.join(ART, 'Textures'))
         os.makedirs(os.path.join(ART, 'Meshes'), exist_ok=True); os.makedirs(os.path.join(ART, 'Blend'), exist_ok=True)

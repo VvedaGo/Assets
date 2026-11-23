@@ -25,6 +25,11 @@ ar.SKELETONS['QC'] = [b for b in ar.Q_BONES if not b[0].startswith('Horn')]
 BIND = {'Eye.L': 'Head', 'Eye.R': 'Head', 'Nose': 'Head'}
 LIMITS = dict(asp.Q_LIMITS, Tail1=dict(x=(-105, 80), z=(-60, 60)), FrontFoot=dict(x=(-70, 120)))   # paw flat at push-off   # cat: the tail can lie flat on the ground
 KNEE_TOL = 0.006
+# hind thigh -> Pelvis weights (top ring inside the body, ring at z 0.14) and Spine2 weight at the neck root; env override
+# for testing (CAT_THIGH="0.7,0.0" CAT_NECK_ROOT=0.5 = the round-1 binding)
+THIGH_W = tuple(float(v) for v in os.environ.get('CAT_THIGH', '1.0,0.0').split(','))
+THIGH_MID_Z = 0.13
+NECK_ROOT_W = float(os.environ.get('CAT_NECK_ROOT', '0.5'))
 
 
 def bone_of(part):
@@ -91,7 +96,7 @@ def neck_weights(co, P):
     A, Bp, C = P['Neck1'], P['Neck2'], P['Head']
     t1 = (co - A).dot(Bp - A) / (Bp - A).length_squared
     s = t1 if t1 < 1.0 else 1.0 + max(0.0, (co - Bp).dot(C - Bp) / (C - Bp).length_squared)
-    knots = [(0.0, {'Spine2': 0.5, 'Neck1': 0.5}), (0.5, {'Neck1': 1.0}), (1.0, {'Neck1': 0.5, 'Neck2': 0.5}),
+    knots = [(0.0, {'Spine2': NECK_ROOT_W, 'Neck1': 1.0 - NECK_ROOT_W}), (0.5, {'Neck1': 1.0}), (1.0, {'Neck1': 0.5, 'Neck2': 0.5}),
              (1.5, {'Neck2': 1.0}), (2.0, {'Neck2': 0.2, 'Head': 0.8})]
     if s <= knots[0][0]: return dict(knots[0][1])
     if s >= knots[-1][0]: return dict(knots[-1][1])
@@ -117,8 +122,14 @@ def part_weights(nm, co, P, tail_pts, spine_pts):
             if nm not in (up, lo): continue
             zk = P[lo].z; zf = P[ft].z
             if nm == up:
+                bb = 'Spine2' if k == 'Front' else 'Pelvis'
                 if co.z > P[up].z - 0.005:            # thigh/shoulder top inside the body stays with the body when folded
-                    return {('Spine2' if k == 'Front' else 'Pelvis'): 0.7, up: 0.3}
+                    return {bb: THIGH_W[0], up: 1.0 - THIGH_W[0]} if k == 'Hind' else {bb: 0.7, up: 0.3}
+                # round 2 (ANIMATION_FIXES 2): the hind thigh's upper ring (z 0.14) is shared with the pelvis too, so the
+                # long thigh faces between it and the body-bound top ring bend into a haunch instead of standing out of the
+                # hip as a flat light slab in Lie_Idle
+                if k == 'Hind' and co.z > THIGH_MID_Z:
+                    return {bb: THIGH_W[1], up: 1.0 - THIGH_W[1]}
                 return {up: 0.5, lo: 0.5} if abs(co.z - zk) < KNEE_TOL else {up: 1.0}
             if co.z < zf: return {ft: 1.0}
             if co.z > zk + KNEE_TOL: return {up: 1.0}

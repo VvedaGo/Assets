@@ -175,15 +175,15 @@
    ]
   },
   "Walk": {
-   "frames": 34,
-   "seconds": 1.1,
+   "frames": 37,
+   "seconds": 1.2,
    "loop": true,
    "loop_closure_deg": 0.0,
-   "lowest_vertex_m": -0.0025,
-   "lowest_frame": 19,
-   "foot_slip_m": 0.0018,
-   "foot_slip_pct_of_step": 0.63,
-   "step_m": 0.286,
+   "lowest_vertex_m": -0.0026,
+   "lowest_frame": 21,
+   "foot_slip_m": 0.002,
+   "foot_slip_pct_of_step": 0.65,
+   "step_m": 0.312,
    "stance_foot_max_height_m": 0.0001,
    "speed_mps": 0.4,
    "neck_yaw_total_deg": 0.5,
@@ -197,40 +197,40 @@
      -6.0
     ],
     "FrontFoot.L.x": [
-     -58.5,
-     1.6
+     -57.9,
+     2.2
     ],
     "FrontFoot.R.x": [
-     -59.1,
-     1.6
+     -57.9,
+     2.2
     ],
     "FrontLower.L.x": [
-     34.0,
-     97.3
+     32.2,
+     98.9
     ],
     "FrontLower.R.x": [
-     32.6,
-     97.5
+     32.2,
+     98.9
     ],
     "FrontUpper.L.x": [
-     -46.8,
-     7.5
+     -50.9,
+     11.4
     ],
     "FrontUpper.L.z": [
-     0.2,
-     3.6
+     0.0,
+     3.7
     ],
     "FrontUpper.R.x": [
-     -47.5,
-     7.2
+     -50.9,
+     11.4
     ],
     "FrontUpper.R.z": [
      -3.7,
-     -0.2
+     -0.0
     ],
     "Head.x": [
-     -20.0,
-     -16.4
+     -19.9,
+     -16.1
     ],
     "Head.z": [
      -1.2,
@@ -238,39 +238,39 @@
     ],
     "HindFoot.L.x": [
      -10.2,
-     77.1
+     80.0
     ],
     "HindFoot.R.x": [
-     -17.1,
-     78.1
+     -10.2,
+     80.0
     ],
     "HindLower.L.x": [
-     -64.4,
-     -16.1
+     -68.0,
+     -18.7
     ],
     "HindLower.R.x": [
-     -65.7,
-     -8.4
+     -68.0,
+     -18.7
     ],
     "HindUpper.L.x": [
-     -11.3,
-     35.1
+     -13.4,
+     40.0
     ],
     "HindUpper.L.z": [
-     1.9,
-     3.6
+     2.0,
+     3.7
     ],
     "HindUpper.R.x": [
-     -10.7,
-     34.9
+     -13.4,
+     40.0
     ],
     "HindUpper.R.z": [
-     -3.6,
-     -1.9
+     -3.7,
+     -2.0
     ],
     "Neck1.x": [
-     11.5,
-     16.0
+     11.6,
+     16.4
     ],
     "Neck1.z": [
      -1.5,
@@ -281,8 +281,8 @@
      8.0
     ],
     "Pelvis.x": [
-     -3.3,
-     4.3
+     -4.0,
+     4.0
     ],
     "Pelvis.y": [
      -1.0,
@@ -301,24 +301,24 @@
      2.5
     ],
     "Tail1.x": [
-     6.5,
-     9.5
+     12.7,
+     27.3
     ],
     "Tail1.z": [
-     -3.0,
-     3.0
+     -2.0,
+     2.0
     ],
     "Tail2.z": [
-     -5.0,
-     5.0
+     -3.5,
+     3.5
     ],
     "Tail3.x": [
      -2.0,
      2.0
     ],
     "Tail3.z": [
-     -7.0,
-     7.0
+     -5.0,
+     5.0
     ]
    },
    "limit_violations": []
@@ -328,7 +328,7 @@
    "seconds": 4.0,
    "loop": true,
    "loop_closure_deg": 0.0,
-   "lowest_vertex_m": -0.0,
+   "lowest_vertex_m": -0.0349,
    "lowest_frame": 0,
    "neck_yaw_total_deg": 7.2,
    "joint_ranges_deg": {
@@ -389,8 +389,8 @@
      2.0
     ],
     "Head.x": [
-     -42.5,
-     -40.5
+     -29.3,
+     -27.3
     ],
     "Head.y": [
      14.3,
@@ -425,12 +425,12 @@
      8.0
     ],
     "Neck1.x": [
-     52.1,
-     52.1
+     35.1,
+     35.1
     ],
     "Neck2.x": [
-     34.6,
-     34.6
+     23.3,
+     23.3
     ],
     "Neck2.y": [
      4.5,
@@ -469,8 +469,8 @@
      24.7
     ],
     "Tail1.x": [
-     20.6,
-     20.6
+     37.9,
+     37.9
     ],
     "Tail1.y": [
      10.5,
@@ -493,25 +493,25 @@
      -82.5
     ],
     "Tail3.x": [
-     -9.7,
-     -9.7
+     -24.7,
+     -24.7
     ],
     "Tail3.y": [
-     24.2,
-     24.2
+     32.6,
+     32.6
     ],
     "Tail3.z": [
-     -41.6,
-     -33.6
+     -72.1,
+     -64.1
     ]
    },
    "limit_violations": [],
    "rest_lowest_z_m": {
-    "Front.L": 0.0227,
-    "Front.R": 0.0176,
-    "Hind.L": 0.0171,
-    "Hind.R": -0.0,
-    "body": 0.0389,
+    "Front.L": -0.0122,
+    "Front.R": -0.0174,
+    "Hind.L": -0.0179,
+    "Hind.R": -0.0349,
+    "body": 0.004,
     "tail": 0.003
    },
    "pose": {
@@ -526,8 +526,8 @@
     "front_leg_z": -0.0,
     "hind_leg_z": 0.0071,
     "legs_outside": 0.429,
-    "head_pitch": 57.9,
-    "tail1_pitch": 14.9,
+    "head_pitch": 39.1,
+    "tail1_pitch": -2.4,
     "tail_lowest": 0.003
    }
   }
@@ -541,7 +541,7 @@
    ],
    [
     "Fox_Walk",
-    33.0
+    36.0
    ],
    [
     "Fox_Lie_Idle",
@@ -1103,7 +1103,7 @@
     ],
     "Rig.001|Fox_Walk": [
      1.0,
-     34.0
+     37.0
     ]
    },
    "images": [

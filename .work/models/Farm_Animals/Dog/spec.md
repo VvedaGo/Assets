@@ -172,3 +172,36 @@ Metrics: loops 0.000 deg; lowest Idle -2.6 / Walk -1.4 / Sit -4.3 mm; Walk slip 
 Dog_Walk 35 / Dog_Sit_Idle 106 (import ranges), vertex error 0.0. GIFs: Walk 1.19 MB, Sit_Idle 1.51 MB, Idle 2.66 MB.
 Remaining: in the sit, the white top of the metatarsus shows as a "heel" behind the 128 deg hock fold (rigid part, hip only
 9 cm above the ground).
+
+## Head rework 4 + Sit rig round 2 (2026-11-21, user-approved mesh change) - supersedes the head and Sit_Idle above
+Head (build_dog.py, built in final metres around the head pivot HP, old x1.46 group scale removed):
+- Skull 12-sided loft with non-uniform ring angles (narrow top face = blaze): broad crown (0.36 wide), real stop,
+  muzzle 0.09 from the stop to the tip (was ~0.14, narrow, flat-topped -> fox), jaw shortened with it.
+- Colours: black cap down to the brows, narrow white blaze crown -> nose widening to a white muzzle, orange mask
+  around the eyes and cheeks, white chin. Eyes 8-gon discs r 0.024 (was 0.02), forward on the stop, 0.19 apart.
+- Nose: broad flat pad 0.092 x 0.06. Ears: 0.115 standing (leaning out 39 deg) + 0.13 flap folded forward over a
+  hinge = d1 x d2 (bug fixed: the old width axis collapsed the fold ring), tan inner face + tan flap underside, black
+  outside. Mane: 7 black + 2 orange flattened 4-sided tufts per side (sunk in the skull) framing the face from behind
+  the ears down past the cheeks. Cheek "headphone" fins removed.
+Rounds (head sheet: ref | 3/4 | front | side | preview angle): R1 thin spike tufts, pointed ears -> chunky tufts;
+R2 forehead orange, spikes sideways -> black cap, tufts down; R3/R4 fold collapsed / face sideways -> hinge fix, flap
+forward; R5 ok from front; R6 muzzle -2.5 cm, 2 filler tufts.
+Legs: lower-leg bottom rings 8% thinner, front pastern 6 mm forward (cheap, barely visible).
+Result: 1796 tris (Head 296 incl. tufts, Jaw 32, Ears 2x32, Eyes 2x14, Nose 44); 0.509 x 1.279 x 1.134 m; checks
+non-manifold/loose/degenerate 0/0/0, mirror 0, gap 0, coplanar 0, min z 0. Palette unchanged (16 cells, none added).
+
+Sit_Idle (rig round 2):
+- Geometry note: moving the shoulder pivot 0.12 m straight down only gains ~0.035 m in the sit (the joint also drops
+  0.12*cos(tilt)), so it alone cannot fix a 45-50 deg sit. Done: FrontUpper pivot 0.52 -> 0.40 (chest bottom; leg mesh
+  above z pivot+0.05 bound to Spine2; standing silhouette unchanged) PLUS a shoulder slide in Sit_Idle only: FrontUpper
+  location keyed (world-vertical 0.059 m into the chest, like the scapula); own write_action copy keys FrontUpper
+  location; leg IK accounts for it.
+- Torso tilt (Pelvis->Spine2 joint line) 47.1 deg, hip 0.096, front legs straight, 8 deg forward, paws 0.29 apart;
+  thighs forward-out (38 deg splay) beside the belly, white lower legs forward along the ground turned in 30 deg, hind
+  paws 1.3 cm behind the front paws; joint raised until the paw box rests on the ground; tail on the ground.
+- In the sit the hind joint folds FORWARD (it plays the stifle): leg_checks reports 210 "wrong-way" frames for Sit_Idle
+  by design; Dog-only limits widened: HindUpper x -115, HindLower x +95 (Walk/Idle still 0 wrong-way frames).
+Metrics: loops 0.0 deg; lowest Idle -4.6 / Walk -6.4 / Sit -5.5 mm; Walk slip 1.2 %; 0 limit violations.
+FBX re-import: 26 bones, 28 meshes, 1796 tris, takes Dog_Idle 91 / Dog_Walk 35 / Dog_Sit_Idle 106, vertex error 0.0.
+Remaining: thin light sliver under the belly between front leg and thigh in the sit; a few black tuft tips poke through
+the ruff side; the head is straight (reference turns it to the camera).

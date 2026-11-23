@@ -78,7 +78,8 @@ def s_wave(p, ph, amps, lag, pitch=(0.0, 0.0, 0.0)):
 
 def gait_fox(sk, sp, name, overlay):
     """copy of ../Cat/cat_clips.gait_cat (overlay applied BEFORE the leg IK, paws placed closer to the midline)"""
-    g = sp['gait'][name]; T = g['T']; N = frames_of(T); duty = g['duty']; v = g['speed']; S = duty * v * T
+    import os as _os, json as _json
+    g = dict(sp['gait'][name], **_json.loads(_os.environ.get('FOX_WALK', '{}'))); T = g['T']; N = frames_of(T); duty = g['duty']; v = g['speed']; S = duty * v * T
     targ = []; need = {'Front': np.zeros(N), 'Hind': np.zeros(N)}
     stance = {k: [] for k in LEGS}
     piv = {k: sk.rest[ar.LEGS[k][0]].translation.copy() for k in LEGS}
@@ -103,7 +104,35 @@ def gait_fox(sk, sp, name, overlay):
     drops = {}
     for gk, a in need.items():
         Fc = np.fft.rfft(a); Fc[4:] = 0; sm = np.fft.irfft(Fc, N)
-        sm += max(0.0, float((a - sm).max())); drops[gk] = sm + g['crouch'] + (g.get('crouch_front', 0.0) if gk == 'Front' else 0.0)
+        sm += max(0.0, float((a - sm).max()))
+        if g.get('flat'): sm = np.full(N, float(a.max()))     # sneak: constant low body (no reach bob), round 2 2026-11-21
+        if g.get('exact'):                                    # round 4 (user: front 'knees' turned the wrong way): the body
+            hm = g.get('harm')
+            if hm:                                           # round 5 (user: the rump and tail jerk): smooth upper envelope with
+                sm = a.copy()                                # `harm` harmonics, never below the need -> legs straight, no pitch jerk
+                for _ in range(80):
+                    Fc = np.fft.rfft(np.maximum(sm, a)); Fc[hm:] = 0; sm = np.fft.irfft(Fc, N)
+                sm = np.maximum(sm, a)
+            else:
+                sm = np.maximum(a, (np.roll(a, 1) + a + np.roll(a, -1)) / 3)   # follows the legs, so stance legs stay straight
+        drops[gk] = sm + g['crouch'] + (g.get('crouch_front', 0.0) if gk == 'Front' else 0.0)
+    if g.get('pitch_max'):                                   # round 5b: keep the body from rocking: |front - hind| drop is limited,
+        span0 = sk.rest[ar.LEGS['HindL'][0]].translation.y - sk.rest[ar.LEGS['FrontL'][0]].translation.y   # the girdle that needs
+        dmax = abs(span0) * math.sin(R(g['pitch_max']))       # less only folds its legs a little more (drop is never below need)
+        for _ in range(6):
+            df_, dh_ = drops['Front'].copy(), drops['Hind'].copy()
+            df2 = np.maximum(df_, dh_ - dmax); dh2 = np.maximum(dh_, df_ - dmax)
+            for gk, vv in (('Front', df2), ('Hind', dh2)):
+                sm = vv.copy()
+                for _i in range(60):
+                    Fc = np.fft.rfft(np.maximum(sm, vv)); Fc[g.get('harm', 4):] = 0; sm = np.fft.irfft(Fc, N)
+                drops[gk] = np.maximum(sm, vv)
+    if g.get('common'):                                      # round 5: ONE smooth curve for the whole body (no pitch, no rump jerk)
+        am = np.maximum(need['Front'], need['Hind']); cm = am.copy()
+        for _ in range(80):
+            Fc = np.fft.rfft(np.maximum(cm, am)); Fc[g['common']:] = 0; cm = np.fft.irfft(Fc, N)
+        cm = np.maximum(cm, am)
+        for gk in drops: drops[gk] = cm + g['crouch'] + (g.get('crouch_front', 0.0) if gk == 'Front' else 0.0)
     span = piv['HindL'].y - piv['FrontL'].y
     frames = []
     for f in range(N):
@@ -118,6 +147,10 @@ def gait_fox(sk, sp, name, overlay):
         frames.append(pose)
     frames.append(copy_pose(frames[0]))
     events = sorted([(round(g['phases'][k] * N) % N, 'Footstep', k) for k in LEGS])
+    _pt = np.array([math.asin((drops['Front'][i] - drops['Hind'][i]) / span) for i in range(N)]); _h = np.array(drops['Hind'])
+    print('FOXWALK jerk: hind drop range', round(float(_h.max() - _h.min()), 4), 'pitch range deg', round(math.degrees(float(_pt.max() - _pt.min())), 2),
+          'max |d2 hind| mm', round(float(np.abs(np.diff(_h, 2, append=_h[:2])).max()) * 1000, 2),
+          'max |d pitch| deg/frame', round(math.degrees(float(np.abs(np.diff(_pt, append=_pt[:1])).max())), 3))
     return frames, events, dict(stance=stance, speed=v, step=S, N=N,
                                 drops={k: [round(float(d.min()), 4), round(float(d.max()), 4)] for k, d in drops.items()})
 
@@ -180,7 +213,12 @@ def curl(sk, base, lp):
     for b, a in zip(('Neck1', 'Neck2', 'Head'), lp['neck_yaw']): yaw_world(sk, p, b, sd * a)
     rot(p, 'Head', y=sd * lp['head_roll'])
     ear(p, up=lp['ear_up'], back=lp['ear_back'])
-    no_penetration(sk, p, exact=True)            # belly on the ground (head still high)
+    import os as _os, json as _json
+    lp = dict(lp, **_json.loads(_os.environ.get('FOX_LIE', '{}')))
+    # round 3 (user: lying fox hovers above the ground, the head sinks into the paws): the old 'whole mesh on the ground'
+    # rule balanced the fox on one hind paw (body 3.9 cm, front paws 2 cm up). Now the BODY sits on the ground (body_z) and
+    # the tucked legs may sink a little below it; the head is laid ON the paws (chin_z), not between them.
+    bz = sk.minz(p, sk.mask(BODY)); raise_body(sk, p, lp.get('body_z', 0.004) - bz)
     A = aim_head_fox(sk, p, lp['chin_z'], share=lp['head_share'], lo=-20.0, hi=100.0)   # pitch in the bone frames
     # tail: Tail1 pitch solved so the tail lies on the ground (lowest tail_z), then swept forward along the same flank
     tm = sk.mask(TAIL); q0 = copy_pose(p)
@@ -195,7 +233,7 @@ def curl(sk, base, lp):
         if z > lp['tail_z']: lo = m
         else: hi = m
     q, z = at(lo)
-    no_penetration(sk, q, exact=False)
+    no_penetration(sk, q, exact=False, mask=sk.mask(BODY + HEADM + TAIL))      # legs excluded: tucked, may sink
     info = dict(head_pitch=round(A, 1), tail1_pitch=round(lo, 1), tail_lowest=round(z, 4))
     print('CURL', info)
     return q, info
@@ -266,7 +304,9 @@ def build_clips(sk, sp):
         rot(p, 'Neck1', x=g['neck'][0] - 0.6 * pitch + 0.5 * math.sin(2 * TW * ph - 1.0), z=0.6 * u * math.sin(TW * ph - 0.9))
         rot(p, 'Neck2', x=g['neck'][1])
         rot(p, 'Head', x=g['neck'][2] - 0.4 * pitch - 0.6 * math.sin(2 * TW * ph - 1.3), z=-0.5 * u * math.sin(TW * ph - 1.2))
-        s_wave(p, ph, g['tail'], 0.12, pitch=(g['tail_pitch'] + 1.5 * math.sin(2 * TW * ph - 1.5), 0.0, 2.0 * math.sin(2 * TW * ph - 2.2)))
+        import os as _o2
+        tk = float(_o2.environ.get('FOX_TAILK', g.get('tail_follow', 0.0)))        # round 5: tail counter-pitch against the body pitch
+        s_wave(p, ph, g['tail'], 0.12, pitch=(g['tail_pitch'] - tk * pitch + 1.5 * math.sin(2 * TW * ph - 1.5), 0.0, 2.0 * math.sin(2 * TW * ph - 2.2)))
         rot(p, 'Ear.L', x=g['ear_fwd'] + g['ear'] * math.sin(2 * TW * ph - 2.0))
         rot(p, 'Ear.R', x=g['ear_fwd'] + g['ear'] * math.sin(2 * TW * ph - 2.3))
     fr, ev, extra = gait_fox(sk, sp, 'Walk', ov_walk)

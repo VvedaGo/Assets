@@ -48,10 +48,12 @@ HEAD_TILT = math.radians(64)
 U = Vector((0, -math.cos(HEAD_TILT), -math.sin(HEAD_TILT)))      # poll -> nose
 VV = Vector((0, -math.sin(HEAD_TILT), math.cos(HEAD_TILT)))      # forehead normal (front/up)
 P0 = Vector((0, -0.62, 1.45))
-HEAD_LEN = 0.375
+HEAD_LEN = 0.345
 # (s along U, half width, half height forehead side, half height jaw side) - baby head: big cranium, short broad muzzle
-HEAD_RINGS = [(-0.03, 0.104, 0.104, 0.104), (0.04, 0.172, 0.138, 0.15), (0.11, 0.200, 0.138, 0.165), (0.185, 0.190, 0.125, 0.145),
-              (0.25, 0.152, 0.106, 0.110), (0.30, 0.138, 0.100, 0.098), (0.345, 0.142, 0.098, 0.094), (0.375, 0.120, 0.078, 0.074)]
+# round 3 (user: Foal muzzle crooked / flattened): the old rings were 0.40 wide x 0.28 high before HEAD_SCALE 1.25, i.e. a
+# 0.50 m wide plate (spec: 0.33 at the eyes, 0.20 at the muzzle). Now narrower and taller: a round cranium, a tapering muzzle.
+HEAD_RINGS = [(-0.03, 0.092, 0.102, 0.102), (0.04, 0.130, 0.145, 0.155), (0.11, 0.144, 0.152, 0.172), (0.18, 0.136, 0.142, 0.164),
+              (0.235, 0.116, 0.122, 0.138), (0.28, 0.102, 0.110, 0.120), (0.32, 0.100, 0.108, 0.108), (0.345, 0.090, 0.092, 0.092)]
 MUZZLE_FROM = 4
 EYE_R = 0.036            # eye apothem before HEAD_SCALE (flush disc, 2 mm proud)          # head loft segments j >= this are muzzle colour
 FRONT = (0.15, -0.31)
@@ -216,7 +218,7 @@ def build_head(M):
 def build_face(M, head_faces):
     bvh = bvh_of(head_faces)
     # eyes: big dark 8-gon discs on the front corners of the face, 5 mm proud
-    hp, n = surf(bvh, P0 + U * 0.16 + X * 0.10 + VV * 0.04, -(X * 0.40 + VV * 0.92))
+    hp, n = surf(bvh, P0 + U * 0.16 + X * 0.085 + VV * 0.04, -(X * 0.40 + VV * 0.92))
     ax = n.normalized()
     for sfx, sx in (('.L', 1), ('.R', -1)):
         c = hp if sx > 0 else mir(hp); a = ax if sx > 0 else mir(ax)
@@ -225,7 +227,7 @@ def build_face(M, head_faces):
                EYE, EYE, EYE)
         M.pivot['Eye' + sfx] = c.copy()
     # nostrils: dark ovals on the muzzle front
-    hp, n = surf(bvh, P0 + U * (HEAD_LEN - 0.035) + X * 0.052 + VV * 0.03, -(U * 0.55 + VV * 0.85))
+    hp, n = surf(bvh, P0 + U * (HEAD_LEN - 0.035) + X * 0.045 + VV * 0.03, -(U * 0.55 + VV * 0.85))
     ax = (n + X * 0.25).normalized()
     cen = []
     for sx in (1, -1):
@@ -236,7 +238,7 @@ def build_face(M, head_faces):
         cen.append(c)
     M.pivot['Nostrils'] = (cen[0] + cen[1]) / 2
     # ears: big upright cupped leaves, dark inner face, roots sunk into the poll corners
-    hp, n = surf(bvh, P0 + U * 0.05 + X * 0.105, -VV)
+    hp, n = surf(bvh, P0 + U * 0.05 + X * 0.085, -VV)
     u = Vector((0.26, 0.04, 1.0)).normalized()
     f = Vector((0.25, -1.0, 0.0)); f = (f - u * f.dot(u)).normalized()
     s = u.cross(f).normalized()
@@ -252,9 +254,9 @@ def build_face(M, head_faces):
         M.pivot['Ear' + sfx] = hp.copy() if sx > 0 else mir(hp)
     # jaw: chin / lower lip block under the muzzle
     jc = lambda s_: P0 + U * s_ - VV * 0.07
-    jr = [(0.225, 0.055, 0.03, 0.02), (0.28, 0.092, 0.04, 0.035), (0.33, 0.095, 0.035, 0.03), (0.36, 0.075, 0.025, 0.022)]
+    jr = [(0.205, 0.050, 0.03, 0.02), (0.255, 0.076, 0.04, 0.035), (0.30, 0.082, 0.035, 0.03), (0.33, 0.068, 0.025, 0.022)]
     M.loft('Jaw', [ring_xyz(jc(s_), w, a, b, 6, X, VV, 2.4, 2.4) for s_, w, a, b in jr], MUZZLE, MUZZLE, MUZZLE)
-    M.pivot['Jaw'] = jc(0.26)
+    M.pivot['Jaw'] = jc(0.24)
     # forelock: dark tuft from the poll down the forehead between the ears (centre strand + mirrored pair)
     for i, (x0, x1, L, w) in enumerate([(0.0, 0.0, 0.14, 0.13), (0.045, 0.075, 0.11, 0.10)]):
         cs, sd, nn = [], [], []

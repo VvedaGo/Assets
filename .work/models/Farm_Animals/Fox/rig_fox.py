@@ -61,14 +61,16 @@ def species(obs):
         B[kind + 'Upper.L'] = (t(u), t(l)); B[kind + 'Lower.L'] = (t(l), t(f)); B[kind + 'Foot.L'] = (t(f), t(Vector((f.x, f.y, 0.0))))
     return dict(id='SML-02', species='Fox', asset=ASSET, tag=bc.TAG, skeleton='QF', bones=B,
                 size=dict(length=1.404, withers=0.547),
-                gait={'Walk': dict(T=1.1, duty=0.65, speed=0.40, lift=0.072, flick=(40, 30), crouch=0.010, crouch_front=0.0,
-                                   roll=1.0, bob=0.003, reach=0.995, narrow=0.85, spine=2.5, ear=2.0, ear_fwd=-8.0,
-                                   neck=(14.0, 8.0, -18.0), tail=(3.0, 5.0, 7.0), tail_pitch=8.0,
+                # round 2 (2026-11-21): stance travel >= 0.3 x length 1.404 (0.42 m), constant low sneak body (flat), tail higher
+                gait={'Walk': dict(T=1.2, duty=0.65, speed=0.40, harm=4, pitch_max=4.0,   # round 5: shorter step, smooth body, pitch <= +-4 deg (rump jerk)
+                                    lift=0.072, flick=(40, 30), crouch=0.0, crouch_front=0.0, flat=False, exact=True,
+                                   roll=1.0, bob=0.003, reach=0.97, narrow=0.85, spine=2.5, ear=2.0, ear_fwd=-8.0,
+                                   neck=(14.0, 8.0, -18.0), tail=(2.0, 3.5, 5.0), tail_pitch=20.0, tail_follow=2.0,
                                    phases={'HindL': 0.0, 'FrontL': 0.25, 'HindR': 0.5, 'FrontR': 0.75})},
                 idle=dict(turn=(32.0, 22.0), tilt=9.0, swivel=24.0, twitch=16.0, tail=(3.0, 5.0, 7.0)),
-                lie=dict(side=1.0, pelvis_yaw=-15.0, roll=4.0, spine=(28.0, 28.0), neck_yaw=(0.0, 5.0, 5.0), head_roll=15.0, chin_z=0.030,
+                lie=dict(side=1.0, pelvis_yaw=-15.0, roll=4.0, spine=(28.0, 28.0), neck_yaw=(0.0, 5.0, 5.0), head_roll=15.0, chin_z=0.100, body_z=0.004,
                          head_share=(('Neck1', 0.90), ('Neck2', 0.60), ('Head', -0.70)), front=(70, 20, 110),
-                         ear_up=-12.0, ear_back=22.0, tail_yaw=(84.0, 84.0, 47.0), tail_z=0.003),
+                         ear_up=-12.0, ear_back=22.0, tail_yaw=(84.0, 84.0, 75.0), tail_z=0.003),
                 clips=[('Idle', 4.0, True), ('Walk', 1.1, True), ('Lie_Idle', 4.0, True)], limits=LIMITS, poses={})
 
 

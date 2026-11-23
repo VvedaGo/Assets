@@ -210,8 +210,13 @@ def build_neck(M):
             return ORANGE
         return f
     M.loft('Neck1', rings[0:3], col(1, None), ORANGE, ORANGE)
-    t = (cs[2] - cs[3]).normalized()
-    M.loft('Neck2', [tuck(rings[2], t, 0.965, 0.012), rings[3], rings[4]], col(1, 0), ORANGE, ORANGE)
+    # neck-base seam fix (2026-11-21): Neck2 used to start with a tuck ring (0.965 scale, 12 mm inside Neck1), so at the
+    # joint plane it was ~2 mm narrower than Neck1 and the rim of Neck1's orange end cap showed as a thin dark line across
+    # the throat. Now Neck2 shares Neck1's boundary ring exactly (same vertices -> same weights -> stays closed in every
+    # pose) plus one hidden band reaching 14 mm back inside Neck1 (Kitten approach, overlap ~10% of the neck length).
+    t = (cs[2] - cs[1]).normalized()
+    hid = [cs[2] + (p - cs[2]) * 0.97 - t * 0.014 for p in rings[2]]
+    M.loft('Neck2', [hid, rings[2], rings[3], rings[4]], col(1, 1), ORANGE, ORANGE)
     M.pivot['Neck1'] = cs[0].copy(); M.pivot['Neck2'] = cs[2].copy()
 
 

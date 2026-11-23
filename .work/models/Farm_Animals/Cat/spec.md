@@ -76,3 +76,8 @@ Clips (30 fps, in place): Cat_Idle 3.5 s (tail S-wave x2, breathing, head turn, 
 on the ground, front legs folded under the chest, hind legs folded forward beside the belly, tail curled on the ground
 round the left rear flank; breathing, head drift, ear twitches, tail-tip flicks).
 Known: thin dark sole edges show at the folded paws in Lie_Idle; the folded thigh top still shows a small seam on the flank.
+Neck-base seam fix (2026-11-21): Neck2 started with a tuck ring (0.965 scale) and was ~2 mm narrower than Neck1 at the joint,
+so the rim of Neck1's orange end cap showed as a thin dark line across the throat (rest pose, Idle, Lie_Idle). Neck2 now
+shares Neck1's boundary ring exactly + one hidden band 14 mm back inside Neck1 (0.97 scale); tris 1448 -> 1460. Checked
+in EEVEE close-ups: rest, Idle, Lie_Idle, Walk, head down 35/25/20, head up -20/-20/-25, lateral +-25 x3: no line.
+Still open: the same tuck seams at the body joints (Spine2|Spine1, Spine1|Pelvis) and tail joints show as faint lines.

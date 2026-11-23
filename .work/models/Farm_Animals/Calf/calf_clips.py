@@ -32,7 +32,16 @@ def set_dir(sk, p, bone, wd):
 # back under the chest. Hind: thigh+shank pointed forward-out-down (beside the rear belly), hock 50 deg, hoof turned so its
 # side, not the sole, faces out. Values chosen from rendered candidates (side / 3/4 / front views).
 BREATH_SPINE = 3.0          # breathe() spine factor in Lie_Idle -> chest top travel ~1.5 cm (printed, ANIMATION_FIXES: 1-2 cm)
-LIE = dict(fa=70, fl=165, ff=30, hdir=(0.22, -0.15, -0.085), hl=50, hf=-50)
+# Round 2 (ANIMATION_FIXES 1, re-check): with rigid knee binding (rig_calf KNEE_MODE 'rigid') the folded front forearm
+# stays a clean brown column (the side-weighted knee ring crumpled it into jagged 'claws'); the hind leg is folded
+# further (hock 90) and points forward beside the belly so the sock + hoof tuck in instead of sticking out sideways.
+# Round 3 (user: Calf_Lie_Idle 'ужасно'): the 165-deg folded knee read as a crumpled clump and the hind hoof as a black
+# crescent on the flank. Now a 'sphinx' lie: front upper leg forward 72 deg (knee on the ground ahead of the chest), the
+# forearm and hoof lying forward on the ground; hind leg folded beside the rear belly, hoof tucked in. Legs rest ON the
+# ground (front +0.3 mm, hind +10 mm); all joints inside the rig limits except HindUpper (thigh forward-out 79 deg, limit widened to -95 for the calf in rig_calf.py), values chosen from rendered candidates (side / front / back).
+LIE = dict(fa=72, fl=0, ff=-60, hdir=(0.1, -0.5, -0.08), hl=-3, hf=0)
+import os as _os, json as _json
+LIE.update({k: (tuple(v) if isinstance(v, list) else v) for k, v in _json.loads(_os.environ.get('CALF_LIE', '{}')).items()})
 
 
 def lie_pose_calf(sk, sp, c=LIE):
@@ -62,7 +71,7 @@ def best_lie(sk, sp):
     """LIE values; the front upper angle is raised (<= 75, the FrontUpper limit) until the folded front leg clears the
     ground by 5 mm (breathing moves the shoulders by a few mm)"""
     fm = sk.mask(FRONT_LEGS); c = dict(LIE)
-    for fa in range(LIE['fa'], 76):
+    for fa in range(LIE['fa'], LIE['fa'] + 1):
         c['fa'] = fa; p = lie_pose_calf(sk, sp, c)
         if sk.minz(p, fm) >= 0.005: break
     p = lie_pose_calf(sk, sp, c)

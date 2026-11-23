@@ -108,11 +108,14 @@ def best_lie(sk):
     pm = sk.mask(['HindFoot.L', 'HindFoot.R', 'FrontFoot.L', 'FrontFoot.R'])
     # paws: front foot -60 (paw lies flat, sole down; with +20 it stood upright and its dark sole showed as a dark line at
     # the chest), hind foot +60..90 (paw flat on the ground in front of the hock, sole down)
+    # Round 2: the hind thigh splayed 20-25 deg showed its lit outer face as a light slab standing off the hip. Fixed hind
+    # values from rendered close-ups: thigh back 45, hock 150, splay 5 -> the thigh lies flush on the flank as a haunch
+    # (with rig_cat THIGH_W: the thigh's top ring is fully bound to the pelvis, no torn edge at the hip).
     for fa in (60, 75):
         for fl in (150, 165):
-            for ha in (35, 45, 55):
-                for hl in (130, 140, 150):
-                    for splay in (20, 25):
+            for ha in (45,):
+                for hl in (150,):
+                    for splay in (5,):
                         for ff, hf in ((-60.0, 90.0), (-60.0, 60.0), (-45.0, 90.0)):
                             p = lie_pose_cat(sk, fa, fl, ha, hl, splay, 0.0, ff, hf)
                             M = sk.fk(p); BP = sk.skin(M, bm); FP = sk.skin(M, fm); HP = sk.skin(M, hm); PP = sk.skin(M, pm)

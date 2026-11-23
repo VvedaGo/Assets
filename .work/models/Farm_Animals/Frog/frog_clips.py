@@ -18,7 +18,7 @@ PARENT = {'FrontL': 'Spine2', 'FrontR': 'Spine2', 'HindL': 'Pelvis', 'HindR': 'P
 # Idle: throat pulses (buccal pumping) - scale of the Throat bone (x lateral, y down = along the bone, z fore-aft)
 THROAT_AMP = (0.10, 0.08, 0.16)
 # Jump body track (phase of the 1.5 s loop): t, pelvis world z offset (m), pitch (deg, - = nose up), y offset (m, + back)
-JUMP_BODY = [(0.00, 0.0, 0.0, 0.0), (0.16, 0.0, 0.0, 0.0), (0.30, -0.0030, -8.0, 0.002), (0.37, 0.050, -32.0, -0.006),
+JUMP_BODY = [(0.00, 0.0, 0.0, 0.0), (0.16, 0.0, 0.0, 0.0), (0.30, -0.0030, -6.0, 0.002), (0.37, 0.050, -20.0, -0.006),
              (0.47, 0.078, -12.0, -0.008), (0.57, 0.020, 12.0, -0.004), (0.60, 0.003, 10.0, -0.001),
              (0.64, -0.004, 2.0, 0.0), (0.72, -0.0012, -1.0, 0.0), (0.82, 0.0, 0.0, 0.0), (1.00, 0.0, 0.0, 0.0)]
 JUMP_T = dict(front_off=0.30, hind_off=0.37, front_on=0.60, hind_on=0.64)

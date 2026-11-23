@@ -261,8 +261,8 @@
    "seconds": 3.5,
    "loop": true,
    "loop_closure_deg": 0.0,
-   "lowest_vertex_m": -0.0086,
-   "lowest_frame": 13,
+   "lowest_vertex_m": -0.0115,
+   "lowest_frame": 92,
    "neck_yaw_total_deg": 3.0,
    "joint_ranges_deg": {
     "Ear.L.x": [
@@ -282,28 +282,20 @@
      -6.0
     ],
     "FrontFoot.L.x": [
-     30.0,
-     30.0
+     -60.0,
+     -60.0
     ],
     "FrontFoot.R.x": [
-     30.0,
-     30.0
-    ],
-    "FrontLower.L.x": [
-     165.0,
-     165.0
-    ],
-    "FrontLower.R.x": [
-     165.0,
-     165.0
+     -60.0,
+     -60.0
     ],
     "FrontUpper.L.x": [
-     -74.0,
-     -74.0
+     -72.0,
+     -72.0
     ],
     "FrontUpper.R.x": [
-     -74.0,
-     -74.0
+     -72.0,
+     -72.0
     ],
     "Head.x": [
      -3.5,
@@ -313,45 +305,37 @@
      -3.0,
      3.0
     ],
-    "HindFoot.L.x": [
-     -50.0,
-     -50.0
-    ],
-    "HindFoot.R.x": [
-     -50.0,
-     -50.0
-    ],
     "HindLower.L.x": [
-     -50.0,
-     -50.0
+     3.0,
+     3.0
     ],
     "HindLower.R.x": [
-     -50.0,
-     -50.0
+     3.0,
+     3.0
     ],
     "HindUpper.L.x": [
-     -34.4,
-     -34.4
+     -78.8,
+     -78.8
     ],
     "HindUpper.L.y": [
-     -18.2,
-     -18.2
+     -9.0,
+     -9.0
     ],
     "HindUpper.L.z": [
-     -54.8,
-     -54.8
+     -11.0,
+     -11.0
     ],
     "HindUpper.R.x": [
-     -34.7,
-     -34.7
+     -79.3,
+     -79.3
     ],
     "HindUpper.R.y": [
-     19.6,
-     19.6
+     9.7,
+     9.7
     ],
     "HindUpper.R.z": [
-     57.8,
-     57.8
+     11.6,
+     11.6
     ],
     "Neck1.x": [
      6.5,
@@ -391,30 +375,30 @@
     ]
    },
    "limit_violations": [],
-   "fa": 74,
-   "fl": 165,
-   "ff": 30,
+   "fa": 72,
+   "fl": 0,
+   "ff": -60,
    "hdir": [
-    0.22,
-    -0.15,
-    -0.085
+    0.1,
+    -0.5,
+    -0.08
    ],
-   "hl": 50,
-   "hf": -50,
+   "hl": -3,
+   "hf": 0,
    "belly_z": 0.0,
-   "front_leg_z": 0.0062,
-   "hind_leg_z": -0.0026,
+   "front_leg_z": 0.0003,
+   "hind_leg_z": 0.0104,
    "hind_upper_euler_deg": [
-    -34.4,
-    -18.2,
-    -54.8
+    -78.8,
+    -9.0,
+    -11.0
    ],
    "breath_chest_top_m": 0.0159,
    "belly_z_range_m": [
     -0.0,
     0.0
    ],
-   "leg_top_z": 0.3,
+   "leg_top_z": 0.327,
    "body_top_z": 0.683,
    "body_lowest_z": 0.0
   }

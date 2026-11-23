@@ -32,7 +32,7 @@ SP = dict(
                        nod=3.5, tail=(5, 8, 11), ear=4.0)},
     clips=[('Idle', 3.0, True), ('Walk', 0.8, True), ('Lie_Idle', 3.5, True)],
     # calf limits: Q + hind hip abduction to 60 deg (Lie_Idle: the fat hind leg lies beside the belly, ANIMATION_FIXES 1)
-    limits=dict(asp.Q_LIMITS, HindUpper=dict(x=(-60, 75), y=(-25, 25), z=(-60, 60))), poses=dict(lie_roll=2.0))
+    limits=dict(asp.Q_LIMITS, HindUpper=dict(x=(-95, 75), y=(-25, 25), z=(-60, 60))), poses=dict(lie_roll=2.0))
 
 
 def args():
@@ -116,7 +116,9 @@ def lerp_w(y, knots):
             t = (y - y0) / (y1 - y0); return {b0: 1 - t, b1: t} if b0 != b1 else {b0: 1.0}
 
 
-KNEE_MODE = os.environ.get('CALF_KNEE', 'rigid_sock')
+# 'rigid' (round 2): knee ring 100% Upper, sock 100% Lower (top tuck ring with Upper, bottom ring with Foot) -> the 165 deg
+# Lie_Idle front fold leaves a clean column instead of a crumpled ring; Walk/Idle knees bend < 25 deg, the tucked sock hides it
+KNEE_MODE = os.environ.get('CALF_KNEE', 'rigid')
 
 
 def smooth_joints(ob, W, parts, tab):
@@ -147,6 +149,7 @@ def smooth_joints(ob, W, parts, tab):
 
             def knee_w(co):
                 if KNEE_MODE == 'orig': return {up: 0.5, lo: 0.5}
+                if KNEE_MODE == 'rigid': return {up: 1.0}
                 d = co - kp; u = outer * d.y / max(math.hypot(d.x, d.y), 1e-6)
                 w = min(max(0.5 + 0.5 * u, 0.0), 1.0)
                 return {up: w, lo: 1.0 - w} if 0.0 < w < 1.0 else {(up if w >= 1.0 else lo): 1.0}
