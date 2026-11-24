@@ -55,3 +55,6 @@ set PYTHONUTF8=1
 - `agents/EXTERNAL_WORKER_BRIEF.md` — common brief for model workers (Codex or Claude subagents), with the defects the lead
   rejected most often. Append a short item spec per model.
 - `agents/REVIEW_TEMPLATE.md` — review file format.
+- `agents/roles/` — briefs of all roles of the agent pipeline ([AGENT_PIPELINE.md](../AGENT_PIPELINE.md)); orchestrator
+  skill `/pack-pipeline` in `.claude/skills/pack-pipeline/`.
+- `templates/pack/` — pack file templates (state, theme, demand, catalogue, style, prompts, shots, store card).
