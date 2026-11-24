@@ -6,6 +6,7 @@
 
 - [REQUIREMENTS.md](REQUIREMENTS.md) — требования к моделям, сценам, поставке и оформлению страницы Asset Store.
 - [PLAN.md](PLAN.md) — реестр продуктов и порядок производства от выбора темы до публикации.
+- [AGENT_PIPELINE.md](AGENT_PIPELINE.md) — черновик агентного конвейера: кто выполняет каждый этап, порядок, ворота и возвраты.
 - [Tools/README.md](Tools/README.md) — конвейер Blender и Unity, шаблон скрипта для реестра моделей и шаблоны ревью.
 - [PackTools](Assets/Editor/PackTools) — редакторские инструменты для импорта моделей, сборки префабов и сцен.
 - `Assets/Settings`, `Packages` и `ProjectSettings` — настройки Unity 6000.3.10f1 и URP. Список сцен сборки пуст.
