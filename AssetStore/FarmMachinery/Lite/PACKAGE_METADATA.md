@@ -1,6 +1,6 @@
 # Farm Machinery Lite — Asset Store card
 
-Product: Farm Machinery Lite · Version: 1.0.0 · Updated: 2026-11-25 · Status: draft (Э13; numbers to be re-checked in Э14)
+Product: Farm Machinery Lite · Version: 1.0.0 · Updated: 2026-11-25 · Status: draft — Э13 done, Э12 media accepted (media_1); numbers to be re-checked in Э14
 Fields and rules: REQUIREMENTS.md 7.1–7.3. Final texts go into the labelled blocks only; notes, options, TODO and
 `[ПРОВЕРИТЬ]` go into the Notes block at the end. Full version card: [../Full/PACKAGE_METADATA.md](../Full/PACKAGE_METADATA.md).
 
@@ -137,29 +137,29 @@ AI use: reference images for each model and the scene layouts were generated wit
 Third-party content: none. No third-party models, textures, code, fonts or audio are included in the package.
 ```
 
-Fonts on store images (not in the package): see `AssetStore/FarmMachinery/Media/layout/FONTS.md` — **open**, being finalised by
-Codex (Э12).
+Fonts on store images (not in the package): Montserrat 9.000, SIL Open Font License 1.1 — `AssetStore/FarmMachinery/Media/layout/FONTS.md`,
+`Media/layout/fonts/OFL.txt`. The badge lettering on 01_Icon is drawn by ImageGen inside the raster (family unknown).
 
 ## Media
 
 Lite set = 10 images (REQUIREMENTS 7.4: 4 main + 6 screenshots). Raw sources: `AssetStore/FarmMachinery/Media/raw/` and
-`raw/Catalog/` (all accepted in `planning/FarmMachinery/reviews/renders_2.md`, slot mapping "Lite — 10 слотов"). Final files: Э12.
-Plate system (7.6): Card/Cover — badge top left, dark plate `#20242A` with cream title `#F2E6C9`, red accent strip `#C8473B`;
+`raw/Catalog/` (all accepted in `planning/FarmMachinery/reviews/renders_2.md`, slot mapping "Lite — 10 слотов"). Final files: `AssetStore/FarmMachinery/Lite/Media/final/` (PNG RGB; icon also 1024 master and 60 px check, card also 1260×840), accepted in `planning/FarmMachinery/reviews/media_1.md`.
+Plate system (7.6): Icon — red corner triangle `3D` + red tag `LITE`; Card/Cover — red rectangular badge `LITE` top left (no `3D` corner), dark plate `#20242A` with cream title `#F2E6C9`, red accent strip `#C8473B`;
 no separate logo (owner decision 2026-11-25); gallery — compact dark plate bottom left, line 1 = pack name, line 2 = frame theme.
 Typography: `·` = middle dot U+00B7, `×` = U+00D7, `→` = U+2192, `—` = em dash; letters exactly as written (case included).
 
 | File | Size | Purpose | Plate text (exact) | Source render | Status |
 |---|---|---|---|---|---|
-| 01_Icon | 160×160 (+1024 master, check at 60) | Store icon: AI-generated artwork of the TRC-01 Red cab tractor, made from our real render, on flat teal `#173C45` | Corner badges: `3D` + `LITE` · no other text | Icon_Lite.png (base for the generated artwork) | raw ✅; trial `final/_draft/01_Icon_Lite_*_preview_only`; final generated icon with corner badges — Э12 |
-| 02_Card | 420×280 (+1260×840) | Search card: TRC-01 + plough | Badge: `LITE` · Title: `FARM MACHINERY` · Accent: `13 MODELS + 3 COMPOSITIONS` | Card_Lite.png | raw ✅; trial in `_draft` used another accent; final — Э12 |
-| 03_Cover | 1950×1300 | Page cover: Lite fleet on the field | Badge: `LITE` · Title: `FARM MACHINERY` · Accent: `13 MODELS · SEPARATE WHEELS · HITCH POINTS` | Cover_Lite.png | raw ✅; trial in `_draft` used another accent; final — Э12 |
-| 04_Social | 1200×630 | Link preview, clean render | — (no text) | Social_Lite.png | raw ✅; final — Э12 |
-| 05_Hero | 1920×1080 | Ready scene: field work | `FARM MACHINERY LITE` / `FIELD WORK` | Hero_Lite.png | raw ✅; trial in `_draft` had line 1 `FARM MACHINERY`; final — Э12 |
-| 06_FullCollection | 1920×1080 | All Lite models and variants | `FARM MACHINERY LITE` / `LITE COLLECTION · 13 MODELS · 21 PREFABS` | Catalog/06_FullCollection_Lite.png | raw ✅; final — Э12 |
-| 07_Closeups | 1920×1080 | 5 detail panels | `FARM MACHINERY LITE` / `DETAILS` | Demo_FieldWork_CloseCMP01, Demo_FieldWork_LowNode_Plough, Closeup_Lite_RearLinkage, Closeup_Lite_Sprayer, Closeup_Lite_Tipper | raw ✅; final — Э12 |
-| 08_VariantsAndModules | 1920×1080 | Colours, poses, assembly, attach points (4 panels) | `FARM MACHINERY LITE` / `VARIANTS & ATTACH POINTS` | Catalog/08_ColourVariants_Lite, 08_Poses_Lite, 08_Modularity_Lite, 08_AttachPoints_Lite | raw ✅ (sheets sparse — crop by rows); final — Э12 |
-| 09_Technical | 1920×1080 | Wireframe LOD0 / LOD1, colliders, real tris | `FARM MACHINERY LITE` / `LOD & COLLIDERS` | Catalog/09_Technical_Lite.png + 09_Technical_numbers.md (spare: Catalog/14_Unity_Lite.png) | raw ✅; final — Э12 |
-| 10_DemoAndVersion | 1920×1080 | Demo view + what is in Lite / Full only | `FARM MACHINERY LITE` / `DEMO & WHAT'S IN LITE` | Demo_FieldWork_Overview.png (alt. Demo_FieldWork_Beauty.png) + text block | raw ✅; block — Э12 |
+| 01_Icon | 160×160 (+1024 master, check at 60) · PNG RGB | Store icon: AI-generated artwork of the TRC-01 Red cab tractor, made from our real render, on flat teal `#173C45` | Corner badge: `3D` (red triangle top left, white letters) + red tag `LITE` below it · no other text | Icon_Lite.png (base for the generated artwork) | accepted (media_1); AI-generated artwork from the real render, badge lettering drawn by ImageGen |
+| 02_Card | 420×280 (+1260×840) · PNG RGB | Search card: TRC-01 + plough | Badge: `LITE` · Title: `FARM MACHINERY` · Accent: `13 MODELS + 3 COMPOSITIONS` | Card_Lite.png | accepted (media_1) |
+| 03_Cover | 1950×1300 · PNG RGB | Page cover: Lite fleet on the field | Badge: `LITE` · Title: `FARM MACHINERY` · Accent: `13 MODELS · SEPARATE WHEELS · HITCH POINTS` | Cover_Lite.png | accepted (media_1) |
+| 04_Social | 1200×630 · PNG RGB | Link preview, clean render | — (no text) | Social_Lite.png | accepted (media_1) |
+| 05_Hero | 1920×1080 · PNG RGB | Ready scene: field work | `FARM MACHINERY LITE` / `FIELD WORK` | Hero_Lite.png | accepted (media_1) |
+| 06_FullCollection | 1920×1080 · PNG RGB | All Lite models and variants | `FARM MACHINERY LITE` / `LITE COLLECTION · 13 MODELS · 21 PREFABS` | Catalog/06_FullCollection_Lite.png | accepted (media_1) |
+| 07_Closeups | 1920×1080 · PNG RGB | 5 detail panels | `FARM MACHINERY LITE` / `DETAILS` | Demo_FieldWork_CloseCMP01, Demo_FieldWork_LowNode_Plough, Closeup_Lite_RearLinkage, Closeup_Lite_Sprayer, Closeup_Lite_Tipper | accepted (media_1) |
+| 08_VariantsAndModules | 1920×1080 · PNG RGB | Colours, poses, assembly, attach points (4 panels) | `FARM MACHINERY LITE` / `VARIANTS & ATTACH POINTS` | Catalog/08_ColourVariants_Lite, 08_Poses_Lite, 08_Modularity_Lite, 08_AttachPoints_Lite | accepted (media_1) |
+| 09_Technical | 1920×1080 · PNG RGB | Wireframe LOD0 / LOD1, colliders, real tris | `FARM MACHINERY LITE` / `LOD & COLLIDERS` | Catalog/09_Technical_Lite.png + 09_Technical_numbers.md (spare: Catalog/14_Unity_Lite.png) | accepted (media_1) |
+| 10_DemoAndVersion | 1920×1080 · PNG RGB | Demo view + what is in Lite / Full only | `FARM MACHINERY LITE` / `DEMO & WHAT'S IN LITE` | Demo_FieldWork_Overview.png (alt. Demo_FieldWork_Beauty.png) + text block | accepted (media_1) |
 
 ### Captions inside images (exact)
 
@@ -236,14 +236,14 @@ Farm Props and Vehicles $20.00, Low poly farm asset pack $29.99; общие па
    UniversalAdditionalCameraData/LightData) — проверено по m_Script в Demo_FieldWork.unity; подтвердить в чистом проекте.
 
 **Прочие открытые пункты:**
-- Шрифты плашек: `Media/layout/FONTS.md` открыт (сейчас Arial Bold как черновик, лицензия не проверена; Codex выбирает OFL-семью).
-  После выбора — проверить, что строки с `·`, `×`, `→`, `—` поддерживаются шрифтом. Шрифт в пакет не входит.
+- Э12 (медиа) принят: `planning/FarmMachinery/reviews/media_1.md` — Lite 10/10 ✅. Шрифт плашек — Montserrat 9.000, SIL OFL 1.1
+  (`Media/layout/FONTS.md`, `fonts/OFL.txt`), в пакет не входит. Логотипа нет. `build_media.py` читает тексты из столбца
+  «Plate text» и разделов «Captions» этой карточки — при правке строк Media пересобрать изображения.
 - Тексты пробной генерации отличаются от карточки: акцент Card/Cover Lite был `13 MODELS · LOW POLY · URP`, на Hero_Lite строка 1
   была `FARM MACHINERY`. Финальные — из этой карточки (одна мысль на Card — по 7.6; на галерее без бейджа LITE виден в имени).
 - Ссылка на Full в Support появится после создания черновика Full (Э15); ID Farm Nature и Farm Processing в Asset Store не
   нашёл — добавить или убрать из строки.
 - Лимиты Title (52 симв.), Summary (180, рабочий диапазон 10–200), числа тегов (14) — сверить с формой портала.
-- Card/Cover в пробе Э12 имеют пустой квадрат под логотип — по решению владельца логотипа нет; место убрать или занять (Э12).
 - Коллайдер: контракт CATALOG п. 9 просил коробку «без колёс», PackPrefabBuilder делает одну коробку на всю модель — в карточке
   написано по факту.
 - Перерасход tris ATT-01 (404/400) покупателю не важен, в тексте не упоминается.

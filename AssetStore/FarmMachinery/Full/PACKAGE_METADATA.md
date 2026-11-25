@@ -1,6 +1,6 @@
 # Farm Machinery — Asset Store card
 
-Product: Farm Machinery (Full) · Version: 1.0.0 · Updated: 2026-11-25 · Status: draft (Э13; numbers to be re-checked in Э14)
+Product: Farm Machinery (Full) · Version: 1.0.0 · Updated: 2026-11-25 · Status: draft — Э13 done, Э12 media accepted (media_1); numbers to be re-checked in Э14
 Fields and rules: REQUIREMENTS.md 7.1–7.3. Final texts go into the labelled blocks only; notes, options, TODO and
 `[ПРОВЕРИТЬ]` go into the Notes block at the end. Lite version card: [../Lite/PACKAGE_METADATA.md](../Lite/PACKAGE_METADATA.md).
 
@@ -140,33 +140,33 @@ AI use: reference images for each model and the scene layouts were generated wit
 Third-party content: none. No third-party models, textures, code, fonts or audio are included in the package.
 ```
 
-Fonts on store images (not in the package): see `AssetStore/FarmMachinery/Media/layout/FONTS.md` — **open**, being finalised by
-Codex (Э12).
+Fonts on store images (not in the package): Montserrat 9.000, SIL Open Font License 1.1 — `AssetStore/FarmMachinery/Media/layout/FONTS.md`,
+`Media/layout/fonts/OFL.txt`. The badge lettering on 01_Icon is drawn by ImageGen inside the raster (family unknown).
 
 ## Media
 
 Full set = 14 images (REQUIREMENTS 7.4: 4 main + 10 screenshots). Raw sources: `AssetStore/FarmMachinery/Media/raw/` and
-`raw/Catalog/` (all accepted in `planning/FarmMachinery/reviews/renders_2.md`, slot mapping "Full — 14 слотов"). Final files: Э12.
-Plate system (7.6): Card/Cover — no top badge, dark plate `#20242A` with cream title `#F2E6C9`, red accent strip `#C8473B`;
+`raw/Catalog/` (all accepted in `planning/FarmMachinery/reviews/renders_2.md`, slot mapping "Full — 14 слотов"). Final files: `AssetStore/FarmMachinery/Full/Media/final/` (PNG RGB; icon also 1024 master and 60 px check, card also 1260×840), accepted in `planning/FarmMachinery/reviews/media_1.md` after fixes.
+Plate system (7.6): Icon/Card/Cover — one badge system: red corner triangle top left with white `3D` (owner decision 2026-11-25; REQUIREMENTS 7.6 optional paid badge); Card/Cover — dark plate `#20242A` with cream title `#F2E6C9`, red accent strip `#C8473B`;
 no separate logo (owner decision 2026-11-25); gallery — compact dark plate bottom left, line 1 = pack name, line 2 = frame theme.
 Typography: `·` = middle dot U+00B7, `×` = U+00D7, `→` = U+2192, `—` = em dash; letters exactly as written (case included).
 
 | File | Size | Purpose | Plate text (exact) | Source render | Status |
 |---|---|---|---|---|---|
-| 01_Icon | 160×160 (+1024 master, check at 60) | Store icon: AI-generated artwork of the HRV-01 Red combine with grain header, made from our real render, on flat teal `#173C45` | Corner badge: `3D` · no other text | Icon_Full.png (base for the generated artwork) | raw ✅; trial `final/_draft/01_Icon_Full_*_preview_only`; final generated icon with corner badge — Э12 |
-| 02_Card | 420×280 (+1260×840) | Search card: combine + grain header | Title: `FARM MACHINERY` · Accent: `26 MODELS + 5 COMPOSITIONS` | Card_Full.png | raw ✅; trial in `_draft` (same text); final — Э12 |
-| 03_Cover | 1950×1300 | Page cover: harvest fleet | Title: `FARM MACHINERY` · Accent: `26 MODELS · SEPARATE WHEELS · HITCH POINTS` | Cover_Full.png | raw ✅; trial in `_draft` used `26 MODELS + 5 COMPOSITIONS`; final — Э12 |
-| 04_Social | 1200×630 | Link preview, clean render | — (no text) | Social_Full.png | raw ✅; final — Э12 |
-| 05_Hero | 1920×1080 | Ready scene: harvest | `FARM MACHINERY` / `HARVEST` | Hero_Full.png | raw ✅; final — Э12 |
-| 06_FullCollection | 1920×1080 | All 26 models and 15 variants | `FARM MACHINERY` / `FULL COLLECTION · 26 MODELS · 41 PREFABS` | Catalog/06_FullCollection_Full.png (spare: 06a_Machines, 06b_Implements) | raw ✅; final — Э12 |
-| 07_Closeups | 1920×1080 | 5 detail panels | `FARM MACHINERY` / `DETAILS` | Demo_Harvest_LowNode_Header, Demo_Harvest_CloseHaymaking, Demo_Harvest_CloseGrainYard, Demo_FieldWork_LowNode_Plough, Demo_FieldWork_CloseCMP01 | raw ✅; final — Э12 |
-| 08_VariantsAndModules | 1920×1080 | Colours, poses, swappable headers, attach points (4 panels) | `FARM MACHINERY` / `VARIANTS & MODULARITY` | Catalog/08_ColourVariants, 08_Poses, 08_Modularity, 08_AttachPoints | raw ✅ (sheets sparse — crop by rows); final — Э12 |
-| 09_Technical | 1920×1080 | Wireframe LOD0 / LOD1, colliders, real tris | `FARM MACHINERY` / `LOD & COLLIDERS` | Catalog/09_Technical.png + 09_Technical_numbers.md | raw ✅; final — Э12 |
-| 10_DemoAndVersion | 1920×1080 | Harvest demo + what is / is not included | `FARM MACHINERY` / `HARVEST DEMO & CONTENTS` | Demo_Harvest_Overview.png (alt. Demo_Harvest_Beauty.png) + text block | raw ✅; block — Э12 |
-| 11_CategoryDetails | 1920×1080 | Harvest machines, headers, grain yard | `FARM MACHINERY` / `HARVEST & GRAIN YARD` | Catalog/11_Category_Harvest.png (spare: 11_Category_Implements, 11_Category_Trailers) | raw ✅; final — Э12 |
-| 12_Compositions | 1920×1080 | 5 composition prefabs | `FARM MACHINERY` / `5 READY COMPOSITIONS` | Catalog/12_Compositions_Grid.png or 12_CMP_01…05 laid out as a grid (CMP_05 small on the grid — prefer the single renders) | raw ✅; final — Э12 |
-| 13_Materials | 1920×1080 | 3 atlases + result on models | `FARM MACHINERY` / `MATERIALS & COLOUR ATLASES` | Catalog/13_Materials_Models.png + 13_Atlas_Red / Green / Blue.png | raw ✅; final — Э12 |
-| 14_UnityAndComparison | 1920×1080 | Prefab in Unity (Hierarchy, LOD Group, Box Collider) + Lite vs Full panel | `FARM MACHINERY` / `UNITY SETUP · LITE VS FULL` | Catalog/14_Unity_Full.png + comparison panel | raw ✅; panel — Э12 |
+| 01_Icon | 160×160 (+1024 master, check at 60) · PNG RGB | Store icon: AI-generated artwork of the HRV-01 Red combine with grain header, made from our real render, on flat teal `#173C45` | Corner badge: `3D` (red triangle top left, white letters) · no other text | Icon_Full.png (base for the generated artwork) | accepted (media_1); AI-generated artwork from the real render, badge lettering drawn by ImageGen |
+| 02_Card | 420×280 (+1260×840) · PNG RGB | Search card: combine + grain header | Corner badge: `3D` (red triangle top left) · Title: `FARM MACHINERY` · Accent: `26 MODELS + 5 COMPOSITIONS` | Card_Full.png | accepted (media_1, after fix: `3D` corner recorded) |
+| 03_Cover | 1950×1300 · PNG RGB | Page cover: harvest fleet | Corner badge: `3D` (red triangle top left) · Title: `FARM MACHINERY` · Accent: `26 MODELS · SEPARATE WHEELS · HITCH POINTS` | Cover_Full.png | accepted (media_1, after fix: `3D` corner recorded) |
+| 04_Social | 1200×630 · PNG RGB | Link preview, clean render | — (no text) | Social_Full.png | accepted (media_1) |
+| 05_Hero | 1920×1080 · PNG RGB | Ready scene: harvest | `FARM MACHINERY` / `HARVEST` | Hero_Full.png | accepted (media_1) |
+| 06_FullCollection | 1920×1080 · PNG RGB | All 26 models and 15 variants | `FARM MACHINERY` / `FULL COLLECTION · 26 MODELS · 41 PREFABS` | Catalog/06_FullCollection_Full.png (spare: 06a_Machines, 06b_Implements) | accepted (media_1) |
+| 07_Closeups | 1920×1080 · PNG RGB | 5 detail panels | `FARM MACHINERY` / `DETAILS` | Demo_Harvest_LowNode_Header, Demo_Harvest_CloseHaymaking, Demo_Harvest_CloseGrainYard, Demo_FieldWork_LowNode_Plough, Demo_FieldWork_CloseCMP01 | accepted (media_1) |
+| 08_VariantsAndModules | 1920×1080 · PNG RGB | Colours, poses, swappable headers, attach points (4 panels) | `FARM MACHINERY` / `VARIANTS & MODULARITY` | Catalog/08_ColourVariants, 08_Poses, 08_Modularity, 08_AttachPoints | accepted (media_1) |
+| 09_Technical | 1920×1080 · PNG RGB | Wireframe LOD0 / LOD1, colliders, real tris | `FARM MACHINERY` / `LOD & COLLIDERS` | Catalog/09_Technical.png + 09_Technical_numbers.md | accepted (media_1) |
+| 10_DemoAndVersion | 1920×1080 · PNG RGB | Harvest demo + what is / is not included | `FARM MACHINERY` / `HARVEST DEMO & CONTENTS` | Demo_Harvest_Overview.png (alt. Demo_Harvest_Beauty.png) + text block | accepted (media_1) |
+| 11_CategoryDetails | 1920×1080 · PNG RGB | Harvest machines, headers, grain yard | `FARM MACHINERY` / `HARVEST & GRAIN YARD` | Catalog/11_Category_Harvest.png (spare: 11_Category_Implements, 11_Category_Trailers) | accepted after Fix 3 (tighter tile crops, media_1) |
+| 12_Compositions | 1920×1080 · PNG RGB | 5 composition prefabs | `FARM MACHINERY` / `5 READY COMPOSITIONS` | Catalog/12_Compositions_Grid.png or 12_CMP_01…05 laid out as a grid (CMP_05 small on the grid — prefer the single renders) | accepted (media_1) |
+| 13_Materials | 1920×1080 · PNG RGB | 3 atlases + result on models | `FARM MACHINERY` / `MATERIALS & COLOUR ATLASES` | Catalog/13_Materials_Models.png + 13_Atlas_Red / Green / Blue.png | accepted (media_1) |
+| 14_UnityAndComparison | 1920×1080 · PNG RGB | Prefab in Unity (Hierarchy, LOD Group, Box Collider) + Lite vs Full panel | `FARM MACHINERY` / `UNITY SETUP · LITE VS FULL` | Catalog/14_Unity_Full.png + comparison panel | accepted (media_1) |
 
 ### Captions inside images (exact)
 
@@ -276,9 +276,10 @@ Synty $49.99, ithappy $79.00. У нас 26 моделей / 41 префаб / 5 
 - Жатка в префабе комбайна: CATALOG HRV-01 говорит «несут вложенную жатку ATT-03», фактически префабы комбайна без жатки,
   жатки ставятся по Feeder-точкам (ImportNotes п. 2, renders_2: «нет вложенной жатки в иерархии» 14_Unity_Full). Карточка
   написана по факту; если владелец захочет вложенную жатку — поменять Scale / Setup и Description.
-- Шрифты плашек: `Media/layout/FONTS.md` открыт (черновик Arial Bold, лицензия не проверена; Codex выбирает OFL-семью). Проверить
-  поддержку `·`, `×`, `→`, `—`, `✓` не используется (в таблице сравнения `YES` / `—`). Шрифт в пакет не входит.
-- Card/Cover в пробе Э12 имеют пустой квадрат под логотип — по решению владельца логотипа нет; место убрать или занять (Э12).
+- Э12 (медиа) принят после исправлений: `planning/FarmMachinery/reviews/media_1.md` (Fix 1–2 — тексты карточек и угол `3D`
+  на Card/Cover внесены сюда; Fix 3 — кадрирование 11_CategoryDetails в `build_media.py`, Codex; файл и CHECKS.md — после него). Шрифт плашек — Montserrat 9.000, SIL OFL 1.1 (`Media/layout/FONTS.md`,
+  `fonts/OFL.txt`), в пакет не входит. Логотипа нет. `build_media.py` читает тексты из столбца «Plate text» и разделов
+  «Captions» этой карточки — при правке строк Media пересобрать изображения.
 - Отличия от пробной генерации: акцент Cover Full был `26 MODELS + 5 COMPOSITIONS` — теперь он только на Card, на Cover второй
   тезис (отдельные колёса и точки сцепки — главное отличие из Э3).
 - Cover_Full и Hero_Full показывают демо-тюки DEM-08 (свои, решение владельца 2026-11-24) — это демо-окружение, входит в
