@@ -1,0 +1,62 @@
+FARM ANIMALS - Low Poly Livestock, Poultry & Pets (Rigged & Animated)
+=====================================================================
+
+Requirements
+- Unity 6 (6000.3 or newer), Universal Render Pipeline (URP 17).
+- No other packages. No code dependencies in the prefabs except the small FarmAnimalEvents component.
+
+Contents
+- 35 animals, each a rigged FBX (Generic rig) with its own 256 px flat-colour palette atlas and URP/Lit material:
+  Livestock (LIV): Cow, Calf, Bull, Horse, Foal, Donkey, Sheep, Lamb, Ram, Goat, Kid, Pig, Piglet
+  Birds (BRD):     Hen, Rooster, Chick, Turkey, Duck, Duckling, Goose, Pigeon, Sparrow, Crow
+  Pets (PET):      Dog, Puppy, Cat, Kitten
+  Small (SML):     Fox, Rabbit, Hedgehog, Mouse, Frog
+  Insects (INS):   Bee, Butterfly, Ladybug (shown larger than life so they read on a game camera)
+- 113 animation clips (2-3 per animal, 14 for the cow), 30 fps, in place (no root motion).
+- 35 ready prefabs: Art/Prefabs/<Category>/FMS_<Animal>.prefab
+- 8 compositions: Art/Prefabs/CMP/FMS_CMP_<Name>.prefab
+  Pasture, Stable, SheepFlock, Pigsty, Barnyard, Pond, Garden, Orchard
+- 2 demo scenes: Demo/Scenes/Demo_FarmAnimals_Showcase.unity and Demo_FarmAnimals_Compositions.unity
+- Documentation/ImportReport.txt lists every animal with its triangles, clips, events and size.
+
+Folder layout (Assets/FarmAnimals)
+  Art/Models      FBX files (clips are inside each FBX)
+  Art/Textures    palette atlases (Point filter, no mipmaps, uncompressed)
+  Art/Materials   one URP/Lit material per animal
+  Art/Animators   one Animator Controller per animal
+  Art/Prefabs     animal prefabs and compositions
+  Scripts         FarmAnimalEvents (runtime, assembly FarmAnimals.Runtime)
+  Demo            demo scenes, demo materials/meshes, FarmAnimalDemo script (assembly FarmAnimals.Demo)
+
+Using an animal
+1. Drag a prefab from Art/Prefabs into the scene. It has an Animator, a CapsuleCollider and FarmAnimalEvents.
+2. Drive the Animator Controller from your code:
+   - "Speed" (float, m/s): Idle -> Walk -> Run/Trot blend tree for animals that move on the ground.
+     The thresholds are the real speed of each clip, so moving the transform at that speed keeps the feet from sliding.
+   - One bool per extra clip, named like the clip: Graze, Eat, Drink, Lie_Idle, Sit_Idle, Peck, Swim, Fly, Root,
+     Browse, Nibble, Play_Hop, Play_Bow, Pounce, Display, Crow, Paw_Ground, Curl_Up, Jump, ...
+     Set it to true to play that clip, false to return to Idle/Locomotion.
+   - Animals without a ground walk (Bee, Butterfly) start in their first clip (Fly) and switch with the bools.
+   - Example:  animator.SetFloat("Speed", 0.9f);  animator.SetBool("Graze", true);
+3. Clip names are <Animal>_<Clip>, e.g. Cow_Walk. Loop clips loop; one-shot clips (Cow: Hit_React, Lie_Down, Stand_Up,
+   Moo) play once.
+
+Animation events (sounds are not included)
+The clips carry events: Footstep (parameter = leg, e.g. "FrontL"), Vocal, LayEgg, Peck, Nibble, Sniff, Paw, Pounce,
+Jump, Land, Takeoff, Flap, WingFlap, Paddle, Curl, Display. FarmAnimalEvents receives them and raises C# events:
+   var events = GetComponent<FarmAnimals.FarmAnimalEvents>();
+   events.FootstepRaised += leg => audioSource.PlayOneShot(stepClip);
+   events.AnimationEventRaised += (name, parameter) => Debug.Log(name);
+Keep the component on the prefab root (next to the Animator); without it Unity logs "AnimationEvent has no receiver".
+
+Demo scenes
+- Demo_FarmAnimals_Showcase: every animal on a floating island per category; each one cycles through all its clips.
+- Demo_FarmAnimals_Compositions: the 8 compositions; ground animals wander around their island.
+- Press Play to see the animations. Each island has a disabled shot camera (Cam_<Name>) for screenshots.
+- FarmAnimalDemo is demo code only; delete the Demo folder if you do not need it.
+
+Technical details
+- Rig: Generic avatar per animal; bones stay visible in the hierarchy (attach props to "Head" etc.).
+- Triangles: 400 - 2400 per animal (see ImportReport.txt). No LODs.
+- Materials: URP/Lit, one 256x256 atlas per animal, GPU instancing enabled.
+- Scale: 1 unit = 1 m, Y up, the models face +Z, the pivot is on the ground.

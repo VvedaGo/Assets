@@ -1,0 +1,160 @@
+var baseScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+var scene = UnityEditor.SceneManagement.EditorSceneManager.NewScene(UnityEditor.SceneManagement.NewSceneSetup.EmptyScene, UnityEditor.SceneManagement.NewSceneMode.Additive);
+UnityEngine.SceneManagement.SceneManager.SetActiveScene(scene);
+var outDir = "AssetStore/FarmAnimals/Media/Raw/Studio/";
+System.IO.Directory.CreateDirectory(outDir);
+try
+{
+    var cam = new UnityEngine.GameObject("Main Camera").AddComponent<UnityEngine.Camera>();
+    cam.enabled = false;
+    cam.clearFlags = UnityEngine.CameraClearFlags.SolidColor;
+    cam.backgroundColor = new UnityEngine.Color32(181,187,199,255);
+    cam.orthographic = true;
+    cam.nearClipPlane = .001f;
+    cam.cullingMask = 1 << 30;
+    var cameraData = cam.gameObject.AddComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>();
+    cameraData.renderPostProcessing = true;
+    cameraData.volumeLayerMask = 1 << 30;
+    var vol = new UnityEngine.GameObject("Studio Post").AddComponent<UnityEngine.Rendering.Volume>();
+    vol.gameObject.layer = 30;
+    vol.isGlobal = true;
+    vol.sharedProfile = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.Rendering.VolumeProfile>("Assets/_Presentation/Settings/PP_Presentation.asset");
+    var light = new UnityEngine.GameObject("Studio Key").AddComponent<UnityEngine.Light>();
+    light.type = UnityEngine.LightType.Directional;
+    light.intensity = 1.26f;
+    light.color = new UnityEngine.Color(1f,.96f,.88f);
+    light.cullingMask = 1 << 30;
+    light.transform.rotation = UnityEngine.Quaternion.Euler(38,145,0);
+    UnityEngine.RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
+    UnityEngine.RenderSettings.ambientLight = new UnityEngine.Color(.75f,.77f,.82f);
+    UnityEngine.RenderSettings.sun = light;
+    UnityEngine.RenderSettings.fog = false;
+    var paths = UnityEditor.AssetDatabase.GetAllAssetPaths();
+    UnityEngine.Vector3? animationCenter = null;
+    float animationScale = 0;
+    string RenderAnimal(string animal, string clip, float phase, int width, int height, string file, float angle, float zoom, bool wire)
+    {
+        var path = System.Array.Find(paths, p => p.StartsWith("Assets/FarmAnimals/Art/Prefabs/") && p.EndsWith("/FMS_" + animal + ".prefab"));
+        var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(path);
+        var go = (UnityEngine.GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(asset, scene);
+        go.name = "FMS_" + animal + "|" + clip + "|" + phase.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        foreach (var tr in go.GetComponentsInChildren<UnityEngine.Transform>(true)) tr.gameObject.layer = 30;
+        var a = go.GetComponentInChildren<UnityEngine.Animator>();
+        var clips = a.runtimeAnimatorController.animationClips;
+        var c = System.Array.Find(clips, x => x.name == animal + "_" + clip) ?? clips[0];
+        c.SampleAnimation(go, phase * c.length);
+        var renderers = go.GetComponentsInChildren<UnityEngine.SkinnedMeshRenderer>();
+        var meshes = new System.Collections.Generic.List<UnityEngine.Mesh>();
+        foreach (var skinned in renderers)
+        {
+            var baked = new UnityEngine.Mesh();
+            skinned.BakeMesh(baked);
+            meshes.Add(baked);
+        }
+        var direction = UnityEngine.Quaternion.Euler(13, angle, 0);
+        var inv = UnityEngine.Quaternion.Inverse(direction);
+        var min = UnityEngine.Vector3.one * float.PositiveInfinity;
+        var max = UnityEngine.Vector3.one * float.NegativeInfinity;
+        for (var i = 0; i < meshes.Count; i++)
+            foreach (var v in meshes[i].vertices)
+            {
+                var cameraPoint = inv * renderers[i].transform.TransformPoint(v);
+                min = UnityEngine.Vector3.Min(min, cameraPoint);
+                max = UnityEngine.Vector3.Max(max, cameraPoint);
+            }
+        var center = (min + max) * .5f;
+        var size = max - min;
+        var ortho = UnityEngine.Mathf.Max(size.y, size.x * height / width) * .5f / zoom;
+        if (file.StartsWith("Cow_"))
+        {
+            if (!animationCenter.HasValue)
+            {
+                animationCenter = center;
+                animationScale = ortho * 1.08f;
+            }
+            center = animationCenter.Value;
+            ortho = animationScale;
+        }
+        cam.transform.rotation = direction;
+        cam.transform.position = direction * center - cam.transform.forward * (size.magnitude * 4 + 1);
+        cam.orthographicSize = ortho;
+        var wireMeshes = new System.Collections.Generic.List<UnityEngine.Mesh>();
+        UnityEngine.Material wireMaterial = null;
+        try
+        {
+            if (wire)
+            {
+                var shader = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.Shader>("Assets/_Presentation/Settings/StoreWireframe.shader");
+                wireMaterial = new UnityEngine.Material(shader);
+                for (var i = 0; i < meshes.Count; i++)
+                {
+                    var baked = meshes[i];
+                    var sourceVertices = baked.vertices;
+                    var triangles = baked.triangles;
+                    var vertices = new UnityEngine.Vector3[triangles.Length];
+                    var coordinates = new System.Collections.Generic.List<UnityEngine.Vector3>(triangles.Length);
+                    var indices = new int[triangles.Length];
+                    var basis = new[] { UnityEngine.Vector3.right, UnityEngine.Vector3.up, UnityEngine.Vector3.forward };
+                    for (var j = 0; j < triangles.Length; j++)
+                    {
+                        vertices[j] = sourceVertices[triangles[j]];
+                        coordinates.Add(basis[j % 3]);
+                        indices[j] = j;
+                    }
+                    var mesh = new UnityEngine.Mesh();
+                    mesh.vertices = vertices;
+                    mesh.SetUVs(0, coordinates);
+                    mesh.triangles = indices;
+                    mesh.RecalculateNormals();
+                    wireMeshes.Add(mesh);
+                    var overlay = new UnityEngine.GameObject("Shaded wireframe");
+                    overlay.layer = 30;
+                    overlay.transform.SetParent(renderers[i].transform, false);
+                    overlay.AddComponent<UnityEngine.MeshFilter>().sharedMesh = mesh;
+                    overlay.AddComponent<UnityEngine.MeshRenderer>().sharedMaterial = wireMaterial;
+                    renderers[i].enabled = false;
+                }
+            }
+            return FarmAnimals.Editor.FarmAnimalsShots.RenderOpen(outDir + file + ".png", width, height, 2);
+        }
+        finally
+        {
+            UnityEngine.Object.DestroyImmediate(go);
+            foreach (var mesh in meshes) UnityEngine.Object.DestroyImmediate(mesh);
+            foreach (var mesh in wireMeshes) UnityEngine.Object.DestroyImmediate(mesh);
+            if (wireMaterial != null) UnityEngine.Object.DestroyImmediate(wireMaterial);
+        }
+    }
+    var groups = new [] {
+        "Cow Calf Bull Horse Foal Donkey Sheep Lamb Ram Goat Kid Pig Piglet",
+        "Hen Rooster Chick Turkey Duck Duckling Goose Pigeon Sparrow Crow",
+        "Dog Puppy Cat Kitten", "Fox Rabbit Hedgehog Mouse Frog", "Bee Butterfly Ladybug"
+    };
+    var catalogSizes = new[] {(518,260),(450,294),(676,294),(450,252),(446,252)};
+    for (var group = 0; group < groups.Length; group++)
+        foreach (var animal in groups[group].Split(' '))
+        {
+            var clip = animal == "Bee" || animal == "Butterfly" ? "Fly" : "Idle";
+            var (width,height) = catalogSizes[group];
+            RenderAnimal(animal, clip, .24f, width, height, animal, 145, .78f, false);
+        }
+    foreach (var animal in new [] {"Cow","Rooster","Rabbit"})
+    {
+        RenderAnimal(animal, "Idle", .24f, 600, 440, "Beauty_" + animal, 137, .87f, false);
+        RenderAnimal(animal, "Idle", .24f, 600, 440, "Wire_" + animal, 137, .87f, true);
+    }
+    foreach (var action in new [] {"Walk","Graze","Lie_Down"})
+        foreach (var phase in new [] { .10f, .33f, .59f, .85f })
+            RenderAnimal("Cow", action, phase, 420, 286, "Cow_" + action + "_" + UnityEngine.Mathf.RoundToInt(phase * 100), 115, .80f, false);
+    foreach (var animal in new [] {"Bee","Butterfly","Ladybug","Rabbit","Hedgehog"})
+        RenderAnimal(animal, animal == "Bee" || animal == "Butterfly" ? "Fly" : "Idle", .24f, 580, 335, "Category_" + animal, 145, .82f, false);
+    foreach (var animal in new [] {"Cow","Rooster","Dog","Fox"})
+        RenderAnimal(animal, "Idle", .24f, 890, 382, "Detail_" + animal, 148, .90f, false);
+    RenderAnimal("Cow", "Idle", .24f, 636, 202, "Editor_Cow", 148, .88f, false);
+    return "Studio renders complete";
+}
+finally
+{
+    UnityEngine.SceneManagement.SceneManager.SetActiveScene(baseScene);
+    UnityEditor.SceneManagement.EditorSceneManager.CloseScene(scene, true);
+}
