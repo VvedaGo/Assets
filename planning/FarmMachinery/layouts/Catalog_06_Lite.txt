@@ -1,0 +1,19 @@
+# FarmMachinery Catalog_06_Lite — catalogue raw render (REQUIREMENTS 7.4–7.5 frame 06_FullCollection (Lite)); clean, NO text (plates/captions in Э12).
+# FarmMachinerySceneBuilder.Build("Catalog_06_Lite") -> FarmMachineryCatalogShots: rows listed back to front, packed by real LOD0 bounds,
+# camera fitted to the real bounds ('#! fit shot group yaw pitch margin'). Background #E9E9EC, look catalog (neutral, soft shadows).
+# Lite: 13 models + 8 variants = 21 prefabs; rows: trailers, tractors, implements, attachments.
+
+#! look catalog
+bg 233 233 236
+ground 233 233 236
+
+#! catgroup main
+#! catrows 35 1.0 4.0
+#! catrow TRL-01 TRL-01_Grain TRL-02 TRL-03
+#! catrow TRC-02 TRC-02_Green TRC-02_Blue TRC-01 TRC-01_Green TRC-01_Blue
+#! catrow IMP-03 IMP-03_Work IMP-05 IMP-05_Work
+#! catrow IMP-02 IMP-06 IMP-01 IMP-04 IMP-04_Work | ATT-01 ATT-02
+
+# ---------- shots (placeholder camera lines; FarmMachineryCatalogShots fits them) ----------
+shot Sheet 0 10 -20 0 0 0 20 1920 1080
+#! fit Sheet main 0 auto 0.05 0

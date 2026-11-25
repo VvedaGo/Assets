@@ -20,6 +20,9 @@ namespace PackTools.Editor
         public string Prefix = "FMS_";
         /// <summary>Folder with the scene layout text files.</summary>
         public string LayoutDir;
+        /// <summary>Optional ID -> prefab file name without ".prefab", for packs whose prefabs are named after the FBX
+        /// (TRC-01 -> FMS_Mach_Tractor_Cab); IDs not listed (or no map) use Prefix + ID.</summary>
+        public Dictionary<string, string> PrefabNames;
         /// <summary>Floor fill codes for the 'floor' layout directive (code -> item ID).</summary>
         public Dictionary<string, string> FloorTiles = new Dictionary<string, string>();
         /// <summary>Folder under %TEMP% where scene shots are rendered.</summary>
@@ -36,11 +39,13 @@ namespace PackTools.Editor
         public string DemoDir => Root + "/Demo";
         public string ReportPath => ".work/ImportReport_" + Tag + ".txt";   // outside Assets: the Asset Store validator takes any .txt under the pack for documentation
 
-        /// <summary>Prefab path of a catalogue ID: category = the part before the first '-' (STA-05 -> Art/Prefabs/STA/...).</summary>
+        /// <summary>Prefab path of a catalogue ID: category = the part before the first '-' (STA-05 -> Art/Prefabs/STA/...);
+        /// file name from PrefabNames when the ID is listed there.</summary>
         public string PrefabPath(string id)
         {
             var dash = id.IndexOf('-');
             var category = dash > 0 ? id.Substring(0, dash) : id;
+            if (PrefabNames != null && PrefabNames.TryGetValue(id, out var name)) return $"{PrefabDir}/{category}/{name}.prefab";
             return $"{PrefabDir}/{category}/{Prefix}{id.Replace('-', '_')}.prefab";
         }
     }

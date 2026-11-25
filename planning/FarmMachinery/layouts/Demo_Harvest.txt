@@ -1,0 +1,144 @@
+# FarmMachinery Demo_Harvest (reference: planning/FarmMachinery/scenes/Demo_Harvest.png + .md; recipe: SCENE_STYLE.md, style
+# reference: the accepted Demo_FieldWork). FarmMachinerySceneBuilder.Build("Demo_Harvest").
+# Layout space: x right, z away from the camera, y up; rot 90 = nose screen-left; machines on modules at y 0.01 (road 0.02).
+# Attach offsets from the attach points: HRV-03 Feeder_Front 2.94 + ATT-05 Feeder_Rear 0.901 = 3.841; TRC-01 Hitch_Rear 2.15 +
+# TRL-01 Hitch_Front 3.11 = 5.26; HRV-01 Feeder_Front 4.20 + ATT-04 Feeder_Rear 1.30 = 5.50; TRL-04 Header_Rest (0, 0.921, -0.758)
+# turned 270 deg -> ATT-03 at +0.758 x, y 0.921, rot 0. Owner decisions: no bales, no Farm Nature / Market assets; no grain stream.
+
+#! look v2
+#! sky 1
+#! clouds 18 5 3 22 -14 -3 0.9 1.6
+#! clouds 12 9 22 50 -2 4 1.2 2.2
+bg 173 191 217
+#! plane off
+#! env DEM-01 0 0 0 0
+
+# ---------- road along x between the harvest (front) and the hay / headers (back), edge to edge ----------
+#! envrow DEM-04 -24.76 -0.9 26.06 -0.9 7 90 0.02 1 1.059
+
+# ---------- front left: CMP-04 harvest on stubble (HRV-01 + ATT-03 unloading into TRL-05 Full / TRC-02 Green; the cart's
+# auger unfolded over TRL-01 Grain / TRC-01 Red) ----------
+# MEDIA v2: CMP-04 turned to rot 0 (nose to the lit side, towards the camera), entering the standing wheat (DEM-07, cropped
+# foreground); stubble behind and beside it where the machines have been
+#! env DEM-07 -15.5 -14.75 0 0.01 0.41 0.375
+# second wheat module offset by half a (scaled) clump cell and 1 cm up: denser stalks (MEDIA v2 polish)
+#! env DEM-07 -15.23 -14.53 0 0.02 0.41 0.375
+#! env DEM-03 -16.2 -7.6 0 0.01 0.5 0.8
+#! env DEM-03 -6.2 -10.0 90 0.01
+CMP-04 -12.0 -10.0 0 0.01
+
+
+# ---------- front right: forage pair on stubble: HRV-03 Red + ATT-05, TRC-01 Red + TRL-01 Empty under the spout ----------
+#! env DEM-03 8 -9 90 0.01
+HRV-03 9 -8 90 0.01
+ATT-05 5.159 -8 90 0.01
+TRL-01 9.3 -4.5 90 0.01
+TRC-01 4.04 -4.5 90 0.01
+#! aim FMS_Mach_ForageHarvester Spout Spout_Out FMS_Mach_Trailer_Tipper Bed
+
+# ---------- back left: CMP-05 haymaking on stubble (TRC-02 Red + HRV-02 Open on the 4-module windrow, TRC-01 Red + IMP-07
+# Work, TRC-01 Green + IMP-04 Work, TRL-06 empty) ----------
+#! env DEM-03 -14 10 90 0.01
+#! env DEM-03 -2 10 90 0.01
+CMP-05 -9.5 10 90 0.01
+# DEM-08 demo bales: round bales on the stubble behind the baler HRV-02, rectangular bales on the TRL-06 deck (raycast y 1.035)
+#! env DEM-08_Round 1.8 5.3 15 0.01
+#! env DEM-08_Round 3.7 6.6 70 0.01
+#! env DEM-08_Round 2.4 8.6 120 0.01
+#! env DEM-08_Round 5.2 9.0 30 0.01
+#! env DEM-08_Rect -8.00 1.80 0 1.045
+#! env DEM-08_Rect -8.00 3.00 0 1.045
+#! env DEM-08_Rect -7.44 1.80 0 1.045
+#! env DEM-08_Rect -7.44 3.00 0 1.045
+#! env DEM-08_Rect -6.88 1.80 0 1.045
+#! env DEM-08_Rect -6.88 3.00 0 1.045
+#! env DEM-08_Rect -6.32 1.80 0 1.045
+#! env DEM-08_Rect -6.32 3.00 0 1.045
+#! env DEM-08_Rect -5.76 1.80 0 1.045
+#! env DEM-08_Rect -5.76 3.00 0 1.045
+#! env DEM-08_Rect -5.20 1.80 0 1.045
+#! env DEM-08_Rect -5.20 3.00 0 1.045
+#! env DEM-08_Rect -4.64 1.80 0 1.045
+#! env DEM-08_Rect -4.64 3.00 0 1.045
+#! env DEM-08_Rect -4.08 1.80 0 1.045
+#! env DEM-08_Rect -4.08 3.00 0 1.045
+#! env DEM-08_Rect -3.52 1.80 0 1.045
+#! env DEM-08_Rect -3.52 3.00 0 1.045
+#! env DEM-08_Rect -2.96 1.80 0 1.045
+#! env DEM-08_Rect -2.96 3.00 0 1.045
+#! env DEM-08_Rect -2.40 1.80 0 1.045
+#! env DEM-08_Rect -2.40 3.00 0 1.045
+#! env DEM-08_Rect -1.84 1.80 0 1.045
+#! env DEM-08_Rect -1.84 3.00 0 1.045
+#! env DEM-08_Rect -1.28 1.80 0 1.045
+#! env DEM-08_Rect -1.28 3.00 0 1.045
+#! env DEM-08_Rect -6.60 1.80 0 1.455
+#! env DEM-08_Rect -6.60 3.00 0 1.455
+#! env DEM-08_Rect -6.04 1.80 0 1.455
+#! env DEM-08_Rect -6.04 3.00 0 1.455
+#! env DEM-08_Rect -5.48 1.80 0 1.455
+#! env DEM-08_Rect -5.48 3.00 0 1.455
+#! env DEM-08_Rect -4.92 1.80 0 1.455
+#! env DEM-08_Rect -4.92 3.00 0 1.455
+#! env DEM-08_Rect -4.36 1.80 0 1.455
+#! env DEM-08_Rect -4.36 3.00 0 1.455
+#! env DEM-08_Rect -3.80 1.80 0 1.455
+#! env DEM-08_Rect -3.80 3.00 0 1.455
+#! env DEM-08_Rect -3.24 1.80 0 1.455
+#! env DEM-08_Rect -3.24 3.00 0 1.455
+
+
+# ---------- back right: HRV-01 Blue + ATT-04 (mounted); front right on the grass by the island edge: TRL-04 carrying ATT-03
+# (polish 2026-11-24: moved out of the grain-yard close-up; >5 m passage between the grain yard and the machines) ----------
+HRV-01_Blue 15 5.5 90 0
+ATT-04 9.5 5.5 90 0
+TRL-04 20 -7 90 0
+ATT-03 20.758 -7 0 0.921
+
+# ---------- far edge: grain yard on a dirt pad (road modules), EQP-02 x2; EQP-01 in front of the bins with 1.2 m clearance ----------
+#! envrow DEM-04 5 16.5 13 16.5 3 0 0.02 1 0.85
+EQP-02 5.5 16.5 0 0.02
+EQP-02 12 16.8 0 0.02
+EQP-01 9.4 11.5 90 0
+
+# ---------- lively grass (recipe) ----------
+#! scatter DEM-05_Grass:7,DEM-05_Flowers:1,DEM-05_Rock:0.4 1500 7 -32 -22 32 22 0.7 1.4
+#! cluster DEM-05_Grass:5,DEM-05_Flowers:4,DEM-05_Rock:0.4 90 14 1.0 11 -32 -22 32 22 0.8 1.6
+#! border DEM-05_Grass:7,DEM-05_Flowers:2,DEM-05_Rock:0.5 260 0.8 22 2 -17 14 -1 0.8 1.6
+#! border DEM-05_Grass:7,DEM-05_Flowers:2,DEM-05_Rock:0.5 360 0.8 24 -20 2 4 18 0.8 1.6
+#! border DEM-05_Grass:8,DEM-05_Flowers:1.5,DEM-05_Rock:0.5 500 0.8 23 -29 -2.9 30.3 1.1 0.8 1.5
+#! border DEM-05_Grass:7,DEM-05_Flowers:2,DEM-05_Rock:0.5 200 0.8 25 3 13.1 15 19.9 0.8 1.6
+
+# ---------- cameras ----------
+# Overview: the whole floating island as the Demo_FieldWork Overview (yaw 19, 30 deg down), sky and clouds around.
+# Beauty: 3/4 from the road side behind the combine's right (yaw 174, 39 deg down) on HRV-01 + ATT-03 unloading into TRL-05:
+# the combine and header in front, the auger bridging over the cart; the tipper / tractors behind sit higher in the frame
+# (projected-box search: least silhouette overlap, nothing cut by the frame edge).
+# Close: CMP-05 haymaking from the right side (yaw -68, 24 deg down): only CMP-05 in the frame (projected-box search).
+# Close: grain yard EQP-02 x2 + EQP-01 from the front (yaw 0, 42 deg down): only the grain yard in the frame.
+
+# ---------- MEDIA v2 shots (look v2: camera from the lit side -x / -z) ----------
+# Overview: machines larger — the island 85-90 % (edge cropped at one side)
+shot Overview -17.55 25.80 -46.25 -3 0 -4 38
+# Beauty (Synty 014): combine + header and the tractor with the cart together, front and lit side, header diagonal, the standing
+# wheat as cropped foreground (scene_fit CMP-04 only, yaw 45, pitch 26, 3 % margin: the wheat block edges run out of the frame): dist 23.4, ndc x -0.88..0.88 y -0.94..0.93
+# MEDIA v2 polish (round 2): steeper (pitch 50) so the background machines (HRV-01 Blue, header trailer, grain yard) and the forage group leave the top edge; scratch shot_boxes.py
+shot Beauty -14.94 21.83 -29.15 -10.96 0.60 -10.45 32 1920 1080
+# Fix 1 (2026-11-25, round 2): camera from the front (yaw 12, pitch 48: the island edge and the background machines leave the frame): TRC-02 + cart stand right of the header (no overlap), the island
+# edge stays out of the frame, CMP-04 fitted with a 2 % margin (dist 28.6, ndc x -0.61..0.61 y -0.96..0.95)
+# CloseHaymaking / CloseGrainYard: same composition, camera a little lower for volume
+shot CloseHaymaking -5.25 9.80 -7.98 -3.20 1.30 6.60 32 1920 1080
+# Fix 1: side view of TRC-02 towing HRV-02 Open (hitch visible, no overlap); TRL-06 and its rectangular bales are hidden for this
+# shot only (they stood between the camera and the baler)
+#! shothide CloseHaymaking Trailer_Bale
+#! shothide CloseHaymaking Bales_Rect
+shot CloseGrainYard 8.89 14.8 -1.62 8.89 2.85 14.94 30
+# LowNode_Header: low shot of the header on the feeder (joint, reel, auger) — the header reads as detachable
+shot LowNode_Header -18.99 2.01 -15.89 -15.70 1.10 -11.20 40 1920 1080
+# Fix 1: low camera (1.9 m) front-left on the feeder joint (yaw 35, FOV 40); the tractors and carts of CMP-04 hidden for this
+# shot, the standing wheat moved 4.5 m away so the reel, the auger and the feeder joint read
+#! shothide LowNode_Header Tractor_Large_Green
+#! shothide LowNode_Header GrainCart_Full
+#! shothide LowNode_Header TRC-01_FMS_Mach_Tractor_Cab
+#! shothide LowNode_Header Trailer_Tipper_Grain
+#! shotmove LowNode_Header FMS_Mach_Demo_WheatField 0 0 -4.5

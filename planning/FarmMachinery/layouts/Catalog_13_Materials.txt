@@ -1,0 +1,23 @@
+# FarmMachinery Catalog_13_Materials — catalogue raw render (REQUIREMENTS 7.4–7.5 frame 13_Materials); clean, NO text (plates/captions in Э12).
+# FarmMachinerySceneBuilder.Build("Catalog_13_Materials") -> FarmMachineryCatalogShots: rows listed back to front, packed by real LOD0 bounds,
+# camera fitted to the real bounds ('#! fit shot group yaw pitch margin'). Background #E9E9EC, look catalog (neutral, soft shadows).
+# TRC-01 Red / Green / Blue (one model, three atlases) and a close-up of the flat-colour faces.
+
+#! look catalog
+bg 233 233 236
+ground 233 233 236
+
+#! catgroup trio
+#! catrows 35 1.4 1.0
+#! catrow TRC-01_Green TRC-01_Blue
+#! catrow TRC-01
+
+#! catgroup close
+#! catrows 35 1.0 4.0
+#! catrow TRC-01@r60
+
+# ---------- shots (placeholder camera lines; FarmMachineryCatalogShots fits them) ----------
+shot Models 0 10 -20 0 0 0 30 1280 1080
+#! fit Models trio 0 22 0.05 0
+shot Close 0 10 -20 0 0 0 30 640 1080
+#! fit Close close 0 12 -0.28 0

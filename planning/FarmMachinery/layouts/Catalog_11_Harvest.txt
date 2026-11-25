@@ -1,0 +1,18 @@
+# FarmMachinery Catalog_11_Harvest — catalogue raw render (REQUIREMENTS 7.4–7.5 frame 11_CategoryDetails: harvest); clean, NO text (plates/captions in Э12).
+# FarmMachinerySceneBuilder.Build("Catalog_11_Harvest") -> FarmMachineryCatalogShots: rows listed back to front, packed by real LOD0 bounds,
+# camera fitted to the real bounds ('#! fit shot group yaw pitch margin'). Background #E9E9EC, look catalog (neutral, soft shadows).
+# HRV-01 / HRV-03 / HRV-02 (Closed, Open), headers ATT-03..05, grain handling EQP-01 / EQP-02, windrow PRP-01.
+
+#! look catalog
+bg 233 233 236
+ground 233 233 236
+
+#! catgroup main
+#! catrows 35 1.0 4.0
+#! catrow EQP-02 EQP-01 HRV-02 HRV-02_Open
+#! catrow HRV-01 HRV-03
+#! catrow ATT-03 ATT-04 ATT-05 PRP-01
+
+# ---------- shots (placeholder camera lines; FarmMachineryCatalogShots fits them) ----------
+shot Sheet 0 10 -20 0 0 0 20 1920 1080
+#! fit Sheet main 0 auto 0.05 0

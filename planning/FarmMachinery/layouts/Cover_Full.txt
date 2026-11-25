@@ -1,0 +1,46 @@
+# FarmMachinery Cover_Full (MEDIA v2; changes: planning/FarmMachinery/scenes/changes/Cover_Full.changes.md; style + recipe: SCENE_STYLE.md)
+# FarmMachinerySceneBuilder.Build("Cover_Full"). Layout space: x right, z away from the camera, y up; rot r: forward = (-sin r, -cos r).
+# LOOK v2: the low sun comes from -x / -z and the camera stands at yaw 30-35 (from -x / -z): noses to -x / -z are lit.
+# Attach offsets (CATALOG contract): Feeder_Front HRV-01 4.20 / HRV-03 2.94; Feeder_Rear ATT-03 -1.05, ATT-05 -0.901;
+# Hitch_Rear TRC-01 -2.15, TRC-02 -2.90; Hitch_Front TRL-01 3.11, TRL-05 3.295.
+# CMP-04 at rot 0 (measured): combine nose to -z (towards the camera), header x -6.8..-0.6 / z -3.3..-1.2 from the pivot,
+# TRC-02 Green + cart and TRC-01 + TRL-01 Grain to its right (+x), the unloading auger over the cart.
+
+#! look v2
+#! sky 1
+# DEM-06 clouds (recipe): a low ring under the island edge and a far ring around the horizon
+#! clouds 18 5 3 22 -14 -3 0.9 1.6
+#! clouds 12 9 22 50 -2 4 1.2 2.2
+bg 173 191 217
+#! plane off
+#! env DEM-01 0 0 0 0
+# even stubble under the whole group (bottom 20-25 % = calm ground for the plate)
+#! env DEM-03 -4 -8 0 0.01
+#! env DEM-03 12 -8 0 0.01
+#! env DEM-03 -4 4 0 0.01
+#! env DEM-03 12 4 0 0.01
+
+# ---------- hero, nearest: HRV-01 Red + ATT-03 (rot 75: nose to the lit side and towards the camera) ----------
+HRV-01 1 -9.5 75 0.01
+ATT-03 -4.071 -10.859 75 0.01
+# ---------- middle: forage HRV-03 + ATT-05, TRC-02 Green + TRL-05 cart; apart, no silhouettes touching ----------
+ATT-05 -10.84 4.5 90 0.01
+HRV-03 -7 4.5 90 0.01
+TRC-02_Green 4 4.5 90 0.01
+TRL-05 10.195 4.5 90 0.01
+# ---------- behind: haymaking (baler, rake, demo bales) ----------
+HRV-02 -6 11 90 0.01
+IMP-07_Work 1 11 90 0.01
+#! env DEM-08_Round 5.2 10.6 10 0.01
+#! env DEM-08_Round 7.3 11.2 60 0.01
+#! env DEM-08_Round 6.2 13.0 100 0.01
+# ---------- far landmark: grain bin ----------
+EQP-02 17 14.5 0 0
+
+# ---------- lively grass (recipe), behind the group only ----------
+#! scatter DEM-05_Grass:7,DEM-05_Flowers:1,DEM-05_Rock:0.4 1200 7 -32 -2 32 22 0.7 1.4
+#! cluster DEM-05_Grass:5,DEM-05_Flowers:4,DEM-05_Rock:0.4 70 14 1.0 11 -32 -2 32 22 0.8 1.6
+
+# ---------- camera ----------
+# fitted (scene_fit, yaw 35, pitch 33, fov 45 for perspective: the hero larger than the rows behind, 3 % margin, bottom free 0.22): dist 38.7, ndc x -0.59..0.59 y -0.56..0.93
+shot Cover -18.54 18.10 -25.42 0.07 -2.98 1.16 45 1950 1300

@@ -1,0 +1,28 @@
+# FarmMachinery Catalog_Closeup_Lite — catalogue raw render (REQUIREMENTS 7.4–7.5 frame 07_Closeups (Lite)); clean, NO text (plates/captions in Э12).
+# FarmMachinerySceneBuilder.Build("Catalog_Closeup_Lite") -> FarmMachineryCatalogShots: rows listed back to front, packed by real LOD0 bounds,
+# camera fitted to the real bounds ('#! fit shot group yaw pitch margin'). Background #E9E9EC, look catalog (neutral, soft shadows).
+# TRC-01 rear three-point linkage + PTO + drawbar; IMP-03 boom fold hinge (Work); TRL-01 Grain load.
+
+#! look catalog
+bg 233 233 236
+ground 233 233 236
+
+#! catgroup link
+#! catrows 35 1.0 4.0
+#! catrow TRC-01@r150
+
+#! catgroup boom
+#! catrows 35 1.0 4.0
+#! catrow IMP-03_Work@r20
+
+#! catgroup tip
+#! catrows 35 1.0 4.0
+#! catrow TRL-01_Grain@r35
+
+# ---------- shots (placeholder camera lines; FarmMachineryCatalogShots fits them) ----------
+shot Tipper 0 10 -20 0 0 0 30 1920 1080
+#! fit Tipper tip 0 44 0.03 0
+shot RearLinkage 0 10 -20 0 0 0 30 1920 1080
+#! focus RearLinkage link Link3P_Rear 1.25 25 16
+shot Sprayer 0 10 -20 0 0 0 30 1920 1080
+#! focus Sprayer boom Boom_L 1.6 10 24

@@ -1,0 +1,17 @@
+# FarmMachinery Catalog_11_Trailers — catalogue raw render (REQUIREMENTS 7.4–7.5 frame 11_CategoryDetails: trailers); clean, NO text (plates/captions in Э12).
+# FarmMachinerySceneBuilder.Build("Catalog_11_Trailers") -> FarmMachineryCatalogShots: rows listed back to front, packed by real LOD0 bounds,
+# camera fitted to the real bounds ('#! fit shot group yaw pitch margin'). Background #E9E9EC, look catalog (neutral, soft shadows).
+# TRL-01..06 with Grain / Full loads.
+
+#! look catalog
+bg 233 233 236
+ground 233 233 236
+
+#! catgroup main
+#! catrows 35 1.0 4.0
+#! catrow TRL-06 TRL-04 TRL-05 TRL-05_Full
+#! catrow TRL-01 TRL-01_Grain TRL-02 TRL-03
+
+# ---------- shots (placeholder camera lines; FarmMachineryCatalogShots fits them) ----------
+shot Sheet 0 10 -20 0 0 0 20 1920 1080
+#! fit Sheet main 0 auto 0.05 0

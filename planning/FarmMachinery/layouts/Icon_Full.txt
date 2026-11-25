@@ -1,0 +1,28 @@
+# FarmMachinery Icon_Full (MEDIA v2; changes: planning/FarmMachinery/scenes/changes/NEW_Icon_Social.changes.md; style + recipe: SCENE_STYLE.md)
+# FarmMachinerySceneBuilder.Build("Icon_Full"). Layout space: x right, z away from the camera, y up; rot r: forward = (-sin r, -cos r).
+# LOOK v2: the sun comes from -x / -z (low, ~25 deg), so the hero turns to rot 105 (nose to -x, a little to +z) and the camera
+# stands at yaw ~50 (from -x / -z): the lit nose and the lit left side face it; the attachment trails to screen-right / into depth.
+# Attach offsets (CATALOG contract): Link3P TRC-01 -2.00 / IMP-01 +1.74; Feeder_Front HRV-01 4.20 / Feeder_Rear ATT-03 -1.05.
+
+#! look v2
+#! sky 1
+# DEM-06 clouds (recipe): a low ring under the island edge and a far ring around the horizon
+#! clouds 18 5 3 22 -14 -3 0.9 1.6
+#! clouds 12 9 22 50 -2 4 1.2 2.2
+bg 173 191 217
+#! plane off
+#! env DEM-01 0 0 0 0
+#! env DEM-03 -3.45 -0.93 105 0.01
+
+# ---------- icon: HRV-01 Red + ATT-03, header diagonal, silhouette 70-80 % of the square ----------
+HRV-01 0 0 105 0.01
+ATT-03 -5.071 1.359 105 0.01
+
+# ---------- lively grass (recipe), only behind / beside the group: the frame bottom stays even ground ----------
+#! scatter DEM-05_Grass:7,DEM-05_Flowers:1,DEM-05_Rock:0.4 1300 7 -32 5 32 22 0.7 1.4
+#! scatter DEM-05_Grass:7,DEM-05_Flowers:1,DEM-05_Rock:0.4 500 8 10 -22 32 5 0.7 1.4
+#! cluster DEM-05_Grass:5,DEM-05_Flowers:4,DEM-05_Rock:0.4 70 14 1.0 11 -32 5 32 22 0.8 1.6
+
+# ---------- camera ----------
+# fitted (scene_fit, yaw 50, pitch 32, 3 % margin, bottom free 0.0): dist 22.8, ndc x -0.92..0.93 y -0.72..0.72
+shot Icon -16.56 13.39 -12.20 -1.75 1.31 0.23 30 1024 1024

@@ -1,0 +1,18 @@
+# FarmMachinery Catalog_09_Technical_Lite — catalogue raw render (REQUIREMENTS 7.4–7.5 frame 09_Technical (Lite)); clean, NO text (plates/captions in Э12).
+# FarmMachinerySceneBuilder.Build("Catalog_09_Technical_Lite") -> FarmMachineryCatalogShots: rows listed back to front, packed by real LOD0 bounds,
+# camera fitted to the real bounds ('#! fit shot group yaw pitch margin'). Background #E9E9EC, look catalog (neutral, soft shadows).
+# Rows TRC-01, IMP-01; columns LOD0 shaded + wire, LOD1 shaded + wire, BoxCollider outline.
+
+#! look catalog
+bg 233 233 236
+ground 233 233 236
+
+#! catgroup main
+#! catrows 35 2.4 3.0
+#! catgrid
+#! catrow TRC-01@wire TRC-01@wire@lod1 TRC-01@box
+#! catrow IMP-01@wire IMP-01@wire@lod1 IMP-01@box
+
+# ---------- shots (placeholder camera lines; FarmMachineryCatalogShots fits them) ----------
+shot Sheet 0 10 -20 0 0 0 12 1920 1080
+#! fit Sheet main 0 30 0.05 0

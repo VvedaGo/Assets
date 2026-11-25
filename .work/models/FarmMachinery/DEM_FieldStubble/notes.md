@@ -1,0 +1,6 @@
+# DEM-03 Demo FieldStubble (`FMS_Mach_Demo_FieldStubble`) — builder notes
+
+Demo environment piece (owner decision 2026-11-24, demo only — not a catalogue product). Built and checked HEADLESS only: **no live MCP pass** (the live Blender MCP server was not reachable; coordinator decision B, 2026-11-24). Own atlas `art/FarmMachinery/Demo/Textures/T_FarmMachinery_Demo_BaseColor.png` (256 px 4×4, md5 f52802de…) + material `M_FarmMachinery_Demo`; the machines' atlas T_FarmMachinery_Red_BaseColor stays byte-identical (md5 eb6768e2…). Soil / road / stubble cells use the SCENE_STYLE.md calibrated BASE colours (125 102 98 / 146 146 147 / 122 141 137), so they look cool / grey in Blender previews and render to the target tones under the PackSceneBuilder warm key. Root on the ground (Y 0 = walking surface), centre of bbox in X / Z, no LOD. Output art/FarmMachinery/Demo/{Meshes,Blend,Previews}/. Rounds ≤ 3. Checks: non-manifold / loose / degenerate 0, coplanar 0, gaps 0; FBX re-import verified (texture found).
+
+- Module 16 × 12 m: stubble-ground slab (top Y 0, bottom −0.05) + 40 straw wedge rows along Z (pitch 0.40, 0.16 wide, 0.12 high, light / dark straw sides; round 1 rows 0.10 wide read as thin lines). Size 16.00 × 0.17 × 12.00.
+- Tris 332 / 1200. SNAP: DEM-03 | DEM-03 along X OK (4/4), DEM-02 | DEM-03 along X OK.

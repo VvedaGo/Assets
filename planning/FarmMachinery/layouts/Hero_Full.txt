@@ -1,0 +1,58 @@
+# FarmMachinery Hero_Full (MEDIA v2; changes: planning/FarmMachinery/scenes/changes/Hero_Full.changes.md, NEW_Icon_Social.changes.md (Social); style + recipe: SCENE_STYLE.md)
+# FarmMachinerySceneBuilder.Build("Hero_Full"). Layout space: x right, z away from the camera, y up; rot r: forward = (-sin r, -cos r).
+# LOOK v2: the low sun comes from -x / -z and the camera stands at yaw 30-35 (from -x / -z): noses to -x / -z are lit.
+# Attach offsets (CATALOG contract): Feeder_Front HRV-01 4.20 / HRV-03 2.94; Feeder_Rear ATT-03 -1.05, ATT-05 -0.901;
+# Hitch_Rear TRC-01 -2.15, TRC-02 -2.90; Hitch_Front TRL-01 3.11, TRL-05 3.295.
+# CMP-04 at rot 0 (measured): combine nose to -z (towards the camera), header x -6.8..-0.6 / z -3.3..-1.2 from the pivot,
+# TRC-02 Green + cart and TRC-01 + TRL-01 Grain to its right (+x), the unloading auger over the cart.
+
+#! look v2
+#! sky 1
+# DEM-06 clouds (recipe): a low ring under the island edge and a far ring around the horizon
+#! clouds 18 5 3 22 -14 -3 0.9 1.6
+#! clouds 12 9 22 50 -2 4 1.2 2.2
+bg 173 191 217
+#! plane off
+#! env DEM-01 0 0 0 0
+# standing wheat (DEM-07) ahead of the header and to its left; stubble everywhere the machines have been
+#! env DEM-07 -14.3 -8 90 0.01
+# second wheat module offset by half a clump cell (and 1 cm up) to densify the stalks (MEDIA v2 polish)
+#! env DEM-07 -13.7 -7.33 90 0.02
+#! env DEM-03 -2.3 -9 90 0.01 0.875 1
+#! env DEM-03 -6 4 0 0.01
+#! env DEM-03 10 4 0 0.01
+#! env DEM-03 -6 16 0 0.01
+
+# ---------- focus: CMP-04, the combine entering the standing wheat and unloading into the cart ----------
+CMP-04 -8 2 0 0.01
+# ---------- middle: forage harvester HRV-03 + ATT-05, spout aimed into TRL-01 towed by TRC-01 alongside ----------
+HRV-03 8.5 2.6 90 0.01
+ATT-05 4.659 2.6 90 0.01
+TRC-01 3.54 6.2 90 0.01
+TRL-01 8.8 6.2 90 0.01
+#! aim FMS_Mach_ForageHarvester Spout Spout_Out FMS_Mach_Trailer_Tipper Bed
+# ---------- middle-left: haymaking — baler, rake, windrows and demo bales (DEM-08) on the stubble ----------
+HRV-02 -2 12 90 0.01
+IMP-07_Work 4.4 12 90 0.01
+PRP-01 -9 11.2 90 0.01
+PRP-01 -9 14.2 90 0.01
+#! env DEM-08_Round -5.6 15.6 0 0.01
+#! env DEM-08_Round -3.4 16.0 35 0.01
+#! env DEM-08_Round -0.2 15.4 80 0.01
+#! env DEM-08_Rect -12.2 12.4 90 0.01
+#! env DEM-08_Rect -12.2 13.0 90 0.01
+# ---------- far: grain yard (bins + auger) ----------
+#! envrow DEM-04 15.5 7.5 23.5 7.5 3 0 0.02 1 1
+EQP-02 16.5 7.6 0 0.02
+EQP-02 22.8 7.2 0 0.02
+
+# ---------- lively grass (recipe): grass clumps on the free island ----------
+#! scatter DEM-05_Grass:7,DEM-05_Flowers:1,DEM-05_Rock:0.4 1300 7 -32 -22 32 22 0.7 1.4
+#! cluster DEM-05_Grass:5,DEM-05_Flowers:4,DEM-05_Rock:0.4 80 14 1.0 11 -32 -22 32 22 0.8 1.6
+
+# ---------- camera ----------
+# MEDIA v2 polish (round 2): narrower FOV 30 (no fisheye), pitch 42, closer than v2 (dist 50 vs fov 45 at 43): the unloading pair ~40-45 % of the width;
+# the grain yard pulled to z 7.5 so it stays in the frame (scratch shot_boxes.py)
+shot Hero -18.08 33.46 -27.68 0.50 0.00 4.50 30 1920 1080
+# Social 1200x630: fitted to the focus + the forage pair only (yaw 30, pitch 32, 6 % margin), the farm runs out to the cropped edges: dist 35.2, ndc x -0.73..0.73 y -0.88..0.87
+shot Social -17.54 16.08 -20.84 -2.62 -2.57 5.02 34 1200 630

@@ -1,0 +1,39 @@
+# FarmMachinery Cover_Lite (MEDIA v2; changes: planning/FarmMachinery/scenes/changes/Cover_Lite.changes.md; style + recipe: SCENE_STYLE.md)
+# FarmMachinerySceneBuilder.Build("Cover_Lite"). Layout space: x right, z away from the camera, y up; rot r: forward = (-sin r, -cos r).
+# LOOK v2: the low sun comes from -x / -z, the camera stands at yaw ~40 (from -x / -z), so noses (rot 60-90) and left sides are lit.
+# Attach offsets (CATALOG contract): Link3P TRC-01 -2.00 / IMP-01 +1.74; Hitch_Rear TRC-02 -2.90 / Hitch_Front TRL-01 3.11.
+# Lite only: TRC-01, TRC-02, TRL-01..03, IMP-01..06 and the demo environment.
+
+#! look v2
+#! sky 1
+# DEM-06 clouds (recipe): a low ring under the island edge and a far ring around the horizon
+#! clouds 18 5 3 22 -14 -3 0.9 1.6
+#! clouds 12 9 22 50 -2 4 1.2 2.2
+bg 173 191 217
+#! plane off
+#! env DEM-01 0 0 0 0
+#! envrow DEM-04 -24.76 3 26.06 3 7 90 0.02 1 1.059
+# bottom of the frame = even ploughed ground under and in front of the hero (no grass polygon in the corner)
+#! env DEM-02 -6 -10 90 0.01
+#! env DEM-02 6 -10 90 0.01
+
+# ---------- hero, nearest, front-left / centre: TRC-01 Red in 3/4 front (rot 90: nose to the lit -x, lit left side to the camera) ----------
+TRC-01 -6 -11 90 0.01
+# ---------- the convoy on the road behind it, to the right and into depth: 4 Lite machines apart (MEDIA v2 polish) ----------
+TRC-02_Blue 8.5 3 90 0.02
+TRL-01 14.51 3 90 0.02
+IMP-02 19.9 3 90 0.02
+IMP-03 24.5 3 90 0.02
+
+# ---------- lively grass (recipe), behind the fields only ----------
+#! scatter DEM-05_Grass:7,DEM-05_Flowers:1,DEM-05_Rock:0.4 1200 7 -32 0.5 32 22 0.7 1.4
+#! cluster DEM-05_Grass:5,DEM-05_Flowers:4,DEM-05_Rock:0.4 80 14 1.0 11 -32 1 32 22 0.8 1.6
+#! border DEM-05_Grass:8,DEM-05_Flowers:1.5,DEM-05_Rock:0.5 500 0.8 23 -29.0 1 30.3 5 0.8 1.6
+# Fix 1 (2026-11-25): grass strip along the ploughed field outline hides the stepped furrow ends (reviewer note)
+#! border DEM-05_Grass:9,DEM-05_Flowers:1,DEM-05_Rock:0.3 700 0.7 31 -12 -18 12 -2 0.9 1.7
+
+# ---------- camera ----------
+# MEDIA v2 polish (round 2): placed by hand (scratch shot_boxes.py; boxes overestimate silhouettes by ~15 %): hero box
+# x -0.83..+0.02 (~42 % -> ~36 % real), y -0.51..+0.55 (wheels above the plate line at -0.56); convoy boxes x -0.17..+0.70,
+# y +0.52..+0.90 behind it; yaw 38, pitch 23, fov 44 (perspective: the hero clearly the largest object)
+shot Cover -10.25 5.27 -20.29 -2.60 0.00 -10.50 44 1950 1300

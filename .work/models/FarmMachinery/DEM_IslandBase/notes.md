@@ -1,0 +1,7 @@
+# DEM-01 Demo IslandBase (`FMS_Mach_Demo_IslandBase`) — builder notes
+
+Demo environment piece (owner decision 2026-11-24, demo only — not a catalogue product). Built and checked HEADLESS only: **no live MCP pass** (the live Blender MCP server was not reachable; coordinator decision B, 2026-11-24). Own atlas `art/FarmMachinery/Demo/Textures/T_FarmMachinery_Demo_BaseColor.png` (256 px 4×4, md5 f52802de…) + material `M_FarmMachinery_Demo`; the machines' atlas T_FarmMachinery_Red_BaseColor stays byte-identical (md5 eb6768e2…). Soil / road / stubble cells use the SCENE_STYLE.md calibrated BASE colours (125 102 98 / 146 146 147 / 122 141 137), so they look cool / grey in Blender previews and render to the target tones under the PackSceneBuilder warm key. Root on the ground (Y 0 = walking surface), centre of bbox in X / Z, no LOD. Output art/FarmMachinery/Demo/{Meshes,Blend,Previews}/. Rounds ≤ 3. Checks: non-manifold / loose / degenerate 0, coplanar 0, gaps 0; FBX re-import verified (texture found).
+
+- Irregular rounded outline, 18 points, top extent 64.0 × 44.0 m (bbox 64.33 × 0.80 × 44.33 with the bevel / skirt), flat grass top at Y 0 in two greens painted as 5 large blobs on staggered zigzag triangles (round 1 had a radial pinwheel — replaced), soft bevel to Y −0.10, soil skirt with two strata to Y −0.80, closed bottom.
+- Tris 250 / 1500. Re-import 2 nodes.
+- In demo scenes place the modules (DEM-02…04) 0.01 m above the island top to avoid coplanar z-fighting (both tops are at Y 0 by spec).

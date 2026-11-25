@@ -193,14 +193,25 @@ def report(obs):
 
 # ---------------- export + verify + lib ----------------
 def export(asset, coll, root, fbx):
-    """FBX for Unity (Y up, -Z forward baked, scale 1). Blender 5.2 writes a wrong transform for 2nd-level children with
-    bake_space_transform (e.g. a crank parented under a moving stone): their local matrix is pre-compensated during the
-    export and restored afterwards. Keep moving parts as direct root children where possible."""
+    """FBX for Unity (Y up, -Z forward baked, scale 1). Blender 5.2 writes a wrong transform for children below the
+    root's direct children with bake_space_transform (e.g. a crank parented under a moving stone): their local matrix is
+    pre-compensated during the export and restored afterwards. Keep moving parts as direct root children where possible.
+    Changelog 2026-11-24 (FarmMachinery HRV-03): any nesting depth. Parents are compensated first and every nested object
+    gets L'(o) = L'(parent)^-1 @ G @ L(parent) @ L(o) (L = original local, L' = compensated local); for 2nd-level children
+    L'(parent) = L(parent), so their result is unchanged."""
     from bpy_extras.io_utils import axis_conversion
     G = axis_conversion(to_forward='-Z', to_up='Y').to_4x4()
-    nested = [(o, o.matrix_basis.copy()) for o in coll.objects if o.parent is not None and o.parent != root]
+    def depth(o):
+        d = 0
+        while o.parent is not None: o = o.parent; d += 1
+        return d
+    orig = {o.name: o.matrix_local.copy() for o in coll.objects}
+    nested = sorted([(o, o.matrix_basis.copy()) for o in coll.objects if o.parent is not None and o.parent != root],
+                    key=lambda t: depth(t[0]))
     for o, _ in nested:
-        Pm = o.parent.matrix_local.copy(); o.matrix_local = Pm.inverted() @ G @ Pm @ o.matrix_local
+        p = o.parent
+        o.matrix_local = p.matrix_local.inverted() @ G @ orig.get(p.name, p.matrix_local) @ o.matrix_local
+        bpy.context.view_layer.update()
     bpy.context.view_layer.update()
     for o in bpy.context.view_layer.objects: o.select_set(False)
     for o in coll.objects: o.select_set(True)
@@ -211,7 +222,7 @@ def export(asset, coll, root, fbx):
             mesh_smooth_type='FACE', use_mesh_modifiers=True, add_leaf_bones=False, path_mode='COPY',
             embed_textures=False, bake_anim=False)
     finally:
-        for o, m in nested: o.matrix_basis = m
+        for o, m in reversed(nested): o.matrix_basis = m
         bpy.context.view_layer.update()
     print('exported', fbx, '| nested parts pre-compensated:', [o.name for o, _ in nested])
     return fbx

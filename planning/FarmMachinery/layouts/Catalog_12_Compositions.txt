@@ -1,0 +1,50 @@
+# FarmMachinery Catalog_12_Compositions — catalogue raw render (REQUIREMENTS 7.4–7.5 frame 12_Compositions); clean, NO text (plates/captions in Э12).
+# FarmMachinerySceneBuilder.Build("Catalog_12_Compositions") -> FarmMachineryCatalogShots: rows listed back to front, packed by real LOD0 bounds,
+# camera fitted to the real bounds ('#! fit shot group yaw pitch margin'). Background #E9E9EC, look catalog (neutral, soft shadows).
+# CMP-01..05, one group each (90 m apart), same yaw / pitch / margin.
+
+#! look catalog
+bg 233 233 236
+ground 233 233 236
+
+#! catgroup c1
+#! catrows 35 1.0 4.0
+#! catrow CMP-01@r110
+
+#! catgroup c2
+#! catrows 35 1.0 4.0
+#! catrow CMP-02
+
+#! catgroup c3
+#! catrows 35 1.0 4.0
+#! catrow CMP-03@r95
+
+#! catgroup c4
+#! catrows 35 1.0 4.0
+#! catrow CMP-04
+
+#! catgroup c5
+#! catrows 35 1.0 4.0
+#! catrow CMP-05
+
+# ---------- shots (placeholder camera lines; FarmMachineryCatalogShots fits them) ----------
+shot CMP_01 0 10 -20 0 0 0 30 1920 1080
+#! fit CMP_01 c1 0 28 0.05 0
+shot CMP_02 0 10 -20 0 0 0 30 1920 1080
+#! fit CMP_02 c2 0 28 0.05 0
+shot CMP_03 0 10 -20 0 0 0 30 1920 1080
+#! fit CMP_03 c3 0 40 0.05 0
+shot CMP_04 0 10 -20 0 0 0 30 1920 1080
+#! fit CMP_04 c4 0 28 0.05 0
+shot CMP_05 0 10 -20 0 0 0 30 1920 1080
+#! fit CMP_05 c5 0 28 0.05 0
+shot Grid_01 0 10 -20 0 0 0 30 624 522
+#! fit Grid_01 c1 0 28 0.05 0
+shot Grid_02 0 10 -20 0 0 0 30 624 522
+#! fit Grid_02 c2 0 28 0.05 0
+shot Grid_03 0 10 -20 0 0 0 30 942 522
+#! fit Grid_03 c3 0 40 0.05 0
+shot Grid_04 0 10 -20 0 0 0 30 942 522
+#! fit Grid_04 c4 0 28 0.05 0
+shot Grid_05 0 10 -20 0 0 0 30 624 522
+#! fit Grid_05 c5 0 28 0.05 0

@@ -1,0 +1,18 @@
+# FarmMachinery Catalog_11_Implements — catalogue raw render (REQUIREMENTS 7.4–7.5 frame 11_CategoryDetails: implements); clean, NO text (plates/captions in Э12).
+# FarmMachinerySceneBuilder.Build("Catalog_11_Implements") -> FarmMachineryCatalogShots: rows listed back to front, packed by real LOD0 bounds,
+# camera fitted to the real bounds ('#! fit shot group yaw pitch margin'). Background #E9E9EC, look catalog (neutral, soft shadows).
+# IMP-01..07 with Work poses, ATT-01 / ATT-02.
+
+#! look catalog
+bg 233 233 236
+ground 233 233 236
+
+#! catgroup main
+#! catrows 35 1.0 4.0
+#! catrow IMP-03 IMP-03_Work IMP-07
+#! catrow IMP-07_Work IMP-05 IMP-05_Work
+#! catrow IMP-02 IMP-06 IMP-01 IMP-04 IMP-04_Work ATT-01 ATT-02
+
+# ---------- shots (placeholder camera lines; FarmMachineryCatalogShots fits them) ----------
+shot Sheet 0 10 -20 0 0 0 20 1920 1080
+#! fit Sheet main 0 auto 0.05 0
