@@ -19,6 +19,9 @@ namespace FarmMachinery.Editor
     public static class FarmMachineryEnvironment
     {
         public const string Root = "Assets/FarmMachinery/Demo/Environment";
+        /// <summary>Base atlases / materials made by Import (A/B base of LOOK v2): dev-only since Э14; the shipped prefabs use the
+        /// v2 materials (FarmMachineryRelease.UseV2EnvironmentMaterials, run it again after a new Import).</summary>
+        public const string BaseRoot = "Assets/_FarmMachineryDev/Demo/Environment";
         private const string Texture = "T_FarmMachinery_Demo_BaseColor";
         private const string MaterialName = "M_FarmMachinery_Demo";
         public const string ReportPath = ".work/ImportReport_FarmMachinery_Demo.txt";
@@ -52,9 +55,9 @@ namespace FarmMachinery.Editor
         [MenuItem("Tools/Farm Machinery/Import Demo Environment")]
         public static string Import()
         {
-            Directory.CreateDirectory($"{Root}/Materials");
+            Directory.CreateDirectory($"{BaseRoot}/Materials");
             Directory.CreateDirectory($"{Root}/Prefabs");
-            var texPath = $"{Root}/Textures/{Texture}.png";
+            var texPath = $"{BaseRoot}/Textures/{Texture}.png";
             var tex = (TextureImporter)AssetImporter.GetAtPath(texPath) ?? throw new System.InvalidOperationException($"{texPath} missing: copy and refresh first");
             if (tex.filterMode != FilterMode.Point || tex.mipmapEnabled)
             {
@@ -65,7 +68,7 @@ namespace FarmMachinery.Editor
             }
             var material = Material(AssetDatabase.LoadAssetAtPath<Texture2D>(texPath));
             var cloudMaterial = CloudMaterial(material);
-            var tex2Path = $"{Root}/Textures/{Texture2Name}.png";
+            var tex2Path = $"{BaseRoot}/Textures/{Texture2Name}.png";
             var tex2 = (TextureImporter)AssetImporter.GetAtPath(tex2Path) ?? throw new System.InvalidOperationException($"{tex2Path} missing: copy and refresh first");
             if (tex2.filterMode != FilterMode.Point || tex2.mipmapEnabled)
             {
@@ -154,7 +157,7 @@ namespace FarmMachinery.Editor
         /// </summary>
         private static Material CloudMaterial(Material demo)
         {
-            var path = $"{Root}/Materials/M_FarmMachinery_Demo_Cloud.mat";
+            var path = $"{BaseRoot}/Materials/M_FarmMachinery_Demo_Cloud.mat";
             var shader = Shader.Find("FarmMachinery/Demo/Cloud");
             var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (mat == null)
@@ -182,7 +185,7 @@ namespace FarmMachinery.Editor
 
         private static Material Material(Texture2D texture, string materialName = MaterialName)
         {
-            var path = $"{Root}/Materials/{materialName}.mat";
+            var path = $"{BaseRoot}/Materials/{materialName}.mat";
             var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (mat == null)
             {

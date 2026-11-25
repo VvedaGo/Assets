@@ -1,10 +1,11 @@
 # Farm Machinery Lite — Asset Store card
 
-Product: Farm Machinery Lite · Version: 1.0.0 · Updated: 2026-11-25 · Status: draft — Э13 done, Э12 media accepted (media_1); numbers to be re-checked in Э14
+Product: Farm Machinery Lite · Version: 1.0.0 · Updated: 2026-11-25 · Status: checked — Э13 done, Э12 media accepted (media_1), Э14 release check passed (numbers confirmed on the exported package)
 Fields and rules: REQUIREMENTS.md 7.1–7.3. Final texts go into the labelled blocks only; notes, options, TODO and
 `[ПРОВЕРИТЬ]` go into the Notes block at the end. Full version card: [../Full/PACKAGE_METADATA.md](../Full/PACKAGE_METADATA.md).
 
-Sources of numbers: `.work/ImportCheck_FarmMachinery.md` (FarmMachineryChecks, 2026-11-24 19:28, Unity 6000.3.10f1, URP),
+Sources of numbers: Э14 clean import of the exported package (`.work/export/checks/<Lite|Full>/check.txt`, 2026-11-25) =
+`.work/ImportCheck_FarmMachinery.md` (FarmMachineryChecks, 2026-11-24 19:28, Unity 6000.3.10f1, URP),
 `.work/ImportReport_FarmMachinery.txt`, `.work/ImportReport_FarmMachinery_Demo.txt`, `.work/ImportNotes_FarmMachinery.md`,
 `AssetStore/FarmMachinery/Media/raw/Catalog/09_Technical_numbers.md`. Lite content = the "Lite = да" rows of
 `planning/FarmMachinery/CATALOG.md`.
@@ -57,7 +58,7 @@ WHAT'S INCLUDED
 - Attachments (2): quick hitch frame, front weight
 - 21 prefabs in total: 13 models + 8 variants (4 colour, 3 pose, 1 load)
 - 3 compositions: Ploughing (tractor + plough), Grain Haul (tractor + 2 tippers), Machine Yard (the whole Lite fleet)
-- Demo scenes: Demo_FieldWork (field work on a small farm island) and a catalogue scene with all 21 prefabs
+- Demo scenes: Demo_FieldWork (field work on a small farm island) and Demo_Catalog_Lite with all 21 prefabs
 
 LIMITATIONS
 This is an art pack. It has no scripts, driving physics, WheelColliders, Rigidbodies, rigs or animation clips. Separate wheels and moving parts are prepared for your own scripts or animations; they are not animated. Cab glass is opaque, there is no cab interior. The ground, fields, road, grass and clouds in the demo scenes are demo-only assets.
@@ -81,10 +82,10 @@ Works on its own. Requires only the Universal Render Pipeline.
 | Rigging / Animations | Static meshes, no rig, no skinning, 0 animation clips. Wheels, links, doors, beds, booms and other moving parts are separate objects with pivots on their axes, not animations |
 | Colliders | One BoxCollider on every single-item prefab (21/21), sized to the whole model including wheels; pose variants have their own recomputed box. No MeshColliders. Compositions use the colliders of their nested prefabs |
 | Scale / Setup | 1 unit = 1 m, Y up, machines face +Z. Root pivot on the ground at the centre of the footprint, root scale 1, rotation 0. Wheels: `Wheel_FL/FR/RL/RR` (single axle `Wheel_L/R`, plough gauge `Wheel_Gauge`), pivot at the wheel centre, spin axis local X. Attach points are empty objects (+Z forward, +Y up): `Hitch_*`, `Link3P_*`, `PTO_*`, `Seat`. Standard rest heights: Hitch 0.55 m, Link3P 0.60 m, PTO 0.70 m. Naming `FMS_Mach_<Name>` for base prefabs and `FMS_Mach_<Name>_<Variant>` for variants. Quick Hitch and Front Weight are modelled at their mounted height and float above Y = 0 when placed alone |
-| Files / Sources | FBX models (13), PNG textures (3), URP materials (3), prefabs (24), demo scenes. Blender files and build scripts are not included |
-| Demo / Scripts | Demo scenes: Demo_FieldWork (CMP_01–03 on a farm island with ploughed field, seedlings, road and grass) and a catalogue scene with all 21 prefabs in rows. No scripts in the package; no camera controller (use the Scene view). Demo scenes use a URP Volume for post-processing. Demo-only assets in `Demo/`: environment models and prefabs (island base, field modules, road, grass tufts, clouds), their own atlas material, a sky panorama and two simple sky / cloud shaders; they are not counted above |
-| Compatibility / Dependencies | Unity 6000.3 (built with 6000.3.10f1), Universal Render Pipeline 17.3. Built-in Render Pipeline and HDRP are not supported. No other packages required; no Input System dependency |
-| Package Size | Measured on the exported 1.0.0 .unitypackage (Э14) |
+| Files / Sources | 75 files: FBX models (13), PNG textures (3), URP materials (3), prefabs (24), 2 demo scenes with their demo-only assets, README_Lite.txt and Changelog.txt in Documentation. Blender files and build scripts are not included |
+| Demo / Scripts | Demo scenes: Demo_FieldWork (CMP_01–03 on a farm island with ploughed field, seedlings, road and grass) and Demo_Catalog_Lite (all 21 prefabs in rows). Each has one active camera; the other shot cameras are inactive viewpoints. No scripts in the package; no camera controller. Demo scenes use a URP Volume for post-processing. Demo-only assets in `Demo/` (not counted above): 6 environment FBX and 11 prefabs (island base, ploughed field, seedlings, road, grass tufts, clouds), 5 materials (3 environment, sky, catalogue backdrop), 3 textures (two 256 × 256 environment atlases, 512 × 512 sky panorama), 2 shaders (panorama sky, unlit clouds), 1 Volume profile |
+| Compatibility / Dependencies | Unity 6000.3 (tested with 6000.3.10f1, clean import of the exported package), Universal Render Pipeline 17.3. Built-in Render Pipeline and HDRP are not supported. No other packages required; no Input System dependency |
+| Package Size | 1.7 MB (1,745,816 bytes) — FarmMachinery_Lite_1.0.0.unitypackage, version 1.0.0 |
 
 ## Price
 
@@ -104,14 +105,14 @@ Version: `1.0.0`
 - 21 prefabs (13 models + 8 colour, pose and load variants) and 3 compositions
 - Separate wheels and moving parts with pivots, named Hitch / Link3P / PTO attach points
 - LOD1 on 11 models, Box Collider on every prefab
-- Demo scenes: Demo_FieldWork and a catalogue scene
+- Demo scenes: Demo_FieldWork and Demo_Catalog_Lite
 - Unity 6000.3, URP 17.3
 ```
 
 ## Compatibility
 
 ```text
-Unity 6000.3 (built with 6000.3.10f1). Universal Render Pipeline (URP) 17.3. Built-in Render Pipeline and HDRP are not supported. The package contains no code, so there are no platform-specific requirements; performance on specific mobile devices has not been measured.
+Unity 6000.3 (tested with 6000.3.10f1). Universal Render Pipeline (URP) 17.3. Built-in Render Pipeline and HDRP are not supported. The package contains no code, so there are no platform-specific requirements; performance on specific mobile devices has not been measured.
 ```
 
 ## Dependencies
@@ -125,7 +126,7 @@ No other Asset Store products are needed. The demo scenes use only assets includ
 
 ```text
 Support: contact via the publisher profile
-Documentation: Assets/FarmMachinery/Documentation/README
+Documentation: Assets/FarmMachinery/Documentation/README_Lite.txt
 Full version: Farm Machinery - [Asset Store link]
 Same series: Farm Market Starter (https://assetstore.unity.com/packages/package/421724), Farm Yard (https://assetstore.unity.com/packages/package/424220), Farm Nature, Farm Processing
 ```
@@ -215,25 +216,26 @@ $15.99, PolyOne Farm Vehicles $15.00, Gridness Farm Pack – Vehicles $15.00, Yo
 Farm Props and Vehicles $20.00, Low poly farm asset pack $29.99; общие паки фермы Synty $49.99, ithappy $79.00; наш Farm Yard $7.99.
 В Title/Tags слово «free» не добавлял (поле Price уже Free); при желании тег `free` можно поставить вместо `farming`.
 
-**[ПРОВЕРИТЬ после экспорта] (Э14):**
-1. Package Size — нет экспорта; вписать размер `.unitypackage` 1.0.0 (не размер папки: `Assets/FarmMachinery` сейчас 79 МБ вместе
-   со всеми медиа-сценами и V1/V2-версиями демо-материалов).
-2. Состав экспорта Lite: 13 FBX, 21 + 3 префаба, 3 материала, 3 атласа, Demo_FieldWork, каталожная сцена, подмножество демо-окружения.
-   Как собирается Lite (отдельный экспорт из той же `Assets/FarmMachinery` или копия) — решить; одинаковые имена/GUID с Full,
-   чтобы апгрейд Lite → Full не дублировал файлы (это обещано в Submission Notes).
-3. Демо-сцены: в проекте нет `Demo_Catalog_Lite` из CATALOG — есть `Catalog_06_Lite.unity` (тот же ряд 21 префаба). Решить имя;
-   в тексте написано «a catalogue scene» без имени. Медиа-сцены (Icon/Card/Cover/Hero/Catalog_*) и лишние материалы
-   `M_Demo_Backdrop_*`, `*_Soft`, `*_V2`, 3 панорамы неба — исключить или оставить; после этого вписать число демо-текстур и
-   материалов в Technical Details (7.2 требует считать демо отдельно).
-4. Какие DEM-модели реально нужны Demo_FieldWork (DEM-01…06, 09?) — от этого список демо-окружения в Demo / Scripts.
-5. Чистый импорт в Unity 6000.3.10f1 + URP 17.3: компиляция, missing scripts, розовые материалы (включая облака/небо на
-   собственных шейдерах), открытие сцен, Validator. До этого формулировка «built with» вместо «tested with».
-6. Все числа (tris 28,872 / 14,100, min/max, 21 префаб, 11 LOD) — из ImportCheck 2026-11-24 19:28; сверить после экспорта и
-   при расхождении поправить и подписи 06/09/10 (→ Э12).
-7. Документации нет: `Assets/FarmMachinery/Documentation/` отсутствует (README + Changelog — Э14). Ссылка в Support указывает
-   на будущий README.
-8. Отсутствие зависимости от Input System: скриптов в паке нет, в демо-сценах только компоненты URP (Volume,
-   UniversalAdditionalCameraData/LightData) — проверено по m_Script в Demo_FieldWork.unity; подтвердить в чистом проекте.
+**Э14 — проверка поставки (2026-11-25), пункты `[ПРОВЕРИТЬ после экспорта]` закрыты:**
+1. Package Size — 1.7 MB (1,745,816 байт); размер `.unitypackage`, не папки. Пакет: `.work/export/FarmMachinery_Lite_1.0.0.unitypackage`, список файлов с GUID —
+   `.work/export/FarmMachinery_Lite_1.0.0_files.txt` (75 файлов).
+2. Состав: 13 FBX, 21 + 3 префаба, 3 материала, 3 атласа, сцены Demo_FieldWork и Demo_Catalog_Lite, только нужное им демо-окружение (6 FBX, 11 префабов, 5 материалов, 3 текстуры, 2 шейдера, 1 Volume), README_Lite + Changelog. Dev-only (медиа-/каталожные сцены съёмки, A/B-материалы base/Soft/field, их небо и Volume, сгенерированные
+   backdrop/zone-материалы) перенесены в `Assets/_FarmMachineryDev/` с сохранением GUID и в пакеты не входят; Editor-обёртки и
+   PackTools не экспортируются. Lite и Full — один набор файлов с общими GUID (73 общих файла, расхождений 0); Lite-only —
+   `Demo_Catalog_Lite.unity`, `README_Lite.txt`. Импорт Full поверх Lite: 127 файлов, дублей нет.
+3. Демо-сцены: Demo_FieldWork (только Lite-префабы — проверено по зависимостям) и Demo_Catalog_Lite (21 префаб). Каталожные сцены сделаны из каталожных листов, по одной активной камере; демо-окружение посчитано
+   отдельно в Demo / Scripts.
+4. Чистый импорт: новый проект Unity 6000.3.10f1, шаблон URP (URP 17.3.0), `-importPackage` в batchmode: ошибок компиляции 0,
+   ошибок/предупреждений по паку в логе 0, missing scripts 0, розовых материалов 0 (включая небо и облака на своих шейдерах,
+   shaders supported, errors 0), префабы 35/35 (24 товарных + 11 демо) инстанцируются все, сцены открываются, рендер каждой сцены без magenta —
+   `.work/export/checks/Lite/*.png`, отчёт `check.txt`, логи `.work/export/checks/logs/`. Формулировка «tested with» подтверждена.
+5. Числа после экспорта совпали с ImportCheck и картинками: 13 моделей, 21 = 13 + 8 вариантов, 3 CMP, BoxCollider 21/21, LODGroup 11, LOD0 28,872 (312…3,708), LOD1 14,100, 3 материала, 3 текстуры, 2 демо-сцены. Подписи на изображениях менять не нужно.
+6. Документация: `Assets/FarmMachinery/Documentation/README_Lite.txt` и `Changelog.txt` (1.0.0).
+7. Input System не нужен: скриптов в пакете 0, в сценах только компоненты URP; в чистом проекте ошибок нет.
+8. Asset Store Tools Validator 12.0.6 (папка `Assets/FarmMachinery`, категория 3D): 36 Pass, 1 Warning, 0 Fail —
+   `.work/export/checks/Validator_FarmMachinery.txt`. Warning «Check Model Orientation» на `FMS_Mach_HayRake.fbx`: штанги граблей
+   в покое повёрнуты на 90° вокруг шарнира (транспортная поза по Fix 1, pivot на оси) — по замыслу, не дефект; убрать можно только
+   переэкспортом модели с «запечённой» позой (Э7, по решению владельца).
 
 **Прочие открытые пункты:**
 - Э12 (медиа) принят: `planning/FarmMachinery/reviews/media_1.md` — Lite 10/10 ✅. Шрифт плашек — Montserrat 9.000, SIL OFL 1.1

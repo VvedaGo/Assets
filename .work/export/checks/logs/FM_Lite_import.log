@@ -1,0 +1,623 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.10f1 (e35f0c77bd8e) revision 14901004'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'ru' Physical Memory: 16306 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sergv" at "2026-11-25T07:55:48.0346597Z"
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-25T07:55:48Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:/Users/Sergv/AppData/Local/Temp/fm_clean/FM_Lite2
+-importPackage
+C:/Users/Sergv/orca/workspaces/Assets_Farm/master-2/.work/export/FarmMachinery_Lite_1.0.0.unitypackage
+-logFile
+C:/Users/Sergv/AppData/Local/Temp/fm_clean/FM_Lite_import.log
+-quit
+Successfully changed project path to: C:/Users/Sergv/AppData/Local/Temp/fm_clean/FM_Lite2
+C:/Users/Sergv/AppData/Local/Temp/fm_clean/FM_Lite2
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [32644]  Target information:
+
+Player connection [32644]  * "[IP] 192.168.0.101 [Port] 55506 [Flags] 2 [Guid] 1764606756 [EditorId] 1764606756 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-OSJB5QF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [32644]  * "[IP] 172.18.48.1 [Port] 55506 [Flags] 2 [Guid] 1764606756 [EditorId] 1764606756 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-OSJB5QF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [32644] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [32644] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-34216" after 0.8 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              1295438783864ccea2dd8d5ce7792f5e
+  Correlation Id:          e15e36a5e2286e99defc6255f6e7a3e5
+  External correlation Id: 4642781109377470071
+  Machine Id:              kU4p6sSGjXsz9Fgi6x90dzIWT7s=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Sergv" (connect: 0.00s, validation: 0.00s, handshake: 2.74s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sergv-notifications" at "2026-11-25T07:55:50.7784349Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 7971663431844-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 2.75s
+[Licensing::Module] Licensing is initialized (took 1.72s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Artifact Garbage Collection - Removed 629 unused hashed content files
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.10f1 (e35f0c77bd8e)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Sergv/AppData/Local/Temp/fm_clean/FM_Lite2/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 Ti (ID=0x1b06)
+    Vendor:   NVIDIA
+    VRAM:     11107 MB
+    Driver:   32.0.15.8266
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56216
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.10f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.10f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.429979 seconds.
+- Loaded All Assemblies, in  9.057 seconds
+Native extension for LinuxStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 2369 ms
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Licensing::Client] Successfully resolved entitlement details
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  5.054 seconds
+Domain Reload Profiling: 14108ms
+	BeginReloadAssembly (7865ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (15ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (482ms)
+	LoadAllAssembliesAndSetupDomain (656ms)
+		LoadAssemblies (7849ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (649ms)
+			TypeCache.Refresh (646ms)
+				TypeCache.ScanAssembly (621ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (5055ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (5012ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2542ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (81ms)
+			ProcessInitializeOnLoadAttributes (158ms)
+			ProcessInitializeOnLoadMethodAttributes (2227ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Package Manager] Registered 57 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.10 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.ai.navigation@c33a115e9883)
+    com.unity.collab-proxy@2.11.3 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.collab-proxy@e566cd3e7623)
+    com.unity.ide.rider@3.0.39 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.ide.rider@4504839d03f7)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.18.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.inputsystem@57d0e36f6123)
+    com.unity.timeline@1.8.10 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.timeline@7f8b2fb101b6)
+    com.unity.visualscripting@1.9.9 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.visualscripting@191c0d7e3b69)
+    com.unity.searcher@4.9.4 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.unity.burst@1.8.28 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.burst@07790c2d06d9)
+    com.unity.mathematics@1.3.3 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.2 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.collections@aea9d3bd5e19)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.2.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562)
+  Built-in packages:
+    com.unity.multiplayer.center@1.0.1 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.render-pipelines.universal@37e0d4fc2503)
+    com.unity.test-framework@1.6.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.test-framework@0b7a23ab2e1d)
+    com.unity.ugui@2.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.ugui@bb329a87fcdc)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3)
+    com.unity.shadergraph@17.3.0 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.shadergraph@c8830f61858d)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Sergv\AppData\Local\Temp\fm_clean\FM_Lite2\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 37.4998ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/Sergv/AppData/Local/Temp/fm_clean/FM_Lite2
+DisplayProgressbar: Compiling Scripts
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/Sergv/AppData/Local/Temp/fm_clean/FM_Lite2
+ExitCode: 4 Duration: 0s232ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+*** Tundra requires additional run (0.20 seconds), 0 items updated, 485 evaluated
+ExitCode: 0 Duration: 1s802ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/Sergv/AppData/Local/Temp/fm_clean/FM_Lite2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll"
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@07790c2d06d9\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.5.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff\Mono.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 245.0803ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 135 defines and 337 references
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      running Unity.Jobs.CodeGen.JobsILPostProcessor
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null with Library\Bee\artifacts\1900b0aE.dag\Unity.Collections.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null with C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null with C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil.Rocks, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@07790c2d06d9\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc - - 200 - application/grpc 616.7596ms
+ExitCode: 0 Duration: 5s620ms
+Finished compiling graph: 866 nodes, 15876 flattened edges (13240 ToBuild, 132 ToUse), maximum node priority 904
+[483/862    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp
+[680/862    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[858/862    4s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[859/862    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 135 defines and 337 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[860/862    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+[861/862    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+*** Tundra build success (5.59 seconds), 6 items updated, 862 evaluated
+AssetDatabase: script compilation time: 8.136850s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  7.778 seconds
+Start importing ProjectSettings/EditorSettings.asset using Guid(0000000000000000c000000000000000) (LibraryAssetImporter) -> (artifact id: '25eff3b8603947bb3af22634f887ce6f') in 0.0227496 seconds
+Start importing Assets/Editor using Guid(a87e4b938a6c21c4cb57517f860c8f1e) (DefaultImporter) -> (artifact id: '0d088da47dffad3c802deb96078152ed') in 0.0092331 seconds
+Refreshing native plugins compatible for Editor in 1.62 ms, found 3 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  7.047 seconds
+Domain Reload Profiling: 14816ms
+	BeginReloadAssembly (332ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (160ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (7344ms)
+		LoadAssemblies (7196ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (259ms)
+			TypeCache.Refresh (178ms)
+				TypeCache.ScanAssembly (165ms)
+			BuildScriptInfoCaches (65ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (7048ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (3959ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (47ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (183ms)
+			ProcessInitializeOnLoadAttributes (3600ms)
+			ProcessInitializeOnLoadMethodAttributes (114ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Start importing Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceRays.urtshader using Guid(1142bbad8b9e8c44c83a9775ff120d37) (ScriptedImporter)Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+
+Compiling Ray Tracing Shader "TraceRays.urtshader", keywords = <no keywords>
+    finished in 0.03 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: '711be5bd2aec212bc7f52fe41408d171') in 0.1060548 seconds
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/RisEstimation.urtshader using Guid(713f6141bd66a134383b787f2eaa7c11) (ScriptedImporter)
+Compiling Ray Tracing Shader "RisEstimation.urtshader", keywords = <no keywords>
+    finished in 0.01 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: '138b6ddd809598ee99efeedbba515d5d') in 0.0285399 seconds
+Start importing Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/RenderingLayerMask/TraceRenderingLayerMask.urtshader using Guid(94a070d33e408384bafc1dea4a565df9) (ScriptedImporter)
+Compiling Ray Tracing Shader "TraceRenderingLayerMask.urtshader", keywords = <no keywords>
+    finished in 0.01 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: 'ae9ed0d17c428fa5d475a19beb4b638b') in 0.0353333 seconds
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/UniformEstimation.urtshader using Guid(94a39d12848d8d64ca962a72b74e7c50) (ScriptedImporter)
+Compiling Ray Tracing Shader "UniformEstimation.urtshader", keywords = <no keywords>
+    finished in 0.01 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: 'd3dc4aa72a88bdf174f365f7399c830a') in 0.021362 seconds
+Start importing Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceTransparentRays.urtshader using Guid(6513c3b892e933c4f8d00c19d5c47532) (ScriptedImporter)
+Compiling Ray Tracing Shader "TraceTransparentRays.urtshader", keywords = <no keywords>
+    finished in 0.01 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: '134aed3489688c5d7443737a8b82ef4a') in 0.0138368 seconds
+Start importing Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/DynamicGI/DynamicGISkyOcclusion.urtshader using Guid(5a2a534753fbdb44e96c3c78b5a6999d) (ScriptedImporter)
+Compiling Ray Tracing Shader "DynamicGISkyOcclusion.urtshader", keywords = <no keywords>
+    finished in 0.01 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: '461705bc7692729cfd2d2238848b6419') in 0.029947 seconds
+Start importing Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceRaysAndFetchAttributes.urtshader using Guid(fbc59f55df2416344b008dc23753cae2) (ScriptedImporter)
+Compiling Ray Tracing Shader "TraceRaysAndFetchAttributes.urtshader", keywords = <no keywords>
+    finished in 0.01 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: '67e914a91375aed09bcd09d6732c8b3c') in 0.0188657 seconds
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/RestirCandidateTemporal.urtshader using Guid(ad3a9f9982f8c4f4a839a78955e78458) (ScriptedImporter)
+Compiling Ray Tracing Shader "RestirCandidateTemporal.urtshader", keywords = <no keywords>
+    finished in 0.01 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: '9c5f82b1bec7d1e113aa7d907a3587c5') in 0.0436517 seconds
+Start importing Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/VirtualOffset/TraceVirtualOffset.urtshader using Guid(ff2cbab5da58bf04d82c5f34037ed123) (ScriptedImporter)
+Compiling Ray Tracing Shader "TraceVirtualOffset.urtshader", keywords = <no keywords>
+    finished in 0.01 seconds. Local cache hits 1, remote cache hits 0, compiled 0 platform variants
+ -> (artifact id: '6a26cbc95662ba5a0a572b51348960cd') in 0.0230375 seconds
+Refreshing native plugins compatible for Editor in 1.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=29bb20407f9701d4e808b67869d635f4): Total: 26.407 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=2 (actual=2, local cache=0, cache server=0)
+		Asset DB Process Time: managed=14 ms, native=9940 ms
+		Asset DB Callback time: managed=368 ms, native=103 ms
+		Scripting: domain reloads=1, domain reload time=7778 ms, compile time=8139 ms, other=62 ms
+		Project Asset Count: scripts=1238, non-scripts=2285
+		Asset File Changes: new=2, changed=3, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 34.043ms
+	ApplyChangesToAssetFolders: 0.905ms
+	Scan: 141.663ms
+	OnSourceAssetsModified: 0.832ms
+	CategorizeAssetsWithTransientArtifact: 1520.913ms
+	ProcessAssetsWithTransientArtifactChanges: 78.709ms
+	CategorizeAssets: 46.410ms
+	ImportOutOfDateAssets: 7437.547ms (-1095.959ms without children)
+		ImportManagerImport: 377.186ms (20.558ms without children)
+			ImportInProcess: 356.603ms
+			UpdateCategorizedAssets: 0.025ms
+		CompileScripts: 8138.531ms
+		ReloadNativeAssets: 0.052ms
+		UnloadImportedAssets: 2.028ms
+		ReloadImportedAssets: 14.365ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.882ms
+		InitializingProgressBar: 0.010ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.452ms
+	PostProcessAllAssets: 435.917ms
+	Hotreload: 5.027ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 0.928ms
+	PersistCurrentRevisions: 0.724ms
+	UnloadStreamsEnd: 0.005ms
+	GenerateScriptTypeHashes: 3.167ms
+	Untracked: 16703.081ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 17.535ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-FM_Lite2
+Curl error 6: Could not resolve host: config.uca.cloud.unity3d.com
+Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
+Curl error 6: Could not resolve host: cdp.cloud.unity3d.com
+Unloading 6247 unused Assets / (20.5 MB). Loaded Objects now: 7007.
+Memory consumption went from 207.8 MB to 187.3 MB.
+Total: 19.988400 ms (FindLiveObjects: 1.285900 ms CreateObjectMapping: 0.901900 ms MarkObjects: 11.295600 ms  DeleteObjects: 6.502800 ms)
+
+Import package from :C:/Users/Sergv/orca/workspaces/Assets_Farm/master-2/.work/export/FarmMachinery_Lite_1.0.0.unitypackage !
+Start importing Assets/FarmMachinery using Guid(014a1948c56f0964fb64c9e35a0750c2) (DefaultImporter) -> (artifact id: 'ef7375f01685dc37304236c8ffc378a6') in 0.0111662 seconds
+Start importing Assets/FarmMachinery/Art using Guid(d0a8a1e0879952146b58c1acf1d76de9) (DefaultImporter) -> (artifact id: 'cfe939425f6a57dbf278a5fa1de0e852') in 0.0100746 seconds
+Start importing Assets/FarmMachinery/Demo using Guid(043addd953848fc4e8cb1819453377dc) (DefaultImporter) -> (artifact id: '7df47dbd3ddbc694568c13f5c3e9c93a') in 0.0083734 seconds
+Start importing Assets/FarmMachinery/Documentation using Guid(baa2922a201cbc345a8ce2612d116439) (DefaultImporter) -> (artifact id: 'c79e536c679cfcb13c9e7c688ec8ac06') in 0.0107558 seconds
+Start importing Assets/FarmMachinery/Demo/Environment using Guid(1331f9bc23e4b93488cc495fa933bde7) (DefaultImporter) -> (artifact id: '851b5a4329018c727d221cb4ce376062') in 0.0093432 seconds
+Start importing Assets/FarmMachinery/Demo/Settings using Guid(f4ed9c922b3d91a4896a8e8f644d92bb) (DefaultImporter) -> (artifact id: '75020cb69bea54fd8a8a7bbaf9baae38') in 0.0081955 seconds
+Start importing Assets/FarmMachinery/Art/Models using Guid(859e0b6400748d744ab871d2b578b93f) (DefaultImporter) -> (artifact id: '33f12e873509ccb5b67551011f73507f') in 0.0096123 seconds
+Start importing Assets/FarmMachinery/Demo/Textures using Guid(c5761e57c338d584d943e30f86101bb7) (DefaultImporter) -> (artifact id: '5e9514bf533d208d8316999d6f2ac6df') in 0.0083845 seconds
+Start importing Assets/FarmMachinery/Demo/Scenes using Guid(06d5717c6612b85408a21af7cbc4fbdc) (DefaultImporter) -> (artifact id: '454b2ed6fea8a07d658c1f92f3db5ff4') in 0.006948 seconds
+Start importing Assets/FarmMachinery/Art/Textures using Guid(16455167c9b0bc74aacf03550f66baed) (DefaultImporter) -> (artifact id: '4fabf5c0ff440cef317e60640ed52fb1') in 0.0086629 seconds
+Start importing Assets/FarmMachinery/Art/Materials using Guid(39cb99ff8dc7db4488e7ce9457844897) (DefaultImporter) -> (artifact id: '302642809d38a70f62a9ca930135e2ed') in 0.0072923 seconds
+Start importing Assets/FarmMachinery/Demo/Shaders using Guid(1aefcf1be1d961848971437dde0a5464) (DefaultImporter) -> (artifact id: '291f280cdfd5ac73ee38997b451a2cdf') in 0.010258 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs using Guid(1e0d79ce39c103a49ada199b92bb68e1) (DefaultImporter) -> (artifact id: '34e350b5e07004ac50b431ce61ce5def') in 0.0071585 seconds
+Start importing Assets/FarmMachinery/Demo/Materials using Guid(bfbaa935c320c9647b10d8851d059e91) (DefaultImporter) -> (artifact id: '6f9af780be0cb0096925157ff3101aeb') in 0.0092196 seconds
+Start importing Assets/FarmMachinery/Art/Models/TRC using Guid(b02f899b95a311745902fae6c88322dc) (DefaultImporter) -> (artifact id: '70aa411d35f5ac0ea2bf93654ae6487e') in 0.0079518 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRL using Guid(11275e692f9feab46888981b0e2a99e2) (DefaultImporter) -> (artifact id: 'cba6ac052c85a7248eca25e9230608cb') in 0.0082165 seconds
+Start importing Assets/FarmMachinery/Art/Models/TRL using Guid(f2d28f5ea65f2eb48b43f47a98470890) (DefaultImporter) -> (artifact id: '4a9816f98038a83d95d0bafc479bb3f3') in 0.0096407 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Models using Guid(b31a069886808cf41b40565473acfcba) (DefaultImporter) -> (artifact id: '64e7fa3ed7cd1b2178b1c8d67b73ca35') in 0.0068719 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRC using Guid(26ef0cbbcaec39844a5b6b7da54206b2) (DefaultImporter) -> (artifact id: '2c1d2db55011b2cdcbf209047c94d83f') in 0.0087537 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Textures using Guid(07780c275ca7d144388bb5c4bdaf2a84) (DefaultImporter) -> (artifact id: '1b6471ca98b69bdd790b226f5de16723') in 0.0073301 seconds
+Start importing Assets/FarmMachinery/Art/Models/IMP using Guid(b7eace3af5c287d4ca3b8c6fca8d51f0) (DefaultImporter) -> (artifact id: 'b3c9501a290cfa8486437c5e8a47f96f') in 0.0083339 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs using Guid(4b17f28ae7856374bbc63bba9ed8aa78) (DefaultImporter) -> (artifact id: '8870af5cad5204e028c2a299567b5f40') in 0.0077657 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/ATT using Guid(cb9aaf2a8745f13449cc84c1eb23ddbc) (DefaultImporter) -> (artifact id: 'fdf06322a3feb74465ec04a79259f6db') in 0.0074879 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/CMP using Guid(9cf400875b3a7484d8184253e148491b) (DefaultImporter) -> (artifact id: 'd4b84da6f2ccd945e014b8757e3f3db4') in 0.0089366 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP using Guid(3e510fe3b3d181f408303ed28e15a7f3) (DefaultImporter) -> (artifact id: 'ee18cddefedbd7ab52d21106dedd4d04') in 0.0079358 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Materials using Guid(9ec3f827dd0efb7469b5218859e521a4) (DefaultImporter) -> (artifact id: '2a2efa37187bf7e5d1a0317057d86dc7') in 0.0078216 seconds
+Start importing Assets/FarmMachinery/Art/Models/ATT using Guid(5fa5d08671aeda9498325c90c48ed8b2) (DefaultImporter) -> (artifact id: '6cc7a3323d350338ce200f3056efaaa0') in 0.0086089 seconds
+Start importing Assets/FarmMachinery/Demo/Scenes/Demo_Catalog_Lite.unity using Guid(9a9c6755cd9908047a8706bf53dd0c24) (DefaultImporter) -> (artifact id: '5e46a26df5ccf10d907e7bac0536b380') in 0.0009774 seconds
+Start importing Assets/FarmMachinery/Demo/Scenes/Demo_FieldWork.unity using Guid(baf6ba660e83bc041952a3ff520f1d4e) (DefaultImporter) -> (artifact id: 'd39960607c909a90792dc5054f3d32a5') in 0.0006614 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Textures/T_FarmMachinery_Demo_BaseColor_V2.png using Guid(419c0d066316c904aaf2f0e2ece1cdeb) (TextureImporter) -> (artifact id: '7a8c0ce7afe5855996a77cbb67f80490') in 0.0068442 seconds
+Start importing Assets/FarmMachinery/Art/Textures/T_FarmMachinery_Red_BaseColor.png using Guid(419f7b59b0531f24ea2dfd2d843fc82d) (TextureImporter) -> (artifact id: 'c1a65815856a7610d6222ccf508133b7') in 0.0030102 seconds
+Start importing Assets/FarmMachinery/Demo/Textures/T_FarmMachinery_SkyPanorama_V2.png using Guid(815c3798ad780d74093227617f375775) (TextureImporter) -> (artifact id: '4e377480997dffd1f35a8e6afee4d927') in 0.0091971 seconds
+Start importing Assets/FarmMachinery/Art/Textures/T_FarmMachinery_Green_BaseColor.png using Guid(c3df5db413a03704e99e56a27b0c11af) (TextureImporter) -> (artifact id: '6fe8a616aa7604dafe37cd606041d731') in 0.003565 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Textures/T_FarmMachinery_Demo2_BaseColor_V2.png using Guid(38b7bcb03b7ab434b8c53e3f642e00ce) (TextureImporter) -> (artifact id: 'c53cde8da6e1dab25ef83e423cf521d3') in 0.0031619 seconds
+Start importing Assets/FarmMachinery/Art/Textures/T_FarmMachinery_Blue_BaseColor.png using Guid(ab6687cbeab31a3418364fb7e2a879e5) (TextureImporter) -> (artifact id: '30e3933eee6ad116844e7e144448153f') in 0.0045303 seconds
+Start importing Assets/FarmMachinery/Demo/Shaders/FarmMachineryCloud.shader using Guid(a0d274663480aab4e8461695eba56786) (ShaderImporter) -> (artifact id: 'd49c26076451b6d4ec4989285939c215') in 0.0611132 seconds
+Start importing Assets/FarmMachinery/Demo/Shaders/FarmMachinerySky.shader using Guid(7fce0569b407a60438df3499f476696a) (ShaderImporter) -> (artifact id: 'dae96b49ac6c086d475f50535bd29198') in 0.018671 seconds
+Start importing Assets/FarmMachinery/Demo/Materials/M_FarmMachinery_Demo_CatalogBackdrop.mat using Guid(80c3c3a875acfb64fa2353418021d279) (NativeFormatImporter) -> (artifact id: 'fa8924dcea055ec45c7495749c0a13b8') in 0.0023226 seconds
+Start importing Assets/FarmMachinery/Art/Materials/M_FarmMachinery_Green.mat using Guid(218a9193d48390846be0bf668bcd8e6f) (NativeFormatImporter) -> (artifact id: '1d26e17e50d391d0ba3cd611ccb549d5') in 0.0018176 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo_V2.mat using Guid(f16eb3ad6997e6142ba62df99410edb6) (NativeFormatImporter) -> (artifact id: 'f5cc0e161c6181b1d3ade314740efc0d') in 0.0048589 seconds
+Start importing Assets/FarmMachinery/Art/Materials/M_FarmMachinery_Red.mat using Guid(72ea50a533777a546baf030b1887df3b) (NativeFormatImporter) -> (artifact id: 'dd1ca93bba74d82c0d9bbdfa9392a32f') in 0.0019183 seconds
+Start importing Assets/FarmMachinery/Art/Materials/M_FarmMachinery_Blue.mat using Guid(4595f95ea47f8ef4580c32c5c6080282) (NativeFormatImporter) -> (artifact id: '38706a8cac4724ef08350f31ef70e2e9') in 0.0019727 seconds
+Start importing Assets/FarmMachinery/Demo/Settings/M_FarmMachinery_Sky_V2.mat using Guid(f710d7ae6cfe92647936bfcc4e2f6db9) (NativeFormatImporter) -> (artifact id: '6652d51b708fa67f60bff6a37fd57e19') in 0.0028014 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo2_V2.mat using Guid(9a1ac66f2f4eaa94c95a2176ba31551e) (NativeFormatImporter) -> (artifact id: '4625d04161d80305b08f89bbdc59d4dc') in 0.0017283 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo_Cloud_V2.mat using Guid(ecfe7abdc6d16e84c8df2dbf1a3d47c7) (NativeFormatImporter) -> (artifact id: 'f45af04b2d377fa772784a3d66c66fee') in 0.0021254 seconds
+Start importing Assets/FarmMachinery/Art/Models/TRL/FMS_Mach_Trailer_Tipper.fbx using Guid(018bb78df31807c4d9f7c143c36c6145) (FBXImporter) -> (artifact id: '6b1d5357cd938545f0d9f32844aa72ec') in 0.0375074 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Models/FMS_Mach_Demo_FieldPloughed.fbx using Guid(51d8ebaaad23c6745b0526204fd4d634) (FBXImporter) -> (artifact id: 'f2666115d1e69d4dbd54473f149632f9') in 0.0158185 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Models/FMS_Mach_Demo_Clouds.fbx using Guid(7164642f067963f4bab8124c1f7cc3e0) (FBXImporter) -> (artifact id: '2648b19781f07217cfbc53ffd3dd2c98') in 0.0178386 seconds
+Start importing Assets/FarmMachinery/Art/Models/TRC/FMS_Mach_Tractor_Cab.fbx using Guid(d1b3bf0e3dbfa434ab30e636a4f82577) (FBXImporter) -> (artifact id: 'ad1b764feb2617b60d0908250ad8815b') in 0.0263671 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Models/FMS_Mach_Demo_GrassTufts.fbx using Guid(f2ab92a76fc76fc45838128c3d4bcc5d) (FBXImporter) -> (artifact id: '975390011903b7901427e345d5e70d2b') in 0.0153526 seconds
+Start importing Assets/FarmMachinery/Art/Models/ATT/FMS_Mach_QuickHitch.fbx using Guid(f609384271b29bf46943f88b0049acfd) (FBXImporter) -> (artifact id: 'f990bd7dfd9af8b23c8d8bc253a69abd') in 0.0154035 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Models/FMS_Mach_Demo_Road_Straight.fbx using Guid(68b8d63806782c34f806a95aee593e04) (FBXImporter) -> (artifact id: 'd7244390c340ff0c67b8e804a85d7188') in 0.0149802 seconds
+Start importing Assets/FarmMachinery/Art/Models/TRL/FMS_Mach_Trailer_Tank.fbx using Guid(09c5490f3d1d0604383f8f42b4695a9b) (FBXImporter) -> (artifact id: '5adbf52be058986ff67c8d323843d5f1') in 0.0351717 seconds
+Start importing Assets/FarmMachinery/Art/Models/IMP/FMS_Mach_Plough.fbx using Guid(6963ccacee98b1b4380e77fe5988e373) (FBXImporter) -> (artifact id: 'eac34ae5336c9ea233d7e878c71f7b76') in 0.0162158 seconds
+Start importing Assets/FarmMachinery/Art/Models/IMP/FMS_Mach_Cultivator.fbx using Guid(3ad0f2f5493b82f4b8edcba26e57af1f) (FBXImporter) -> (artifact id: '2558349f901a540b9305a746fa89f872') in 0.0186398 seconds
+Start importing Assets/FarmMachinery/Art/Models/ATT/FMS_Mach_FrontWeight.fbx using Guid(aa039669f6236d747af77cf46514772c) (FBXImporter) -> (artifact id: '239eed608baaa34af42de95f829f3fd5') in 0.0145971 seconds
+Start importing Assets/FarmMachinery/Art/Models/IMP/FMS_Mach_Seeder.fbx using Guid(bb82f7b9479cda64785e85295c43bfe6) (FBXImporter) -> (artifact id: '0514d654a71a5909d967127cfce94b13') in 0.0220328 seconds
+Start importing Assets/FarmMachinery/Art/Models/IMP/FMS_Mach_Sprayer.fbx using Guid(eb62967fb2562294f8becf18dbd93f92) (FBXImporter) -> (artifact id: '2a1ac9b8546aab65e52b2d68b0142dca') in 0.0182255 seconds
+Start importing Assets/FarmMachinery/Art/Models/TRC/FMS_Mach_Tractor_Large.fbx using Guid(fbc953b0c0c6c7f4f9fe059be4d9c73e) (FBXImporter) -> (artifact id: 'dd9cd98946b6c8ac7b3c92b35bea4101') in 0.0225845 seconds
+Start importing Assets/FarmMachinery/Art/Models/TRL/FMS_Mach_Trailer_Flatbed.fbx using Guid(ccee5dd0a7fa418448c3add9862bcbe4) (FBXImporter) -> (artifact id: '7ae95085d5708a37015d3cb762676fda') in 0.0220413 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Models/FMS_Mach_Demo_Seedlings.fbx using Guid(6d96d19826889e743a96447c0573bb3d) (FBXImporter) -> (artifact id: 'fc546a63ad9001fbcf9a0f623ffd2415') in 0.0343545 seconds
+Start importing Assets/FarmMachinery/Art/Models/IMP/FMS_Mach_DiscHarrow.fbx using Guid(ad94fe22c0ed1a2459395e3df0aa1154) (FBXImporter) -> (artifact id: '36ef8514be94d373a584ede3880f8b83') in 0.020997 seconds
+Start importing Assets/FarmMachinery/Art/Models/IMP/FMS_Mach_Mower.fbx using Guid(2e6843bfdfb51964c89e09ca46b8a379) (FBXImporter) -> (artifact id: 'df901feecd6e5544dd06963de3fefbd3') in 0.0169814 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Models/FMS_Mach_Demo_IslandBase.fbx using Guid(efab200d69d7e1d40b3b6f3cc873d482) (FBXImporter) -> (artifact id: '24cf7bfe7a66cf08410e4c8f4df0846e') in 0.0138311 seconds
+Start importing Assets/FarmMachinery/Demo/Settings/FarmMachinery_DemoVolume_V2.asset using Guid(18a110d301b27c74483f48c9b16aa3ba) (NativeFormatImporter) -> (artifact id: '5864e6917409d39fcfb55183f3631d29') in 0.003065 seconds
+Start importing Assets/FarmMachinery/Documentation/README_Lite.txt using Guid(9752ff080286c6546ad9e4ba9cd0d366) (TextScriptImporter) -> (artifact id: 'defe75d8faf02b93ebe5d9f7956a85fb') in 0.0024561 seconds
+Start importing Assets/FarmMachinery/Documentation/Changelog.txt using Guid(aa2ae08b658102843a285d9c6998b32d) (TextScriptImporter) -> (artifact id: 'c31decbf9480219c0d81588182fd1e48') in 0.0024641 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_Sprayer.prefab using Guid(e6813ea9d509b1346a483d3cd5dc0e66) (PrefabImporter) -> (artifact id: 'b58902994c3f857b24275049c17f711e') in 0.0051784 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_Sprayer_Work.prefab using Guid(31d15e51c23f6b04cba31561e91dc8c1) (PrefabImporter) -> (artifact id: 'a9a2c68d4fb7299a42f0ae537d69ebae') in 0.0091212 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_GrassTufts_Flowers.prefab using Guid(f1a33d14a2602ca42ae00cbe40079694) (PrefabImporter) -> (artifact id: '3193fd6232cd9992a79fcc27689a0b40') in 0.0037699 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_Seeder.prefab using Guid(1222cd0b4c03b994095232b0c9cc5551) (PrefabImporter) -> (artifact id: '1a678d5eba4f2668d60e27728d77128a') in 0.0048708 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_IslandBase.prefab using Guid(22957300d498c72408a5879ffa0330f6) (PrefabImporter) -> (artifact id: 'abf59e2fff192989b366ec0ea94a68c9') in 0.0054832 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRC/FMS_Mach_Tractor_Large.prefab using Guid(19e5ee32cf44ad9478de6fa03d2cbc43) (PrefabImporter) -> (artifact id: '4c939c18204475c0ec129f2883ccd514') in 0.0080903 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRC/FMS_Mach_Tractor_Large_Green.prefab using Guid(e29e09db01735004cbc34d32c2987a11) (PrefabImporter) -> (artifact id: '9012361cfa2d01a6b8216f6c9105b54c') in 0.0059568 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRL/FMS_Mach_Trailer_Tipper.prefab using Guid(53253c36fbdda534f811ed4c3825846f) (PrefabImporter) -> (artifact id: 'c70a8217783eefd46d8777715f83412b') in 0.0310217 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRL/FMS_Mach_Trailer_Tipper_Grain.prefab using Guid(eada4bed710075e44a2a6cefd5418983) (PrefabImporter) -> (artifact id: '83ca74679968b84b5d76a447300f165e') in 0.0066 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRC/FMS_Mach_Tractor_Large_Blue.prefab using Guid(bee1d1aeda6293d4c8f59655da411514) (PrefabImporter) -> (artifact id: 'bb245c68f84b776000de0d41b7e479e8') in 0.0038266 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/CMP/FMS_Mach_CMP_02_GrainHaul.prefab using Guid(03f6292e88b66d14199ef2b684962375) (PrefabImporter) -> (artifact id: 'b72f1db8895d2066e25d80e263cf1b57') in 0.0088491 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_FieldPloughed.prefab using Guid(c31230656cd99114c93148d35d2f350b) (PrefabImporter) -> (artifact id: 'aac0a6788b18c48012953cd12b19e519') in 0.0034114 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRC/FMS_Mach_Tractor_Cab.prefab using Guid(07107674d153f3548a8361aca3826c91) (PrefabImporter) -> (artifact id: '013095e62928659cd8a62b0427273982') in 0.0060758 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_Plough.prefab using Guid(e7953abc7f5ec4548b3c41e752ba2255) (PrefabImporter) -> (artifact id: '94dd524272416e20653013a606a7f0e7') in 0.004195 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/CMP/FMS_Mach_CMP_01_Ploughing.prefab using Guid(849a6e3a988d92948ba1162e1d99a283) (PrefabImporter) -> (artifact id: '7af0637884240b9c372ab19cfc39376f') in 0.0091849 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_DiscHarrow.prefab using Guid(363ed9ce7b0875644a7c29d286377e0a) (PrefabImporter) -> (artifact id: '57af7f3f5b35b791be10fffdfd76a53f') in 0.0326249 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_Seedlings.prefab using Guid(083d150582ae06f438b6cd9cff0f2993) (PrefabImporter) -> (artifact id: '714d34f5762ea55d19598f1fd9ed57cf') in 0.0036052 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_DiscHarrow_Work.prefab using Guid(f9fafe12477d2b64aa67823f7ab1070d) (PrefabImporter) -> (artifact id: '65e1d8d5b77645a26a64b6723dcd1af5') in 0.003467 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_Clouds_A.prefab using Guid(0ad76f3ecc9a7894bb085593d2e10a0d) (PrefabImporter) -> (artifact id: '74b9cf1e6e7f80e71d8d78ac7b01a854') in 0.0036685 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_Mower.prefab using Guid(4a8f08cea2f245b40b54f90a05404355) (PrefabImporter) -> (artifact id: '667fb489ed854a9034d2fbe32a36a296') in 0.0043169 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_Cultivator.prefab using Guid(aad41b9f8f386b24abc557ac58833557) (PrefabImporter) -> (artifact id: 'dfae992aca8aeb24ba74f24e94aca930') in 0.0044844 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/ATT/FMS_Mach_FrontWeight.prefab using Guid(ba1fd51bce0e89c42b518fec86a5b145) (PrefabImporter) -> (artifact id: '76dc60c3e879d2840aa48053b115eeaa') in 0.0032576 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_Clouds_D.prefab using Guid(0b78983d28c417142a4e496fca98d87b) (PrefabImporter) -> (artifact id: '481908e7a7678ddc891d62d33d35565b') in 0.0028023 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRC/FMS_Mach_Tractor_Cab_Blue.prefab using Guid(bb3e024c18ce022499493b63bb1988de) (PrefabImporter) -> (artifact id: 'aee4e4de00da9915b9db3eba3a5b35cb') in 0.0046382 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRL/FMS_Mach_Trailer_Flatbed.prefab using Guid(db58d6f932a7d0748a94179b90d41d67) (PrefabImporter) -> (artifact id: '5049a0bf16ef5ab8ef91793372dd01b2') in 0.005153 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_Clouds_B.prefab using Guid(8c540371a3ec09c4aa4d208be39ba3a3) (PrefabImporter) -> (artifact id: '956fa10c512bd97806af5097accccd4d') in 0.0030392 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRC/FMS_Mach_Tractor_Cab_Green.prefab using Guid(8cce77be584d9164b8df6e45eeaf169b) (PrefabImporter) -> (artifact id: '77f6caeaf43efa859a90468ff0752c6c') in 0.0200409 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_Road_Straight.prefab using Guid(ec0036bf29a488e48ac9559aced6fce4) (PrefabImporter) -> (artifact id: 'b3c9211071d9d1f487a6d0e79e887f98') in 0.004069 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/ATT/FMS_Mach_QuickHitch.prefab using Guid(0dc41bec1f48f184aad03b5802ce8b64) (PrefabImporter) -> (artifact id: '21339a7e9c7dfbdfaa61ac524972d864') in 0.0059361 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/TRL/FMS_Mach_Trailer_Tank.prefab using Guid(cefbd344c50fcf843a4e0665b597a668) (PrefabImporter) -> (artifact id: 'eb7b64ec4f50b66971dcec3e05ed6138') in 0.0059 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/CMP/FMS_Mach_CMP_03_MachineYard.prefab using Guid(1ddc88e56ea99f24780d1a6424518baa) (PrefabImporter) -> (artifact id: '1b470c5b24d5c959c9654946cb630c27') in 0.0103909 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_GrassTufts_Grass.prefab using Guid(ddf441b59f1fe2540a6b02fdf9310bb9) (PrefabImporter) -> (artifact id: '68f9162e8951721ffb08414c782e35d1') in 0.0031486 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_Clouds_C.prefab using Guid(1e3104ff65f200444ad845368ee4239d) (PrefabImporter) -> (artifact id: '9e6ef35c3231a724165b1945f3321c86') in 0.0037473 seconds
+Start importing Assets/FarmMachinery/Art/Prefabs/IMP/FMS_Mach_Mower_Work.prefab using Guid(3e1744d602cb73f46902ccf2d893ece8) (PrefabImporter) -> (artifact id: '0e010715432d894748d0744ea7f133b8') in 0.0029559 seconds
+Start importing Assets/FarmMachinery/Demo/Environment/Prefabs/FMS_Mach_Demo_GrassTufts_Rock.prefab using Guid(6e7c52f22e4da0c46830d55975dbdd04) (PrefabImporter) -> (artifact id: 'dfc5ed13dc7dea32979cd2b1ecd51eb2') in 0.0243757 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 1.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=67fd6d7dfad095e4c818e4df352d8d74): Total: 1.530 seconds - Initiated by RefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=102 (actual=102, local cache=0, cache server=0)
+		Asset DB Process Time: managed=18 ms, native=1319 ms
+		Asset DB Callback time: managed=143 ms, native=47 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=1265, non-scripts=2360
+		Asset File Changes: new=102, changed=102, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 1.042ms
+	ApplyChangesToAssetFolders: 0.133ms
+	Scan: 157.137ms
+	OnSourceAssetsModified: 1.681ms
+	CategorizeAssetsWithTransientArtifact: 0.147ms
+	ProcessAssetsWithTransientArtifactChanges: 0.170ms
+	CategorizeAssets: 36.067ms
+	ImportOutOfDateAssets: 1132.164ms (43.636ms without children)
+		ImportManagerImport: 1087.352ms (13.323ms without children)
+			ImportInProcess: 1072.718ms
+			UpdateCategorizedAssets: 1.311ms
+		CompileScripts: 0.014ms
+		ReloadNativeAssets: 0.026ms
+		UnloadImportedAssets: 0.275ms
+		ReloadImportedAssets: 0.017ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.459ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.379ms
+	PostProcessAllAssets: 186.781ms
+	Hotreload: 2.758ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.120ms
+	UnloadStreamsBegin: 0.914ms
+	PersistCurrentRevisions: 0.482ms
+	UnloadStreamsEnd: 0.297ms
+	Untracked: 10.035ms
+
+Asset Pipeline Refresh (id=b91021142bf7081419bf17bc098bfc13): Total: 0.022 seconds - Initiated by RefreshV2(ForceSynchronousImport)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 0,056559 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-Sergv-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-Sergv channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+09:56:40.327 |V| RiderPlugin                    | :1                             | AppDomain.CurrentDomain.DomainUnload lifetimeDefinition.Terminate
+abort_threads: Failed aborting id: 00000000000072A4, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000008984, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000072A4, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000008984, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 4396
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

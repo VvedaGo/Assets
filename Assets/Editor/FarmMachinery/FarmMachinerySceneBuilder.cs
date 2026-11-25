@@ -40,7 +40,7 @@ namespace FarmMachinery.Editor
     /// </summary>
     public static class FarmMachinerySceneBuilder
     {
-        public const string VolumePath = "Assets/FarmMachinery/Demo/Settings/FarmMachinery_DemoVolume.asset";
+        public const string VolumePath = "Assets/_FarmMachineryDev/Demo/Settings/FarmMachinery_DemoVolume.asset";   // A/B look, dev-only (Э14)
 
         private static PackConfig C => FarmMachineryPackBuilder.Config;
 
@@ -171,6 +171,7 @@ namespace FarmMachinery.Editor
                 log.AppendLine("render " + path);
             }
             AssetDatabase.SaveAssets();
+            log.Append(FarmMachineryRelease.AfterSceneBuild(sceneName));   // Э14: non-shipped scenes go to Assets/_FarmMachineryDev
             Debug.Log(log.ToString());
             return log.ToString();
         }
@@ -333,8 +334,8 @@ namespace FarmMachinery.Editor
 
         private static float Opt(string[] t, int i, float d) => t.Length > i ? F(t[i]) : d;
 
-        public const string SkyPath = "Assets/FarmMachinery/Demo/Settings/M_FarmMachinery_Sky.mat";
-        public const string SkyTexturePath = "Assets/FarmMachinery/Demo/Textures/T_FarmMachinery_SkyPanorama.png";
+        public const string SkyPath = "Assets/_FarmMachineryDev/Demo/Settings/M_FarmMachinery_Sky.mat";   // field sky, dev-only (v2 sky ships)
+        public const string SkyTexturePath = "Assets/_FarmMachineryDev/Demo/Textures/T_FarmMachinery_SkyPanorama.png";
 
         /// <summary>
         /// '#! sky [exposure] [rotation]': panorama skybox (shader FarmMachinery/Demo/URP Panorama Sky + T_FarmMachinery_SkyPanorama,

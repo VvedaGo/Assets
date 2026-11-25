@@ -15,12 +15,12 @@ namespace FarmMachinery.Editor
     /// </summary>
     public static class FarmMachinerySoftLook
     {
-        public const string VolumePath = "Assets/FarmMachinery/Demo/Settings/FarmMachinery_DemoVolume_Soft.asset";
-        public const string SkyMaterialPath = "Assets/FarmMachinery/Demo/Settings/M_FarmMachinery_Sky_Soft.mat";
-        public const string SkyTexturePath = "Assets/FarmMachinery/Demo/Textures/T_FarmMachinery_SkyPanorama_Soft.png";
-        private const string DemoMaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo.mat";
-        public const string DemoSoftMaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo_Soft.mat";
-        public const string DemoSoftTexturePath = "Assets/FarmMachinery/Demo/Environment/Textures/T_FarmMachinery_Demo_BaseColor_Soft.png";
+        public const string VolumePath = "Assets/_FarmMachineryDev/Demo/Settings/FarmMachinery_DemoVolume_Soft.asset";
+        public const string SkyMaterialPath = "Assets/_FarmMachineryDev/Demo/Settings/M_FarmMachinery_Sky_Soft.mat";
+        public const string SkyTexturePath = "Assets/_FarmMachineryDev/Demo/Textures/T_FarmMachinery_SkyPanorama_Soft.png";
+        private const string DemoMaterialPath = "Assets/_FarmMachineryDev/Demo/Environment/Materials/M_FarmMachinery_Demo.mat";
+        public const string DemoSoftMaterialPath = "Assets/_FarmMachineryDev/Demo/Environment/Materials/M_FarmMachinery_Demo_Soft.mat";
+        public const string DemoSoftTexturePath = "Assets/_FarmMachineryDev/Demo/Environment/Textures/T_FarmMachinery_Demo_BaseColor_Soft.png";
 
         /// <summary>Values (SCENE_STYLE.md "URP look — soft (candidate)").</summary>
         public static class V

@@ -18,7 +18,7 @@ namespace FarmMachinery.Editor
         public const string VolumePath = "Assets/FarmMachinery/Demo/Settings/FarmMachinery_DemoVolume_V2.asset";
         public const string SkyMaterialPath = "Assets/FarmMachinery/Demo/Settings/M_FarmMachinery_Sky_V2.mat";
         public const string SkyTexturePath = "Assets/FarmMachinery/Demo/Textures/T_FarmMachinery_SkyPanorama_V2.png";
-        private const string DemoMaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo.mat";
+        private const string DemoMaterialPath = "Assets/_FarmMachineryDev/Demo/Environment/Materials/M_FarmMachinery_Demo.mat";   // base (A/B), dev-only
         public const string DemoSoftMaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo_V2.mat";
         public const string DemoSoftTexturePath = "Assets/FarmMachinery/Demo/Environment/Textures/T_FarmMachinery_Demo_BaseColor_V2.png";
 
@@ -131,7 +131,7 @@ namespace FarmMachinery.Editor
             return $"sky v2: {SkyTexturePath}";
         }
 
-        private const string Demo2MaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo2.mat";
+        private const string Demo2MaterialPath = "Assets/_FarmMachineryDev/Demo/Environment/Materials/M_FarmMachinery_Demo2.mat";
         public const string Demo2V2MaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo2_V2.mat";
         public const string Demo2V2TexturePath = "Assets/FarmMachinery/Demo/Environment/Textures/T_FarmMachinery_Demo2_BaseColor_V2.png";
 
@@ -153,11 +153,14 @@ namespace FarmMachinery.Editor
             }
             else mat.CopyPropertiesFromMaterial(demo);
             mat.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>(texturePath));
+            // Э14: the copy also took the base atlas in the legacy _MainTex slot; point it at the v2 atlas so the shipped
+            // material does not drag the dev-only base texture into the package
+            mat.SetTexture("_MainTex", AssetDatabase.LoadAssetAtPath<Texture2D>(texturePath));
             EditorUtility.SetDirty(mat);
             return mat;
         }
 
-        private const string CloudMaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo_Cloud.mat";
+        private const string CloudMaterialPath = "Assets/_FarmMachineryDev/Demo/Environment/Materials/M_FarmMachinery_Demo_Cloud.mat";
         public const string CloudV2MaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo_Cloud_V2.mat";
 
         /// <summary>Lighter clouds for v2: brighter sides and undersides, warm-white tops.</summary>
@@ -173,6 +176,8 @@ namespace FarmMachinery.Editor
             mat.SetColor("_SideColor", new Color(0.96f, 0.96f, 0.98f));
             mat.SetColor("_BottomColor", new Color(0.84f, 0.88f, 0.95f));
             mat.SetFloat("_FacetAccent", 0.06f);
+            foreach (var slot in mat.GetTexturePropertyNames())   // Э14: no stale atlas refs from the lit material it was cloned from
+                if (mat.shader.FindPropertyIndex(slot) < 0 && mat.GetTexture(slot) != null) mat.SetTexture(slot, null);
             EditorUtility.SetDirty(mat);
             return mat;
         }
