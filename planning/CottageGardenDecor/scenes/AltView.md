@@ -1,0 +1,49 @@
+# AltView — scene reference (Э9 → Э10)
+
+Purpose (REQUIREMENTS 7.5) — Обратный ракурс Demo_CottageGarden от пруда к беседке. Store files built from it — `10_DemoAndVersion`.
+Reference image: `planning/CottageGardenDecor/scenes/AltView.png`
+
+## Prompt (Codex, Sol 6.2)
+
+```
+Surgical edit of first image, absolutely preserve its 16:9 framing, original reverse angle from left NW, positions of all six named zones, gazebo, pond and sky. Focus on strictly removing alien props. At the red rose gateway on far right DELETE entirely the huge curved white background lattice fence and its tall end posts, and DELETE the two spherical green shrubs in stone vases. Replace entrance cluster with the approved exact elements in ref 2, but at original scale and reverse camera: simple low lattice gate leaf, two planted beds, two separate rose bushes, two edging rows, and tiny red hat gnome. No screen behind the entrance. At the pond in near left keep the passage open and narrow rectangular opaque blue water, lower walls to the proportions and geometry in ref 3. Stela with semicircular basin should touch wall on dry ground. Behind the insect hotel of ref 4, keep the original hook and add the nearby second hook with cylindrical feeder only. Keep original island shape and paint, gazebo, source garden locations and scale throughout. No houses, extra bushes, fences, trees, people, animals, text or other objects.
+```
+
+## Zones and items
+
+| Zone | Items (ID × count) | Notes |
+|---|---|---|
+| Юго-запад | CMP-01 ×1 | Калитка поперёк короткого ответвления, отдельный вход. |
+| Юго-восток | CMP-06 ×1 | Качели в глубине зоны, гамак и шезлонги на открытой стороне газона. |
+| Запад, средняя зона | CMP-02 ×1 | Пергола поперёк площадки, белые ширмы с тыла. |
+| Восток, средняя зона | CMP-04 ×1 | Регулярный партер с центральным фонтаном. |
+| Северо-запад | CMP-05 ×1 | Пруд за низкой стеной, просвет арки со стороны дорожки. |
+| Северо-восток | CMP-03 ×1 | Беседка на ответвлении дорожки, вход развёрнут к развилке. |
+| Между композициями | FLB-01 ×1, FLB-02 ×1, FLB-03 ×1, STR-01_White ×1, STR-07_White ×1, FUR-03_White ×1, FUR-04_White ×1 | Три пустые клумбы, белые арка и обелиск, один белый стол и один белый стул. |
+| Ось юг–север | Демо-дорожка ×1 | Простая песочная полоса с короткими подходами, остров около 24 × 18 м. |
+
+## Camera and light
+
+- Ракурс, высота и FOV. Северо-запад, наклон 36° вниз, ориентир высоты 19 м, вертикальный FOV 38°, широкий кадр. Пруд впереди, беседка за дорожкой.
+- Свет. Тёплый мягкий дневной свет сверху слева и контактные тени.
+- Фон. Ясное голубое небо и редкие мягкие облака, остров с открытым срезом земли.
+- Свободная область. Оставить чистый верхний угол под возможный блок состава.
+
+## Not in pack — remove
+
+При визуальной проверке посторонних объектов не обнаружено.
+
+## Проверка референса
+
+- Отдельный ракурс, пруд и арка на переднем плане, беседка за дорожкой. Пруд и стелу в Unity поставить отдельно по схеме CMP-05; на PNG чаша слишком близка к водной плитке.
+- Мелкие предметы, варианты и точные стыки расставить по MD композиций. У второго крюка на PNG кормушка не видна.
+
+| Генерация | Результат |
+|---:|---|
+| 1 | Отклонена. Стена пересекает проход кованой арки, плющ лежит на газоне, край острова обрезан. |
+| 2 | Отклонена. Проход открыт и кадр шире, но за розовым входом возникли белый дуговой забор и два посторонних шара в вазонах. |
+| 3 | Выбрана. Забор и вазоны удалены, проём, две аппликации плюща и обратный ракурс читаются. |
+
+## Fixes
+
+<!-- The render reviewer appends fix sections. -->
