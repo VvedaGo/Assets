@@ -1,0 +1,35 @@
+import os
+SP='.work/pipeline/AssetNew/specs'
+tasks=[
+ ('STR-02',[('STR-02','Arch_Iron','wrought-iron rose arch')],'A','Iron wording and cell as the STR-06 spire; curls must be real geometry within 1400 tris; ground spikes go to y=0 (no floating). Plant mounts like STR-01 (Plant_L/R/Top empties) so PLT-02/03 fit - check .work/models/AssetNew/STR-01_Arch_Wood/notes.md.'),
+ ('STR-03',[('STR-03','Arbor_Bench','arbor: arch with built-in bench and lattice sides; LOD yes')],'A','Lattice wording/cells identical to STR-01 and MOD-01 (white #EEEDE7, slats 0.05); bench seat height 0.45; walk-in/seat clearances per spec; LOD1 via make_lod1.py.'),
+ ('STR-04+STR-05',[('STR-04','Pergola','pergola 3x3; LOD yes'),('STR-05','Pergola_Bay','pergola extension bay 3 m (attaches to STR-04 or another bay); LOD yes')],'A','ONE registry script for both; prove SNAP STR-04|STR-05 and STR-05|STR-05 (posts shared/halved per the snap contract, beams continuous, print SNAP OK). PLT-03 garland must sit on a beam (see .work/models/AssetNew/PLT-03_Rose_Climbing_Top/notes.md). Same wood as STR-01. LOD1 via make_lod1.py.'),
+ ('STR-07',[('STR-07','Obelisk','obelisk for climbing plants; variant `_White` (colour)')],'A','Same wood/white as STR-01. Members thinner than STYLE minimum are an accepted exception only as written in the spec.'),
+ ('MOD-07+MOD-08+MOD-09',[('MOD-07','Pond_Edge','raised formal pond edge 1 m'),('MOD-08','Pond_Edge_Corner','pond edge corner'),('MOD-09','Pond_Water','pond water tile 1x1 (opaque)')],'A','ONE registry script for all three; prove SNAP: edge|edge, edge|corner, a closed 2x2 and 3x2 pond, water tile level and coverage inside edges (print SNAP OK). Stone exactly as MOD-03 / FLB-01 (slots 11/12, see .work/models/AssetNew/MOD-03+MOD-04_Wall/notes.md); water as WTR-03 (flat opaque blue).'),
+ ('FLB-02+FLB-03',[('FLB-02','Bed_Corner','L-shaped flower bed 2x2; variant `_Planted` (mesh)'),('FLB-03','Bed_Round','round flower bed D2; variant `_Planted` (mesh)')],'A+F (per spec)','Copy kerb, soil and planting helpers from .work/models/AssetNew/FLB-01_Bed_Straight/build.py; same kerb stone, soil relief contract and plant clusters as FLB-01. Review note on FLB-01 _Planted: tilt pink/white cups ~10 deg more toward the viewer, avoid lollipop discs, less bare soil at the front. Prove SNAP with FLB-01 (FLB-01|FLB-02 join) and print SNAP OK. LOD1 for _Planted via make_lod1.py as for FLB-01. Also render one HEADLESS check image of each _Planted variant (same camera as the preview) into %TEMP%/assetnew_check/<ID>/<ID>_Planted_check.png for the reviewer.'),
+]
+for name,items,atlas,extra in tasks:
+    ids=[i for i,_,_ in items]
+    folder='.work/models/AssetNew/'+(f'{ids[0]}_{items[0][1]}' if len(ids)==1 else '+'.join(ids)+'_'+items[0][1].split('_')[0])
+    itemlines='\n'.join(f'- {i} `FMS_Garden_{n}` - {d}' for i,n,d in items)
+    inputs='; '.join(f'planning/AssetNew/prompts/{i}.3d.md, planning/AssetNew/references/{i}.png' for i in ids)
+    fbx='; '.join(f'art/AssetNew/Meshes/FMS_Garden_{n}.fbx (+ .fbm, + variant FBX if any), art/AssetNew/Blend/FMS_Garden_{n}*.blend, exactly ONE preview art/AssetNew/Previews/FMS_Garden_{i.replace("-","_")}_Preview.png' for i,n,_ in items)
+    script='build.py in the `-- <ID> build|export` form' if len(ids)==1 else 'ONE registry build.py in the `-- <ID> build|export` form'
+    spec=f'''Read your brief: Tools/agents/roles/model-builder.md (repo root = this worktree, C:/Users/Sergv/orca/workspaces/Assets_Farm/AssetNew). Also load the skill `blender-unity-assets`.
+Pack: AssetNew (product Cottage Garden Decor) · Stage: Э7 · Portion: Series batch 2 (one builder at a time on the live Blender; others wait for you)
+Items:
+{itemlines}
+Inputs: {inputs}; planning/AssetNew/STYLE.md; planning/AssetNew/CATALOG.md (rows + «Модули и стыковка»); Tools/README.md; Tools/blender/pack_common.py, pack_shapes.py, build_registry_template.py, make_lod1.py; Tools/agents/EXTERNAL_WORKER_BRIEF.md (Style, Defects, Report). The reference image wins over catalogue numbers (PIPE-04) except functional sizes in the spec (snap grid, walk-through openings, seat heights, mounting dimensions).
+Approved models of this pack (style, palette, helpers): WTR-03, STR-06, STR-01, PLT-01/02/03, FLB-01, MOD-01..06 - previews in art/AssetNew/Previews/, scripts and notes in .work/models/AssetNew/*/. Review lessons: planning/AssetNew/reviews/models_pilot.md and models_1.md (palette is fixed: stone greyer and white cooler than references - keep two-tone splits visible; functional sizes win; no bevels/overhangs beyond the spec).
+Atlas: {atlas}. Reuse art/AssetNew/Textures/FMS_Garden_AtlasA.png and/or FMS_Garden_AtlasF.png read-only (do NOT rewrite them; if a colour is missing, ask via orchestration ask first).
+{extra}
+Blender: owner's Blender 5.2 with the MCP add-on (outdated add-on, but execute_blender_code and look work). Start with get_addon_status + get_scene_info. If execute or look fail: stop and report failed. Work only in your new collection(s) named <ID>_<Name>; never touch other collections, the owner's Cube or the saved file. The 2 m default Cube at the origin hides models in look - render in a temporary scene (copy the render helper from .work/models/AssetNew/WTR-03_Birdbath/build.py) and view with look image=. Save the selection before a live pc.export and restore it after.
+Headless check: "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe" --background --factory-startup --python <script> -- <args> (PYTHONUTF8=1). make_lod1.py needs an absolute --art path and sys.dont_write_bytecode (do not leave Tools/blender/__pycache__).
+Write only: {folder}/ ({script}, notes.md); {fbx}. Check renders only in %TEMP%/assetnew_check/<ID>/. Nothing else (no Tools/, prompts, catalogue, other items).
+Limits: max 5 self-check rounds per model in live Blender. No paid generate_3d, no search_assets/import_asset, no downloads, no git, no secrets. LOD as in the catalogue row.
+Done when: each model exported, re-import verify OK, headless export reproduces it, checks printed (non-manifold/loose/degenerate 0, coplanar 0, ground contact, tris <= budget, SNAP OK where a contract exists).
+Report (worker_done): per ID: paths; tris per part and total vs budget (LOD0/LOD1); size m; pivot; checks; SNAP; re-import; headless reproduction; rounds used; remaining differences vs reference; verdict SHIP / SHIP WITH NOTES / NO-SHIP.
+Placement: this machine (local), the user's worktree.
+'''
+    open(f'{SP}/spec_b2_{name}.md','w',encoding='utf-8').write(spec)
+print(sorted(f for f in os.listdir(SP) if 'b2_' in f))
