@@ -1,6 +1,6 @@
 # Farm Machinery — Asset Store card
 
-Product: Farm Machinery (Full) · Version: 1.0.0 · Updated: 2026-11-25 · Status: checked — Э13 done, Э12 media accepted (media_1), Э14 release check passed (numbers confirmed on the exported package)
+Product: Farm Machinery (Full) · Version: 1.0.0 · Updated: 2026-11-26 · Status: checked — Э13 done, Э12 media accepted (media_1), Э14 release check passed (numbers confirmed on the exported package)
 Fields and rules: REQUIREMENTS.md 7.1–7.3. Final texts go into the labelled blocks only; notes, options, TODO and
 `[ПРОВЕРИТЬ]` go into the Notes block at the end. Lite version card: [../Lite/PACKAGE_METADATA.md](../Lite/PACKAGE_METADATA.md).
 
@@ -49,7 +49,7 @@ KEY FEATURES
 - 3 colour atlases (Red, Green, Blue): tractors and harvesters come as Red, Green and Blue prefabs; implements and trailers are Red, recolour them by swapping the material
 - Pose variants: transport / work (sprayer, mower, disc harrow, hay rake), closed / open baler; load variants: empty / grain tipper, empty / full grain cart
 - LOD1 (about 50% triangles) on 22 of 26 models, Box Collider on every prefab
-- 5 ready compositions and 3 demo scenes
+- 5 ready compositions and 4 demo scenes
 
 WHAT'S INCLUDED
 - Tractors (2): medium cab tractor, large 4-wheel tractor with front linkage - each in Red, Green and Blue
@@ -61,7 +61,7 @@ WHAT'S INCLUDED
 - Field prop (1): 4 m windrow module that snaps end to end
 - 41 prefabs in total: 26 models + 15 variants (8 colour, 5 pose, 2 load)
 - 5 compositions: Ploughing, Grain Haul, Machine Yard, Harvest (combine, grain cart and tipper), Haymaking (mower, rake, baler and bale trailer)
-- Demo scenes: Demo_FieldWork, Demo_Harvest and Demo_Catalog with all 41 prefabs
+- 4 demo scenes: Demo_FieldWork, Demo_Harvest, Demo_Catalog with all 41 prefabs and Demo_Catalog_Lite with the 21 Lite prefabs
 
 LIMITATIONS
 This is an art pack. It has no scripts, driving physics, WheelColliders, Rigidbodies, rigs or animation clips. Separate wheels and moving parts are prepared for your own scripts or animations; they are not animated. Cab glass is opaque, there is no cab interior. Drive shafts are not modelled. The ground, wheat field, bales, road, grass and clouds in the demo scenes are demo-only assets.
@@ -85,10 +85,10 @@ Works on its own. Requires only the Universal Render Pipeline.
 | Rigging / Animations | Static meshes, no rig, no skinning, 0 animation clips. Wheels, links, doors, beds, booms, augers, reels, spouts and other moving parts are separate objects with pivots on their axes, not animations |
 | Colliders | One BoxCollider on every single-item prefab (41/41), sized to the whole model including wheels; pose variants have their own recomputed box. No MeshColliders. Compositions use the colliders of their nested prefabs |
 | Scale / Setup | 1 unit = 1 m, Y up, machines face +Z. Root pivot on the ground at the centre of the footprint, root scale 1, rotation 0. Wheels: `Wheel_FL/FR/RL/RR` (single axle `Wheel_L/R`, plough gauge `Wheel_Gauge`), pivot at the wheel centre, spin axis local X. Attach points are empty objects (+Z forward, +Y up): `Hitch_*`, `Link3P_*`, `PTO_*`, `Feeder_Front` / `Feeder_Rear`, plus `Seat`, `Auger_Out`, `Spout_Out`, `Bale_Out`, `Header_Rest`. Standard rest heights: Hitch 0.55 m, Link3P 0.60 m, PTO 0.70 m. Naming `FMS_Mach_<Name>` for base prefabs and `FMS_Mach_<Name>_<Variant>` for variants. Combine and forage harvester prefabs come without a header; attach one by its Feeder points. Quick hitch, front weight and the 3 headers are modelled at their mounted height and float above Y = 0 when placed alone. The windrow module is exactly 4 m long and snaps end to end |
-| Files / Sources | 125 files: FBX models (26), PNG textures (3), URP materials (3), prefabs (46), 3 demo scenes with their demo-only assets, README.txt and Changelog.txt in Documentation. Blender files and build scripts are not included |
-| Demo / Scripts | Demo scenes: Demo_FieldWork (CMP_01–03 on a farm island), Demo_Harvest (CMP_04–05, forage harvester with pickup header and a tipper, combine with corn header, header trailer with grain header, grain bins and auger on a farm island with wheat and stubble) and Demo_Catalog (all 41 prefabs in rows). Each has one active camera; the other shot cameras are inactive viewpoints. No scripts in the package; no camera controller. Demo scenes use a URP Volume for post-processing. Demo-only assets in `Demo/` (not counted above): 11 environment FBX and 20 prefabs (island base, ploughed / stubble / seedling / wheat field modules, road, grass tufts, clouds, straw bales), 5 materials (3 environment, sky, catalogue backdrop), 3 textures (two 256 × 256 environment atlases, 512 × 512 sky panorama), 2 shaders (panorama sky, unlit clouds), 1 Volume profile |
+| Files / Sources | 127 files in two folders (Full needs both): `Assets/FarmMachinery/Lite` — 75 files shared with Farm Machinery Lite (13 FBX, 3 PNG atlases, 3 URP materials, 24 prefabs, Demo_FieldWork, Demo_Catalog_Lite, the demo look and environment they use, README_Lite + Changelog) and `Assets/FarmMachinery/Full` — 52 files (13 FBX, 22 prefabs = 13 models + 7 variants + CMP_04–05, Demo_Harvest, Demo_Catalog, Full-only demo environment, README.txt). FBX models 26, prefabs 46 in total. Blender files and build scripts are not included |
+| Demo / Scripts | Demo scenes: Demo_FieldWork (Lite/Demo/Scenes; CMP_01–03 on a farm island), Demo_Harvest (Full/Demo/Scenes; CMP_04–05, forage harvester with pickup header and a tipper, combine with corn header, header trailer with grain header, grain bins and auger on a farm island with wheat and stubble) Demo_Catalog (Full/Demo/Scenes; all 41 prefabs in rows) and Demo_Catalog_Lite (Lite/Demo/Scenes; the 21 Lite prefabs in rows) — 4 demo scenes. Each has one active camera; the other shot cameras are inactive viewpoints. No scripts in the package; no camera controller. Demo scenes use a URP Volume for post-processing. Demo-only assets in `Lite/Demo/` and `Full/Demo/` (not counted above): 11 environment FBX and 20 prefabs (island base, ploughed / stubble / seedling / wheat field modules, road, grass tufts, clouds, straw bales), 5 materials (3 environment, sky, catalogue backdrop), 3 textures (two 256 × 256 environment atlases, 512 × 512 sky panorama), 2 shaders (panorama sky, unlit clouds), 1 Volume profile |
 | Compatibility / Dependencies | Unity 6000.3 (tested with 6000.3.10f1, clean import of the exported package), Universal Render Pipeline 17.3. Built-in Render Pipeline and HDRP are not supported. No other packages required; no Input System dependency |
-| Package Size | 3.4 MB (3,407,161 bytes) — FarmMachinery_1.0.0.unitypackage, version 1.0.0 |
+| Package Size | 3.4 MB (3,429,097 bytes) — FarmMachinery_1.0.0.unitypackage, version 1.0.0 (folders `Assets/FarmMachinery` + `Lite` + `Full`) |
 
 ## Price
 
@@ -108,7 +108,7 @@ Version: `1.0.0`
 - 41 prefabs (26 models + 15 colour, pose and load variants) and 5 compositions
 - Separate wheels and moving parts with pivots, named Hitch / Link3P / PTO / Feeder attach points, swappable combine headers
 - LOD1 on 22 models, Box Collider on every prefab
-- Demo scenes: Demo_FieldWork, Demo_Harvest and Demo_Catalog
+- 4 demo scenes: Demo_FieldWork, Demo_Harvest, Demo_Catalog, Demo_Catalog_Lite
 - Unity 6000.3, URP 17.3
 ```
 
@@ -129,7 +129,7 @@ No other Asset Store products are needed. The demo scenes use only assets includ
 
 ```text
 Support: contact via the publisher profile
-Documentation: Assets/FarmMachinery/Documentation/README.txt
+Documentation: Assets/FarmMachinery/Full/Documentation/README.txt
 Lite version: Farm Machinery Lite - [Asset Store link]
 Same series: Farm Market Starter (https://assetstore.unity.com/packages/package/421724), Farm Yard (https://assetstore.unity.com/packages/package/424220), Farm Nature, Farm Processing
 ```
@@ -199,7 +199,7 @@ Typography: `·` = middle dot U+00B7, `×` = U+00D7, `→` = U+2192, `—` = em 
 **10_DemoAndVersion** — text block (side panel over calm sky/ground):
 - heading: `WHAT'S INCLUDED`
 - `26 MODELS · 41 PREFABS · 5 COMPOSITIONS`
-- `3 DEMO SCENES: FIELD WORK · HARVEST · CATALOGUE`
+- `4 DEMO SCENES: FIELD WORK · HARVEST · 2 CATALOGUES`
 - `SEPARATE WHEELS · NAMED ATTACH POINTS · LOD1 · COLLIDERS`
 - heading: `NOT INCLUDED`
 - `DRIVING SCRIPTS · ANIMATIONS · CHARACTERS`
@@ -235,14 +235,14 @@ Comparison panel (heading + 3-column table; `—` = not included):
 - `MODELS` | `13` | `26`
 - `PREFABS (INCL. VARIANTS)` | `21` | `41`
 - `COMPOSITIONS` | `3` | `5`
-- `DEMO SCENES` | `2` | `3`
+- `DEMO SCENES` | `2` | `4`
 - `TRACTORS · IMPLEMENTS · TRAILERS` | `YES` | `YES`
 - `HARVESTERS · HEADERS · BALER · GRAIN YARD` | `—` | `YES`
 
 ## Submission Notes
 
 ```text
-Art-only package: no scripts. Demo scenes use a URP Volume and two simple unlit sky / cloud shaders included in Demo/Shaders. Assets in Demo/Environment (island base, field and wheat modules, road, grass, clouds, straw bales) exist only for the demo scenes and are not counted as product models. Attachments and headers are modelled at their mounted height, so they sit above Y = 0 when placed alone. Farm Machinery Lite is a subset of this package with the same file names.
+Art-only package: no scripts. Demo scenes use a URP Volume and two simple unlit sky / cloud shaders included in Lite/Demo/Shaders. Assets in Demo/Environment (island base, field and wheat modules, road, grass, clouds, straw bales) exist only for the demo scenes and are not counted as product models. Attachments and headers are modelled at their mounted height, so they sit above Y = 0 when placed alone. Farm Machinery Lite is a subset of this package with the same file names.
 ```
 
 ## Notes (not for the portal)
@@ -258,9 +258,9 @@ Synty $49.99, ithappy $79.00. У нас 26 моделей / 41 префаб / 5 
 сменные жатки). Наши: Farm Yard $7.99, Farm Processing — предложение $19.99.
 
 **Э14 — проверка поставки (2026-11-25), пункты `[ПРОВЕРИТЬ после экспорта]` закрыты:**
-1. Package Size — 3.4 MB (3,407,161 байт); размер `.unitypackage`, не папки. Пакет: `.work/export/FarmMachinery_1.0.0.unitypackage`, список файлов с GUID —
+1. Package Size — 3.4 MB (3,429,097 байт, после разделения на Lite/Full: + Demo_Catalog_Lite и README_Lite из папки Lite); размер `.unitypackage`, не папки. Пакет: `.work/export/FarmMachinery_1.0.0.unitypackage`, список файлов с GUID —
    `.work/export/FarmMachinery_1.0.0_files.txt` (125 файлов).
-2. Состав: 26 FBX, 41 + 5 префабов, 3 материала, 3 атласа, сцены Demo_FieldWork, Demo_Harvest, Demo_Catalog, демо-окружение (11 FBX, 20 префабов, 5 материалов, 3 текстуры, 2 шейдера, 1 Volume), README + Changelog. Dev-only (медиа-/каталожные сцены съёмки, A/B-материалы base/Soft/field, их небо и Volume, сгенерированные
+2. Состав: 26 FBX, 41 + 5 префабов, 3 материала, 3 атласа, сцены Demo_FieldWork, Demo_Harvest, Demo_Catalog, Demo_Catalog_Lite (4), демо-окружение (11 FBX, 20 префабов, 5 материалов, 3 текстуры, 2 шейдера, 1 Volume), README + Changelog. Dev-only (медиа-/каталожные сцены съёмки, A/B-материалы base/Soft/field, их небо и Volume, сгенерированные
    backdrop/zone-материалы) перенесены в `Assets/_FarmMachineryDev/` с сохранением GUID и в пакеты не входят; Editor-обёртки и
    PackTools не экспортируются. Lite и Full — один набор файлов с общими GUID (73 общих файла, расхождений 0); Lite-only —
    `Demo_Catalog_Lite.unity`, `README_Lite.txt`. Импорт Full поверх Lite: 127 файлов, дублей нет.
@@ -270,13 +270,32 @@ Synty $49.99, ithappy $79.00. У нас 26 моделей / 41 префаб / 5 
    ошибок/предупреждений по паку в логе 0, missing scripts 0, розовых материалов 0 (включая небо и облака на своих шейдерах,
    shaders supported, errors 0), префабы 66/66 (46 товарных + 20 демо) инстанцируются все, сцены открываются, рендер каждой сцены без magenta —
    `.work/export/checks/Full/*.png`, отчёт `check.txt`, логи `.work/export/checks/logs/`. Формулировка «tested with» подтверждена.
-5. Числа после экспорта совпали с ImportCheck и картинками: 26 моделей, 41 = 26 + 15 вариантов, 5 CMP, BoxCollider 41/41, LODGroup 22, LOD0 54,464 (76…3,708), LOD1 25,580, 3 материала, 3 текстуры, 3 демо-сцены. Подписи на изображениях менять не нужно.
-6. Документация: `Assets/FarmMachinery/Documentation/README.txt` и `Changelog.txt` (1.0.0).
+5. Числа после экспорта совпали с ImportCheck и картинками: 26 моделей, 41 = 26 + 15 вариантов, 5 CMP, BoxCollider 41/41, LODGroup 22, LOD0 54,464 (76…3,708), LOD1 25,580, 3 материала, 3 текстуры, 4 демо-сцены (после разделения на Lite/Full). Подписи на изображениях менять не нужно.
+6. Документация: `Assets/FarmMachinery/Full/Documentation/README.txt` и `Changelog.txt` (1.0.0).
 7. Input System не нужен: скриптов в пакете 0, в сценах только компоненты URP; в чистом проекте ошибок нет.
-8. Asset Store Tools Validator 12.0.6 (папка `Assets/FarmMachinery`, категория 3D): 36 Pass, 1 Warning, 0 Fail —
+8. Asset Store Tools Validator 12.0.6 (категория 3D): `Assets/FarmMachinery` — 36 Pass, 1 Warning, 0 Fail; `Assets/FarmMachinery/Lite` — 37 Pass —
    `.work/export/checks/Validator_FarmMachinery.txt`. Warning «Check Model Orientation» на `FMS_Mach_HayRake.fbx`: штанги граблей
    в покое повёрнуты на 90° вокруг шарнира (транспортная поза по Fix 1, pivot на оси) — по замыслу, не дефект; убрать можно только
    переэкспортом модели с «запечённой» позой (Э7, по решению владельца).
+
+**Раскладка Lite / Full (2026-11-26, просьба владельца):** проект разделён на `Assets/FarmMachinery/Lite` (75 файлов: всё,
+что нужно Lite) и `Assets/FarmMachinery/Full` (52 файла: только Full-only — 13 моделей, 7 вариантов, CMP_04–05, Full-only
+демо-окружение 5 FBX + 9 префабов, Demo_Harvest, Demo_Catalog, README). Ассеты не дублируются: файлы перенесены, все 200 GUID
+пака и dev-папки сохранены (сверка .meta до/после — 0 потерь, 0 новых). Lite не ссылается на Full: зависимости каждого из
+75 Lite-файлов проверены по одному — 0 ссылок на Full. Build All через обёртку (staging Full-файлов в рабочий корень Lite для
+общих PackTools и обратно) — те же GUID, префабы моделей и вариантов байт-в-байт; композиции CMP пересобираются с новыми
+внутренними fileID (так работает их сборщик), демо-сцены от этого не меняются (рендер Demo_FieldWork совпадает с Э14 по md5).
+Медиа-пересборка: Catalog_09_Technical_Lite байт-в-байт с raw, Icon_Full — 2 пикселя из 1 048 576 отличаются на ≤ 6/255.
+Пакеты: Lite = `Assets/FarmMachinery` + `Lite`; Full = `Assets/FarmMachinery` + `Lite` + `Full`. Повторные чистые импорты
+(Unity 6000.3.10f1, URP 17.3.0) и апгрейд Lite → Full: 0 ошибок, 0 missing scripts, 0 розовых, префабы и сцены в порядке,
+апгрейд — 127 файлов / 50 папок без дублей; отчёт `.work/export/RELEASE_CHECK.md`. Validator: `Assets/FarmMachinery` — 36 Pass,
+1 Warning (HayRake, теперь `Full/Art/Models/IMP`), `Assets/FarmMachinery/Lite` — 37 Pass, 0 Warning.
+Для Э12: `Media/raw/Catalog/14_Unity_Full.png` и `14_Unity_Lite.png` пересняты с новыми путями (`Assets > FarmMachinery > Full >
+Art > Prefabs > HRV`, `… > Lite > Art > Prefabs > TRC`), без тулбара аккаунта, путей и имён — финальный `14_UnityAndComparison`
+нужно пересобрать из нового raw. Решение оркестратора (2026-11-26): в Full 4 демо-сцены (Demo_FieldWork и Demo_Catalog_Lite из
+папки Lite + Demo_Harvest, Demo_Catalog); тексты карточки обновлены — подписи изображений Full меняются (Э12): 10_DemoAndVersion
+`3 DEMO SCENES: FIELD WORK · HARVEST · CATALOGUE` → `4 DEMO SCENES: FIELD WORK · HARVEST · 2 CATALOGUES`; 14_UnityAndComparison
+строка `DEMO SCENES` `2 | 3` → `2 | 4`. Lite остаётся 2.
 
 **Прочие открытые пункты:**
 - Жатка в префабе комбайна: CATALOG HRV-01 говорит «несут вложенную жатку ATT-03», фактически префабы комбайна без жатки,

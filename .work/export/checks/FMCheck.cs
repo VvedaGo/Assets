@@ -49,12 +49,12 @@ public static class FMCheck
         r.AppendLine($"URP package: {UnityEditor.PackageManager.PackageInfo.FindForAssembly(typeof(UnityEngine.Rendering.Universal.UniversalRenderPipeline).Assembly)?.version}");
 
         var all = AssetDatabase.FindAssets("", new[] { Root }).Select(AssetDatabase.GUIDToAssetPath).Distinct().Where(p => !AssetDatabase.IsValidFolder(p)).ToList();
-        r.AppendLine($"files under {Root}: {all.Count}");
-        int Count(string dir, string ext) => all.Count(p => p.StartsWith($"{Root}/{dir}/") && p.EndsWith(ext));
+        r.AppendLine($"files under {Root}: {all.Count} (Lite {all.Count(p => p.StartsWith(Root + "/Lite/"))}, Full {all.Count(p => p.StartsWith(Root + "/Full/"))}), folders {AssetDatabase.FindAssets("", new[] { Root }).Select(AssetDatabase.GUIDToAssetPath).Distinct().Count(AssetDatabase.IsValidFolder)}");
+        int Count(string dir, string ext) => all.Count(p => p.Contains($"/{dir}/") && p.EndsWith(ext));
         r.AppendLine($"Art/Models fbx {Count("Art/Models", ".fbx")}, Art/Prefabs prefabs {Count("Art/Prefabs", ".prefab")} (CMP {Count("Art/Prefabs/CMP", ".prefab")}), " +
                      $"Art/Materials {Count("Art/Materials", ".mat")}, Art/Textures {Count("Art/Textures", ".png")}, scenes {all.Count(p => p.EndsWith(".unity"))}, " +
-                     $"Demo materials {all.Count(p => p.StartsWith(Root + "/Demo/") && p.EndsWith(".mat"))}, Demo textures {all.Count(p => p.StartsWith(Root + "/Demo/") && p.EndsWith(".png"))}, " +
-                     $"Demo prefabs {all.Count(p => p.StartsWith(Root + "/Demo/") && p.EndsWith(".prefab"))}, Demo fbx {all.Count(p => p.StartsWith(Root + "/Demo/") && p.EndsWith(".fbx"))}, " +
+                     $"Demo materials {all.Count(p => p.Contains("/Demo/") && p.EndsWith(".mat"))}, Demo textures {all.Count(p => p.Contains("/Demo/") && p.EndsWith(".png"))}, " +
+                     $"Demo prefabs {all.Count(p => p.Contains("/Demo/") && p.EndsWith(".prefab"))}, Demo fbx {all.Count(p => p.Contains("/Demo/") && p.EndsWith(".fbx"))}, " +
                      $"shaders {all.Count(p => p.EndsWith(".shader"))}, scripts {all.Count(p => p.EndsWith(".cs") || p.EndsWith(".dll"))}");
         foreach (var s in AssetDatabase.FindAssets("t:Shader", new[] { Root }).Select(AssetDatabase.GUIDToAssetPath))
         {
@@ -78,7 +78,7 @@ public static class FMCheck
             foreach (var rend in go.GetComponentsInChildren<Renderer>(true))
                 foreach (var m in rend.sharedMaterials)
                     if (Pink(m)) { pink++; pinkList.Add($"{p} :: {rend.name}"); }
-            if (p.StartsWith(Root + "/Art/Prefabs/") && !p.Contains("/CMP/"))
+            if (p.Contains("/Art/Prefabs/") && !p.Contains("/CMP/"))
             {
                 single++;
                 if (go.GetComponent<BoxCollider>() != null) boxed++;

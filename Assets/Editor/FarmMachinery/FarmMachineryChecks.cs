@@ -19,8 +19,11 @@ namespace FarmMachinery.Editor
         // Attachments that hang on a linkage / feeder by design (specs ATT-01..05: "not meant to stand on the ground").
         private static readonly HashSet<string> Hanging = new HashSet<string> { "ATT-01", "ATT-02", "ATT-03", "ATT-04", "ATT-05" };
 
+        /// <summary>Runs with the Full items staged into the Lite working root (see FarmMachineryRelease.Staged).</summary>
         [MenuItem("Tools/Farm Machinery/Check Prefabs")]
-        public static string Run()
+        public static string Run() => FarmMachineryRelease.Staged(RunStaged);
+
+        private static string RunStaged()
         {
             var md = new StringBuilder();
             var issues = new List<string>();

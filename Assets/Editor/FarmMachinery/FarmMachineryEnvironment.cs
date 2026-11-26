@@ -18,7 +18,7 @@ namespace FarmMachinery.Editor
     /// </summary>
     public static class FarmMachineryEnvironment
     {
-        public const string Root = "Assets/FarmMachinery/Demo/Environment";
+        public const string Root = "Assets/FarmMachinery/Lite/Demo/Environment";   // working root (Full-only pieces staged in, see FarmMachineryRelease)
         /// <summary>Base atlases / materials made by Import (A/B base of LOOK v2): dev-only since Э14; the shipped prefabs use the
         /// v2 materials (FarmMachineryRelease.UseV2EnvironmentMaterials, run it again after a new Import).</summary>
         public const string BaseRoot = "Assets/_FarmMachineryDev/Demo/Environment";
@@ -53,7 +53,9 @@ namespace FarmMachinery.Editor
         }
 
         [MenuItem("Tools/Farm Machinery/Import Demo Environment")]
-        public static string Import()
+        public static string Import() => FarmMachineryRelease.Staged(ImportStaged);
+
+        private static string ImportStaged()
         {
             Directory.CreateDirectory($"{BaseRoot}/Materials");
             Directory.CreateDirectory($"{Root}/Prefabs");

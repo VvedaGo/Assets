@@ -49,8 +49,14 @@ namespace FarmMachinery.Editor
 
         /// <summary>Builds the scene of planning/FarmMachinery/layouts/&lt;sceneName&gt;.txt; renders go to
         /// %TEMP%/&lt;RenderTempDir&gt;/&lt;sceneName&gt;_&lt;shot&gt;&lt;renderSuffix&gt;.png.</summary>
-        public static string Build(string sceneName, string renderSuffix = "", string lookOverride = null)
+        public static string Build(string sceneName, string renderSuffix = "", string lookOverride = null) =>
+            FarmMachineryRelease.Staged(() => BuildStaged(sceneName, renderSuffix, lookOverride));
+
+        /// <summary>Runs with the Full items staged into the Lite working root (PackSceneBuilder resolves prefabs under one
+        /// PackConfig root); the existing scene and its generated materials are staged first so their GUIDs are kept.</summary>
+        private static string BuildStaged(string sceneName, string renderSuffix, string lookOverride)
         {
+            FarmMachineryRelease.BeforeSceneBuild(sceneName);
             var layout = $"{sceneName}.txt";
             var log = new StringBuilder(PackSceneBuilder.Build(C, layout, sceneName, savePrefabs: false));
             var scene = SceneManager.GetActiveScene();

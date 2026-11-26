@@ -15,12 +15,12 @@ namespace FarmMachinery.Editor
     /// </summary>
     public static class FarmMachineryLookV2
     {
-        public const string VolumePath = "Assets/FarmMachinery/Demo/Settings/FarmMachinery_DemoVolume_V2.asset";
-        public const string SkyMaterialPath = "Assets/FarmMachinery/Demo/Settings/M_FarmMachinery_Sky_V2.mat";
-        public const string SkyTexturePath = "Assets/FarmMachinery/Demo/Textures/T_FarmMachinery_SkyPanorama_V2.png";
+        public const string VolumePath = "Assets/FarmMachinery/Lite/Demo/Settings/FarmMachinery_DemoVolume_V2.asset";
+        public const string SkyMaterialPath = "Assets/FarmMachinery/Lite/Demo/Settings/M_FarmMachinery_Sky_V2.mat";
+        public const string SkyTexturePath = "Assets/FarmMachinery/Lite/Demo/Textures/T_FarmMachinery_SkyPanorama_V2.png";
         private const string DemoMaterialPath = "Assets/_FarmMachineryDev/Demo/Environment/Materials/M_FarmMachinery_Demo.mat";   // base (A/B), dev-only
-        public const string DemoSoftMaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo_V2.mat";
-        public const string DemoSoftTexturePath = "Assets/FarmMachinery/Demo/Environment/Textures/T_FarmMachinery_Demo_BaseColor_V2.png";
+        public const string DemoSoftMaterialPath = "Assets/FarmMachinery/Lite/Demo/Environment/Materials/M_FarmMachinery_Demo_V2.mat";
+        public const string DemoSoftTexturePath = "Assets/FarmMachinery/Lite/Demo/Environment/Textures/T_FarmMachinery_Demo_BaseColor_V2.png";
 
         /// <summary>Values (SCENE_STYLE.md "URP look — v2").</summary>
         public static class V
@@ -132,8 +132,8 @@ namespace FarmMachinery.Editor
         }
 
         private const string Demo2MaterialPath = "Assets/_FarmMachineryDev/Demo/Environment/Materials/M_FarmMachinery_Demo2.mat";
-        public const string Demo2V2MaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo2_V2.mat";
-        public const string Demo2V2TexturePath = "Assets/FarmMachinery/Demo/Environment/Textures/T_FarmMachinery_Demo2_BaseColor_V2.png";
+        public const string Demo2V2MaterialPath = "Assets/FarmMachinery/Lite/Demo/Environment/Materials/M_FarmMachinery_Demo2_V2.mat";
+        public const string Demo2V2TexturePath = "Assets/FarmMachinery/Lite/Demo/Environment/Textures/T_FarmMachinery_Demo2_BaseColor_V2.png";
 
         private static Material DemoSoftMaterial(Material demo, string materialPath, string texturePath)
         {
@@ -161,7 +161,7 @@ namespace FarmMachinery.Editor
         }
 
         private const string CloudMaterialPath = "Assets/_FarmMachineryDev/Demo/Environment/Materials/M_FarmMachinery_Demo_Cloud.mat";
-        public const string CloudV2MaterialPath = "Assets/FarmMachinery/Demo/Environment/Materials/M_FarmMachinery_Demo_Cloud_V2.mat";
+        public const string CloudV2MaterialPath = "Assets/FarmMachinery/Lite/Demo/Environment/Materials/M_FarmMachinery_Demo_Cloud_V2.mat";
 
         /// <summary>Lighter clouds for v2: brighter sides and undersides, warm-white tops.</summary>
         private static Material CloudMaterial(Material cloud)

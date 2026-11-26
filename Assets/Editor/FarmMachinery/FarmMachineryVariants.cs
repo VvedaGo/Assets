@@ -49,7 +49,9 @@ namespace FarmMachinery.Editor
         }
 
         [MenuItem("Tools/Farm Machinery/Build Variants")]
-        public static string Build()
+        public static string Build() => FarmMachineryRelease.Staged(BuildStaged);
+
+        private static string BuildStaged()
         {
             var log = new StringBuilder("[FarmMachinery] variants\n");
             foreach (var (id, _) in LoadVariants) EmptyBase(id, log);

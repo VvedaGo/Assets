@@ -74,7 +74,9 @@ namespace FarmMachinery.Editor
         }
 
         [MenuItem("Tools/Farm Machinery/Build Compositions")]
-        public static string Build()
+        public static string Build() => FarmMachineryRelease.Staged(BuildStaged);
+
+        private static string BuildStaged()
         {
             var dir = $"{FarmMachineryPackBuilder.Config.PrefabDir}/CMP";
             Directory.CreateDirectory(dir);

@@ -9,7 +9,7 @@ namespace FarmMachinery.Editor
     {
         public static readonly PackConfig Config = new PackConfig
         {
-            Root = "Assets/FarmMachinery",
+            Root = FarmMachineryRelease.LiteRoot,   // working root: Full-only items are staged in for every build (FarmMachineryRelease.Staged)
             Tag = "FarmMachinery",
             TextureRegex = @"T_FarmMachinery_[A-Za-z0-9]+_BaseColor",
             Prefix = FarmMachineryCatalog.Prefix,
@@ -19,16 +19,16 @@ namespace FarmMachinery.Editor
         };
 
         [MenuItem("Tools/Farm Machinery/Build Prefabs")]
-        public static string Build() => PackPrefabBuilder.Build(Config);
+        public static string Build() => FarmMachineryRelease.Staged(() => PackPrefabBuilder.Build(Config));
 
         /// <summary>Base prefabs (shared builder) → variants → compositions → checks. Variants and compositions depend on the bases,
         /// so rerun them after every Build Prefabs.</summary>
         [MenuItem("Tools/Farm Machinery/Build All")]
-        public static string BuildAll() => new StringBuilder()
+        public static string BuildAll() => FarmMachineryRelease.Staged(() => new StringBuilder()
             .AppendLine(Build())
             .AppendLine(FarmMachineryVariants.Build())
             .AppendLine(FarmMachineryCompositions.Build())
             .AppendLine(FarmMachineryChecks.Run())
-            .ToString();
+            .ToString());
     }
 }

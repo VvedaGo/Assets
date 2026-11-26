@@ -1,6 +1,6 @@
 # Farm Machinery Lite — Asset Store card
 
-Product: Farm Machinery Lite · Version: 1.0.0 · Updated: 2026-11-25 · Status: checked — Э13 done, Э12 media accepted (media_1), Э14 release check passed (numbers confirmed on the exported package)
+Product: Farm Machinery Lite · Version: 1.0.0 · Updated: 2026-11-26 · Status: checked — Э13 done, Э12 media accepted (media_1), Э14 release check passed (numbers confirmed on the exported package)
 Fields and rules: REQUIREMENTS.md 7.1–7.3. Final texts go into the labelled blocks only; notes, options, TODO and
 `[ПРОВЕРИТЬ]` go into the Notes block at the end. Full version card: [../Full/PACKAGE_METADATA.md](../Full/PACKAGE_METADATA.md).
 
@@ -82,10 +82,10 @@ Works on its own. Requires only the Universal Render Pipeline.
 | Rigging / Animations | Static meshes, no rig, no skinning, 0 animation clips. Wheels, links, doors, beds, booms and other moving parts are separate objects with pivots on their axes, not animations |
 | Colliders | One BoxCollider on every single-item prefab (21/21), sized to the whole model including wheels; pose variants have their own recomputed box. No MeshColliders. Compositions use the colliders of their nested prefabs |
 | Scale / Setup | 1 unit = 1 m, Y up, machines face +Z. Root pivot on the ground at the centre of the footprint, root scale 1, rotation 0. Wheels: `Wheel_FL/FR/RL/RR` (single axle `Wheel_L/R`, plough gauge `Wheel_Gauge`), pivot at the wheel centre, spin axis local X. Attach points are empty objects (+Z forward, +Y up): `Hitch_*`, `Link3P_*`, `PTO_*`, `Seat`. Standard rest heights: Hitch 0.55 m, Link3P 0.60 m, PTO 0.70 m. Naming `FMS_Mach_<Name>` for base prefabs and `FMS_Mach_<Name>_<Variant>` for variants. Quick Hitch and Front Weight are modelled at their mounted height and float above Y = 0 when placed alone |
-| Files / Sources | 75 files: FBX models (13), PNG textures (3), URP materials (3), prefabs (24), 2 demo scenes with their demo-only assets, README_Lite.txt and Changelog.txt in Documentation. Blender files and build scripts are not included |
-| Demo / Scripts | Demo scenes: Demo_FieldWork (CMP_01–03 on a farm island with ploughed field, seedlings, road and grass) and Demo_Catalog_Lite (all 21 prefabs in rows). Each has one active camera; the other shot cameras are inactive viewpoints. No scripts in the package; no camera controller. Demo scenes use a URP Volume for post-processing. Demo-only assets in `Demo/` (not counted above): 6 environment FBX and 11 prefabs (island base, ploughed field, seedlings, road, grass tufts, clouds), 5 materials (3 environment, sky, catalogue backdrop), 3 textures (two 256 × 256 environment atlases, 512 × 512 sky panorama), 2 shaders (panorama sky, unlit clouds), 1 Volume profile |
+| Files / Sources | 75 files, all in `Assets/FarmMachinery/Lite`: FBX models (13), PNG textures (3), URP materials (3), prefabs (24), 2 demo scenes with their demo-only assets, README_Lite.txt and Changelog.txt in Documentation. Blender files and build scripts are not included |
+| Demo / Scripts | Demo scenes: Demo_FieldWork (CMP_01–03 on a farm island with ploughed field, seedlings, road and grass) and Demo_Catalog_Lite (all 21 prefabs in rows). Each has one active camera; the other shot cameras are inactive viewpoints. No scripts in the package; no camera controller. Demo scenes use a URP Volume for post-processing. Demo-only assets in `Lite/Demo/` (not counted above): 6 environment FBX and 11 prefabs (island base, ploughed field, seedlings, road, grass tufts, clouds), 5 materials (3 environment, sky, catalogue backdrop), 3 textures (two 256 × 256 environment atlases, 512 × 512 sky panorama), 2 shaders (panorama sky, unlit clouds), 1 Volume profile |
 | Compatibility / Dependencies | Unity 6000.3 (tested with 6000.3.10f1, clean import of the exported package), Universal Render Pipeline 17.3. Built-in Render Pipeline and HDRP are not supported. No other packages required; no Input System dependency |
-| Package Size | 1.7 MB (1,745,816 bytes) — FarmMachinery_Lite_1.0.0.unitypackage, version 1.0.0 |
+| Package Size | 1.7 MB (1,748,725 bytes) — FarmMachinery_Lite_1.0.0.unitypackage, version 1.0.0 (folders `Assets/FarmMachinery` + `Lite`) |
 
 ## Price
 
@@ -126,7 +126,7 @@ No other Asset Store products are needed. The demo scenes use only assets includ
 
 ```text
 Support: contact via the publisher profile
-Documentation: Assets/FarmMachinery/Documentation/README_Lite.txt
+Documentation: Assets/FarmMachinery/Lite/Documentation/README_Lite.txt
 Full version: Farm Machinery - [Asset Store link]
 Same series: Farm Market Starter (https://assetstore.unity.com/packages/package/421724), Farm Yard (https://assetstore.unity.com/packages/package/424220), Farm Nature, Farm Processing
 ```
@@ -202,7 +202,7 @@ Typography: `·` = middle dot U+00B7, `×` = U+00D7, `→` = U+2192, `—` = em 
 ## Submission Notes
 
 ```text
-Art-only package: no scripts. Demo scenes use a URP Volume and two simple unlit sky / cloud shaders included in Demo/Shaders. Assets in Demo/Environment (island base, field modules, road, grass, clouds) exist only for the demo scenes and are not counted as product models. Quick Hitch and Front Weight are modelled at their mounted height, so they sit above Y = 0 when placed alone. Lite is a subset of Farm Machinery (Full) with the same file names.
+Art-only package: no scripts. Demo scenes use a URP Volume and two simple unlit sky / cloud shaders included in Lite/Demo/Shaders. Assets in Demo/Environment (island base, field modules, road, grass, clouds) exist only for the demo scenes and are not counted as product models. Quick Hitch and Front Weight are modelled at their mounted height, so they sit above Y = 0 when placed alone. Lite is a subset of Farm Machinery (Full) with the same file names.
 ```
 
 ## Notes (not for the portal)
@@ -217,7 +217,7 @@ Farm Props and Vehicles $20.00, Low poly farm asset pack $29.99; общие па
 В Title/Tags слово «free» не добавлял (поле Price уже Free); при желании тег `free` можно поставить вместо `farming`.
 
 **Э14 — проверка поставки (2026-11-25), пункты `[ПРОВЕРИТЬ после экспорта]` закрыты:**
-1. Package Size — 1.7 MB (1,745,816 байт); размер `.unitypackage`, не папки. Пакет: `.work/export/FarmMachinery_Lite_1.0.0.unitypackage`, список файлов с GUID —
+1. Package Size — 1.7 MB (1,748,725 байт, после разделения на Lite/Full); размер `.unitypackage`, не папки. Пакет: `.work/export/FarmMachinery_Lite_1.0.0.unitypackage`, список файлов с GUID —
    `.work/export/FarmMachinery_Lite_1.0.0_files.txt` (75 файлов).
 2. Состав: 13 FBX, 21 + 3 префаба, 3 материала, 3 атласа, сцены Demo_FieldWork и Demo_Catalog_Lite, только нужное им демо-окружение (6 FBX, 11 префабов, 5 материалов, 3 текстуры, 2 шейдера, 1 Volume), README_Lite + Changelog. Dev-only (медиа-/каталожные сцены съёмки, A/B-материалы base/Soft/field, их небо и Volume, сгенерированные
    backdrop/zone-материалы) перенесены в `Assets/_FarmMachineryDev/` с сохранением GUID и в пакеты не входят; Editor-обёртки и
@@ -230,12 +230,30 @@ Farm Props and Vehicles $20.00, Low poly farm asset pack $29.99; общие па
    shaders supported, errors 0), префабы 35/35 (24 товарных + 11 демо) инстанцируются все, сцены открываются, рендер каждой сцены без magenta —
    `.work/export/checks/Lite/*.png`, отчёт `check.txt`, логи `.work/export/checks/logs/`. Формулировка «tested with» подтверждена.
 5. Числа после экспорта совпали с ImportCheck и картинками: 13 моделей, 21 = 13 + 8 вариантов, 3 CMP, BoxCollider 21/21, LODGroup 11, LOD0 28,872 (312…3,708), LOD1 14,100, 3 материала, 3 текстуры, 2 демо-сцены. Подписи на изображениях менять не нужно.
-6. Документация: `Assets/FarmMachinery/Documentation/README_Lite.txt` и `Changelog.txt` (1.0.0).
+6. Документация: `Assets/FarmMachinery/Lite/Documentation/README_Lite.txt` и `Changelog.txt` (1.0.0).
 7. Input System не нужен: скриптов в пакете 0, в сценах только компоненты URP; в чистом проекте ошибок нет.
-8. Asset Store Tools Validator 12.0.6 (папка `Assets/FarmMachinery`, категория 3D): 36 Pass, 1 Warning, 0 Fail —
+8. Asset Store Tools Validator 12.0.6 (категория 3D): `Assets/FarmMachinery` — 36 Pass, 1 Warning, 0 Fail; `Assets/FarmMachinery/Lite` — 37 Pass —
    `.work/export/checks/Validator_FarmMachinery.txt`. Warning «Check Model Orientation» на `FMS_Mach_HayRake.fbx`: штанги граблей
    в покое повёрнуты на 90° вокруг шарнира (транспортная поза по Fix 1, pivot на оси) — по замыслу, не дефект; убрать можно только
    переэкспортом модели с «запечённой» позой (Э7, по решению владельца).
+
+**Раскладка Lite / Full (2026-11-26, просьба владельца):** проект разделён на `Assets/FarmMachinery/Lite` (75 файлов: всё,
+что нужно Lite) и `Assets/FarmMachinery/Full` (52 файла: только Full-only — 13 моделей, 7 вариантов, CMP_04–05, Full-only
+демо-окружение 5 FBX + 9 префабов, Demo_Harvest, Demo_Catalog, README). Ассеты не дублируются: файлы перенесены, все 200 GUID
+пака и dev-папки сохранены (сверка .meta до/после — 0 потерь, 0 новых). Lite не ссылается на Full: зависимости каждого из
+75 Lite-файлов проверены по одному — 0 ссылок на Full. Build All через обёртку (staging Full-файлов в рабочий корень Lite для
+общих PackTools и обратно) — те же GUID, префабы моделей и вариантов байт-в-байт; композиции CMP пересобираются с новыми
+внутренними fileID (так работает их сборщик), демо-сцены от этого не меняются (рендер Demo_FieldWork совпадает с Э14 по md5).
+Медиа-пересборка: Catalog_09_Technical_Lite байт-в-байт с raw, Icon_Full — 2 пикселя из 1 048 576 отличаются на ≤ 6/255.
+Пакеты: Lite = `Assets/FarmMachinery` + `Lite`; Full = `Assets/FarmMachinery` + `Lite` + `Full`. Повторные чистые импорты
+(Unity 6000.3.10f1, URP 17.3.0) и апгрейд Lite → Full: 0 ошибок, 0 missing scripts, 0 розовых, префабы и сцены в порядке,
+апгрейд — 127 файлов / 50 папок без дублей; отчёт `.work/export/RELEASE_CHECK.md`. Validator: `Assets/FarmMachinery` — 36 Pass,
+1 Warning (HayRake, теперь `Full/Art/Models/IMP`), `Assets/FarmMachinery/Lite` — 37 Pass, 0 Warning.
+Для Э12: `Media/raw/Catalog/14_Unity_Full.png` и `14_Unity_Lite.png` пересняты с новыми путями (`Assets > FarmMachinery > Full >
+Art > Prefabs > HRV`, `… > Lite > Art > Prefabs > TRC`), без тулбара аккаунта, путей и имён — финальный `14_UnityAndComparison`
+нужно пересобрать из нового raw. В Full теперь входит и Demo_Catalog_Lite (часть папки Lite): на изображениях Full написано
+`3 DEMO SCENES` (10) и `DEMO SCENES 2 | 3` (14) — считаем Demo_Catalog_Lite частью Lite; если владелец хочет считать 4 сцены,
+поправить подписи (Э12).
 
 **Прочие открытые пункты:**
 - Э12 (медиа) принят: `planning/FarmMachinery/reviews/media_1.md` — Lite 10/10 ✅. Шрифт плашек — Montserrat 9.000, SIL OFL 1.1
