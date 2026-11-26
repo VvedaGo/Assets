@@ -22,6 +22,9 @@ namespace PackTools.Editor
         public string LayoutDir;
         /// <summary>Floor fill codes for the 'floor' layout directive (code -> item ID).</summary>
         public Dictionary<string, string> FloorTiles = new Dictionary<string, string>();
+        /// <summary>Optional prefab names (ID or ID_Variant -> name without Prefix, STR-01_Gate -> Arch_Wood_Gate) for packs whose
+        /// prefabs carry descriptive names; IDs not listed keep the ID path.</summary>
+        public Dictionary<string, string> PrefabNames = new Dictionary<string, string>();
         /// <summary>Folder under %TEMP% where scene shots are rendered.</summary>
         public string RenderTempDir = "pack_scene";
         public Color Backdrop = new Color32(0x17, 0x3C, 0x45, 0xFF);
@@ -41,7 +44,8 @@ namespace PackTools.Editor
         {
             var dash = id.IndexOf('-');
             var category = dash > 0 ? id.Substring(0, dash) : id;
-            return $"{PrefabDir}/{category}/{Prefix}{id.Replace('-', '_')}.prefab";
+            var name = PrefabNames.TryGetValue(id, out var mapped) ? mapped : id.Replace('-', '_');
+            return $"{PrefabDir}/{category}/{Prefix}{name}.prefab";
         }
     }
 }

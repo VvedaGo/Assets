@@ -113,3 +113,29 @@ PackSceneBuilder.Place uses `PackConfig.PrefabPath(id)` = `Prefabs/<CAT>/FMS_Gar
   `Art/Prefabs/<CAT>/*.prefab` (60), and the `.meta` files Unity generated.
 - `.work/ImportReport_AssetNew.txt` (written by the tool) and `.work/pipeline/AssetNew/import_report.md` (this file).
 - No git writes. Shared tools, planning/, art/ and ProjectSettings/ are unchanged (the 3 ProjectSettings diffs were there before this task).
+
+## Follow-up 2026-11-26 (owner decisions: no colliders; PrefabNames map)
+Changes by file:
+- `Assets/Editor/PackTools/PackConfig.cs` (the only shared-code change): new optional field `PrefabNames` (`Dictionary<string,string>`, empty by default, XML summary). It maps an ID or ID_Variant to a name without Prefix.
+  `PrefabPath(id)` uses the map name when the key is present and otherwise builds the old ID name. Category is still taken from the ID.
+  The old behaviour is unchanged, checked with an empty config: STA-05 -> `Art/Prefabs/STA/FMS_Workshop_STA_05.prefab`, MOD-02_Plain -> `.../MOD/FMS_Workshop_MOD_02_Plain.prefab`.
+- `Assets/Editor/AssetNew/AssetNewPackBuilder.cs`:
+  - `PrefabNames` holds 60 entries: 42 IDs plus 18 ID_Variant keys, e.g. "STR-01" -> "Arch_Wood", "STR-01_Gate" -> "Arch_Wood_Gate", "TOP-01_Rose" -> "Topiary_Standard_Rose".
+  - The menu item Tools/Cottage Garden Decor/Build Prefabs now runs `PackPrefabBuilder.Build` and then the post-pass `RemoveColliders()`.
+  - `RemoveColliders()` uses LoadPrefabContents, destroys every Collider on the root and its children, and saves the prefab only when something was removed. The prefab asset is kept, so its GUID stays the same.
+- `Tools/README.md`: one line in the Unity section about the optional `PackConfig.PrefabNames`.
+- `.work/ImportReport_AssetNew.txt`: rewritten by the rebuild, same content (60 prefabs, the same 3 deliberate flags). The tool's report does not mention the post-pass; its log line is `[AssetNew] colliders removed: 60 in 60 prefabs`.
+
+Verification:
+- Recompile completed, and the new members resolve in the Editor, so the compile succeeded. Rebuild: 60 prefabs.
+- Colliders: **60 before** (one BoxCollider per prefab) -> **0 after**. Counted twice: `GetComponentsInChildren<Collider>(true)` over all 60 prefabs, and a YAML scan finds no `*Collider:` block in any `.prefab`.
+  Components left in total: GameObject 228, Transform 228, MeshFilter 153, MeshRenderer 153, LODGroup 9.
+- Map: all 60 keys resolve through `PrefabPath` to an existing prefab, **missing = 0**.
+- GUIDs: the `.prefab.meta` GUIDs of all 60 prefabs are **identical** before and after the rebuild (diff empty), so references survive.
+- Unchanged apart from colliders: a full re-dump of all 60 prefabs (nodes, transforms, tris, vertex bounds, materials/atlases, LODGroups) is identical to the dump taken before the follow-up, collider lines aside.
+  Spot checks: FUR-01 `Seat` (0, 2.04, 0) with `Seat_Low1` under it and the LODGroup paired; MOD-06 arc X 0..1.05 / Z 0..1.05 on AtlasA; STR-01 _Gate `Gate_Leaf` at X +0.59. The X-flip results stand.
+- PackSceneBuilder (read only): every placement (single `<ID>`, `row`, `floor` via FloorTiles, `scaled`) goes through `Place()` -> `C.PrefabPath(id)` (line 132), and there is no other prefab lookup.
+  Variant IDs like `STR-01_Gate` need nothing more: the layout token is passed whole to PrefabPath, the category comes from the part before '-', and the map key matches the whole token.
+  The only rule for layouts: write the exact key (`STR-01_Gate`, not `STR-01 Gate`). A token not in the map falls back to `FMS_Garden_STR_01_Gate`, which does not exist, and is logged as "missing prefab".
+- Section 5 (colliders) above is superseded: the pack ships without colliders, and buyers add a MeshCollider if they need one.
+- Nothing blocked. No git writes.

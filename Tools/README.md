@@ -45,6 +45,7 @@ set PYTHONUTF8=1
 ## Unity (6000.3, URP)
 
 - Per pack: a small wrapper with menu items and a `PackConfig` (root, tag, atlas regex, prefix, floor codes, layout dir).
+- Prefabs with descriptive names (not `<Prefix><ID>`): fill the optional `PackConfig.PrefabNames` (ID or ID_Variant -> name without prefix) so layouts can keep using IDs.
   Example: `Assets/Editor/FarmProcessing/` in the `Farm-Processing` branch.
 - Drive the open Editor with `unity command eval` through `unity/unity_eval.sh` (detached job + poll: direct eval stops
   after 5 s). Refresh the AssetDatabase in its own call after copying files in.
