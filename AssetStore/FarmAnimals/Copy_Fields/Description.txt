@@ -1,0 +1,35 @@
+Bring your farm to life.
+
+Farm Animals is a colorful low-poly pack of 35 rigged and animated animals for farm games, cozy countryside scenes and stylized worlds. Every animal is a ready prefab with its own Animator Controller, so you can drop it into a scene and press Play: cows graze, hens peck, ducks swim, the dog sits and the fox sneaks.
+
+The animals share the faceted flat-color style of the Farm series (Farm Market, Farm Yard, Farm Nature) and fit next to those packs, but they do not need them.
+
+KEY FEATURES
+
+- 35 animals with a Generic rig each (15-29 bones), skinned meshes and a valid Generic avatar.
+- 113 in-place animation clips at 30 fps: 2-3 per animal, 14 for the cow.
+- One Animator Controller per animal: a Locomotion blend tree driven by "Speed" (Idle - Walk - Run/Trot) plus one bool per extra clip (Graze, Peck, Swim, Lie_Idle, Sit_Idle...).
+- 182 animation events (footsteps, pecks, wing flaps, paddling, landing...) received by a small FarmAnimalEvents component and re-raised as C# events for your sounds and effects.
+- 8 composition prefabs: Pasture, Stable, Sheep Flock, Pigsty, Barnyard, Pond, Garden, Orchard.
+- 2 demo scenes on floating islands with a demo script that cycles every clip or lets the animals wander.
+- One 256 x 256 palette atlas and one URP/Lit material per animal.
+
+WHAT'S INSIDE
+
+Livestock (13): cow, calf, bull, horse, foal, donkey, sheep, lamb, ram, goat, kid, pig, piglet.
+Birds (10): hen, rooster, chick, turkey, duck, duckling, goose, pigeon, sparrow, crow.
+Pets (4): dog, puppy, cat, kitten.
+Small animals (5): fox, rabbit, hedgehog, mouse, frog.
+Insects (3): bee, butterfly, ladybug (shown larger than life so they read on a game camera).
+
+ANIMATIONS
+
+Most animals have Idle, a movement clip (Walk, Hop, Scurry, Crawl or Trot) and one signature clip: Graze, Peck, Swim, Root, Browse, Crow, Display, Play_Hop, Play_Bow, Pounce, Nibble, Curl_Up, Paw_Ground, Lie_Idle, Sit_Idle or Fly. The cow has the full set: Idle, Idle_Look, Walk, Run, Eat, Drink, Graze, Lie_Down, Lie_Idle, Sleep, Stand_Up, Moo, Tail_Swish and Hit_React. Clips are in place; the Speed thresholds are the real speed of each clip, so moving the transform at that speed keeps the feet from sliding.
+
+DEMO SCENES
+
+Demo_FarmAnimals_Showcase shows every animal on a floating island per category, cycling through all its clips. Demo_FarmAnimals_Compositions shows the 8 composition prefabs, with the ground animals wandering around their island. Each island has a shot camera for screenshots.
+
+SCOPE
+
+This is an animated art pack, not a farming system: AI, needs, economy, breeding, sounds and riding are not included. Clips are in place (no root motion) and there are no transitions between lying, sitting and standing except the cow's Lie_Down and Stand_Up. Buildings, fences and plants seen in some screenshots come from Farm Yard and Farm Nature and are not included. Source models are supplied as FBX; Blender files are not included. Supplied materials target URP.

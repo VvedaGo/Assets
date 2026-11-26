@@ -163,6 +163,23 @@ namespace FarmAnimals.Editor
             return string.Join("\n", log);
         }
 
+        /// <summary>Removes presentation-only assets that older builds wrote into the pack folder (shot island meshes,
+        /// dirt/water materials), then rebuilds the shot scenes so they reference the copies in Assets/_Presentation.</summary>
+        public static string MovePresentationOutOfPack()
+        {
+            var removed = new List<string>();
+            foreach (var g in AssetDatabase.FindAssets("Island_ t:Mesh", new[] { "Assets/FarmAnimals/Demo/Meshes" }))
+            {
+                var p = AssetDatabase.GUIDToAssetPath(g);
+                var n = Path.GetFileNameWithoutExtension(p).Substring(7);
+                if (Shots.Any(s => s.Name == n) || Videos.Any(s => s.Name == n) || n == "10_AllAnimals") { AssetDatabase.DeleteAsset(p); removed.Add(n); }
+            }
+            foreach (var m in new[] { "M_Demo_Dirt", "M_Demo_Water" })
+                if (AssetDatabase.DeleteAsset($"Assets/FarmAnimals/Demo/Materials/{m}.mat")) removed.Add(m);
+            var log = BuildAll();
+            return $"removed {removed.Count}: {string.Join(", ", removed)}\n{log.Split('\n')[0]}";
+        }
+
         private static readonly Dictionary<string, string> PrefabPaths = new Dictionary<string, string>();
         private static GameObject Prefab(string name)
         {
@@ -190,14 +207,14 @@ namespace FarmAnimals.Editor
             var rz = Mathf.Max(s.Rz, s.Items.Max(i => Mathf.Abs(i.P.z)) + 3f);
             var k = s.Items.Max(i => Mathf.Sqrt(Mathf.Pow(i.P.x / rx, 2f) + Mathf.Pow(i.P.z / rz, 2f))) / 0.8f;   // elliptic top: corners too
             if (k > 1f) { rx *= k; rz *= k; }
-            var island = FarmAnimalsDemoBuilder.Island(s.Name, world, rx, rz, out _, 0f);
+            var island = FarmAnimalsDemoBuilder.Island(s.Name, world, rx, rz, out _, 0f, MeshDir);
             if (s.Dirt > 0f)
             {
                 var dirt = new GameObject("DirtYard");
                 dirt.transform.SetParent(island, false);
                 dirt.transform.localPosition = s.DirtAt + Vector3.up * 0.006f;
                 dirt.AddComponent<MeshFilter>().sharedMesh = PatchMesh(s.Name, s.Dirt);
-                dirt.AddComponent<MeshRenderer>().sharedMaterial = FarmAnimalsDemoBuilder.Lit("M_Demo_Dirt", new Color(0.70f, 0.52f, 0.33f));
+                dirt.AddComponent<MeshRenderer>().sharedMaterial = FarmAnimalsDemoBuilder.Lit("M_Shot_Dirt", new Color(0.70f, 0.52f, 0.33f), "Assets/_Presentation/Materials");
             }
             if (s.Water > 0f)
             {
@@ -205,7 +222,7 @@ namespace FarmAnimals.Editor
                 water.transform.SetParent(island, false);
                 water.transform.localPosition = s.WaterAt + Vector3.up * 0.012f;
                 water.AddComponent<MeshFilter>().sharedMesh = PatchMesh("Water_" + s.Name, s.Water);
-                var wm = FarmAnimalsDemoBuilder.Lit("M_Demo_Water", new Color(0.33f, 0.62f, 0.86f));
+                var wm = FarmAnimalsDemoBuilder.Lit("M_Shot_Water", new Color(0.33f, 0.62f, 0.86f), "Assets/_Presentation/Materials");
                 wm.SetFloat("_Smoothness", 0.75f);
                 water.AddComponent<MeshRenderer>().sharedMaterial = wm;
             }

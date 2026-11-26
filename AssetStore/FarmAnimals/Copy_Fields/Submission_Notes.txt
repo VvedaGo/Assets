@@ -1,0 +1,7 @@
+Farm Animals is an animated art package: 35 FBX animals with Generic rigs, 113 in-place clips stored in the FBX files, 35 Animator Controllers and 35 animal prefabs, plus 8 composition prefabs that reuse the animal prefabs. Supplied materials use URP/Lit.
+
+The prefabs carry one small runtime component, FarmAnimalEvents, which receives the clips' animation events (without it Unity would log "AnimationEvent has no receiver"). The demo script FarmAnimalDemo is only used by the two demo scenes; both scripts have their own assembly definitions and no package dependencies.
+
+29 of the 35 animals are made of several skinned part meshes sharing one material; this is stated in Technical Details.
+
+Some store images show buildings and plants from the publisher's Farm Yard and Farm Nature packs as set dressing; the images say "not included". The icon is an AI-generated illustration; see the AI disclosure.

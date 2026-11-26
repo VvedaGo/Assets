@@ -56,7 +56,14 @@ Demo scenes
 - FarmAnimalDemo is demo code only; delete the Demo folder if you do not need it.
 
 Technical details
-- Rig: Generic avatar per animal; bones stay visible in the hierarchy (attach props to "Head" etc.).
+- Rig: Generic avatar per animal, 15-29 bones; bones stay visible in the hierarchy (attach props to "Head" etc.).
+- Meshes: cow, bull, calf, horse, foal and donkey are one skinned mesh; the other animals are built from 16-33
+  skinned part meshes that share one material.
 - Triangles: 400 - 2400 per animal (see ImportReport.txt). No LODs.
 - Materials: URP/Lit, one 256x256 atlas per animal, GPU instancing enabled.
 - Scale: 1 unit = 1 m, Y up, the models face +Z, the pivot is on the ground.
+- Colliders: one CapsuleCollider per animal, fitted to the rest pose (it does not follow the animation).
+
+Version and support
+- Version 1.0.0, see Changelog.txt.
+- Support: sergvved@gmail.com (please include your Unity and URP versions and a short description of the issue).

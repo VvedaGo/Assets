@@ -1,0 +1,54 @@
+ASSETS AND PREFABS
+35 FBX models (one animal each) and 35 animal prefabs; 8 composition prefabs that reuse the animal prefabs (Art/Prefabs/CMP). No color variants. 43 prefabs in total.
+
+POLYGON COUNT
+406-2,424 triangles per animal, mean 1,366, total 47,816 across the 35 models (each counted once; repeated animals in compositions are not counted again). Measured from the imported Unity meshes.
+Livestock: 13 models, 1,144-2,424 triangles, 22,998 total.
+Birds: 10 models, 406-1,442 triangles, 9,606 total.
+Pets: 4 models, 1,362-1,924 triangles, 6,534 total.
+Small animals: 5 models, 906-1,720 triangles, 5,936 total.
+Insects: 3 models, 810-1,028 triangles, 2,742 total.
+
+MESHES AND RENDERERS
+Cow, bull, calf, horse, foal and donkey are one skinned mesh each. The other 29 animals are built from 16-33 separate skinned part meshes (head, ears, legs...) that share one material. Plan draw calls for large herds accordingly.
+
+LODS
+None.
+
+TEXTURES
+35 PNG Base Color atlases, 256 x 256, RGB, one per animal. Point filtering, no mipmaps, uncompressed. No normal, metallic, roughness, occlusion or emission maps. The demo uses no texture files.
+
+MATERIALS AND SHADERS
+35 materials using Universal Render Pipeline/Lit, one per animal (GPU instancing enabled).
+Demo only: 5 materials (4 URP/Lit for grass, soil, rock and clouds; 1 Skybox/Procedural), 14 generated mesh assets (islands, cloud) and 1 URP Volume profile (tonemapping, color adjustments, white balance, bloom, vignette).
+
+UVS
+One UV channel per mesh, laid out on the palette atlas. No lightmap UVs.
+
+RIGGING AND ANIMATIONS
+Generic rig and Generic avatar per animal, 15-29 bones; bones stay visible in the hierarchy for attachments.
+113 animation clips (109 looping, 4 one-shot), 30 fps, in place, stored inside the FBX files:
+Cow 14 (Idle, Idle_Look, Walk, Run, Eat, Drink, Graze, Lie_Down, Lie_Idle, Sleep, Stand_Up, Moo, Tail_Swish, Hit_React).
+Calf, Cat, Fox: Idle, Walk, Lie_Idle. Bull: Idle, Walk, Paw_Ground. Horse, Donkey, Ram, Sheep, Goose: Idle, Walk, Graze. Foal: Idle, Walk, Trot. Goat: Idle, Walk, Browse. Lamb, Kid: Idle, Walk, Play_Hop. Pig, Piglet: Idle, Walk, Root. Hen, Chick: Idle, Walk, Peck. Rooster: Idle, Walk, Crow. Turkey: Idle, Walk, Display. Duck, Duckling: Idle, Walk, Swim. Pigeon: Idle, Peck, Fly. Sparrow: Idle, Hop, Fly. Crow: Idle, Walk, Fly. Dog: Idle, Walk, Sit_Idle. Puppy: Idle, Trot, Play_Bow. Kitten: Idle, Walk, Pounce. Rabbit: Idle, Hop, Nibble. Mouse: Idle, Scurry, Nibble. Hedgehog: Idle, Walk, Curl_Up. Frog: Idle, Jump. Bee: Fly, On_Flower. Butterfly: Fly, Perch_Idle. Ladybug: Idle, Crawl, Fly.
+182 animation events in the clips (Footstep, Peck, Flap, WingFlap, Paddle, Land, Takeoff, Jump, Sniff, Nibble, Curl, Paw, Pounce, Display, Vocal); FarmAnimalEvents receives them.
+35 Animator Controllers: Locomotion blend tree by the float "Speed" plus one bool parameter per extra clip.
+
+COLLIDERS
+One CapsuleCollider per animal prefab (35), fitted to the rest pose along the body; it does not follow the animation.
+
+SCALE AND SETUP
+1 unit = 1 m, Y up, the animals face +Z, pivot on the ground. Sizes follow the stylized proportions of the models (big heads), for example cow 2.66 m long and 1.81 m to the top of the head, horse 2.97 x 2.39 m, dog 1.15 x 1.15 m, chick 0.13 x 0.15 m. Insects are enlarged: bee 0.08 m, butterfly 0.16 m, ladybug 0.05 m. Prefab names use the FMS_ prefix.
+
+FILES AND SOURCES
+Assets/FarmAnimals: 35 FBX, 35 PNG, 35 materials, 35 Animator Controllers, 43 prefabs, 2 scenes, 2 scripts with their assembly definitions, documentation (GettingStarted.txt, ImportReport.txt, Changelog.txt). No Blender source files, audio or video.
+
+DEMO AND SCRIPTS
+Demo_FarmAnimals_Showcase.unity and Demo_FarmAnimals_Compositions.unity (Demo/Scenes); press Play to see the animations. Floating islands and the cloud are 14 generated mesh assets (Demo/Meshes). No camera controller and no input handling; each island has a disabled shot camera.
+FarmAnimalEvents (runtime, assembly FarmAnimals.Runtime): receives the clip events and raises C# events.
+FarmAnimalDemo (demo only, assembly FarmAnimals.Demo): cycles the clips, wanders or patrols. Not needed in a game.
+
+COMPATIBILITY AND DEPENDENCIES
+Created and tested in Unity 6000.3.10f1 with Universal Render Pipeline 17.3.0 (demo scenes played in the Editor without errors). URP is required for the supplied materials. No other packages; the scripts do not use the Input System. Other Unity versions, Built-in and HDRP are not supported or tested; player builds and mobile performance have not been tested.
+
+PACKAGE SIZE
+Version 1.0.0 test export of Assets/FarmAnimals: 9,570,046 bytes (9.13 MiB).

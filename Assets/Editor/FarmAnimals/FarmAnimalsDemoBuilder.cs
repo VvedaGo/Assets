@@ -373,14 +373,14 @@ namespace FarmAnimals.Editor
         }
 
         // ---------------- island + clouds ----------------
-        internal static Transform Island(string name, Transform world, float rx, float rz, out float radiusX, float relief = 0.06f)
+        internal static Transform Island(string name, Transform world, float rx, float rz, out float radiusX, float relief = 0.06f, string meshDir = MeshDir)
         {
             radiusX = rx;
             var island = new GameObject($"Island_{name}").transform;
             island.SetParent(world, false);
             var ground = new GameObject("IslandGround");
             ground.transform.SetParent(island, false);
-            ground.AddComponent<MeshFilter>().sharedMesh = IslandMesh(name, rx, rz, relief);
+            ground.AddComponent<MeshFilter>().sharedMesh = IslandMesh(name, rx, rz, relief, meshDir);
             ground.AddComponent<MeshRenderer>().sharedMaterials = new[] { _grass, _soil, _rock };
             ground.AddComponent<MeshCollider>();
 
@@ -404,7 +404,7 @@ namespace FarmAnimals.Editor
         }
 
         /// <summary>Faceted floating island: flat grass top at y = 0, a soil band, a rocky cone underneath. 3 submeshes.</summary>
-        internal static Mesh IslandMesh(string name, float rx, float rz, float relief = 0.06f)
+        internal static Mesh IslandMesh(string name, float rx, float rz, float relief = 0.06f, string meshDir = MeshDir)
         {
             var rnd = new System.Random(name.GetHashCode() ^ 0x5bd1);
             const int n = 20;
@@ -444,7 +444,8 @@ namespace FarmAnimals.Editor
                 Quad(2, rock1[k], rock1[j], rock2[j], rock2[k]);
                 Tri(2, rock2[k], rock2[j], tip);
             }
-            var path = $"{MeshDir}/Island_{name}.asset";
+            Directory.CreateDirectory(meshDir);
+            var path = $"{meshDir}/Island_{name}.asset";
             var mesh = AssetDatabase.LoadAssetAtPath<Mesh>(path);
             if (mesh == null) { mesh = new Mesh(); AssetDatabase.CreateAsset(mesh, path); }
             mesh.Clear();
@@ -520,9 +521,10 @@ namespace FarmAnimals.Editor
             _cloudMesh = null;
         }
 
-        internal static Material Lit(string name, Color color)
+        internal static Material Lit(string name, Color color, string dir = MatDir)
         {
-            var m = LoadOrCreate($"{MatDir}/{name}.mat", "Universal Render Pipeline/Lit");
+            Directory.CreateDirectory(dir);
+            var m = LoadOrCreate($"{dir}/{name}.mat", "Universal Render Pipeline/Lit");
             m.SetColor("_BaseColor", color);
             m.SetFloat("_Smoothness", 0.05f);
             m.SetFloat("_Metallic", 0f);
