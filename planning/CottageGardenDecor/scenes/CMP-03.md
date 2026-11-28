@@ -40,3 +40,16 @@ Match exactly the warm off-white square background, clipped grass slab, 40° dow
 ## Fixes
 
 <!-- The render reviewer appends fix sections. -->
+
+## Fix 1 (2026-11-26, review renders_2)
+Problem: the gazebo group is 54 % of the width, the lower ~35 % of the frame is empty lime lawn (plinth front margin ~4 m), items on the left and right are small.
+- Plinth: crop to the group bounding box + 0.7 m on the left/right/back and +1.0 m in front (front margin now ~4 m); the plinth should take 85-90 % of the frame width, the lowest plinth pixel at 88-92 % of the height, the gazebo finial at 5-7 % of the height.
+- Camera: same angle (30 deg off-axis, 36 deg down); distance/vFOV so the group (gazebo + arbor + obelisk + bed + topiary) is 62-68 % of the width; if the gazebo hits the frame height first, accept 60 %.
+- Fill the plinth edge zones only with items from the composition (move bed and topiaries 0.5-1 m closer to the gazebo); no extra items.
+- Lawn/backdrop/look: see renders_2.md "Vignette rules" (lawn lit ~#86C24A, backdrop warm #EFEBE4).
+
+## Fix 2 (2026-11-26, review renders_2 pass 2)
+Reviewer decision (framing policy): keep the 16:9 frame, the angle (30 deg off-axis, 36 deg down) and the composition prefab unchanged. Fix the plinth (demo asset, scaled per vignette in the wrapper), not the prefab.
+- Plinth: front margin (gazebo steps to the plinth front edge) 1.0 m, now ~3.5 m (about 400 px of 1080); left margin 0.7 m, right 0.7 m, back 0.7 m. Result plinth ~ 8.0 x 5.5 m; the plinth centre moves to the group centre.
+- Camera: once the plinth is shorter, move the camera closer (dolly, not FOV change) until the finial is at 5-6 % of the height and the plinth bottom at 90-93 %: expected zoom x1.25-1.3, group 60-64 % of the width, plinth 80-86 %.
+- Acceptance: plinth area not occupied by items <= 45 %; no lawn band in front of the gazebo steps taller than 12 % of the frame height.

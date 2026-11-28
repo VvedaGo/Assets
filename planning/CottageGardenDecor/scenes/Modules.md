@@ -43,3 +43,17 @@ Make a surgical edit to the existing first image preserving the camera, all five
 ## Fixes
 
 <!-- The render reviewer appends fix sections. -->
+
+## Fix 1 (2026-11-26, review renders_2)
+Problem: five systems are placed 2-4 m apart on one long plinth; the pergola and the pond are readable but the pond, wall, ring and lattice are small and the middle of the plinth is empty lime lawn (about 45 % of the plinth area). The brick ring is an empty ring on bare grass (acceptable as a module demo).
+- Layout (demo only): keep the arrangement but reduce gaps between systems to 0.8-1.2 m; target plinth 88-92 % of the frame width, lowest plinth pixel at 90 % of the height, empty lawn <= 25 % of the plinth.
+- Arrangement: back row pergola (right) + two-part wall (left); front row pond (left), ring (centre), lattice (right), as now; move the ring 1 m closer to the pond and lattice, wall 1 m closer to the pergola.
+- Camera: closer so the plinth is 88-92 % of the width; elevation 40-43 deg down (Modules.md: 43 deg, SE); keep vFOV 32-35.
+- Backdrop per Modules.md: warm light neutral #F5F1E9 (assembler used #E5E4E2; use #EFEBE4 as a compromise for contrast with the white lattice/stone), lawn as in renders_2.md "Vignette rules".
+
+## Fix 2 (2026-11-26, review renders_2 pass 2)
+Items are readable at 75 % of the width, but ~35 % of the plinth is empty lawn: back-left (above the pond/wall), the centre between the ring and the pergola, and the right-front corner. Reviewer decision: fix by tightening the demo arrangement (placement of the five systems on the plinth, not the systems themselves) and the plinth outline.
+- Move the wall 1.0 m towards the pergola and the pond 0.8 m right/back (towards the wall); move the ring 1.0 m right and 0.5 m back (towards the lattice); the lattice 0.5 m left. Gaps between systems 0.8-1.2 m.
+- Plinth: left/back/right margins 0.7 m, front 0.9 m (outline follows the group, rounded rectangle, bounding ~ 14.5 x 8.5 m instead of the current ~17 x 10 m).
+- Camera: dolly closer to get plinth 84-88 % of the width, pergola top at 5-6 %, plinth bottom at 92 %.
+- Acceptance: empty lawn <= 25 % of the plinth area; every system >= 12 % of the frame width (lattice and ring are now ~11 %).

@@ -1,0 +1,76 @@
+categories: 3D | 2D | Animation | Essentials | Templates | VFX | VFX/Shaders | Audio
+status=RanToCompletion compileErrors=False ex=
+TEST Check Animation Clips | raw=Pass | 3D=Pass
+   MSG No animation clips with invalid names were found!
+TEST Check Audio Clipping | raw=Pass | 3D=Pass
+   MSG No clipping audio files were detected.
+TEST Check Colliders | raw=Pass | 3D=Pass
+   MSG All found prefabs have colliders!
+TEST Check Compressed Files | raw=Pass | 3D=Pass
+   MSG No archives were found in the package content!
+TEST Check Empty Prefabs | raw=Pass | 3D=Pass
+   MSG No empty prefabs were found!
+TEST Check External Dependency Manager | raw=Pass | 3D=Pass
+   MSG Google's External Dependency Manager (EDM4U) was not found in your package.
+TEST Check File Menu Names | raw=Pass | 3D=Pass
+   MSG No MenuItems with invalid names were found!
+TEST Check Line Endings | raw=Pass | 3D=Pass
+   MSG No scripts with inconsistent line endings were found!
+TEST Check LODs | raw=Pass | 3D=Pass
+   MSG All found prefabs are meeting the LOD requirements!
+TEST Check Mesh Prefabs | raw=Pass | 3D=Pass
+   MSG All found prefabs have meshes!
+TEST Check Missing Components in Assets | raw=Pass | 3D=Pass
+   MSG No assets have missing components!
+TEST Check Missing Components in Scenes | raw=Pass | 3D=Pass
+   MSG No missing components were found!
+TEST Check Model Import Logs | raw=Pass | 3D=Pass
+   MSG No issues were detected when importing your models!
+TEST Check Model Orientation | raw=Pass | 3D=Pass
+   MSG All found models are facing the right way!
+TEST Check Model Types | raw=Pass | 3D=Pass
+   MSG All models are of allowed formats!
+TEST Check Normal Map Textures | raw=Pass | 3D=Pass
+   MSG All normal map textures have the correct texture type!
+TEST Check Package Naming | raw=Pass | 3D=Pass
+   MSG All package asset names are valid!
+TEST Check Particle Systems | raw=Pass | 3D=Pass
+   MSG No Particle Systems without Prefabs were found!
+TEST Check Path Lengths | raw=Pass | 3D=Pass
+   MSG All package content matches the path limit criteria!
+TEST Check Prefab Transforms | raw=Pass | 3D=Pass
+   MSG All found prefabs were reset!
+TEST Check Script Compilation | raw=Pass | 3D=Pass
+   MSG All scripts in the project compiled successfully!
+TEST Check Shader Compilation | raw=Pass | 3D=Pass
+   MSG All found Shaders have no compilation errors!
+TEST Check SRP Compatible Materials | raw=Pass | 3D=Pass
+   MSG All shaders used by package materials and all shader files in the package are SRP-compatible.
+TEST Check Static Variables | raw=Pass | 3D=Pass
+   MSG No static variables or events were found!
+TEST Check Texture Dimensions | raw=Pass | 3D=Pass
+   MSG All texture dimensions are a power of 2!
+TEST Check Type Namespaces | raw=Pass | 3D=Pass
+   MSG All scripts contain valid namespaces!
+TEST Remove Executable Files | raw=Pass | 3D=Pass
+   MSG No executable files were found!
+TEST Remove JavaScript Files | raw=Pass | 3D=Pass
+   MSG No UnityScript / JS files were found!
+TEST Remove JPG Files | raw=Pass | 3D=Pass
+   MSG No JPG/JPEG textures were found!
+TEST Remove Lossy Audio Files | raw=Pass | 3D=Pass
+   MSG No lossy audio files were found!
+TEST Remove Mixamo Files | raw=Pass | 3D=Pass
+   MSG No Mixamo files were found!
+TEST Remove SpeedTree Files | raw=Pass | 3D=Pass
+   MSG No SpeedTree assets have been found!
+TEST Remove Video Files | raw=Pass | 3D=Pass
+   MSG No video files were found, looking good!
+TEST Check Demo Scenes | raw=Pass | 3D=Pass
+   MSG Demo scenes found [Assets/CottageGardenDecor/Demo/Scenes/Demo_Catalog.unity:Demo_Catalog; Assets/CottageGardenDecor/Demo/Scenes/Demo_Compositions.unity:Demo_Compositions; Assets/CottageGardenDecor/Demo/Scenes/Demo_CottageGarden.unity:Demo_CottageGarden]
+TEST Check Documentation | raw=Pass | 3D=Pass
+   MSG Found documentation files [Assets/CottageGardenDecor/Documentation/README.txt:README]
+TEST Check Package Size | raw=Pass | 3D=Pass
+   MSG Your package does not exceed the maximum allowed package size!
+TEST Check Project Template Assets | raw=Pass | 3D=Pass
+   MSG No common assets that might cause asset clashing were found!

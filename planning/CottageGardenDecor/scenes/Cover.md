@@ -47,3 +47,11 @@ Edit the first reference into the cover staging shot for the SAME garden layout 
 ## Fixes
 
 <!-- The render reviewer appends fix sections. -->
+
+## Fix 1 (2026-11-26, review renders_1)
+Problem: plate area is fine (free 24 %, island lowest point at 76 %: keep) but the garden is tiny and sparse: ~45 % of the island top is empty lawn (front left, front right, band behind the pond, below the path end), the gazebo is ~9 % of the frame width and its apex is 3 % from the top edge. It reads as a small island on a big sky, not as a cover.
+- Island: same rebuild as Hero Fix 1 (top ~18 x 13.5 m, path scaled, garden >= 80 % of the top).
+- Camera: keep the plate rule (every island/pack pixel above y = 988 px of 1300, band 988-1300 px empty sky). Closer, vFOV 30-32: island 90-94 % of 1950 px (x 3-97 %), lowest point at 74-76 %. Gazebo apex at 8-10 % of the height (now 3 %), gazebo 14-16 % of the width, x centre 50 +- 3 % (the social crop 1200x630 must contain gazebo and the path start). Top sky margin 6-8 % with 3-4 clouds not touching the gazebo.
+- Angle: Cover.md says ENE; the assembler used SSW because the gazebo entrance faces SW (ENE shows its back). SSW is accepted, update the camera line here; keep it 30-40 deg yaw away from Hero.
+- Densify as in Hero Fix 1. Move CMP-01 and CMP-06 2-3 m towards the front edge; the front 20 % of the island top holds >= 3 readable items.
+- Lawn colour as Hero Fix 1. Nothing (clouds, items) below y = 76 %.

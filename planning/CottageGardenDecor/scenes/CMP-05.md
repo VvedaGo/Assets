@@ -41,3 +41,16 @@ Precisely restage the first image with the same square composition, aim 40° dow
 ## Fixes
 
 <!-- The render reviewer appends fix sections. -->
+
+## Fix 1 (2026-11-26, review renders_2)
+Problem: pond 68 % of the width is good, but the right half and the front (~30 % of the frame) are empty lime lawn; the composition (pond, wall, stela, arch, ivy, urn) is spread over a plinth about 1.6x too large; arch is at the far right edge of the group.
+- Plinth: group bounding box + 0.7 m left/right/back, +1.0 m front (now ~3 m front, ~2.5 m right of the arch pillars); lowest plinth pixel at 88-92 % of the height, plinth 85-90 % of the width.
+- Camera: closer so the group (wall + arch + pond) is 75-80 % of the width (the arch top must stay >= 5 % below the frame top); keep angle 30 deg off-axis, 36 deg down.
+- Optional: move the iron arch 0.5 m towards the pond (only if the CMP-05 snap contract allows; otherwise keep).
+- Lawn/backdrop/look: as in renders_2.md "Vignette rules".
+
+## Fix 2 (2026-11-26, review renders_2 pass 2)
+Reviewer decision: same policy as CMP-03 Fix 2 (16:9, same angle, prefab unchanged; fix the plinth and dolly the camera).
+- Plinth: front margin (pond front wall to plinth edge) 1.0 m, now ~3 m (about 330 px); right margin (arch pillar to plinth edge) 0.8 m, now ~2 m; left/back 0.7 m. Plinth ~ 7.0 x 5.0 m.
+- Camera: dolly closer so the arch top is at 5-6 % of the height and the plinth bottom at 90-93 %; expected zoom x1.25, group (wall + arch + pond) 72-78 % of the width, plinth 82-88 %.
+- Acceptance: empty lawn in front of the pond <= 12 % of the frame height; the arch is fully inside the frame with >= 3 % margin to the right edge.

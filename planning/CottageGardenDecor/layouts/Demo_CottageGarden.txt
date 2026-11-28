@@ -1,0 +1,190 @@
+# Demo_CottageGarden — garden 18 x 13.5 m (x -9..9, z -6.75..6.75) on the rebuilt demo island (Э10, Fix 1 renders_1). Layout space = world: x east, z north, camera at -z.
+# Lawn top = y 0, so every pack item passes y explicitly. Built by CottageGardenDecorDemoScene.Build (menu
+# Tools/Cottage Garden Decor/Build Demo Scene): PackSceneBuilder first, then the '#!' environment lines below.
+# Map (zones, scenes/Hero.md): SW CMP-01 entrance · SE CMP-06 wildlife lawn · W CMP-02 pergola · E CMP-04 parterre ·
+# NW CMP-05 pond corner · N/NE CMP-03 gazebo (faces S, steps on the last path segment, path tip under its deck).
+
+# ---- environment (CottageGardenDecorDemoScene) ----
+#! island
+#! sun 0.62 -0.80 0.55 1.95   # intensity informative: the key intensity comes from CottageGardenDecorLook
+#! sky
+# clouds per shot: #! cloud <shot> <A..E> u v dist scale rotY   (viewport u,v 0..1 from the bottom left, dist m along the ray)
+#! cloud Hero A 0.15 0.92 46 0.75 10
+#! cloud Hero C 0.84 0.93 46 0.75 -15
+#! cloud Hero D 0.04 0.62 42 0.65 0
+#! cloud Hero B 0.97 0.66 42 0.65 20
+#! cloud Cover A 0.10 0.95 46 0.60 0
+#! cloud Cover C 0.30 0.97 48 0.55 20
+#! cloud Cover B 0.72 0.97 48 0.55 -10
+#! cloud Cover D 0.91 0.94 46 0.60 10
+#! cloud AltView C 0.78 0.95 44 0.55 15
+#! cloud AltView E 0.94 0.86 42 0.55 -10
+
+# ---- shots (before the first comp: relative to the world origin) ----
+shot Hero 2.58 17.44 -21.98 -0.3 0 -1.4 31 1920 1080
+shot Cover -10.3 14.83 -28.33 -1.52 0 -4.19 31 1950 1300
+shot AltView -9.43 12.32 20.18 -1.42 0 3.0 33 1920 1080
+
+# ---- free items between the compositions (world) ----
+FLB-02 1.9 -1.75 0 0
+FLB-01 8.25 -6.05 60 0
+FLB-03 -1.8 0.95 0 0
+STR-01_White 7.9 5.9 0 0
+STR-07_White 9.0 4.5 0 0
+FUR-03_White 7.4 4.6 0 0
+FUR-04_White 8.0 4.4 80 0
+# Fix 1 densify (allowed free pack items, compositions unchanged in count)
+FLB-01_Planted 0.1 -4.0 90 0
+FLB-01_Planted 2.4 0.5 90 0
+TOP-02 -9.1 -3.65 0 0
+TOP-02 8.9 -4.4 0 0
+TOP-01 9.2 5.6 0 0
+TOP-01 -0.9 6.9 0 0
+PLT-01 -0.15 -6.6 20 0
+PLT-01_Pink 0.15 -5.5 -10 0
+PLT-01_White -3.7 -6.85 0 0
+TOP-04 1.1 -3.15 0 0
+TOP-04 8.8 -2.6 0 0
+
+# ---- CMP-01 RoseArchEntrance (13): gate arch on the approach, beds and bushes both sides, edging rows, gnome ----
+comp Comp_RoseArchEntrance -5.9 -6.6
+STR-01_Gate 0 1.9 0 0
+PLT-02 -0.72 1.9 90 0
+PLT-02 0.72 1.9 -90 0
+PLT-03 0 1.9 0 2.40
+FLB-01_Planted -1.9 0.95 0 0
+FLB-01_Planted 1.9 0.95 0 0
+PLT-01 -1.9 2.05 0 0
+PLT-01_Pink 1.9 2.05 0 0
+MOD-05 -0.52 0.3 90 0
+MOD-05 -0.52 1.3 90 0
+MOD-05 0.52 0.3 90 0
+MOD-05 0.52 1.3 90 0
+ORN-02 1.15 0.15 -20 0
+
+# ---- CMP-02 PergolaTerrace (17): pergola + bay, 4 wisteria under the front beam, pink garland, bistro, screen, urns ----
+comp Comp_PergolaTerrace -6.1 -3.0
+STR-04 -1.5 2.0 0 0
+STR-05 0 2.0 180 0   # rot 180: PackSceneBuilder turns every item 180, the bay must extend to +X
+PLT-05 -2.15 0.5 0 2.24
+PLT-05 -0.85 0.5 0 2.24
+PLT-05 0.85 0.5 0 2.24
+PLT-05 2.15 0.5 0 2.24
+PLT-03_Pink -1.5 0.5 0 2.46
+FUR-03 0 2.0 0 0
+FUR-04 -0.75 2.0 -60 0
+FUR-04 0.75 2.0 60 0
+MOD-02 -2 3.85 0 0
+MOD-01 -1 3.85 0 0
+MOD-02 0 3.85 0 0
+MOD-01 1 3.85 0 0
+MOD-02 2 3.85 0 0
+ORN-03_Planted -3.2 0.0 0 0
+ORN-03_Planted 3.2 0.0 0 0
+
+# ---- CMP-03 GazeboRetreat (14): gazebo facing the front (steps at local z 1.9), rose arch along the path, flowers both flanks ----
+comp Comp_GazeboRetreat 2.0 1.75
+STR-06 0 3.9 90 0
+STR-01 -0.8 0.9 35 0
+PLT-02_Pink -1.39 1.31 125 0
+PLT-02_Pink -0.21 0.49 -55 0
+FLB-03_Planted 2.8 4.65 0 0
+PLT-01_White -2.3 2.75 0 0
+PLT-01_White 2.3 2.85 0 0
+PLT-06 4.0 3.15 0 0
+PLT-06 -3.0 4.05 0 0
+PLT-06_White -3.5 3.15 0 0
+TOP-02 1.6 5.45 0 0
+TOP-02 -2.0 4.85 0 0
+TOP-03 4.5 4.55 0 0
+TOP-03 -3.7 5.0 0 0
+
+# ---- CMP-04 FountainParterre (33): ring 6 x 6 by axis (4 straight per side + 4 arcs), 4 L beds, 4 cones, 4 rose standards ----
+comp Comp_FountainParterre 6.2 -2.1
+WTR-01 0 3 0 0
+FLB-02_Planted -1.6 1.4 180 0
+FLB-02_Planted 1.6 1.4 90 0
+FLB-02_Planted -1.6 4.6 -90 0
+FLB-02_Planted 1.6 4.6 0 0
+TOP-01_Rose -1.2 1.95 0 0
+TOP-01_Rose 1.2 1.95 0 0
+TOP-01_Rose -1.2 4.05 0 0
+TOP-01_Rose 1.2 4.05 0 0
+TOP-02 0 0.75 0 0
+TOP-02 0 5.25 0 0
+TOP-02 -2.2 3.0 0 0
+TOP-02 2.2 3.0 0 0
+MOD-05 -1.5 0 0 0
+MOD-05 -0.5 0 0 0
+MOD-05 0.5 0 0 0
+MOD-05 1.5 0 0 0
+MOD-05 -1.5 6 0 0
+MOD-05 -0.5 6 0 0
+MOD-05 0.5 6 0 0
+MOD-05 1.5 6 0 0
+MOD-05 -3 1.5 90 0
+MOD-05 -3 2.5 90 0
+MOD-05 -3 3.5 90 0
+MOD-05 -3 4.5 90 0
+MOD-05 3 1.5 90 0
+MOD-05 3 2.5 90 0
+MOD-05 3 3.5 90 0
+MOD-05 3 4.5 90 0
+MOD-06 -2 1 0 0
+MOD-06 -2 5 90 0
+MOD-06 2 5 180 0
+MOD-06 2 1 -90 0
+
+# ---- CMP-05 WalledPondCorner (33): L wall (2 segments per arm), 4 pillars, iron arch in the gap, stela, ivy, pond 3 x 2, urn ----
+comp Comp_WalledPondCorner -5.85 2.15
+MOD-03 -3 1.4 90 0
+MOD-03 -3 3.4 90 0
+MOD-03 -2 4.4 0 0
+MOD-03 0 4.4 0 0
+MOD-04 -3 0.4 0 0
+MOD-04 -3 4.4 0 0
+MOD-04 1 4.4 0 0
+MOD-04 3 4.4 0 0
+STR-02 2 4.4 0 0
+WTR-02 -2.78 3.2 -90 0
+PLT-04 -2 4.179 0 0
+PLT-04 -2.779 1.4 -90 0
+MOD-09 -1 1.1 0 0
+MOD-09 0 1.1 0 0
+MOD-09 1 1.1 0 0
+MOD-09 -1 2.1 0 0
+MOD-09 0 2.1 0 0
+MOD-09 1 2.1 0 0
+MOD-07 -1 0.6 180 0
+MOD-07 0 0.6 180 0
+MOD-07 1 0.6 180 0
+MOD-07 -1 2.6 0 0
+MOD-07 0 2.6 0 0
+MOD-07 1 2.6 0 0
+MOD-07 -1.5 1.1 -90 0
+MOD-07 -1.5 2.1 -90 0
+MOD-07 1.5 1.1 90 0
+MOD-07 1.5 2.1 90 0
+MOD-08 -1.5 0.6 180 0
+MOD-08 1.5 0.6 90 0
+MOD-08 1.5 2.6 0 0
+MOD-08 -1.5 2.6 -90 0
+ORN-03 -2.2 -0.1 0 0
+
+# ---- CMP-06 WildlifeLawn (15): swing, obelisk, arbor bench, tiered topiaries at the back; hammock, deck chairs; bird corner ----
+comp Comp_WildlifeLawn 4.4 -7.5
+FUR-01 -1.7 3.8 0 0
+STR-07 0.2 4.1 0 0
+STR-03 1.9 4.0 0 0
+TOP-04 -3.4 2.9 0 0
+TOP-04 3.4 3.4 0 0
+FUR-02 -1.8 1.9 0 0
+FUR-05 -0.75 0.7 5 0
+FUR-05_Blue 0.2 0.7 -5 0
+TOP-01 0.3 2.6 0 0
+ORN-05 1.1 2.7 0 0
+ORN-05_Feeder 1.8 2.7 0 0
+WTR-03 2.3 1.8 0 0
+ORN-04 2.75 2.45 -20 0
+ORN-01 1.6 0.9 0 0
+ORN-02_Blue 0.95 0.35 -15 0

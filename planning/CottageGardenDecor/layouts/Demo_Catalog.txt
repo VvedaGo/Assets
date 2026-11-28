@@ -1,0 +1,73 @@
+# Demo_Catalog — shipped catalogue scene (CATALOG «Демо-сцены»): all 60 single prefabs and 6 composition prefabs in rows by
+# category, with ID labels (TextMesh, flat on the floor in front of each item). Built by CottageGardenDecorCatalogScene.BuildCatalog.
+#! labels
+#! floor -30 -40 30 6
+# ---- all 60 prefabs, one row per category (base followed by its variants; STR-04 + STR-05 assembled) ----
+STR-01 -12.080 -3.230 0 0
+STR-01_White -9.680 -3.230 0 0
+STR-01_Gate -7.280 -3.230 0 0
+STR-02 -4.940 -3.350 0 0
+STR-03 -2.500 -3.180 0 0
+STR-04 0.950 -1.830 0 0
+STR-05 2.450 -1.830 180 0
+STR-06 8.080 -1.790 0 0
+STR-07 11.180 -3.280 0 0
+STR-07_White 12.580 -3.280 0 0
+MOD-01 -6.740 -6.200 0 0
+MOD-02 -4.920 -6.150 0 0
+MOD-03 -3.040 -6.010 0 0
+MOD-04 -0.990 -5.980 0 0
+MOD-05 0.560 -6.180 0 0
+MOD-06 2.910 -5.180 0 0
+MOD-07 4.210 -6.230 0 0
+MOD-08 5.510 -6.230 0 0
+MOD-09 7.180 -5.730 0 -0.34
+FLB-01 -7.000 -9.330 0 0
+FLB-01_Planted -4.200 -9.330 0 0
+FLB-02 -1.400 -8.830 0 0
+FLB-02_Planted 1.400 -8.830 0 0
+FLB-03 4.200 -8.830 0 0
+FLB-03_Planted 7.000 -8.830 0 0
+WTR-01 -1.550 -12.845 0 0
+WTR-02 0.900 -13.455 0 0
+WTR-03 2.450 -13.745 0 0
+ORN-01 -4.500 -16.015 0 0
+ORN-02 -3.350 -16.105 0 0
+ORN-02_Blue -2.310 -16.105 0 0
+ORN-03 -1.090 -15.945 0 0
+ORN-03_Planted 0.310 -15.945 0 0
+ORN-04 1.710 -16.055 0 0
+ORN-05 2.930 -16.105 0 0
+ORN-05_Feeder 4.280 -16.095 0 0
+FUR-01 -6.130 -18.615 0 0
+FUR-02 -2.560 -18.915 0 0
+FUR-03 0.120 -19.015 0 0
+FUR-03_White 1.620 -19.015 0 0
+FUR-04 2.980 -19.135 0 0
+FUR-04_White 4.200 -19.135 0 0
+FUR-05 5.550 -18.835 0 0
+FUR-05_Blue 7.030 -18.835 0 0
+PLT-01 -9.330 -21.375 0 0
+PLT-01_Pink -7.490 -21.375 0 0
+PLT-01_White -5.650 -21.375 0 0
+PLT-02 -3.990 -21.605 0 0
+PLT-02_Pink -2.490 -21.605 0 0
+PLT-03 -0.570 -21.565 0 0
+PLT-03_Pink 1.800 -21.565 0 0
+PLT-04 3.910 -21.725 0 0
+PLT-05 5.990 -21.605 0 0.86
+PLT-06 7.910 -21.435 0 0
+PLT-06_White 9.480 -21.435 0 0
+TOP-01 -2.935 -23.825 0 0
+TOP-01_Rose -1.555 -23.825 0 0
+TOP-02 -0.125 -23.785 0 0
+TOP-03 1.405 -23.785 0 0
+TOP-04 2.885 -23.785 0 0
+# ---- 6 composition prefabs (instances), origin = front centre ----
+#! cmp Comp_RoseArchEntrance -23.35 -35.64
+#! cmp Comp_PergolaTerrace -14.65 -35.64
+#! cmp Comp_GazeboRetreat -4.35 -35.64
+#! cmp Comp_FountainParterre 5.20 -35.64
+#! cmp Comp_WalledPondCorner 13.50 -35.64
+#! cmp Comp_WildlifeLawn 22.50 -35.64
+#! shot Catalog Catalog_check 1920 1080 -30 -44.1 30 2 170 50 28 0.94 0.04 0.96 floor

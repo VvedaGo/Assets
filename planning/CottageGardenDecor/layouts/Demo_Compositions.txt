@@ -1,0 +1,69 @@
+# Demo_Compositions — six composition vignettes + modular sets (Э10, store files CMP-01..06 and Modules).
+# Built by CottageGardenDecorCompositionsScene.Build (menu Tools/Cottage Garden Decor/Build Compositions Scene):
+# PackSceneBuilder places the plain module items below (no 'comp' lines: the CMP prefabs are placed as instances by '#! cmp'
+# and never re-saved), then the wrapper adds plinths (demo island scaled to footprint + margin), cameras, backdrop, look.
+# Layout space = world: x east, z north, camera rule: bearing 150 = front-right (30 deg off the front axis), 38 deg down.
+
+#! camera 150 36 32 0.87   # renders_2: plinth 85-90 % of the width, lowest plinth pixel at 90 %
+#! plinth 0.7 0.7 1.0 0.08   # side, back, front (towards the camera), underside scale
+#! backdrop 252 246 236 248 242 232   # warm light neutral, rendered ~#EFEBE4
+
+# ---- vignettes (40 m apart, each its own plinth and camera; face = plinth turned to the camera, renders_2 pass 2) ----
+#! cmp CMP-01 Comp_RoseArchEntrance 0 0 face
+#! cmp CMP-02 Comp_PergolaTerrace 40 0
+#! cmp CMP-03 Comp_GazeboRetreat 80 0 face 0.7   # front 0.7 m from the arch (Fix 2: front lawn band <= 12 %)
+#! cmp CMP-04 Comp_FountainParterre 120 0
+#! cmp CMP-05 Comp_WalledPondCorner 160 0 face 0.7   # front 0.7 m from the urn / pond rim (Fix 2)
+#! cmp CMP-06 Comp_WildlifeLawn 200 0 face
+
+# ---- Modules (Modules.md, renders_2 Fix 1 + pass-2 Fix 2): gaps 0.8-1.0 m between the five systems ----
+#! group Modules 228 -6 252 8 42
+# pond 3 x 2 (front left, moved 0.5 m right / 0.2 m back towards the wall): inner x 234..237, z -1.8..0.2
+MOD-09 234.5 -1.3 0 0
+MOD-09 235.5 -1.3 0 0
+MOD-09 236.5 -1.3 0 0
+MOD-09 234.5 -0.3 0 0
+MOD-09 235.5 -0.3 0 0
+MOD-09 236.5 -0.3 0 0
+MOD-07 234.5 -1.8 180 0
+MOD-07 235.5 -1.8 180 0
+MOD-07 236.5 -1.8 180 0
+MOD-07 234.5 0.2 0 0
+MOD-07 235.5 0.2 0 0
+MOD-07 236.5 0.2 0 0
+MOD-07 234 -1.3 -90 0
+MOD-07 234 -0.3 -90 0
+MOD-07 237 -1.3 90 0
+MOD-07 237 -0.3 90 0
+MOD-08 234 -1.8 180 0
+MOD-08 237 -1.8 90 0
+MOD-08 237 0.2 0 0
+MOD-08 234 0.2 -90 0
+# brick edging ring (front centre, ~1.0 m right of the pond, 0.3 m back): 3 x 3 by axis x 238.4..241.4, z -2.4..0.6
+MOD-05 239.9 -2.4 0 0
+MOD-05 239.9 0.6 0 0
+MOD-05 238.4 -0.9 90 0
+MOD-05 241.4 -0.9 90 0
+MOD-06 239.4 -1.4 0 0
+MOD-06 239.4 -0.4 90 0
+MOD-06 240.4 -0.4 180 0
+MOD-06 240.4 -1.4 -90 0
+# lattice screen (front right, 0.85 m from the ring)
+MOD-02 242.3 -1.9 0 0
+MOD-01 243.3 -1.9 0 0
+MOD-02 244.3 -1.9 0 0
+MOD-01 245.3 -1.9 0 0
+MOD-02 246.3 -1.9 0 0
+# stone wall (back left, 0.8 m behind the pond, 0.8 m left of the pergola): 2 segments, 3 pillars
+MOD-04 234.2 1.6 0 0
+MOD-03 235.2 1.6 0 0
+MOD-04 236.2 1.6 0 0
+MOD-03 237.2 1.6 0 0
+MOD-04 238.2 1.6 0 0
+# pergola + bay (back right): STR-04 + STR-05 at +1.5 (rot 180), wisteria under the front beam z 1.8
+STR-04 241 3.3 0 0
+STR-05 242.5 3.3 180 0
+PLT-05 240.3 1.8 0 2.24
+PLT-05 241.7 1.8 0 2.24
+PLT-05 243.3 1.8 0 2.24
+PLT-05 244.7 1.8 0 2.24

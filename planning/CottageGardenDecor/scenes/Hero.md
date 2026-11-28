@@ -47,3 +47,13 @@ Keep the first image, same overall garden island layout, strongly identifiable s
 ## Fixes
 
 <!-- The render reviewer appends fix sections. -->
+
+## Fix 1 (2026-11-26, review renders_1)
+Problem: island fills 80 % of the frame width but the garden is small on it. Compositions cover ~55 % of the island top; the foreground (bottom 25 %), left and right edges and the zone between path and edges are empty lawn. The gazebo is ~9 % of the frame width and is not the clear focus.
+- Island (demo-asset rebuild in Blender, not a layout change): shrink the top from ~24 x 18 m to ~18 x 13.5 m (x0.75), keep the soil cut and faceted edge. Re-export the FBX; path scaled/shortened the same way (width 2.4 m kept).
+- Layout: move the six compositions inwards so the garden (bounding box of all pack items) occupies >= 80 % of the island top area; gap composition to island edge 0.8-1.5 m, gaps between compositions 1.5-2.5 m (now 4-6 m). Zones stay as in the reference (CMP-03 NE, CMP-05 NW, CMP-02 W, CMP-04 E, CMP-01 SW, CMP-06 SE).
+- Camera: keep ~SSE (8 deg east), 40 deg down, vFOV 31-33; move closer so the island is 88-92 % of the frame width and the soil cut bottom is at 93-95 % of the height. Top sky margin 6-10 % (clouds only). Gazebo roof >= 13 % of the frame width, tallest and most contrasting object, nothing in front of it; move free STR-07_White and STR-01_White away from the gazebo front (e.g. 3 m east of the pond).
+- Densify with allowed free pack items (extra to the compositions): +4 TOP-01/TOP-02 topiaries along the island edge, +3 PLT-01/PLT-03 rose bushes near the front lawn edge, +2 FLB-01_Planted/FLB-03_Planted at the path fork, +2 TOP-04 near the swing zone. The lower 25 % of the island top must hold >= 2 readable items (e.g. CMP-06 hammock/loungers moved 2 m towards the camera); no bare strip wider than 2.5 m.
+- Lawn colour: now lime yellow-green (~#A5D24F, flat, bright). Target deeper clean green ~#7DB93C, saturation -8 %, exposure -0.15; keep the faceted tone variation. Soil cut unchanged.
+- Light/post: keep warm key from upper left and the shadows. Make the top of the sky slightly bluer (less grey). Remove clouds that overlap island corners (bottom left, bottom right) so the silhouette is clean.
+- Check after render: no pack item (except gnome, birdbath, sundial, hooks) lower than 3 % of the frame height.

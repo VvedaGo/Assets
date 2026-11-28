@@ -47,3 +47,11 @@ Surgical edit of first image, absolutely preserve its 16:9 framing, original rev
 ## Fixes
 
 <!-- The render reviewer appends fix sections. -->
+
+## Fix 1 (2026-11-26, review renders_1)
+Problem: island is 72 % of the width with ~28 % empty sky left and right, items small (gazebo ~10 % of the width), the front lawn is empty beside the walled pond, soil cut touches 98 % of the height (looks cropped low), the pond is seen from the outside of the L wall so the iron arch and stela are hidden, no clear focus.
+- Island: rebuilt smaller as Hero Fix 1 (~18 x 13.5 m, garden >= 80 % of the top).
+- Camera: from NW, 36 deg down, vFOV 32-34; island 86-90 % of the width (x 5-95 %), soil cut bottom at 93-95 %; sky margin >= 5 % at the top, one clean upper corner (left, ~15 % x 15 %) for the composition block, max 2 clouds. Island centroid at x 50 +- 3 %, y 52 +- 4 % (now ~54 % / 60 %).
+- Focus: pond + low wall + iron arch (CMP-05) in the front and the red gazebo behind the path must both read: rotate the camera 15-20 deg towards W (or CMP-05 in place) so the arch opening and stela face the camera/path; pond block >= 14 % of the width.
+- Densify as in Hero Fix 1; additionally fill the front-left lawn with free items (STR-01_White, FUR-03_White/FUR-04_White, FLB-01..03) 1.5-2.5 m from the pond wall, +3 TOP-01/02 near the near edge.
+- Lawn colour/light as Hero Fix 1; keep the long shadows.

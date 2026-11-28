@@ -1,0 +1,24 @@
+Unity 6000.3.10f1 pipeline UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset PC_RPAsset
+scriptCompilationFailed=False
+files=155
+MAT Assets/CottageGardenDecor/Art/Materials/FMS_Garden_AtlasA.mat shader=Universal Render Pipeline/Lit supported=True
+MAT Assets/CottageGardenDecor/Art/Materials/FMS_Garden_AtlasF.mat shader=Universal Render Pipeline/Lit supported=True
+MAT Assets/CottageGardenDecor/Demo/Materials/FMS_Garden_Demo_Atlas.mat shader=Universal Render Pipeline/Lit supported=True
+MAT Assets/CottageGardenDecor/Demo/Materials/FMS_Garden_Demo_Backdrop.mat shader=CottageGardenDecor/Demo/Gradient Sky supported=True
+MAT Assets/CottageGardenDecor/Demo/Materials/FMS_Garden_Demo_CatalogFloor.mat shader=Universal Render Pipeline/Lit supported=True
+MAT Assets/CottageGardenDecor/Demo/Materials/FMS_Garden_Demo_Cloud.mat shader=CottageGardenDecor/Demo/Cloud supported=True
+MAT Assets/CottageGardenDecor/Demo/Materials/FMS_Garden_Demo_Plinth.mat shader=Universal Render Pipeline/Lit supported=True
+MAT Assets/CottageGardenDecor/Demo/Materials/FMS_Garden_Demo_Sky.mat shader=CottageGardenDecor/Demo/Gradient Sky supported=True
+SHADER Assets/CottageGardenDecor/Demo/Shaders/FMS_Garden_Demo_Cloud.shader CottageGardenDecor/Demo/Cloud supported=True errors=0
+SHADER Assets/CottageGardenDecor/Demo/Shaders/FMS_Garden_Demo_Sky.shader CottageGardenDecor/Demo/Gradient Sky supported=True errors=0
+prefabs=73 loaded=73 cmp=6 missingScripts=0 nullMatSlots=0 badShaderSlots=0 colliders=0 lodGroups(incl nested in CMP)=22
+badMaterialsOrShaders=0
+SCENE Assets/CottageGardenDecor/Demo/Scenes/Demo_Catalog.unity: objects=714 prefabInstances=191 brokenInstances=0 missingScripts=0 missingRefs=0 nullMatSlots=0 cameras=1 active=1 volumes=1 volumesWithProfile=1 skybox=FMS_Garden_Demo_Sky/CottageGardenDecor/Demo/Gradient Sky
+  volume profile FMS_Garden_Look: Tonemapping, ColorAdjustments, WhiteBalance, SplitToning, Bloom, Vignette, ColorCurves
+  render Demo_Catalog: camera=Main Camera postProcessing=True magentaPixels=0
+SCENE Assets/CottageGardenDecor/Demo/Scenes/Demo_Compositions.unity: objects=530 prefabInstances=182 brokenInstances=0 missingScripts=0 missingRefs=0 nullMatSlots=0 cameras=1 active=1 volumes=1 volumesWithProfile=1 skybox=FMS_Garden_Demo_Backdrop/CottageGardenDecor/Demo/Gradient Sky
+  volume profile FMS_Garden_Look: Tonemapping, ColorAdjustments, WhiteBalance, SplitToning, Bloom, Vignette, ColorCurves
+  render Demo_Compositions: camera=Main Camera postProcessing=True magentaPixels=0
+SCENE Assets/CottageGardenDecor/Demo/Scenes/Demo_CottageGarden.unity: objects=491 prefabInstances=155 brokenInstances=0 missingScripts=0 missingRefs=0 nullMatSlots=0 cameras=1 active=1 volumes=1 volumesWithProfile=1 skybox=FMS_Garden_Demo_Sky/CottageGardenDecor/Demo/Gradient Sky
+  volume profile FMS_Garden_Look: Tonemapping, ColorAdjustments, WhiteBalance, SplitToning, Bloom, Vignette, ColorCurves
+  render Demo_CottageGarden: camera=Main Camera postProcessing=True magentaPixels=0

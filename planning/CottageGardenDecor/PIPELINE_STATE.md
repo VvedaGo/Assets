@@ -42,11 +42,11 @@
 | Пилот (Э6–Э8 + импорт) | готово | утверждён владельцем («дальше делай 10 моделей»); пробный импорт отложен до открытия Unity | 2026-11-25 | |
 | Серия моделей (Э6–Э8) | в работе | партии 1–2 закрыты (2 ✅ + 18 🟡 + пилот 3 🟡); партии 1–3 закрыты; партия 4 (9, последняя) в работе | 2026-11-25 | reviews/ |
 | Э9 Референсы сцен | готово | 11 кадров приняты оркестратором (27 генераций); лишние объекты перечислены в scenes/*.md | 2026-11-26 | scenes/ |
-| Э10 Unity | в работе | импорт и префабы готовы (60/60, без коллайдеров, таблица ID → имя); дальше — сцены по одной | 2026-11-26 | Assets/CottageGardenDecor/ |
-| Э11 Ревью рендеров | открыто | | | reviews/renders_*.md |
-| Э12 Иконка и оформление | открыто | | | AssetStore/<Product>/Media/final/ |
-| Э13 Карточка | открыто | | | AssetStore/<Product>/PACKAGE_METADATA.md |
-| Э14 Проверка поставки | открыто | | | |
+| Э10 Unity | готово | 3 демо-сцены (CottageGarden, Compositions, Catalog), 6 CMP-префабов, ~20 чистых рендеров | 2026-11-26 | Assets/CottageGardenDecor/ |
+| Э11 Ревью рендеров | готово | все кадры приняты (renders_1–3), 14_Unity снят автоматически | 2026-11-26 | reviews/renders_*.md |
+| Э12 Иконка и оформление | готово | 17 файлов в Media/final; media_1 pass 2: ✅ 15, 🟡 2, 🔴 0 | 2026-11-26 | AssetStore/<Product>/Media/final/ |
+| Э13 Карточка | готово | PACKAGE_METADATA.md: название, $12.99, теги, медиа-план; 7 пунктов [ПРОВЕРИТЬ] → Э14 | 2026-11-26 | AssetStore/<Product>/PACKAGE_METADATA.md |
+| Э14 Проверка поставки | готово | .unitypackage 2.6 МБ, 155 файлов; чистый импорт 0 ошибок, 73/73 префаба, 3/3 сцены; Validator 37/37 Pass; REQUIREMENTS §8 ✅ | 2026-11-26 | |
 | Э15 Черновик в портале | открыто | | | |
 
 ## Предметы
@@ -102,21 +102,31 @@
 
 | Кадр | Назначение | Референс сцены | Раскладка | Рендер | Ревью (возвратов) | Финальный файл |
 |---|---|---|---|---|---|---|
-| Hero | 05_Hero | ✅ | — | — | — | — |
-| Cover | 03_Cover, 04_Social | ✅ | — | — | — | — |
+| Hero | 05_Hero | ✅ | ✅ layouts/Demo_CottageGarden.txt | ✅ Media/raw/Hero.png | ✅ PASS (1) | — |
+| Cover | 03_Cover, 04_Social | ✅ | ✅ layouts/Demo_CottageGarden.txt | ✅ Media/raw/Cover.png | 🟡 (1) | — |
 | Card | 02_Card, 01_Icon | ✅ | — | — | — | — |
-| AltView | 10_DemoAndVersion | ✅ | — | — | — | — |
-| Modules | 08_VariantsAndModules | ✅ | — | — | — | — |
-| CMP-01 | 12_Compositions, 07_Closeups | ✅ | — | — | — | — |
-| CMP-02 | 12_Compositions, 07_Closeups | ✅ | — | — | — | — |
-| CMP-03 | 12_Compositions, 07_Closeups | ✅ | — | — | — | — |
-| CMP-04 | 12_Compositions, 07_Closeups | ✅ | — | — | — | — |
-| CMP-05 | 12_Compositions, 07_Closeups | ✅ | — | — | — | — |
-| CMP-06 | 12_Compositions, 07_Closeups | ✅ | — | — | — | — |
+| AltView | 10_DemoAndVersion | ✅ | ✅ layouts/Demo_CottageGarden.txt | ✅ Media/raw/AltView.png | 🟡 (1) | — |
+| Modules | 08_VariantsAndModules | ✅ | ✅ layouts/Demo_Compositions.txt | ✅ Media/raw/Modules.png | 🟡 (1) | — |
+| CMP-01 | 12_Compositions, 07_Closeups | ✅ | ✅ layouts/Demo_Compositions.txt | ✅ Media/raw/CMP-01.png | 🟡 (1) | — |
+| CMP-02 | 12_Compositions, 07_Closeups | ✅ | ✅ layouts/Demo_Compositions.txt | ✅ Media/raw/CMP-02.png | 🟡 (1) | — |
+| CMP-03 | 12_Compositions, 07_Closeups | ✅ | ✅ layouts/Demo_Compositions.txt | ✅ Media/raw/CMP-03.png | ✅ PASS (2) | — |
+| CMP-04 | 12_Compositions, 07_Closeups | ✅ | ✅ layouts/Demo_Compositions.txt | ✅ Media/raw/CMP-04.png | ✅ PASS (0) | — |
+| CMP-05 | 12_Compositions, 07_Closeups | ✅ | ✅ layouts/Demo_Compositions.txt | ✅ Media/raw/CMP-05.png | 🟡 (2) | — |
+| CMP-06 | 12_Compositions, 07_Closeups | ✅ | ✅ layouts/Demo_Compositions.txt | ✅ Media/raw/CMP-06.png | 🟡 (1) | — |
+| FullCollection | 06_FullCollection | — | ✅ layouts/Demo_Catalog | ✅ Media/raw/06_FullCollection (+_2).png | 🟡 (0) | — |
+| CategoryDetails | 11_CategoryDetails | — | ✅ layouts/Demo_Catalog | ✅ Media/raw/11_CategoryDetails.png | ✅ (0) | — |
+| Variants | 08_VariantsAndModules | — | ✅ layouts/Demo_Catalog | ✅ Media/raw/08_Variants_A/_B.png | ✅ (1) | — |
+| Technical | 09_Technical | — | ✅ layouts/Demo_Catalog | ✅ Media/raw/09_Technical.png | ✅ (0) | — |
+| Materials | 13_Materials | — | ✅ layouts/Demo_Catalog | ✅ Media/raw/13_Materials.png | ✅ (0) | — |
+| Unity | 14_UnityAndComparison | — | ✅ layouts/Demo_Catalog | ✅ Media/raw/—.png | ❓ нужен ручной снимок редактора | — |
+| CardSrc | 02_Card | — | ✅ своя раскладка | ✅ Media/raw/Card.png | ✅ PASS (1) | — |
+| IconSrc | 01_Icon | — | ✅ layouts/Demo_Catalog | ✅ Media/raw/IconSource.png | ✅ (0) | — |
 
 ## Ждёт владельца
 
 <!-- Нумерованные вопросы; владелец отвечает номерами. Решённые переносить в журнал. -->
+
+4. Коммит: всё после f051c50 (демо-окружение, 3 сцены, 6 композиций, look, ~20 рендеров) не закоммичено.
 
 1. Э5 (не блокирует): допущения авторов промптов, которые стоит глянуть — MOD-01 решётка белая (#EEEDE7), хотя STYLE даёт рейкам дерево A-2; TOP-01 `_Rose` — красные бутоны; ORN-02 гном — красный колпак/синяя куртка; STR-06 беседка — вход с двумя ступенями, ~3.9×3.4 м; STR-07 и FUR-05 — детали тоньше правила STYLE (оговорено как исключение). Молчание = принять.
 
@@ -130,6 +140,48 @@
 - Решения владельца:
 - Следующая порция:
 -->
+
+### 2026-11-26 — порция: Э14 проверка поставки
+- Сделано: сборщик — в каждой демо-сцене одна Main Camera (сад 3 → 1, композиции 7 → 1), облака отдельных кадров убраны, медиа-материалы Wire/Sky_Light вынесены в Assets/Editor/CottageGardenDecor/MediaOnly (в поставке 6 демо-материалов). Релиз-агент — README.txt + Changelog.txt; зависимости только URP/Core; экспорт .work/release/CottageGardenDecor_1.0.0.unitypackage (2 550 536 байт, 155 файлов + 32 папки, всё внутри Assets/CottageGardenDecor); чистый проект Unity 6000.3.10f1 URP 17.3: 0 ошибок компиляции, 0 missing scripts, 0 розовых, 73/73 префаба (60 + 6 CMP + 7 демо), 3/3 сцены без пропавших ссылок, Volume работает (рендер .work/release/clean_DemoCottageGarden.png — оркестратор посмотрел, в порядке); Asset Store Validator 12.0.6 — 37 Pass / 0 Warning / 0 Fail. Карточка: 7 пунктов [ПРОВЕРИТЬ] закрыты. Оркестратор обновил устаревшие пункты 6–7 в release_check.md и 14 в карточке (медиа готово).
+- Отложено: необязательно — общая камера Demo_Compositions далековата.
+- Счётчики: агентов 2 (сборщик, релиз-агент) · генераций 0 · кругов Blender 0 · возвратов ревью 0
+- Решения владельца: 2026-11-26 — «дальше».
+- Следующая порция: Э15 черновик в Publisher Portal — нужен вход владельца в браузере; отправка на модерацию только по явному подтверждению.
+
+### 2026-11-26 — порция: Э13 карточка + Э12 медиа магазина
+- Сделано: Э13 — релиз-агент написал AssetStore/CottageGardenDecor/PACKAGE_METADATA.md (все поля 7.1/7.2, цифры перепроверены на диске, медиа-план 15 файлов с точными текстами плашек). Владелец поручил заполнять данные магазина самостоятельно — оркестратор решил: название «Cottage Garden Decor - Arches, Gazebo & Pergola» (47 симв.), цена USD 12.99 без скидки, поддержка через профиль издателя, паки серии — только названиями, 06b оставить. 14_Unity: после того как владелец вывел Unity вперёд, сборщик снял главное окно этого проекта автоматически (инициалы аккаунта замаскированы, временный файл удалён). Э12 — Codex собрал 17 файлов кодом поверх рендеров (Montserrat OFL, #20242A / #C8473B, по образцу build_media.py Farm Machinery): иконка 160 + 1024, карточка 420 + 1260, обложка, соцсети, галерея 05–14 + 06b. Приёмка media_1: ✅ 8 / 🟡 4 / 🔴 2 → FIX 1,2,4,5,6 → pass 2: ✅ 15, 🟡 2, 🔴 0. Слот логотипа пуст (логотипа серии нет).
+- Отложено: в демо-сценах лишние камеры (сад 3, композиции 7) — убрать на Э14; 7 пунктов [ПРОВЕРИТЬ после экспорта].
+- Счётчики: агентов 7 задач (релиз-агент 2; Codex 2; сборщик 1; ревьюер 2 прохода) · генераций 0 · кругов Blender 0 · возвратов ревью 1
+- Решения владельца: 2026-11-26 — «дальше»; данные магазина заполняет конвейер.
+- Следующая порция: Э14 проверка поставки — README/Changelog, лишние камеры, экспорт .unitypackage, импорт в чистый проект Unity 6 / URP, Validator, размер, сверка цифр.
+
+### 2026-11-26 — порция: сцена Demo_Catalog + каталожные кадры + Card/Icon
+- Сделано: сборщик — Demo_Catalog.unity (60 префабов рядами по категориям, 6 композиций, подписи ID в сцене), чистые кадры с картами подписей: 06_FullCollection (+_2 для мелочи), 11_CategoryDetails, 08_Variants_A/_B (все 18 вариантов — визуальная проверка: дефектов нет), 09_Technical (LOD0/LOD1 + каркас), 13_Materials, Card 1260×840, IconSource 1024². Э11 renders_3: Card 🔴 (арка 13 % ширины) → своя раскладка, арка 55 % высоты → ✅; 06_2 и 08_B переупакованы → ✅; итог ✅ 8, 🟡 1 (06), ❓ 1 (14_Unity: снимок из CLI захватил чужое окно — удалён; нужен ручной снимок владельца).
+- Отложено: 14_Unity.
+- Счётчики: агентов 4 задачи (сборщик 2; ревьюер 2 прохода) · генераций 0 · кругов Blender 0 · возвратов ревью 1
+- Решения владельца: 2026-11-26 — «дальше».
+- Следующая порция: Э12 — оформление медиа (иконка, карточка, обложка, соцсети, плашки галереи) кодом поверх рендеров; Э13 карточка товара может идти параллельно.
+
+### 2026-11-26 — порция: look пака (пост-обработка) + сцена Compositions
+- Сделано: по просьбе владельца — общий look FMS_Garden_Look (URP Volume + свет/небо в обёртке): ACES, контраст +18, насыщенность −4, сплит-тонирование холодные тени / тёплые света, ключевой свет 1.95, виньетка 0.20, bloom 0.3, SSAO на время рендера, тени 4096, 2× SS + MSAA; без DOF, шума, хром. аберраций. Сборщик нашёл, что общий рендер обрезал HDR до ACES — в обёртке свой HDR-рендер (PackTools не тронут, проверено по git). Hero/Cover/AltView перерендерены, пары «до/после» в .work/pipeline/CottageGardenDecor/look/. Сцена Demo_Compositions: 6 виньеток CMP на подиумах-островках + Modules, тёплый фон #EFEBE4, одна камера; подиумы развёрнуты краем к кадру. Э11 renders_2: look v1 🟡 (слишком тонко) → v2 ✅; CMP-03/05 🔴 → Fix 1 → Fix 2 → ✅/🟡; итог 10 кадров: ✅ 3, 🟡 7, 🔴 0.
+- Отложено: необязательно — камеру CMP-01/06 ближе на ~5 %.
+- Счётчики: агентов 6 задач (сборщик 3; ревьюер рендеров 3 прохода) · генераций 0 · кругов Blender 0 · возвратов ревью 2 (CMP-03, CMP-05)
+- Решения владельца: 2026-11-26 — «дальше», красивый пост-процессинг.
+- Следующая порция: сцена Demo_Catalog (06_FullCollection, 11_CategoryDetails, 08 варианты, 09_Technical, 13_Materials) + кадр Card/Icon; затем Э12 оформление медиа.
+
+### 2026-11-26 — порция: Э11 ревью + Fix 1 сцены Demo_CottageGarden
+- Сделано: владелец указал на референс Docs/references/SYNTY_ASSET_STORE_VISUAL_REFERENCE.html — оркестратор его прочитал, извлёк текст и 118 картинок в .work/pipeline/CottageGardenDecor/synty_ref/, передал ревьюеру и сборщику, записал в память. Э11 (новый ревьюер рендеров): Hero/Cover/AltView 🔴 FIX 1 — сад мелкий и редкий на большом острове. Строитель уменьшил остров до 18×13.5 м (×0.75), газон #7DB93C; сборщик переставил сад плотнее (143 объекта: +11 свободных предметов), приблизил камеры, AltView с аркой пруда спереди. Pass 2: все три 🟡 (Hero остров 84 %, Cover низ свободен с 74.6 %, AltView 89 %); недобор до 88–94 % и промежутки 0.5–1.1 м приняты ревьюером как плотность в стиле Synty. Отчёт reviews/renders_1.md.
+- Отложено: CMP-03 перестроена вокруг беседки — виньетку сверять с префабом, а не с CMP-03.png.
+- Счётчики: агентов 3 задачи (ревьюер рендеров 2 прохода; строитель демо 1; сборщик 1) · генераций 0 · кругов Blender ≤5 · возвратов ревью 1
+- Решения владельца: 2026-11-26 — «дальше»; использовать референс Synty.
+- Следующая порция: Э10 сцена «Композиции» — виньетки CMP-01…06 (12_Compositions, 07_Closeups) и кадр Modules.
+
+### 2026-11-26 — порция: Э10 сцена Demo_CottageGarden
+- Сделано: демо-окружение (строитель, живой Blender + headless): остров 27×21.6 м 996 tris, дорожка 320, облака 1360, отдельный демо-атлас. Сборщик Unity: изучение серии (Farm Machinery: тёплый ключевой свет, трёхцветный ambient, градиентное небо, облака, пост-обработка); обёртка CottageGardenDecorDemoScene.cs (остров, небо, облака, свет, Volume — PackTools не тронуты); раскладка layouts/Demo_CottageGarden.txt; 6 композиций FMS_Garden_Comp_* (13/17/14/33/33/15 предметов = каталог, без коллайдеров); рендеры AssetStore/CottageGardenDecor/Media/raw/Hero.png, Cover.png, AltView.png.
+- Отложено: оценка оркестратора по листу «референс | рендер» — сад занимает малую часть острова, предметы мелкие, много пустого газона, газон бледнее; кадрам не хватает плотности и размера главного фокуса (REQUIREMENTS 7.6: площадка 80–90 %, без больших пустых участков). Нужен Э11 + доработка: меньше остров или плотнее раскладка, ближе камера.
+- Счётчики: агентов 2 (строитель демо, сборщик сцены) · генераций 0 · кругов Blender ≤5 · возвратов ревью 0
+- Решения владельца: 2026-11-26 — «дальше».
+- Следующая порция: Э11 ревью рендеров этой сцены → правки сборщику (уплотнить сад, уменьшить остров, приблизить камеру).
 
 ### 2026-11-26 — порция: Э9 референсы сцен + переименование пака
 - Сделано: Э9 — Codex, 11 кадров (Hero, Cover, Card, AltView, Modules, CMP-01…06) за 27 генераций, в стиле серии (образцы медиа Farm Nature / Machinery / Processing / Market извлечены из веток в .work/pipeline/CottageGardenDecor/series_media); составы CMP сверены с каталогом; лишние группы, добавленные генератором, перечислены в scenes/*.md. Переименование по команде владельца: ветка VvedaGo/AssetNew → VvedaGo/CottageGardenDecor (не была запушена); git mv planning/art/.work → CottageGardenDecor, ссылки в 156 текстовых файлах (путь worktree …/Assets_Farm/AssetNew не трогали); headless-сборка WTR-03 по новому пути — 336 tris, как раньше; Unity — сборщик через AssetDatabase.MoveAsset/RenameAsset перенёс Assets/CottageGardenDecor и Assets/Editor/CottageGardenDecor, классы CottageGardenDecorPackBuilder/ImportChecks, Root/Tag/LayoutDir; 149 GUID без изменений, 60 префабов, 0 коллайдеров, 60/60 ключей таблицы находят префаб.
