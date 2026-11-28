@@ -242,7 +242,13 @@ Comparison panel (heading + 3-column table; `—` = not included):
 ## Submission Notes
 
 ```text
-Art-only package: no scripts. Demo scenes use a URP Volume and two simple unlit sky / cloud shaders included in Lite/Demo/Shaders. Assets in Demo/Environment (island base, field and wheat modules, road, grass, clouds, straw bales) exist only for the demo scenes and are not counted as product models. Attachments and headers are modelled at their mounted height, so they sit above Y = 0 when placed alone. Farm Machinery Lite is a subset of this package with the same file names.
+Art-only package: no scripts. The pack is split into two folders: FarmMachinery/Lite (identical to the free Farm Machinery Lite, same file names and GUIDs) and FarmMachinery/Full (content added by the full version), so upgrading from Lite adds content without duplicates. Demo scenes use a URP Volume and two simple unlit sky / cloud shaders included in Lite/Demo/Shaders. Assets in Demo/Environment (island base, field and wheat modules, road, grass, clouds, straw bales) exist only for the demo scenes and are not counted as product models. Attachments and combine headers are modelled at their mounted height, so they sit above Y = 0 when placed alone.
+
+Validator note: "Check Model Orientation" flags FMS_Mach_HayRake. This is intentional: the model root faces +Z / +Y correctly; only the two rotor arm sub-objects rest at 90 degrees around their hinge pivots in the transport (folded) pose, so they can be rotated into the work pose (prefab variant FMS_Mach_HayRake_Work). No other model is affected.
+
+AI disclosure: reference images were generated with an AI image generator; all 3D models were built procedurally in Blender with Python scripts and reviewed by hand (no AI 3D generator). Store images are real Unity renders of the included prefabs and demo scenes; only the text plates and the icon artwork were made with AI assistance. No third-party content is included.
+
+Tested: clean import into Unity 6000.3.10f1 (URP 17.3), 0 errors, no missing/pink materials; upgrade over Lite without duplicates; Asset Store Validator: 36 passed, 1 warning (explained above).
 ```
 
 ## Notes (not for the portal)

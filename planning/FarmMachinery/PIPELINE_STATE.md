@@ -39,7 +39,7 @@
 | Э12 Иконка и оформление | готово | PASS после Fix 1 (reviews/media_1.md): Lite 10 + Full 14 | 2026-11-25 | AssetStore/FarmMachinery/{Lite,Full}/Media/final/ | | | AssetStore/<Product>/Media/final/ |
 | Э13 Карточка | готово | решения владельца внесены; цифры [ПРОВЕРИТЬ] на Э14 | 2026-11-25 | AssetStore/FarmMachinery/{Lite,Full}/PACKAGE_METADATA.md | | | AssetStore/<Product>/PACKAGE_METADATA.md |
 | Э14 Проверка поставки | готово | PASS: чистый импорт 0 ошибок; Validator 36 Pass / 1 Warning / 0 Fail | 2026-11-25 | .work/export/RELEASE_CHECK.md |
-| Э15 Черновик в портале | открыто | | | |
+| Э15 Черновик в портале | в работе: владелец заполняет портал и отправляет сам | | | |
 
 ## Предметы
 
@@ -114,6 +114,10 @@
 2. Э15: войти в Publisher Portal в браузере, которым будет пользоваться релиз-агент (встроенный браузер Orca), и сказать «готово».
 
 ## Журнал
+
+### 2026-11-28 — Э15 выкладка (владелец)
+- Владелец заполняет Publisher Portal сам по карточкам; оркестратор подготовил тексты для поля «additional information for Curation» (Lite и Full, внесены в Submission Notes карточек), пояснение к предупреждению Validator по HayRake (решение: оставить, вариант a).
+- Статус отправки на модерацию в журнале не подтверждён владельцем — отметить после его сообщения.
 
 ### 2026-11-26 — разделение на папки Lite / Full (просьба владельца)
 - Assets/FarmMachinery/Lite (75 файлов) и Assets/FarmMachinery/Full (52 файла, только Full-контент); GUID сохранены (200/200), ссылок Lite→Full 0. Пакет Lite = папка Lite, Full = Lite + Full. Чистый импорт обоих и апгрейд Lite→Full: 0 ошибок, без дублей. Validator: Lite 37 Pass, Full 36 Pass + 1 Warning (HayRake).

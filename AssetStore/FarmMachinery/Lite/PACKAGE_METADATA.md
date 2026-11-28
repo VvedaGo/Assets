@@ -202,7 +202,11 @@ Typography: `·` = middle dot U+00B7, `×` = U+00D7, `→` = U+2192, `—` = em 
 ## Submission Notes
 
 ```text
-Art-only package: no scripts. Demo scenes use a URP Volume and two simple unlit sky / cloud shaders included in Lite/Demo/Shaders. Assets in Demo/Environment (island base, field modules, road, grass, clouds) exist only for the demo scenes and are not counted as product models. Quick Hitch and Front Weight are modelled at their mounted height, so they sit above Y = 0 when placed alone. Lite is a subset of Farm Machinery (Full) with the same file names.
+Art-only package: no scripts. Demo scenes use a URP Volume and two simple unlit sky / cloud shaders included in Lite/Demo/Shaders. Assets in Demo/Environment (island base, field modules, road, grass, clouds) exist only for the demo scenes and are not counted as product models. Quick Hitch and Front Weight are modelled at their mounted height, so they sit above Y = 0 when placed alone. Lite is a free subset of Farm Machinery (Full) with the same file names and GUIDs, so upgrading to Full adds content without duplicates.
+
+AI disclosure: reference images were generated with an AI image generator; all 3D models were built procedurally in Blender with Python scripts and reviewed by hand (no AI 3D generator). Store images are real Unity renders of the included prefabs and demo scenes; only the text plates and the icon artwork were made with AI assistance. No third-party content is included.
+
+Tested: clean import into Unity 6000.3.10f1 (URP 17.3), 0 errors, no missing/pink materials; Asset Store Validator: all checks passed.
 ```
 
 ## Notes (not for the portal)
