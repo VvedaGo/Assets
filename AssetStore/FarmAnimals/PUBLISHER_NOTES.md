@@ -18,7 +18,7 @@
 Известно по истории работы над паком:
 - модели, риги и клипы сделаны процедурно скриптами Blender на Python, которые писали ИИ-агенты (Claude) в `.work/models/Farm_Animals/<Animal>/`; правки поз и мешей тоже ими;
 - референсы моделей (`planning/FarmAnimals/references`) сгенерированы встроенным ImageGen, в пак не входят;
-- C# в паке (FarmAnimalEvents, FarmAnimalDemo) и инструменты импорта/демо написаны ИИ (Claude);
+- C# в паке (FarmAnimalEvents, FarmAnimalDemo), шейдер неба демо (FarmAnimals/Demo/URP Gradient Sky) и инструменты импорта/демо написаны ИИ (Claude);
 - иконка — генерация Codex image_gen по модели коровы (Media/Concepts); остальные картинки — рендеры и снимки Unity;
 - сидящая собака Codex (`.work/models/Farm_Animals/Dog_Sit_Codex`) — только референс, в пак не входит.
 
@@ -32,7 +32,7 @@
 
 - [ ] Подтвердить цену и текст AI Disclosure.
 - [ ] Экспортировать финальный .unitypackage (только Assets/FarmAnimals), импортировать в чистый проект Unity 6000.3.10f1 / URP 17.3.0, открыть обе демо-сцены, нажать Play, проверить отсутствие ошибок и розовых материалов. Пока сделан только пробный экспорт (9 570 046 байт) без чистого импорта.
-- [ ] Прогнать Asset Store Tools Validator и сохранить результат.
+- [ ] Прогнать Asset Store Tools Validator и сохранить результат. 2026-11-26: предупреждение «Check SRP Compatible Materials» на M_Demo_Sky (был встроенный Skybox/Procedural) исправлено: небо демо переведено на включённый URP-шейдер Demo/Shaders/FarmAnimalsGradientSky.shader; вид совпадает со старым (контрольный рендер). Validator нужно запустить повторно.
 - [ ] Сверить ограничения Title/Summary, число тегов и наличие категории «3D / Characters / Animals» в авторизованном портале. Сейчас Title 41 символ, Summary 180, тегов 15.
 - [ ] Сделать JPG-копии изображений для загрузки, если портал ограничивает вес; сейчас Final в PNG.
 - [ ] Смонтировать видео 30–60 с из Media/Video и загрузить на YouTube/Vimeo (портал принимает ссылку).

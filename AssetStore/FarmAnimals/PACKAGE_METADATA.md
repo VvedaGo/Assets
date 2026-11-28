@@ -119,7 +119,7 @@ TEXTURES
 
 MATERIALS AND SHADERS
 35 materials using Universal Render Pipeline/Lit, one per animal (GPU instancing enabled).
-Demo only: 5 materials (4 URP/Lit for grass, soil, rock and clouds; 1 Skybox/Procedural), 14 generated mesh assets (islands, cloud) and 1 URP Volume profile (tonemapping, color adjustments, white balance, bloom, vignette).
+Demo only: 5 materials (4 URP/Lit for grass, soil, rock and clouds; 1 sky material using the included URP shader FarmAnimals/Demo/URP Gradient Sky), 14 generated mesh assets (islands, cloud) and 1 URP Volume profile (tonemapping, color adjustments, white balance, bloom, vignette).
 
 UVS
 One UV channel per mesh, laid out on the palette atlas. No lightmap UVs.
@@ -139,7 +139,7 @@ SCALE AND SETUP
 1 unit = 1 m, Y up, the animals face +Z, pivot on the ground. Sizes follow the stylized proportions of the models (big heads), for example cow 2.66 m long and 1.81 m to the top of the head, horse 2.97 x 2.39 m, dog 1.15 x 1.15 m, chick 0.13 x 0.15 m. Insects are enlarged: bee 0.08 m, butterfly 0.16 m, ladybug 0.05 m. Prefab names use the FMS_ prefix.
 
 FILES AND SOURCES
-Assets/FarmAnimals: 35 FBX, 35 PNG, 35 materials, 35 Animator Controllers, 43 prefabs, 2 scenes, 2 scripts with their assembly definitions, documentation (GettingStarted.txt, ImportReport.txt, Changelog.txt). No Blender source files, audio or video.
+Assets/FarmAnimals: 35 FBX, 35 PNG, 35 materials (+5 demo), 35 Animator Controllers, 43 prefabs, 2 scenes, 2 scripts with their assembly definitions, 1 demo sky shader (URP), documentation (GettingStarted.txt, ImportReport.txt, Changelog.txt). No Blender source files, audio or video.
 
 DEMO AND SCRIPTS
 Demo_FarmAnimals_Showcase.unity and Demo_FarmAnimals_Compositions.unity (Demo/Scenes); press Play to see the animations. Floating islands and the cloud are 14 generated mesh assets (Demo/Meshes). No camera controller and no input handling; each island has a disabled shot camera.
@@ -187,7 +187,7 @@ Universal Render Pipeline (com.unity.render-pipelines.universal 17.3.0 in the au
 ## AI Disclosure
 
 ```text
-AI tools were used to create functional content of this package. The 3D models, rigs and animation clips were generated procedurally by Python scripts for Blender that were written with AI coding assistants (Anthropic Claude); concept reference images for the models were generated with an AI image model and are not included. The C# scripts (FarmAnimalEvents, FarmAnimalDemo) and the Unity import and demo-scene tooling were written with AI assistance. The marketing icon is an AI-generated illustration based on the cow model; the other store images are renders and captures of the actual package in Unity. All content was reviewed and adjusted by the publisher.
+AI tools were used to create functional content of this package. The 3D models, rigs and animation clips were generated procedurally by Python scripts for Blender that were written with AI coding assistants (Anthropic Claude); concept reference images for the models were generated with an AI image model and are not included. The C# scripts (FarmAnimalEvents, FarmAnimalDemo), the demo sky shader and the Unity import and demo-scene tooling were written with AI assistance. The marketing icon is an AI-generated illustration based on the cow model; the other store images are renders and captures of the actual package in Unity. All content was reviewed and adjusted by the publisher.
 ```
 
 ## Third-Party Content

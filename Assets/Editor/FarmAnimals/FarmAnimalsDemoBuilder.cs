@@ -278,13 +278,15 @@ namespace FarmAnimals.Editor
             volume.isGlobal = true;
             volume.sharedProfile = PostProfile(profilePath);
 
-            var sky = LoadOrCreate($"{MatDir}/M_Demo_Sky.mat", "Skybox/Procedural");
-            sky.SetFloat("_SunDisk", 0f);
-            sky.SetFloat("_AtmosphereThickness", 0.55f);
-            sky.SetColor("_SkyTint", new Color(0.55f, 0.70f, 0.90f));
-            sky.SetColor("_GroundColor", new Color(0.66f, 0.79f, 0.92f));     // the cameras look down: this is the backdrop
-            sky.SetFloat("_Exposure", 1.25f);
+            var sky = LoadOrCreate($"{MatDir}/M_Demo_Sky.mat", "FarmAnimals/Demo/URP Gradient Sky");   // URP-tagged demo shader (Validator: SRP-compatible)
+            sky.SetColor("_ZenithColor", new Color(0.16f, 0.42f, 0.88f));
+            sky.SetColor("_HorizonColor", new Color(0.78f, 0.87f, 0.94f));
+            sky.SetColor("_GroundColor", new Color(0.76f, 0.90f, 1.00f));       // the cameras look down: this is the backdrop
+            sky.SetFloat("_HorizonSharpness", 3.5f);
+            sky.SetFloat("_Exposure", 1f);
+            EditorUtility.SetDirty(sky);
             RenderSettings.skybox = sky;
+            DynamicGI.UpdateEnvironment();                                          // reflections/ambient from the new sky
             RenderSettings.ambientMode = AmbientMode.Trilight;
             RenderSettings.ambientSkyColor = new Color(0.66f, 0.76f, 0.88f);
             RenderSettings.ambientEquatorColor = new Color(0.74f, 0.76f, 0.70f);
